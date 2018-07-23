@@ -1,0 +1,6 @@
+arrange:
+  - Out_Of_The_Box_Secure_Methods_and_Algorithms.md
+  - Configuring_Your_Own_Algorithms.md
+  - Assigning_Algorithms_To_Data.md
+  - Creating_Masking_Job.md
+  - Monitoring_Masking_Job.md
