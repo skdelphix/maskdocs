@@ -55,7 +55,7 @@ If you really want to get in and do any custom mkdocs development, you can enter
 
 `pipenv shell`
 
-This will activate the virtualenv in which you can run `mkdocs serve` or whatever else you want. To deactivate, use the `deactivate` command.
+This will activate the virtualenv in which you can run `mkdocs serve` or whatever else you want. You can deactivate/exit the shell with the `exit` command or CTRL+D.
 
 ## Quick Steps
 
