@@ -10,7 +10,7 @@ Open your terminal, ```cd``` to whatever top level directory you want and paste:
 
 `git clone git@gitlab.delphix.com:docs/docsdev.git`
 
-Now we need to get Python 3 installed. If you already have it installed, you can skip ahead to **"Install pipenv"**. If you are a savvy adventurer in Pythonland and already have `pipenv` installed, skip to **"Set up your environment"**.
+Now we need to get Python 3 installed. If you already have it installed, you can skip ahead to [Install pipenv](#install-pipenv). If you are a savvy adventurer in Pythonland and already have `pipenv` installed, skip to [Set up your environment](#set-up-your-environment).
 
 ### Install Python 3
 
