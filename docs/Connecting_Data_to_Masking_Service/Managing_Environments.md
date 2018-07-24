@@ -33,10 +33,10 @@ actions:
 
 Here are the steps you need to take to create an environment:
 
-**Step 1:** On the main environments page, in the upper right-hand
+1. On the main environments page, in the upper right-hand
 corner of the screen, click **Add Environment**.
 
-**Step 2:** The screen prompts you for the following items:
+2. The screen prompts you for the following items:
 
   - **Application Name** – The name of the application associated with
     this environment, for informational purposes.
@@ -46,7 +46,7 @@ corner of the screen, click **Add Environment**.
   - **Purpose** – The way the environment is used in the development
     process: Development, Gold Copy, QA, Training, and so on.
 
-**Step 3:** Either click **Save** to return to the **Environments
+3. Either click **Save** to return to the **Environments
 List/Summary** screen, or click **Save & View** to display the
 **Environment Overview** screen.
 
@@ -71,9 +71,9 @@ environment:
 
 2.  The popup fills in the following items:
     
-    1.  Environment Name
+    a.  Environment Name
     
-    2.  File Name.
+    b.  File Name.
 
 3.  Click **Export**.
 
@@ -88,10 +88,10 @@ click on the **Download file** name to access the XML file.
 Once you have exported your environment, you can easily import it into
 another masking engine. To import an environment:
 
-**Step 1:** In the upper right-hand corner of the screen, click **Import
+1. In the upper right-hand corner of the screen, click **Import
 Environment**.
 
-**Step 2:** The screen prompts you for the following items:
+2. The screen prompts you for the following items:
 
   - **Application Name** – The name of the application associated with
     this environment, for informational purposes. (An integrated test
@@ -107,7 +107,7 @@ Environment**.
     information you want to import. (This file must be a previously
     exported Delphix Agile Data Masking environment.)
 
-**Step 3:** Either click **Save** to return to the **Environments
+3. Either click **Save** to return to the **Environments
 List/Summary** screen, or click **Save & View** to display the
 **Environment Overview** screen.
 
@@ -122,11 +122,11 @@ environment do the following:
 
 2.  The popup prompts you for the following information:
     
-    1.  Name
+    a.  Name
     
-    2.  Purpose
+    b.  Purpose
     
-    3.  Application Name
+    c.  Application Name
 
 3.  Click **Save**.
 
