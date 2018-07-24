@@ -397,15 +397,4 @@ Much of the time data will live outside of databases. The data can be stored in 
 | **XML**                  | Supported         |
 | **JSON**                 | Not Supported     |
 
-#### Available Features
 
-ADD SECTION FOR SETUP / SPECIAL CONSIDERATIONS WHEN MASKING ORACLE.
-
-## FEML Sources 
-
-### High Level Process
-
-For more information on how Delphix can help you mask data sources we do
-not have dedicated connector for - please
-[<span class="underline">contact
-us</span>](https://www.delphix.com/company/contact).
