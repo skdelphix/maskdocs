@@ -6,7 +6,7 @@ Delphix Masking is embarking on a great-- nay, a noble quest. It is a quest to b
 
 ### Clone this repo
 
-Open your terminal, ```cd``` to whatever top level directory you want and type:
+Open your terminal, ```cd``` to whatever top level directory you want and paste:
 
 `git clone git@gitlab.delphix.com:docs/docsdev.git`
 
