@@ -70,24 +70,25 @@ LUW:
 
 The DB2 LUW connector supports profiling and masking/tokenization features. Below is a list of which options are & are not available for jobs using the DB2 LUW connector:
 
-|                             | **Feature**         | **Availability** |
-| -------------------------   | ----------------    | ---------------- |
-| **In-Place Masking Mode**   | Multi-Tenant        | Available        |
-|                             | Streams / Threads   | Available        |
-|                             | Bulk Update         | Available        | 
-|                             | Batch Update        | Available        | 
-|                             | Drop Indexes        | Available        |
-|                             | Disable Trigger     | Unavailable      | 
-|                             | Disable Constraint  | Unavailable      |
-| **On-The-Fly Masking Mode** | Restart Ability     | Available        |
-|                             | Truncate            | Available        |
-|                             | Disable Trigger     | Unavailable      |
-|                             | Disable Constraint  | Unavailable      |
-|                             | Create Target       | Available        |
-| **Profiling**               | Multi-Tenant        | Available        |
-|                             | Streams             | Available        |
+|                             | **Feature**             | **Availability** |
+| -------------------------   | ---------------------   | ---------------- |
+| **In-Place Masking Mode**   | Multi-Tenant            | Available        |
+|                             | Streams / Threads       | Available        |
+|                             | Bulk Update             | Available        | 
+|                             | Batch Update            | Available        | 
+|                             | Drop Indexes            | Available        |
+|                             | Disable Trigger         | Unavailable      | 
+|                             | Disable Constraint      | Unavailable      |
+|                             | Identity Column Support | Unavailable      |
+| **On-The-Fly Masking Mode** | Restart Ability         | Available        |
+|                             | Truncate                | Available        |
+|                             | Disable Trigger         | Unavailable      |
+|                             | Disable Constraint      | Unavailable      |
+|                             | Create Target           | Available        |
+| **Profiling**               | Multi-Tenant            | Available        |
+|                             | Streams                 | Available        |
 
-### Oracle
+### Oracle Connector
 
 #### Introduction
 
@@ -107,9 +108,27 @@ marketed by Oracle Corporation.
 
 #### Available Features
 
-ADD SECTION FOR SETUP / SPECIAL CONSIDERATIONS WHEN MASKING ORACLE.
+The Oracle connector supports profiling and masking/tokenization features. Below is a list of which options are and are not available for jobs using the Oracle connector:
 
-### MS SQL
+|                             | **Feature**             | **Availability** |
+| -------------------------   | ---------------------   | ---------------- |
+| **In-Place Masking Mode**   | Multi-Tenant            | Available        |
+|                             | Streams / Threads       | Available        |
+|                             | Bulk Update             | Available        | 
+|                             | Batch Update            | Available        | 
+|                             | Drop Indexes            | Available        |
+|                             | Disable Trigger         | Available        | 
+|                             | Disable Constraint      | Available        |
+|                             | Identity Column Support | Available        |
+| **On-The-Fly Masking Mode** | Restart Ability         | Available        |
+|                             | Truncate                | Available        |
+|                             | Disable Trigger         | Available        |
+|                             | Disable Constraint      | Available        |
+|                             | Create Target           | Available        |
+| **Profiling**               | Multi-Tenant            | Available        |
+|                             | Streams                 | Available        |
+
+### MS SQL Connector
 
 #### Introduction
 
@@ -132,7 +151,25 @@ on another computer across a network (including the Internet).
 
 #### Available Features
 
-ADD SECTION FOR SETUP / SPECIAL CONSIDERATIONS WHEN MASKING MS SQL.
+The MS SQL connector supports profiling and masking/tokenization features. Below is a list of which options are and are not available for jobs using the MS SQL connector.
+
+|                **Feature**                            | **Availability** |
+| -------------------------   | ---------------------   | ---------------- |
+| **In-Place Masking Mode**   | Multi-Tenant            | Available        |
+|                             | Streams / Threads       | Available        |
+|                             | Bulk Update             | Available        | 
+|                             | Batch Update            | Available        | 
+|                             | Drop Indexes            | Available        |
+|                             | Disable Trigger         | Available        | 
+|                             | Disable Constraint      | Available        |
+|                             | Identity Column Support | Available        |
+| **On-The-Fly Masking Mode** | Restart Ability         | Available        |
+|                             | Truncate                | Available        |
+|                             | Disable Trigger         | Available        |
+|                             | Disable Constraint      | Available        |
+|                             | Create Target           | Available        |
+| **Profiling**               | Multi-Tenant            | Available        |
+|                             | Streams                 | Available        |
 
 ### MySQL
 
