@@ -153,7 +153,7 @@ on another computer across a network (including the Internet).
 
 The MS SQL connector supports profiling and masking/tokenization features. Below is a list of which options are and are not available for jobs using the MS SQL connector.
 
-|                **Feature**                            | **Availability** |
+|                             | **Feature**             | **Availability** |
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
@@ -171,7 +171,44 @@ The MS SQL connector supports profiling and masking/tokenization features. Below
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Available        |
 
-### MySQL
+### PostgreSQL Connector
+
+#### Introduction
+
+PostgreSQL, often simply Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. PostgreSQL is developed by the PostgreSQL Global Development Group, a diverse group of many companies and individual contributors.[15] It is free and open-source, released under the terms of the PostgreSQL License, a permissive software license.
+
+#### Support Matrix
+
+| **Version** | **Linux** | **Unix** | **Windows** |
+| ----------- | --------- | -------- | ----------- |
+| **9.2**     | Supported | Supported| Supported   |
+| **9.3**     | Supported | Supported| Supported   |
+| **9.4**     | Supported | Supported| Supported   |
+| **9.5**     | Supported | Supported| Supported   |
+
+#### Available Features
+
+The PostgreSQL connector supports profiling and masking/tokenization features. Below is a list of which options are & are not available for jobs using the PostgreSQL connector:
+
+|                             | **Feature**             | **Availability**
+| -------------------------   | ---------------------   | ---------------- |
+| **In-Place Masking Mode**   | Multi-Tenant            | Available        |
+|                             | Streams / Threads       | Available        |
+|                             | Bulk Update             | Available        | 
+|                             | Batch Update            | Available        | 
+|                             | Drop Indexes            | Unavailable      |
+|                             | Disable Trigger         | Unavailable      | 
+|                             | Disable Constraint      | Unavailable      |
+|                             | Identity Column Support | Available        |
+| **On-The-Fly Masking Mode** | Restart Ability         | Unavailable      |
+|                             | Truncate                | Available        |
+|                             | Disable Trigger         | Available        |
+|                             | Disable Constraint      | Available        |
+|                             | Create Target           | Available        |
+| **Profiling**               | Multi-Tenant            | Available        |
+|                             | Streams                 | Unavailable      |
+
+### MySQL Connector
 
 #### Introduction
 
@@ -189,9 +226,27 @@ company MySQL AB. MySQL is now owned by Oracle Corporation.
 
 #### Available Features
 
-ADD SECTION FOR SETUP / SPECIAL CONSIDERATIONS WHEN MASKING ORACLE.
+The MySQL connector supports profiling and masking/tokenization features. Belwo is a list of which options are and are not available for jobs using the MySQL connector:
 
-### SAP ASE (Sybase)
+|                             | **Feature**             | **Availability** |
+| -------------------------   | ---------------------   | ---------------- |
+| **In-Place Masking Mode**   | Multi-Tenant            | Available        |
+|                             | Streams / Threads       | Available        |
+|                             | Bulk Update             | Available        | 
+|                             | Batch Update            | Available        | 
+|                             | Drop Indexes            | Available        |
+|                             | Disable Trigger         | Unavailable      | 
+|                             | Disable Constraint      | Unavailable      |
+|                             | Identity Column Support | Available        |
+| **On-The-Fly Masking Mode** | Restart Ability         | Unavailable      |
+|                             | Truncate                | Available        |
+|                             | Disable Trigger         | Unavailable      |
+|                             | Disable Constraint      | Unavailable      |
+|                             | Create Target           | Available        |
+| **Profiling**               | Multi-Tenant            | Available        |
+|                             | Streams                 | Available        |
+
+### SAP ASE (Sybase) Connector
 
 #### Introduction
 
@@ -212,9 +267,27 @@ Sybase Corporation which became part of SAP AG.
 
 #### Available Features
 
-ADD SECTION FOR SETUP / SPECIAL CONSIDERATIONS WHEN MASKING ORACLE.
+The SAP ASE (Sybase) connector supports profiling and masking/tokeniztion features. Below is a list of which options are and are not available for jobs using the SAP ASE connector:
 
-### MariaDB
+|                             | **Feature**             | **Availability** |
+| -------------------------   | ---------------------   | ---------------- |
+| **In-Place Masking Mode**   | Multi-Tenant            | Available        |
+|                             | Streams / Threads       | Available        |
+|                             | Bulk Update             | Available        | 
+|                             | Batch Update            | Available        | 
+|                             | Drop Indexes            | Available        |
+|                             | Disable Trigger         | Available        | 
+|                             | Disable Constraint      | Available        |
+|                             | Identity Column Support | Available        |
+| **On-The-Fly Masking Mode** | Restart Ability         | Available        |
+|                             | Truncate                | Available        |
+|                             | Disable Trigger         | Available        |
+|                             | Disable Constraint      | Available        |
+|                             | Create Target           | Available        |
+| **Profiling**               | Multi-Tenant            | Available        |
+|                             | Streams                 | Available        |
+
+### MariaDB Connector
 
 #### Introduction
 
@@ -233,9 +306,11 @@ concerns over its acquisition by Oracle Corporation.
 
 ADD SECTION FOR SETUP / SPECIAL CONSIDERATIONS WHEN MASKING ORACLE.
 
-### DB2 Mainframe 
+### DB2 Z/OS and iSeries Connectors
 
 #### Introduction
+
+DB2 for z/OS and iSeries are relational database management systems that run on IBM Z(mainframe) and IBM Power Systems.
 
 #### Support Matrix
 
@@ -251,9 +326,27 @@ ADD SECTION FOR SETUP / SPECIAL CONSIDERATIONS WHEN MASKING ORACLE.
 
 #### Available Features
 
-ADD SECTION FOR SETUP / SPECIAL CONSIDERATIONS WHEN MASKING ORACLE.
+The DB2 for z/OS and iSeries connectors support profilinng and masking/tokenization features. Below is a list of which options are and are not available for jobs using the DB2 and z/OS and iSeries connectors:
 
-### AWS RDS Oracle
+|                             | **Feature**             | **Availability** |
+| -------------------------   | ---------------------   | ---------------- |
+| **In-Place Masking Mode**   | Multi-Tenant            | Available        |
+|                             | Streams / Threads       | Available        |
+|                             | Bulk Update             | Available        | 
+|                             | Batch Update            | Available        | 
+|                             | Drop Indexes            | Unavailable      |
+|                             | Disable Trigger         | Unavailable      | 
+|                             | Disable Constraint      | Unavailable      |
+|                             | Identity Column Support | Unavailable      |
+| **On-The-Fly Masking Mode** | Restart Ability         | Unavailable      |
+|                             | Truncate                | Available        |
+|                             | Disable Trigger         | Unavailable      |
+|                             | Disable Constraint      | Unavailable      |
+|                             | Create Target           | Unavailable      |
+| **Profiling**               | Multi-Tenant            | Available        |
+|                             | Streams                 | Available        |
+
+### AWS RDS Oracle Connector
 
 #### Introduction
 
@@ -270,12 +363,29 @@ re-sizable hardware capacity.
 | **11.2.04** | Supported         |
 
 #### Available Features
+The AWS RDS connector supports profilinng and masking/tokenization features. Below is a list of which options are and are not available for jobs using the AWS RDS connector:
 
-ADD SECTION FOR SETUP / SPECIAL CONSIDERATIONS WHEN MASKING ORACLE.
+|                             | **Feature**             | **Availability** |
+| -------------------------   | ---------------------   | ---------------- |
+| **In-Place Masking Mode**   | Multi-Tenant            | Available        |
+|                             | Streams / Threads       | Available        |
+|                             | Bulk Update             | Available        | 
+|                             | Batch Update            | Available        | 
+|                             | Drop Indexes            | Available        |
+|                             | Disable Trigger         | Available        | 
+|                             | Disable Constraint      | Available        |
+| **On-The-Fly Masking Mode** | Restart Ability         | Available        |
+|                             | Truncate                | Available        |
+|                             | Disable Trigger         | Available        |
+|                             | Disable Constraint      | Available        |
+| **Profiling**               | Multi-Tenant            | Available        |
+|                             | Streams                 | Available        |
 
-### Files
+### Files Connector
 
 #### Introduction
+
+Much of the time data will live outside of databases. The data can be stored in a variety of different formats including Fixed Width, Delimited, etc.
 
 #### Support Matrix
 
