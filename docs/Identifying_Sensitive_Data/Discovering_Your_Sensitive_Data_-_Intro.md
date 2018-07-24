@@ -30,4 +30,3 @@ when securing the data. The platform comes with several dozen
 pre-configured algorithms which are recommended when the profiler finds
 certain sensitive data.
 
-##
