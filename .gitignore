@@ -1,4 +1,4 @@
 site/
 .DS_Store
-venv/
 build.sh
+Pipfile.lock
