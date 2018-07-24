@@ -3,10 +3,10 @@
 The Delphix Masking service supports profiling, masking, and tokenizing
 a variety of different data sources including distributed databases,
 mainframe, PaaS databases, and files. At a high level, Delphix Masking
-breaks up support for data sources into 2 categories:
+breaks up support for data sources into two categories:
 
   - **Dedicated Delphix Connectors:** These are data sources that the
-    Delphix Platform can connect directly using built-in connectors
+    Delphix Engine can connect directly using built-in connectors
     that have been optimized to perform masking, profiling and
     tokenization.
 
@@ -18,7 +18,7 @@ breaks up support for data sources into 2 categories:
 
 ## Dedicated Delphix Connectors
 
-The Delphix platform has dedicated masking connectors for the following
+The Delphix Engine has dedicated masking connectors for the following
 data sources:
 
   - **Distributed Database:** DB2 LUW, Oracle, MS SQL, MySQL, SAP ASE
@@ -35,7 +35,7 @@ on each data source - see the sections below. For a higher level matrix
 please see our [<span class="underline">Data Source support
 matrices</span>](https://docs.delphix.com/display/DOCS525/Support+Matrices).
 
-### DB2 LUW
+### DB2 LUW Connector
 
 #### Introduction
 
@@ -68,7 +68,25 @@ LUW:
 
 #### Available Features
 
-ADD SECTION FOR SETUP / SPECIAL CONSIDERATIONS WHEN MASKING DB2.
+The DB2 LUW connector supports profiling and masking/tokenization features. Below is a list of which options are & are not available for jobs using the DB2 LUW connector:
+
+|                        | **Feature**         | **Availability** |
+| ---------------------  | ----------------    | ---------------- |
+| In-Place Masking Mode  | Multi-Tenant        | Available        |
+|                        | Streams / Threads   | Available        |
+|                        | Bulk Update         | Available        | 
+|                        | Batch Update        | Available        | 
+|                        | Drop Indexes        | Available        |
+|                        | Disable Trigger     | Unavailable      | 
+|                        | Disable Constraint  | Unavailable      |
+| ---------------------  | ------------------  | ---------------- |
+|On-The-Fly Masking Mode | Restart Ability     | Available        |
+|                        | Truncate            | Available        |
+|                        | Disable Trigger     | Unavailable      |
+|                        | Disable Constraint  | Unavailable      |
+|                        | Create Target       | Available        |
+| Profiling              | Multi-Tenant        | Available        |
+|                        | Streams             | Available        |
 
 ### Oracle
 
