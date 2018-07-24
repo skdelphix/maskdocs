@@ -12,7 +12,8 @@ pre-configured profile expressions (like the one below) designed to
 identify common sensitive data types (SSN, Name, Addresses, etc). You
 also have the ability to write/import your own profile expressions.  
   
-|First Name Expression | <([A-Z][A-Z0-9]*)\b[^>]*>(.*?)</\1> 
+|Type -------------    | Expression --------------           |
+|First Name Expression | <([A-Z][A-Z0-9]*)\b[^>]*>(.*?)</\1> |
   
   
 **Data Level Profiling**  
