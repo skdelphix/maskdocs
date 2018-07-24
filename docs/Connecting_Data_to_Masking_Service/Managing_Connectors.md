@@ -9,7 +9,7 @@ environment and then click the connectors tab.
 
 ![](./media/image5.png)
 
-## Creating A Connector
+## Creating a Connector
 
 To create a new connector:
 
@@ -21,8 +21,8 @@ To create a new connector:
     details on what info is needed to connect to different types
     (Oracle, AWS RDS, etc) see sections below.
 
-2.  Several of our connector types offer 2 different modes of
-    connecting, **Basic** & **Advanced Mode**. Advanced Mode gives you
+2.  Several of our connector types offer two different modes of
+    connecting, **Basic** and **Advanced Mode**. Advanced Mode gives you
     the ability to specify the exact JDBC URL & add parameters that
     may not be available in Basic Mode.
 
@@ -30,190 +30,7 @@ To create a new connector:
 
 3.  Click **Save**.
 
-### Oracle Connector
-
-Delphix Masking support’s many versions of Oracle (see Support Matrix
-for details). In order to for Delphix to connect to your Oracle
-database, the following information is needed:
-
-Basic Mode
-
-| **Field**                   | **Description** |
-| --------------------------- | --------------- |
-| Connector Name              | Profile Job     |
-| Schema Name                 | Cap letters     |
-| Host Name / IP              |                 |
-| SID                         |                 |
-| Port                        |                 |
-| Use Kerberos Authentication |                 |
-| Login ID                    |                 |
-| Password                    |                 |
-
-Advanced Mode
-
-| **Field**                   | **Description** |
-| --------------------------- | --------------- |
-| Connector Name              | Profile Job     |
-| Schema Name                 | Cap letters     |
-| JDBC URL                    |                 |
-| Use Kerberos Authentication |                 |
-| Login ID                    |                 |
-| Password                    |                 |
-
-### MS SQL Server Connector
-
-Basic Mode
-
-| **Field**                   | **Description** |
-| --------------------------- | --------------- |
-| Connector Name              |                 |
-| Schema Name                 |                 |
-| Database Name               |                 |
-| Host Name/IP                |                 |
-| Instance Name               |                 |
-| Port                        |                 |
-| Use Kerberos Authentication |                 |
-| Login ID                    |                 |
-| Password                    |                 |
-
-Advanced Mode
-
-| **Field**                   | **Description** |
-| --------------------------- | --------------- |
-| Connector Name              | Profile Job     |
-| Schema Name                 | Cap letters     |
-| JDBC URL                    |                 |
-| Use Kerberos Authentication |                 |
-| Login ID                    |                 |
-| Password                    |                 |
-
-### Sybase Connector
-
-Basic Mode
-
-| **Field**                   | **Description** |
-| --------------------------- | --------------- |
-| Connector Name              |                 |
-| Schema Name                 |                 |
-| Database Name               |                 |
-| Host Name/IP                |                 |
-| Port                        |                 |
-| Use Kerberos Authentication |                 |
-| Login ID                    |                 |
-| Password                    |                 |
-
-Advanced Mode
-
-| **Field**                   | **Description** |
-| --------------------------- | --------------- |
-| Connector Name              | Profile Job     |
-| Schema Name                 | Cap letters     |
-| JDBC URL                    |                 |
-| Use Kerberos Authentication |                 |
-| Login ID                    |                 |
-| Password                    |                 |
-
-### DB2 LUW Connector
-
-Basic Mode
-
-| **Field**      | **Description** |
-| -------------- | --------------- |
-| Connector Name |                 |
-| Schema Name    |                 |
-| Database Name  |                 |
-| Host Name/IP   |                 |
-| Port           |                 |
-| Login ID       |                 |
-| Password       |                 |
-
-### MySQL Connector
-
-Basic Mode
-
-| **Field**      | **Description** |
-| -------------- | --------------- |
-| Connector Name |                 |
-| Schema Name    |                 |
-| Database Name  |                 |
-| Host Name/IP   |                 |
-| Port           |                 |
-| Login ID       |                 |
-| Password       |                 |
-
-### PostgreSQL Connector
-
-Basic Mode
-
-| **Field**      | **Description** |
-| -------------- | --------------- |
-| Connector Name |                 |
-| Schema Name    |                 |
-| Database Name  |                 |
-| Host Name/IP   |                 |
-| Port           |                 |
-| Login ID       |                 |
-| Password       |                 |
-
-### MariaDB Connector
-
-Insert Info
-
-### DB2 Z/OS Connector
-
-Insert Info
-
-### DB2 iSeries Connector
-
-Insert Info
-
-### AWS RDS Oracle Connector
-
-Basic Mode
-
-| **Field**                   | **Description** |
-| --------------------------- | --------------- |
-| Connector Name              | Profile Job     |
-| Schema Name                 | Cap letters     |
-| Host Name / IP              |                 |
-| SID                         |                 |
-| Port                        |                 |
-| Use Kerberos Authentication |                 |
-| Login ID                    |                 |
-| Password                    |                 |
-
-Advanced Mode
-
-| **Field**                   | **Description** |
-| --------------------------- | --------------- |
-| Connector Name              | Profile Job     |
-| Schema Name                 | Cap letters     |
-| JDBC URL                    |                 |
-| Use Kerberos Authentication |                 |
-| Login ID                    |                 |
-| Password                    |                 |
-
-### File - Delimited Connector
-
-Insert Info
-
-### File - Excel Sheet Connector
-
-Insert Info
-
-### File - Fixed Width Connector
-
-Insert Info
-
-### File - VSAM Connector
-
-Insert Info
-
-### File - XML Connector
-
-Insert Info
-
-## Editing A Connector
+## Editing a Connector
 
 To edit a connector:
 
@@ -230,16 +47,15 @@ To edit a connector:
 
 3.  Click **Save**.
 
-## Deleting A Connector
+## Deleting a Connector
 
 To delete a connector, click the **Delete** icon to the far right of the
-connector
-name.
+connector name.
 
 !!! warning 
     When you delete a connector, you also delete its rule sets and inventory data.
 
-Database Connectors
+**Database Connectors**
 
 The fields that appear are specific to the DBMS Type you select. If you
 need assistance determining these values, please contact your database
@@ -311,7 +127,7 @@ you click **Test Connection**, Delphix uses the information in the form
 to attempt a database connection. When finished, a status message
 appears indicating success or failure.
 
-File Connectors
+**File Connectors**
 
 The values that appear correlate to the **File Type** you select. All
 required fields are marked with an asterisk on the screen.
