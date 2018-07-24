@@ -4,6 +4,8 @@ Delphix Masking is embarking on a great-- nay, a noble quest. It is a quest to b
 
 ## Installation
 
+Please have a look through the following requirements and steps. If you're impatient and want to just run quick commands to get it done, scroll to [Quick Steps](#quick-steps)
+
 ### Clone this repo
 
 Open your terminal, ```cd``` to whatever top level directory you want and paste:
@@ -54,3 +56,12 @@ If you really want to get in and do any custom mkdocs development, you can enter
 `pipenv shell`
 
 This will activate the virtualenv in which you can run `mkdocs serve` or whatever else you want. To deactivate, use the `deactivate` command.
+
+## Quick Steps
+
+1. `git clone git@gitlab.delphix.com:docs/docsdev.git && cd docsdev`
+2. `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+3. `brew update && brew install python3`
+4. `pip3 install --upgrade pip pipenv`
+5. `pipenv install`
+6. `pipenv run mkdocs serve`
