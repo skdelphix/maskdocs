@@ -13,7 +13,7 @@ identify common sensitive data types (SSN, Name, Addresses, etc). You
 also have the ability to write/import your own profile expressions.  
   
 
-|First Name Expression | <([A-Z][A-Z0-9]*)\b[^>]*>(.*?)</\1> |
+*First Name Expression*  <([A-Z][A-Z0-9]*)\b[^>]*>(.*?)</\1> 
   
   
 **Data Level Profiling**  
@@ -22,7 +22,7 @@ data instead of the metadata. Similar to column level profiling, there
 are several dozen pre-configured expressions (like the one below) and
 you can write/import your own.  
   
-  
+*Social Security Expression*  <([A-Z][A-Z0-9]*)\b[^>]*>(.*?)</\1> 
   
 For both column and data level profiling, when a data is identified as
 sensitive, Delphix recommends/assigns particular algorithms to be used
