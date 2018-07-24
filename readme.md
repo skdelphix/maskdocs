@@ -25,9 +25,9 @@ The fastest way to do this on OSX is to install Homebrew and use it to install p
 
 ### Install pipenv
 
-We'll be using `pipenv` to create a virtual build environment. If you're not familiar with `pipenv`, it combines pip package management along with a virtual environment into a simple Pipfile, which is included in this repo. To install `pipenv`, run this:
+We'll be using `pipenv` to create a virtual build environment. If you're not familiar with `pipenv`, it combines pip package management along with a virtual environment into a simple Pipfile, which is included in this repo. To install `pipenv` (and upgrade pip), run this:
 
-`pip3 install pipenv`
+`pip3 install --upgrade pip pipenv`
 
 ### Set up your environment
 
