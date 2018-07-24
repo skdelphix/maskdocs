@@ -46,3 +46,11 @@ To run your own local documentation development environment, make sure you're in
 This will run a local `mkdocs` instance on your machine that serves up the documentation at http://localhost:8000/
 
 From here you can make any changes you want to the .md (markdown) files inside docsdev/docs, and the `mkdocs` server will update with your changes on the fly. Easy, good old fashioned editing. 
+
+## ADVANCED: Tinkering with mkdocs
+
+If you really want to get in and do any custom mkdocs development, you can enter a virtualenv shell rather than running mkdocs through the `pipenv run` command. Just run:
+
+`pipenv shell`
+
+This will activate the virtualenv in which you can run `mkdocs serve` or whatever else you want. To deactivate, use the `deactivate` command.
