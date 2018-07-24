@@ -57,21 +57,21 @@ objects are.
 
 To add a role follow these steps:
 
-  - **Step 1:** Login into the **Masking Engine** and select the
+  **1.:** Login into the **Masking Engine** and select the
     **Settings** tab.
 
-  - **Step 2:** Click the **Add Roles** button.
+  **2.** Click the **Add Roles** button.
 
-  - **Step 3:** Enter a **Role Name**. The far-left column lists the
+  **3.** Enter a **Role Name**. The far-left column lists the
     items for which you can set privileges.
 
-  - **Step 4:** Select the check boxes for the corresponding
+  **.** Select the check boxes for the corresponding
     privileges that you want to apply. If there is no check box, that
     privilege is not available. For example, if you want this role to
     have View, Add, Update, and Run privileges for masking jobs,
     select the corresponding check boxes in the **Masking Job** row.
 
-  - **Step 5:** When you are finished assigning privileges for this
+  **5.** When you are finished assigning privileges for this
     Role, click **Submit**.
 
 ### Recommended Roles
@@ -103,34 +103,34 @@ individual who will have access to the masking service.
 
 To create a new user follow these steps:
 
-  - **Step 1:** Login into the **Masking Engine** and select the
+  **1.** Login into the **Masking Engine** and select the
     **Admin** tab.
 
-  - **Step 2:** Click **Add** **User** at the upper right of the Users
+  **2.** Click **Add** **User** at the upper right of the Users
     screen.
 
-  - **Step 3:** You will be prompted for the following information:
+  **3.** You will be prompted for the following information:
     
-    1.  **First Name** — The user's given name
+      a.  **First Name** — The user's given name
     
-    2.  **Last Name** — The user's surname
+      b.  **Last Name** — The user's surname
     
-    3.  **User Name** — The login name for the user
+      c.  **User Name** — The login name for the user
     
-    4.  **Email** — The user's e-mail address (mailable from the
+      d.  **Email** — The user's e-mail address (mailable from the
         Delphix Masking Engine server for purposes of job completion
         e-mail messages)
     
-    5.  **Password** — The password that the Delphix Masking Engine
+      e.  **Password** — The password that the Delphix Masking Engine
         uses to authenticate the user on the login page. The password
         must be at least six characters long, and contain a minimum of
         one uppercase character, one wild character (\!@\#$%^&\*), and
         one number.
     
-    6.  **Confirm Password** — Confirm the password with double-entry
+      f.  **Confirm Password** — Confirm the password with double-entry
         to avoid data entry error.
     
-    7.  **Administrator** — (Optional) Select the Administrator check
+      g.  **Administrator** — (Optional) Select the Administrator check
         box if you want to give this user Administrator privileges.
         (Administrator privileges allow the user to perform all
         Delphix Masking Engine tasks, including creating and editing
@@ -139,14 +139,14 @@ To create a new user follow these steps:
         disappear because Administrator privileges include all roles
         and environments.
     
-    8.  **Role** — Select the role to grant to this user. The choices
+      h.  **Role** — Select the role to grant to this user. The choices
         here depend on the custom roles that you have created. You can
         assign one role per user name.
     
-    9.  **Environment** — Enter as many environments as this user will
+      i.  **Environment** — Enter as many environments as this user will
         be able to access. Granting a user access to a given
         environment does not give them unlimited access to that
         environment. The user's access is still limited to their
         assigned role.
 
-  - **Step 4:** When you are finished, click **Save**.
+  **4.** When you are finished, click **Save**.
