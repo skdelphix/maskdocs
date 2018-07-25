@@ -1,37 +1,28 @@
 # Configuring Your Own Algorithms
 
 This section describes how users can configure their own algorithms
-using Delphix’s built in security methods.
+using Delphix’s built in algorithm frameworks.
 
-An integral part of the data masking process is to use algorithms to
-mask each data element. You specify which algorithm to use on each
-individual data element (domain) on the Masking's tab. There, you define
-a unique domain for each element and then associate the classification
-and algorithm you want to use for each domain. Use the Algorithm
-settings tab to create or delete algorithms.
 
-## Algorithm Settings Tab
+## Algorithm Settings 
 
 The **Algorithm** tab displays algorithm Names along with Type and
 Description. This is where you add (or create) new algorithms. The
-default Delphix Masking Engine algorithms and any algorithms you have
-defined appear on this tab.
-
-  - All algorithm values are stored encrypted. These values are only
-    decrypted during the masking process.
+default algorithms and any algorithms you have defined appear on this tab.
+All algorithm values are stored encrypted. These values are only
+decrypted during the masking process.
 
 ![](./media/image25.png)
 
-## Adding New Delphix Masking Engine Algorithms
+## Creating New Algorithms
 
-If none of the default Delphix Masking Engine algorithms meet your
-needs, you might want to create a new algorithm.
+If none of the default algorithms meet your needs, you might want to 
+create a new algorithm.
 
-The Delphix Masking Engine Algorithm Frameworks give you the ability to
-quickly and easily define the algorithms you want, directly on the
-Settings page. Then, you can immediately propagate them. Anyone in your
-organization who has the Delphix Masking Engine can then access the
-information.
+Algorithm Frameworks give you the ability to quickly and easily define the 
+algorithms you want, directly on the Settings page. Then, you can immediately 
+propagate them. Anyone in your organization who has the Delphix Masking Engine 
+can then access the information.
 
 Administrators can update **system**-defined algorithms. User-defined
 algorithms can be accessed by all users and updated by the owner/user
@@ -51,18 +42,13 @@ algorithm.
 
 4. Click **Save.**
 
-## Choosing an Algorithm Type
+## Choosing an Algorithm Framework
 
-### Masking Secure Lookup Algorithm
+See Out Of The Box Secure Methods/Algorithms for detailed description on each 
+Algorithm Framework. The algorithm framework you choose will depend on the 
+format of the data & your internal data security guidelines.
 
-Secure lookup is the most commonly used type of algorithm. It is easy to
-generate and works with different languages. When this algorithm
-replaces real, sensitive data with fictional data, it is possible that
-it will create repeating data patterns, known as “collisions.” For
-example, the names “Tom” and “Peter” could both be masked as “Matt.”
-Because names and addresses naturally recur in real data, this mimics an
-actual data set. However, if you want the masking engine to mask all
-data into unique outputs, you should use segment mapping.
+### Secure Lookup Algorithm Framework
 
 To add a secure lookup algorithm:
 
@@ -106,7 +92,7 @@ domain.
 !!! info
     The masking engine supports lookup files saved in ASCII or UTF-8 format only. If the lookup file contains foreign alphabet characters, the file must be saved in UTF-8 format with no BOM (Byte Order Marker) for Masking Engine to read the Unicode text correctly. Some applications, e.g. Notepad on Windows, write a BOM (Byte Order Marker) at the beginning of Unicode files which irritates the masking engine and will lead to SQL update or insert errors when trying to run a masking job that applies a Secure Lookup algorithm that has been created based on a UTF-8 file that included a BOM.
 
-### Masking Segmented Mapping 
+### Segmented Mapping ALgorithm Framework
 
 1.  In the upper right-hand region of the **Algorithm** tab, click
     **Add Algorithm**.
@@ -157,7 +143,7 @@ domain.
     the Masking Engine Profiler to create your inventory, you do not
     need to associate the algorithm with a domain.
 
-### **Specifying Range Values**
+#### Specifying Range Values
 
 You can specify ranges for **Real Values** and **Mask Values**. With
 Real Values ranges, you can specify all the possible real values to map
@@ -228,29 +214,10 @@ to fail.
 !!! info
     If you do not specify a range, the Masking Engine uses the full range (A-Z, 0-9). If you do not know the format of the input, leave the range fields empty. If you know the format of the input (for example, always alphanumeric followed by numeric), you can enter range values such as A2 and S9.
 
-### Using the Mapping Algorithm
+### Mapping Algorithm Framework
 
-A mapping algorithm allows you to state what values will replace the
-original data. It sequentially maps original data values to masked
-values that are pre-populated to a lookup table through the Masking
-Engine user interface. There will be no collisions in the masked data,
-because it always matches the same input to the same output. For example
-“David” will always become “Ragu,” and “Melissa” will always become
-“Jasmine.” The algorithm checks whether an input has already been
-mapped; if so, the algorithm changes the data to its designated output.
 
-You can use a mapping algorithm on any set of values, of any length, but
-you must know how many values you plan to mask. You must supply AT
-MINIMUM the same number of values as the number of unique values you are
-masking; more is acceptable. For example, if there are 10,000 unique
-values in the column you are masking you must give the mapping algorithm
-AT LEAST 10,000
-values.
-
-!!! info
-    When you use a mapping algorithm, you cannot mask more than one table at a time. You must mask tables serially
-
-### **To add a mapping algorithm:**
+**To add a mapping algorithm:**
 
 1.  In the upper right-hand corner of the **Algorithm** tab, click
     **Add Algorithm**.
@@ -299,19 +266,10 @@ See [<span class="underline">Adding New
 Domains</span>](https://docs.delphix.com/display/DOCSDEV/.Managing+Domain+Settings+vJocacean#id-.ManagingDomainSettingsvJocacean-_Adding_New_Domains).
 (Do we need this link?)
 
-### Masking Binary Lookup Algorithm
+### Masking Binary Lookup Algorithm Framework
 
-A Binary Lookup Algorithm is much like the Secure Lookup Algorithm, but
-is used when entire files are stored in a specific column. This
-algorithm replaces objects that appear in object columns. For example,
-if a bank has an object column that stores images of checks, you can use
-a binary lookup algorithm to mask those images. The Delphix Engine
-cannot change data within images themselves, such as the names on X-rays
-or driver’s licenses. However, you can replace all such images with a
-new, fictional image. This fictional image is provided by the owner of
-the original data.
 
-### **To add a binary lookup algorithm:**
+**To add a binary lookup algorithm:**
 
 1.  At the top right of the **Algorithm** tab, click **Add
     Algorithm**.
@@ -329,22 +287,7 @@ the original data.
 
 6.  Click **Save**.
 
-### Tokenization Algorithm
-
-A tokenization algorithm is the only type of algorithm that allows you
-to reverse its masking. For example, you can use a tokenization
-algorithm to mask data before you send it to an external vendor for
-analysis. The vendor can then identify accounts that need attention
-without having any access to the original, sensitive data. Once you have
-the vendor’s feedback, you can reverse the masking and take action on
-the appropriate accounts.
-
-Like mapping, a tokenization algorithm creates a unique token for each
-input such as “David” or “Melissa.” The actual data (for example, names
-and addresses) are converted into tokens that have similar properties to
-the original data – such as text and length – but no longer convey any
-meaning. The Delphix Masking Engine stores both the token and the
-original so that you can reverse masking later.
+### Tokenization Algorithm Framework
 
 To add a Tokenization algorithm:
 
@@ -396,8 +339,7 @@ an idea of what the it will look like.
 
 ![](./media/image24.png)
 
-### Masking MIN Max Algorithm
-
+### MIN Max Algorithm Framework                                                                                                                                 
 The Delphix Masking Engine provides a "Min Max Algorithm" to normalize
 data within a range – for example, 10 to 400. Values that are extremely
 high or low in certain categories allow viewers to infer someone’s
@@ -424,7 +366,7 @@ default value is used when the input cannot be evaluated.
 
 Example: Age less than 18 years - enter Min Value 0 and Max Value 18.
 
-### Data Cleansing Algorithm
+### Data Cleansing Algorithm Framework
 
 A data cleansing algorithm does not perform any masking. Instead, it
 standardizes varied spellings, misspellings, and abbreviations for the
@@ -456,43 +398,9 @@ line in the file. The following is sample file content:
 |New York=NY|
 |Manhattan=NY|
 
-### Free Text Algorithm
+### Free Text Algorithm Framework
 
-A free text redaction algorithm helps you remove sensitive data that
-appears in free-text columns such as “Notes.” This type of algorithm
-requires some expertise to use, because you must set it to recognize
-sensitive data within a block of text.
-
-One challenge is that individual words might not be sensitive on their
-own, but together they can be. The algorithm uses profiler sets to
-determine what information it needs to mask. You can decide which
-expressions the algorithm uses to search for material such as addresses.
-For example, you can set the algorithm to look for “St,” “Cir,” “Blvd,”
-and other words that suggest an address. You can also use pattern
-matching to identify potentially sensitive information. For example, a
-number that takes the form 123-45-6789 is likely to be a Social Security
-Number.
-
-You can use a free text redaction algorithm to show or hide information
-by displaying either a “black list” or a “white list.”
-
-**Blacklist** – Designated material will be redacted (removed). For
-example, you can set a black list to hide patient names and addresses.
-The blacklist feature will match the data in the lookup file to the
-input file.
-
-**Whitelist** – ONLY designated material will be visible. For example,
-if a drug company wants to assess how often a particular drug is being
-prescribed, you can use a white list so that only the name of the drug
-will appear in the notes. The whitelist feature enables you to mask data
-using both the lookup file and a profile set.
-
-For either option, a list of words can be imported from an external text
-file or alternatively, you can use Profiler Sets to match words based on
-regular expressions, defined within Profiler Expressions. You can also
-specify the redaction value that will replace the masked words. Regular
-expressions defined using Profiler Sets will match individual words
-within the input text, rather than phrases.
+To add a free text redaction algorith:
 
 ![](./media/image28.png)
 
