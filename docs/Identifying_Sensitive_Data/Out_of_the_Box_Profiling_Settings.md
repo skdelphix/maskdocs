@@ -12,6 +12,11 @@ account. An account number is used whether or not the identifier uses
 letters or numbers. Below are the profile expressions Delphix uses to
 identify account numbers:
 
+| **Expression Name** | *Domain** -| **Expression Level**  | **Expression** |
+| ------------------- | ---------- | --------------------- | -------------- |
+| Account Number      | ACCOUNT_NO | Column                | (?>(acc(oun|n)?t)_?(num(ber)?|nbrjno)?)(?!\w*(ID|type))   |
+
+
 ## Physical Addresses 
 
 Below are the profile expressions Delphix uses to identify physical
