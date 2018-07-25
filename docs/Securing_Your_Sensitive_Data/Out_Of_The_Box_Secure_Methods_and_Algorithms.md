@@ -1,17 +1,10 @@
-# Out Of The Box Secure Methods/Algorithms 
+# Out Of The Box Algorithm Frameworks and Pre-Configured Algorithms 
 
-This section describes the different security methods (SL, SM, etc)
-available and the specific out of the box algorithms.
+This section describes the different algorithm frameworks (Secure Lookup, Segment Mapping, etc)
+and pre-configured algorithms that are available.
 
-An integral part of the data masking process is to use algorithms to
-mask each data element. You specify which algorithm to use on each
-individual data element (domain) on the Masking's tab. There, you define
-a unique domain for each element and then associate the classification
-and algorithm you want to use for each domain.
 
-Delphix offers a the following set of Algorithms right out of the box:
-
-## Secure Lookup Algorithm
+## Secure Lookup Algorithm Framework
 
 Secure lookup is the most commonly used type of algorithm. It is easy to
 generate and works with different languages. When this algorithm
@@ -22,7 +15,7 @@ Because names and addresses naturally recur in real data, this mimics an
 actual data set. However, if you want the masking engine to mask all
 data into unique outputs, you should use segment mapping.
 
-## Sement Mapping Algorithm
+## Sement Mapping Algorithm Framework
 
 Segment mapping algorithms produce no overlaps or repetitions in the
 masked data. They let you create unique masked values by dividing a
@@ -73,7 +66,7 @@ NM831026-04
     you can replace the two digits with a number within a range (in
     this case, a range of 1 to 77).
 
-## Mapping Algorithm
+## Mapping Algorithm Framework
 
 A mapping algorithm allows you to state what values will replace the
 original data. It sequentially maps original data values to masked
@@ -95,7 +88,7 @@ values.
 !!! info
     When you use a mapping algorithm, you cannot mask more than one table at a time. You must mask tables serially.
 
-## Binary Lookup Algorithm
+## Binary Lookup Algorithm Framework
 
 A Binary Lookup Algorithm is much like the Secure Lookup Algorithm, but
 is used when entire files are stored in a specific column. This
@@ -107,7 +100,7 @@ or driver’s licenses. However, you can replace all such images with a
 new, fictional image. This fictional image is provided by the owner of
 the original data.
 
-## Tokenization Algorithm
+## Tokenization Algorithm Framework
 
 A tokenization algorithm is the only type of algorithm that allows you
 to reverse its masking. For example, you can use a tokenization
@@ -124,7 +117,7 @@ the original data – such as text and length – but no longer convey any
 meaning. The Delphix Masking Engine stores both the token and the
 original so that you can reverse masking later.
 
-## Min Max Algorithm
+## Min Max Algorithm Framework
 
 The Delphix Masking Engine provides a "Min Max Algorithm" to normalize
 data within a range – for example, 10 to 400. Values that are extremely
@@ -138,7 +131,7 @@ all the values in the database are within a specified range.
 If the **Out of range Replacement Values** checkbox is selected, a
 default value is used when the input cannot be evaluated.
 
-## Data Cleansing Algorithm
+## Data Cleansing Algorithm Framework
 
 A data cleansing algorithm does not perform any masking. Instead, it
 standardizes varied spellings, misspellings, and abbreviations for the
@@ -146,7 +139,7 @@ same name. For example, “Ariz,” “Az,” and “Arizona” can all be clean
 to “AZ.” Use this algorithm if the target data needs to be in a standard
 format prior to masking.
 
-## Free Text Algorithm
+## Free Text Algorithm Framework
 
 A free text redaction algorithm helps you remove sensitive data that
 appears in free-text columns such as “Notes.” This type of algorithm
