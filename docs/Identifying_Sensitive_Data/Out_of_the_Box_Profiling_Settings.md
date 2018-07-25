@@ -12,7 +12,7 @@ account. An account number is used whether or not the identifier uses
 letters or numbers. Below are the profile expressions Delphix uses to
 identify account numbers:
 
-| **Expression Name**| *Domain** -| **Expression Level**|          **Expression**                                 |
+| **Expression Name**| **Domain** | **Expression Level**|          **Expression**                                 |
 | -------------------| ---------- | ------------------- | ------------------------------------------------------- |
 | Account Number     | ACCOUNT_NO | Column              | (?>(acc(oun|n)?t)_?(num(ber)?|nbrjno)?)(?!\w*(ID|type)) |
                                                      
@@ -21,7 +21,7 @@ identify account numbers:
 Below are the profile expressions Delphix uses to identify physical
 addresses:
 
-| **Expression Name**    |   *Domain**   | **Expression Level**|                                             **Expression**                                                                                                                |
+| **Expression Name**    |   **Domain**   | **Expression Level**|                                             **Expression**                                                                                                               |
 | -----------------------| ------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Address                | ADDRESS       | Column              | ^(?:(?|postalcode|city|state|country|email|(||n||in|line)?_?2{1}|ID).)*addre?s?s?_?(?:(?!city|state|country|email|(||In||inr|linr)?_?2{1}|ID).)*$                         |
 | Street Address         | ADDRESS       | Column              | (?>(str(eet)?_?addre?s?s?|street))(?!\w*(ID|type))                                                                                                                        |
@@ -35,18 +35,22 @@ addresses:
 Below are the profile expressions Delphix uses to identify beneficiary
 IDs:
 
-| **Expression Name**    |   *Domain**    | **Expression Level** |           **Expression**                           |                                                                                           |
-| -----------------------| -------------- | -------------------  | -------------------------------------------------- |
-| Beneficiary Number     | BENEFICIARY_NO | Column               | (?>(bene(ficiary)?)_?(num(ber)?|nbr|no))(?!\w*ID)  |
-| Beneficiary ID         | BENEFICIARY_NO | Column               | (?>(bene(ficiary)?)_?id)                           |
+| **Expression Name**    |   **Domain**    | **Expression Level** |      **Expression**                                |
+| -----------------------| -------------   | -------------------  | -------------------------------------------------- |
+|  Beneficiary Number    | BENEFICIARY_NO  | Column               | (?>(bene(ficiary)?)_?(num(ber)?|nbr|no))(?!\w*ID)  |
+| Beneficiary ID         | BENEFICIARY_NO  | Column               | (?>(bene(ficiary)?)_?id)                                                                                                                       |
+
+
 
 ## Biometrics 
 
 Below are the profile expressions Delphix uses to biometric data:
+ 
+ 
+| **Expression Name**    |   **Domain**    | **Expression Level** |  **Expression** |                                                                                           |
+| -----------------------| -------------- | -------------------  | --------------  |
+| Biometric              | BIOMETRIC      | Column               | biometric       |
 
-| **Expression Name**    |   *Domain**    | **Expression Level** |  **Expression**|                                                                                           |
-| -----------------------| -------------- | -------------------  | -------------- |
-| Biometric              | BIOMETRIC      | Column               | biometric      |
 
 ## Certificate ID 
 
