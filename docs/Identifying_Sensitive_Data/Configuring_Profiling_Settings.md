@@ -17,9 +17,6 @@ Expression Name, and Expression Level.
 2.  Select a domain from the **Domain**
 dropdown.
 
-    !!! tip "TIP"
-        Only the default Delphix Masking Engine domains and the domains you have defined appear in this drop-down. If you need to add a domain, see [<span class="underline">\_Masking Add New Domain\_</span>](https://docs.delphix.com/display/DOCSDEV/._Masking+Add+New+Domain_+vJocacean).
-
 3.  Enter the following information for that domain:
     
       - **Expression Name**—The field name used to select this
@@ -64,7 +61,13 @@ If you want to edit or add a profiler set, click **Profiler Set** at the
 top of the Profiler tab. The Profiler Set screen appears, listing the
 profiler sets along with their Purpose and Date Created.
 
-## To edit a Profiler Set
+## To add a Profiler Set
+
+1. click **Add Set**.
+2. Enter a profile **Set Name**.
+3. Optionally, enter a **Purpose** for this profile set.
+4. Enter or select which **Domains** to include in this set.
+5. When you are finished, cick **Submit**.
 
 Click the **Edit** icon to the right of the Profiler Set name.
 
@@ -74,16 +77,3 @@ Click the **Delete** icon to the right of the Profiler Set name.
 
 ![](./media/image2.png)
 
-## To add a Profiler Set:
-
-1.  Click **Add Set**.
-
-2.  Enter a profile **Set Name**.
-
-3.  Optionally, enter a **Purpose** for this profile set.
-
-4.  Enter/select which **Domains** to include in this set.
-
-5.  When you are finished, click **Submit**.
-
-![](./media/image5.png)
