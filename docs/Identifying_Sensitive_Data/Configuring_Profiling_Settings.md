@@ -75,5 +75,4 @@ Click the **Edit** icon to the right of the Profiler Set name.
 
 Click the **Delete** icon to the right of the Profiler Set name.
 
-![](./media/image2.png)
 
