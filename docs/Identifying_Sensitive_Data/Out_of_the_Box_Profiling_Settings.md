@@ -14,7 +14,7 @@ identify account numbers:
 
 | **Expression Name**| **Domain** | **Expression Level**|          **Expression**                                 |
 | -------------------| ---------- | ------------------- | ------------------------------------------------------- |
-| Account Number     | ACCOUNT_NO | Column              | (?>(acc(oun|n)?t)_?(num(ber)?|nbrjno)?)(?!\w*(ID|type)) |
+| Account Number     | ACCOUNT_NO | Column              | `(?>(acc(oun\|n)?t)_?(num(ber)?\|nbrjno)?)(?!\w\*(ID\|type))` |
                                                      
 ## Physical Addresses 
 
