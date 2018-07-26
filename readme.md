@@ -65,3 +65,7 @@ This will activate the virtualenv in which you can run `mkdocs serve` or whateve
 4. `pip3 install --upgrade pip pipenv`
 5. `pipenv install`
 6. `pipenv run mkdocs serve`
+
+## Running mkdocs after install
+
+Coming soon.
