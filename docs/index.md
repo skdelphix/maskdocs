@@ -1,4 +1,4 @@
-# Introduction to Delphix Masking 1
+# Introduction to Delphix Masking 
 
 ## Challenge
 
