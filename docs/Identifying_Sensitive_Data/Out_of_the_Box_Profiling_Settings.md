@@ -303,6 +303,6 @@ Below are the profile expressions Delphix uses to identify zip codes:
 | **Expression Name** | **Domain** | **Expression Level** | **Expression**|
 | --- | --- | --- | --- |
 | zip or Postal Code | ZIP | Column |`(?>(zip\|post(al)?)_?((co?de?)?4?))(?!\w*ID)`|
-| Data - Zip Code | ZIP | Data |1\b([0-9]{5})-([0-9]{4})\b`|   
+| Data - Zip Code | ZIP | Data |`1\b([0-9]{5})-([0-9]{4})\b`|   
 
  
