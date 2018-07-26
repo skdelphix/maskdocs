@@ -68,4 +68,4 @@ This will activate the virtualenv in which you can run `mkdocs serve` or whateve
 
 ## Running mkdocs after install
 
-Coming soon.
+When you need to start your local mkdocs server, it's really simple. Just make sure you're in the 'docsdev' directory locally (e.g. `cd ~/docsdev`), then run: `pipenv run mkdocs serve`
