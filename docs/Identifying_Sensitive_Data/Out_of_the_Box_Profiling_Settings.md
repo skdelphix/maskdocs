@@ -37,7 +37,7 @@ IDs:
 
 | **Expression Name**|   **Domain**| **Expression Level** | **Expression**|
 | ---| --- | --- | --- |
-| Beneficiary Number| BENEFICIARY_NO| Column | `(?>(bene(ficiary)?)_?(num(ber)?|nbr\|no))(?!\w*ID)1  |
+| Beneficiary Number| BENEFICIARY_NO| Column | `(?>(bene(ficiary)?)_?(num(ber)?|nbr\|no))(?!\w*ID)1`  |
 | Beneficiary ID | BENEFICIARY_NO| Column | `(?>(bene(ficiary)?)_?id)` |                                                                                                       |
 
 
@@ -106,12 +106,12 @@ birth:
 
 | **Expression Name**| **Domain** | **Expression Level**|  **Expression**|
 | ---| --- | --- | --- |
-| Birth Date | DOB | Column |`(?>(bi?rth)_?(date?\|day\|dt))(?!\w*ID)` |
-| Birth Date1 | DOB | Column `(?>dob\|dtofb\|(day\|date?\|dt)_?(of)?_?(bi?rth))(?!\w*ID)`|
-| Birth Date2 | DOB | Column|`(?>b_?(date?\|day))(?!\w*ID)`|
-| Admission Date| DOB | Column  |`(?>(adm(it\|ission)?)_?(date?\|day\|dt))(?!\w*ID)`|
-| Treatment Date | DOB | Column |`(?>(tr(ea)?t(ment)?)_?(date?\|day|dt))(?!\w*ID)`|
-| Discharge Date | DOB| Column |`(?>(ds\|disc(h\|harge)?)_?(date?\|day\|dt))(?!\w*ID)`|
+| Birth Date |DOB|Column|`(?>(bi?rth)_?(date?\|day\|dt))(?!\w*ID)` |
+| Birth Date1 |DOB|Column|`(?>dob\|dtofb\|(day\|date?\|dt)_?(of)?_?(bi?rth))(?!\w*ID)`|
+| Birth Date2 |DOB|Column|`(?>b_?(date?\|day))(?!\w*ID)`|
+| Admission Date|DOB|Column|`(?>(adm(it\|ission)?)_?(date?\|day\|dt))(?!\w*ID)`|
+| Treatment Date |DOB|Column|`(?>(tr(ea)?t(ment)?)_?(date?\|day|dt))(?!\w*ID)`|
+| Discharge Date |DOB|Column|`(?>(ds\|disc(h\|harge)?)_?(date?\|day\|dt))(?!\w*ID)`|
 
 
 ## Driver License Number
@@ -129,8 +129,8 @@ license numbers:
 
 Below are the profile expressions Delphix uses to identify emails:
 
-| **Expression Name** | **Domain** | **Expression Level** | **Expression** |
-| --- | --- | ---  | ---|
+| **Expression Name** |**Domain** |**Expression Level** | **Expression** |
+| --- | --- | ---| ---|
 | Email  | EMAIL  | Column  | `^(?:(?!invalid).)*email(?!\w*ID)`|
 | Data - Email | EMAIL | Column | `\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}\b`|   
 
@@ -139,29 +139,29 @@ Below are the profile expressions Delphix uses to identify emails:
 
 Below are the profile expressions Delphix uses to identify first names:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |        **Expression**                      |
-| ------------------------ | -------------   | -------------------  | ------------------------------------------ |
-| First Name               | FIRST_NAME      | Column               | (?>(fi?rst)_?(na?me?)|f_?name)(?!\w*ID)    |
-| Middle Name              | FIRST_NAME      | Column               | (?>(mid(dle)?)_?(na?me?)|m_?name)(?!\w*ID) |   
+| **Expression Name**|**Domain**| **Expression Level** | **Expression**|
+| ---| ---| ---| ---|
+| First Name | FIRST_NAME | Column |`(?>(fi?rst)_?(na?me?)\|f_?name)(?!\w*ID)`|
+| Middle Name | FIRST_NAME | Column |`(?>(mid(dle)?)_?(na?me?)\|m_?name)(?!\w*ID)`|   
 
 
 ## IP Address
 
 Below are the profile expressions Delphix uses to IP addresses:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |                                      **Expression**                                                         |
-| ------------------------ | -------------   | -------------------  | ----------------------------------------------------------------------------------------------------------- |
-| IP Address               | IP ADDRESS      | Column               | (?>(ip_?addre?s?s?))(?!\w*(ID|type))                                                                        |
-| Data - IP Address        | IP ADDRESS      | Data                 | \b(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\b |  |   
+| **Expression Name**| **Domain** | **Expression Level** |**Expression**|
+| ---| ---| ---| ---|
+| IP Address | IP ADDRESS | Column |`(?>(ip_?addre?s?s?))(?!\w*(ID\|type))`|
+| Data - IP Address  | IP ADDRESS | Data |`\b(?:(?:25[0-5]\|2[0-4][0-9]\|1[0-9][0-9]\|[1-9]?[0-9])\.){3}(?:25[0-5]\|2[0-4][0-9]\|1[0-9][0-9]\|[1-9]?[0-9])\b`|   
 
 
 ## Last Name
 
 Below are the profile expressions Delphix uses to identify last names:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |                          **Expression**                                 |
-| ------------------------ | -------------   | -------------------  | ----------------------------------------------------------------------- |
-| Last Name                | LAST_NAME       | Column               | ^(?:(?!portal|ID).)*((la?st)_?(na?me?)|l_?name)(?:(?!portalname|ID).)*$ |
+| **Expression Name**| **Domain** | **Expression Level** |**Expression** |
+| ---| --- | ---| --- |
+| Last Name | LAST_NAME | Column |`^(?:(?!portal\|ID).)*((la?st)_?(na?me?)\|l_?name)(?:(?!portalname\|ID).)*$`|
    
 
 ## Plate Number 
@@ -169,9 +169,9 @@ Below are the profile expressions Delphix uses to identify last names:
 Below are the profile expressions Delphix uses to identify plate
 numbers:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |                                  **Expression**                                                   |
-| ------------------------ | -------------   | -------------------  | ------------------------------------------------------------------------------------------------- |
-| License Plate            | PLATE_NO        | Column               | ^(?:(?!template|ID|type).)*(license|li?c)?_?plate_?(num(ber)?|nbr|no)?(?:(?!template|ID|type).)*$ |   |
+| **Expression Name**| **Domain** | **Expression Level** | **Expression**  |
+| --- | --- | --- | ---|
+| License Plate | PLATE_NO | Column |`^(?:(?!template|ID|type).)*(license\|li?c)?_?plate_?(num(ber)?\|nbr\|no)?(?:(?!template\|ID\|type).)*$`|
   
 
 ## PO Box Numbers
@@ -179,19 +179,19 @@ numbers:
 Below are the profile expressions Delphix uses to identify PO box
 numbers:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |   **Expression**    |
-| ------------------------ | -------------   | -------------------  | ------------------- |
-| PO Box                   | PO_BOX          | Column               | po_?box             |
-| Data - PO Box            | PO_BOX          | Data                 | po box|p\.o\        |  
+| **Expression Name**|**Domain** | **Expression Level** | **Expression**|
+| --- | --- |--- |---|
+| PO Box  | PO_BOX  | Column |`po_?box` |
+| Data - PO Box | PO_BOX | Data |`po box\|p\.o\`|  
 
 
 ## Precinct
 
 Below are the profile expressions Delphix uses to identify precincts:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |       **Expression**         |
-| ------------------------ | -------------   | -------------------  | ---------------------------- |
-| Precinct                 | PRECINCT        | Column               | (>?precinct|prcnct)(?!\w*ID) |
+| **Expression Name**| **Domain** | **Expression Level** |**Expression** |
+| --- | ---| ---| --- |
+| Precinct | PRECINCT | Column| `(>?precinct\|prcnct)(?!\w*ID)`|
 
 
 ## Record Number
@@ -199,18 +199,18 @@ Below are the profile expressions Delphix uses to identify precincts:
 Below are the profile expressions Delphix uses to identify record
 numbers:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |             **Expression**                        |
-| ------------------------ | -------------   | -------------------  | ------------------------------------------------- |
-| Record Number            | RECORD_NO       | Column               | (?>rec(ord)?_?(num(ber)?|nbr|no))(?!\w*(ID|type)) |
+| **Expression Name**| **Domain** | **Expression Level** | **Expression** |
+| --- | --- | --- | --- |
+| Record Number | RECORD_NO| Column |`(?>rec(ord)?_?(num(ber)?\|nbr\|no))(?!\w*(ID\|type))` |
 
 
 ## School Name
 
 Below are the profile expressions Delphix uses to identify school names:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |       **Expression**        |
-| ------------------------ | -------------   | -------------------  | --------------------------- |
-| School Name              | SCHOOL_NM       | Column               | (?>school_?na?me?)(?!\w*ID) |
+| **Expression Name**| **Domain**| **Expression Level** | **Expression**|
+| ---| ---| --- | --- |
+| School Name | SCHOOL_NM | Column | `(?>school_?na?me?)(?!\w*ID)` |
 
 
 ## Security Code
@@ -218,9 +218,9 @@ Below are the profile expressions Delphix uses to identify school names:
 Below are the profile expressions Delphix uses to identify security
 codes:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |       **Expression**                  |
-| ------------------------ | -------------   | -------------------  | ------------------------------------- |
-| Security Code            | SECURITY_CODE   | Column               | (?>se?cu?r(i?ty?)?_?co?de?)(?!\w*ID)  |
+| **Expression Name** |**Domain**| **Expression Level** |**Expression**|
+| --- | --- | ---| --- |
+| Security Code | SECURITY_CODE| Column|`(?>se?cu?r(i?ty?)?_?co?de?)(?!\w*ID)`|
 
 
 ## Serial Number
@@ -228,18 +228,18 @@ codes:
 Below are the profile expressions Delphix uses to identify serial
 numbers:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |         **Expression**                       |
-| ------------------------ | -------------   | -------------------  | -------------------------------------------- |
-| Serial Number            | SERIAL_NM       | Column               | (?>(ser(ial)?)_?(num(ber)?|nbr|no))(?!\w*ID) |
+| **Expression Name** | **Domain** | **Expression Level** | **Expression** |
+| --- | --- | --- | --- |
+| Serial Number| SERIAL_NM | Column|`(?>(ser(ial)?)_?(num(ber)?\|nbr|no))(?!\w*ID)`|
 
 
 ## Signature
 
 Below are the profile expressions Delphix uses to identify signatures:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |     **Expression**          |
-| ------------------------ | -------------   | -------------------  | --------------------------- |
-| Signature                | SIGNATURE       | Column               | signature(?!\w*(ID|type))   |
+| **Expression Name**| **Domain**| **Expression Level** |**Expression**|
+| ---- | --- | --- | ---|
+| Signature | SIGNATURE | Column |`signature(?!\w*(ID\|type))`|
 
 
 ## Social Security Number
@@ -247,20 +247,20 @@ Below are the profile expressions Delphix uses to identify signatures:
 Below are the profile expressions Delphix uses to social security
 numbers:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |             **Expression**                                   |
-| ------------------------ | -------------   | -------------------  | ------------------------------------------------------------ |
-| Social Security Numbeer  | SSN             | Column               | ssn(?!\w*ID)                                                 |
-| Data - SSN               | SSN             | Data                 | \b(?!000)(?!666)[0-8]\d{2}[- ](?!00)\d{2}[- ](?!0000)\d{4}\b |  
+| **Expression Name** |**Domain** | **Expression Level** | **Expression** |
+| --- | --- | ---| --- |
+| Social Security Number | SSN | Column  |`ssn(?!\w*ID)`|
+| Data - SSN | SSN  | Data |`\b(?!000)(?!666)[0-8]\d{2}[- ](?!00)\d{2}[- ](?!0000)\d{4}\b`|  
 
 
 ## Tax ID
 
 Below are the profile expressions Delphix uses to identify tax IDs:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |                       **Expression**                |
-| ------------------------ | -------------   | -------------------  | --------------------------------------------------- |
-| Tax ID Number            | TAX_ID          | Column               | tin$|^tin|_tin|tin_                                 |
-| Tax ID Code or Number    | TAX_ID          | Column               | (ta?x)_?(id(ent)?)?_?((co?de?)|(num(ber)?|nbr|no))? |  
+| **Expression Name** | **Domain** | **Expression Level** | **Expression** |
+| --- | --- | --- | --- |
+| Tax ID Number| TAX_ID | Column | `tin$\|^tin\|_tin\|tin_` |
+| Tax ID Code or Number | TAX_ID | Column | `(ta?x)_?(id(ent)?)?_?((co?de?)\|(num(ber)?\|nbr\|no))?`|  
 
 
 ## Telephone Number
@@ -268,21 +268,21 @@ Below are the profile expressions Delphix uses to identify tax IDs:
 Below are the profile expressions Delphix uses to identify telephone
 numbers:
 
-| **Expression Name**        |   **Domain**    | **Expression Level** |                       **Expression**                                    |
-| -------------------------- | -------------   | -------------------  | ----------------------------------------------------------------------- |
-| Telphone or Contact Number | TELEPHONE_NO    | Column               | (?>((tele?)?phone)|(co?nta?ct|tel)_?(num(ber)?|nbr|no))(?!\w*(ID|type)) |
-| Data - Phone Number        | TELEPHONE_NO    | Data                 | \(?\b[0-9]{3}\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}\b                          | 
-| Fax Number                 | TELEPHONE_NO    |  Data                | (?>fax_?(num(ber)?|nbr|no)?)(?!\w*(ID|type))                            |
+| **Expression Name** | **Domain** | **Expression Level** |**Expression**|
+| ---| --- | --- | --- |
+| Telphone or Contact Number | TELEPHONE_NO | Column |`(?>((tele?)?phone)\|(co?nta?ct\|tel)_?(num(ber)?\|nbr\|no))(?!\w*(ID\|type))`|
+| Data - Phone Number | TELEPHONE_NO| Data |`\(?\b[0-9]{3}\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}\b`| 
+| Fax Number| TELEPHONE_NO | Data |`(?>fax_?(num(ber)?\|nbr\|no)?)(?!\w*(ID\|type))`|
 
 
 ## Vin Number
 
 Below are the profile expressions Delphix uses to identify vin numbers:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |    **Expression**    |
-| ------------------------ | -------------   | -------------------  | -------------------- |
-| Vehicle                  | VIN_NO          | Column               | vehicle              |
-| VIN                      | VIN_NO          | Column               | vin$|^vin|_vin|vin_  |   
+| **Expression Name** | **Domain** | **Expression Level** | **Expression** |
+| --- | --- | --- | --- |
+| Vehicle | VIN_NO | Column | vehicle |
+| VIN | VIN_NO | Column |`vin$\|^vin\|_vin\|vin_`|   
 
 
 ## Web Address
@@ -290,19 +290,19 @@ Below are the profile expressions Delphix uses to identify vin numbers:
 Below are the profile expressions Delphix uses to identify web
 addresses:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |                                **Expression**                                           |
-| ------------------------ | -------------   | -------------------  | --------------------------------------------------------------------------------------- |
-| Web or URL Address       | WEB             | Column               | (?>(url|web_?addre?s?s?))(?!\w*(ID|type))                                               |
-| Data - Web Address       | WEB             | Data                 | \b(?:(?:https?|ftp|file)://|www\.|ftp\.)[-A-Z0-9+&-@#/%=~_|$?!:,.]*[A-Z0-9+&-@#/%=~_|$] |   
+| **Expression Name** | **Domain** | **Expression Level** | **Expression** |
+| ---| --- | --- | --- |
+| Web or URL Address | WEB | Column |`(?>(url\|web_?addre?s?s?))(?!\w*(ID\|type))`|
+| Data - Web Address | WEB | Data |`\b(?:(?:https?\|ftp\|file)://\|www\.\|ftp\.)[-A-Z0-9+&-@#/%=~_\|$?!:,.]*[A-Z0-9+&-@#/%=~_\|$]`|   
 
 
 ## ZIP Code
 
 Below are the profile expressions Delphix uses to identify zip codes:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |        **Expression**                       |
-| ------------------------ | -------------   | -------------------  | ------------------------------------------- |
-| zip or Postal Code       | ZIP             | Column               | (?>(zip|post(al)?)_?((co?de?)?4?))(?!\w*ID) |
-| Data - Zip Code          | ZIP             | Data                 | \b([0-9]{5})-([0-9]{4})\b                   |   
+| **Expression Name** | **Domain** | **Expression Level** | **Expression**|
+| --- | --- | --- | --- |
+| zip or Postal Code | ZIP | Column |`(?>(zip\|post(al)?)_?((co?de?)?4?))(?!\w*ID)`|
+| Data - Zip Code | ZIP | Data |1\b([0-9]{5})-([0-9]{4})\b`|   
 
  
