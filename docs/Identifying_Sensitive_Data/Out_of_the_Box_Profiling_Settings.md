@@ -25,7 +25,7 @@ addresses:
 | ---| --- | --- | --- |
 | Address                | ADDRESS       | Column |`^(?:(?!postalcode\|city\|state\|country\|email\|(l\|ln\|lin\|line)?_?2{1}\|ID).)*addre?s?s?_?(?:(?!city\|state\|country\|email|(l\|ln\|lin\|line)?_?2{1}\|ID).)*$`|
 | Street Address         | ADDRESS       | Column | `(?>(str(eet)?_?addre?s?s?\|street))(?!\w*(ID\|type))`|
-| Data - Address         | ADDRESS       | Data | `(.*[\s]+b(ou)?|(e)?v(ar)?d[\d]*.*)\|(.*[\s]+st[.]?(reet)?[\s]*.*)\|(.*[\s]+ave[.]?(nue)?[\s]*.*)\|(.*[\s]+r(oa)?d[\s]*.*)\|(.*[\s]+\|(a)?n(e)?[\s]*.*)\|(.[\s]+cir(cle)?[\s]*.*1 |
+| Data - Address         | ADDRESS       | Data | `(.*[\s]+b(ou)?|(e)?v(ar)?d[\d]*.*)\|(.*[\s]+st[.]?(reet)?[\s]*.*)\|(.*[\s]+ave[.]?(nue)?[\s]*.*)\|(.*[\s]+r(oa)?d[\s]*.*)\|(.*[\s]+\|(a)?n(e)?[\s]*.*)\|(.[\s]+cir(cle)?[\s]*.*1`|
 | Address Line2 - before | ADDRESS_LINE2 | Column | `^(?:(?!email\|ID).)*(l\|ln\|lin\|line)?2{1}_?addre?s?s?(?:(?!email\|ID).)*$`|
 | Address Line2 - after  | ADDRESS_LINE2 | Column  | `^(?:(?!email\|ID).)*addre?s?s?_?(l\|ln\|lin\|line)?_?2{1}(?:(?!email\|ID).)*$`|
 | Data - Address Line 2  | ADDRESS_LINE2 | Data | `(.*[\s]*ap(ar)?t(ment)?[\s]+.*)|(.*[\s]*s(ui)?te[\s]+.*)\|(c(are)?[\s]*[\\\\]?[/]?o(f)?[\s]+.*)`|
@@ -35,19 +35,19 @@ addresses:
 Below are the profile expressions Delphix uses to identify beneficiary
 IDs:
 
-| **Expression Name**    |   **Domain**    | **Expression Level** |      **Expression**                                |
-| -----------------------| -------------   | -------------------  | -------------------------------------------------- |
-| Beneficiary Number     | BENEFICIARY_NO  | Column               | (?>(bene(ficiary)?)_?(num(ber)?|nbr|no))(?!\w*ID)  |
-| Beneficiary ID         | BENEFICIARY_NO  | Column               | (?>(bene(ficiary)?)_?id)                           |                                                                                                       |
+| **Expression Name**|   **Domain**| **Expression Level** | **Expression**|
+| ---| --- | --- | --- |
+| Beneficiary Number| BENEFICIARY_NO| Column | `(?>(bene(ficiary)?)_?(num(ber)?|nbr\|no))(?!\w*ID)1  |
+| Beneficiary ID | BENEFICIARY_NO| Column | `(?>(bene(ficiary)?)_?id)` |                                                                                                       |
 
 
 ## Biometrics 
 
 Below are the profile expressions Delphix uses to biometric data:
 
-| **Expression Name**    |   **Domain**    | **Expression Level** |      **Expression**                                |
-| -----------------------| -------------   | -------------------  | -------------------------------------------------- |
-| Biometric              | BIOMETRIC       | Column               | biometric                                          |                                                                                                       |
+| **Expression Name** |   **Domain**| **Expression Level** | **Expression** |
+| ---| ---| --- | --- |
+| Biometric | BIOMETRIC | Column  | biometric  |                                                                                                       |
 
 
 ## Certificate ID 
@@ -55,48 +55,48 @@ Below are the profile expressions Delphix uses to biometric data:
 Below are the profile expressions Delphix uses to identify certificate
 IDs:
 
-| **Expression Name**    |   **Domain**    | **Expression Level** |      **Expression**                                |
-| -----------------------| -------------   | -------------------  | -------------------------------------------------- |
-| Certificate Number     | CERTIFICATE_NO  | Column               | (?>cert(ificate)?_?(num(ber)?|nbr|no|id))          |
-| Certificate ID         | CERTIFICATE_NO  | Column               | (?>cert(ificate)?_?id)                             |                                                                                                       |
+| **Expression Name** | **Domain** | **Expression Level** | **Expression** |
+| ---| --- | --- | --- |
+| Certificate Number | CERTIFICATE_NO  | Column | `(?>cert(ificate)?_?(num(ber)?\|nbr\|no\|id))`|
+| Certificate ID | CERTIFICATE_NO  | Column | `(?>cert(ificate)?_?id)` |                                                                                                       |
 
 
 ## City 
 
 Below are the profile expressions Delphix uses to identify cities:
 
-| **Expression Name**    |   **Domain**    | **Expression Level** |      **Expression**                                |
-| -----------------------| -------------   | -------------------  | -------------------------------------------------- |
-| City                   | CITY            | Column               | ci?ty(?!\w*ID)                                     |
+| **Expression Name** | **Domain** | **Expression Level** | **Expression**|
+| ----| --- | --- | --- |
+| City | CITY  | Column  | `ci?ty(?!\w*ID)` |
 
 
 ## Country 
 
 Below are the profile expressions Delphix uses to identify countries:
 
-| **Expression Name**    |   **Domain**    | **Expression Level** |      **Expression**                                |
-| -----------------------| -------------   | -------------------  | -------------------------------------------------- |
-| Country                | COUNTRY         | Column               | c(ou)?nty(?!\w*ID)                                 |
+| **Expression Name** | **Domain** | **Expression Level** | **Expression** |
+| ---| --- | --- | --- |
+| Country   | COUNTRY  | Column | `c(ou)?nty(?!\w*ID)`|
 
 
 ## Credit Card 
 
 Below are the profile expressions Delphix uses to identify credit cards:
 
-| **Expression Name**    |   **Domain**   | **Expression Level**|                                             **Expression**                                                                                                                |
-| -----------------------| -------------  | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Card Number            | CREDIT CARD    | Column              | (?>ca?rd_?(num(ber)?|nbr|no)?)(?!\w*ID)                                                                                                                                   |
-| Credit Card Number     | CREDIT CARD    | Column              | (?>cre?di?t_?(ca?rd)?_?(num(ber)?|nbr|no)?)(?!\w*ID)                                                                                                                      |
-| Data - Credit Card     | CREDIT CARD    | Data                | ^(?:3[47][0-9]{13}|4[0-9]{12}(?:[0-9]{3})?(?:[0-9]{3})?|(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}|6(?:(011|5[0-9][0-9])[0-9]{2}|4[4-9][0-9]{3}|2212[6-9]|221[3-9][0-9]|22[2-8][0-9]{2}|229[0-1][0-9]|2292[0-5])[0-9]{10}?(?:[0-9]{3})?|3(?:0[0-5,9]|6[0-9])[0-9]{11}|3[89][0-9]{14}?(?:[0-9]{1,3})?)$  |
+| **Expression Name** | **Domain** | **Expression Level**|  **Expression**|
+| ---| --- | --- | --- |
+| Card Number  | CREDIT CARD | Column  | `(?>ca?rd_?(num(ber)?\|nbr\|no)?)(?!\w*ID)`|
+| Credit Card Number | CREDIT CARD | Column  | `(?>cre?di?t_?(ca?rd)?_?(num(ber)?\|nbr\|no)?)(?!\w*ID)`|
+| Data - Credit Card | CREDIT CARD  | Data | `^(?:3[47][0-9]{13}|4[0-9]{12}(?:[0-9]{3})?(?:[0-9]{3})?\|(?:5[1-5][0-9]{2}\|222[1-9]\|22[3-9][0-9]\|2[3-6][0-9]{2}\|27[01][0-9]\|2720)[0-9]{12}\|6(?:(011\|5[0-9][0-9])[0-9]{2}\|4[4-9][0-9]{3}\|2212[6-9]\|221[3-9][0-9]\|22[2-8][0-9]{2}\|229[0-1][0-9]|2292[0-5])[0-9]{10}?(?:[0-9]{3})?\|3(?:0[0-5,9]\|6[0-9])[0-9]{11}\|3[89][0-9]{14}?(?:[0-9]{1,3})?)$`|
                                                                                                
 
 ## Customer Number
 
 Below are the profile expressions Delphix uses to identify customer IDs:
 
-| **Expression Name**    |   **Domain**    | **Expression Level** |      **Expression**                                |
-| -----------------------| -------------   | -------------------  | -------------------------------------------------- |
-| Customer Number        | CUSTOMER_NUM    | Column               | (?>(cu?st(omer|mr)?)_?(num(ber)?|nbr|no)?)(?!\w*ID)|
+| **Expression Name**|   **Domain** | **Expression Level** | **Expression**|
+| --- | --- | --- | --- |
+| Customer Number| CUSTOMER_NUM | Column| `(?>(cu?st(omer\|mr)?)_?(num(ber)?\|nbr|no)?)(?!\w*ID)`|
 
 
 ## Date of Birth
@@ -104,14 +104,14 @@ Below are the profile expressions Delphix uses to identify customer IDs:
 Below are the profile expressions Delphix uses to identify dates of
 birth:
 
-| **Expression Name**    |   **Domain**   | **Expression Level**|     **Expression**                                                                                                               |
-| -----------------------| -------------- | ------------------- | ------------------------------------------------------- |
-| Birth Date             | DOB            | Column              | (?>(bi?rth)_?(date?|day|dt))(?!\w*ID)                   |
-| Birth Date1            | DOB            | Column              | (?>dob|dtofb|(day|date?|dt)_?(of)?_?(bi?rth))(?!\w*ID)  |
-| Birth Date2            | DOB            | Column              | (?>b_?(date?|day))(?!\w*ID)                             |
-| Admission Date         | DOB            | Column              | (?>(adm(it|ission)?)_?(date?|day|dt))(?!\w*ID)          |
-| Treatment Date         | DOB            | Column              | (?>(tr(ea)?t(ment)?)_?(date?|day|dt))(?!\w*ID)          |
-| Discharge Date         | DOB            | Column              | (?>(ds|disc(h|harge)?)_?(date?|day|dt))(?!\w*ID)        |
+| **Expression Name**| **Domain** | **Expression Level**|  **Expression**|
+| ---| --- | --- | --- |
+| Birth Date | DOB | Column |`(?>(bi?rth)_?(date?\|day\|dt))(?!\w*ID)` |
+| Birth Date1 | DOB | Column `(?>dob\|dtofb\|(day\|date?\|dt)_?(of)?_?(bi?rth))(?!\w*ID)`|
+| Birth Date2 | DOB | Column|`(?>b_?(date?\|day))(?!\w*ID)`|
+| Admission Date| DOB | Column  |`(?>(adm(it\|ission)?)_?(date?\|day\|dt))(?!\w*ID)`|
+| Treatment Date | DOB | Column |`(?>(tr(ea)?t(ment)?)_?(date?\|day|dt))(?!\w*ID)`|
+| Discharge Date | DOB| Column |`(?>(ds\|disc(h\|harge)?)_?(date?\|day\|dt))(?!\w*ID)`|
 
 
 ## Driver License Number
@@ -119,20 +119,20 @@ birth:
 Below are the profile expressions Delphix uses to identify driver
 license numbers:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |                **Expression**                                        |
-| ------------------------ | -------------   | -------------------  | -------------------------------------------------------------------- |
-| Drivers License Number   | DRIVING_LC      | Column               | (?>(dri?v(e?rs?e?)?)_?(license|li?c)?_?(num(ber)?|nbr|no)?)(?!\w*ID) |
-| Drivers License Number1  | DRIVING_LC      | Column               | (^license$|(license|li?c)_?(num(ber)?|nbr|no))(?!\w*ID)              |   
+| **Expression Name** | **Domain** | **Expression Level** | **Expression** |
+| --- | --- | --- | --- |
+| Drivers License Number  | DRIVING_LC | Column | `(?>(dri?v(e?rs?e?)?)_?(license|li?c)?_?(num(ber)?\|nbr|no)?)(?!\w*ID)` |
+| Drivers License Number1 | DRIVING_LC | Column | `(^license$\|(license\|li?c)_?(num(ber)?\|nbr\|no))(?!\w*ID)` |   
 
 
 ## Email
 
 Below are the profile expressions Delphix uses to identify emails:
 
-| **Expression Name**      |   **Domain**    | **Expression Level** |        **Expression**                      |
-| ------------------------ | -------------   | -------------------  | ------------------------------------------ |
-| Email                    | EMAIL           | Column               | ^(?:(?!invalid).)*email(?!\w*ID)           |
-| Data - Email             | EMAIL           | Column               | \b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}\b |   
+| **Expression Name** | **Domain** | **Expression Level** | **Expression** |
+| --- | --- | ---  | ---|
+| Email  | EMAIL  | Column  | `^(?:(?!invalid).)*email(?!\w*ID)`|
+| Data - Email | EMAIL | Column | `\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}\b`|   
 
 
 ## First Name
