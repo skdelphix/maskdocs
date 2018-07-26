@@ -21,14 +21,14 @@ identify account numbers:
 Below are the profile expressions Delphix uses to identify physical
 addresses:
 
-| **Expression Name**    |   **Domain**   | **Expression Level**|                                             **Expression**                                                                                                               |
-| -----------------------| ------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Address                | ADDRESS       | Column              | ^(?:(?|postalcode|city|state|country|email|(||n||in|line)?_?2{1}|ID).)*addre?s?s?_?(?:(?!city|state|country|email|(||In||inr|linr)?_?2{1}|ID).)*$                         |
-| Street Address         | ADDRESS       | Column              | (?>(str(eet)?_?addre?s?s?|street))(?!\w*(ID|type))                                                                                                                        |
-| Data - Address         | ADDRESS       | Data                | (.*[\s]+b(ou)?|(e)?v(ar)?d[\d]*.*)|(.*[\s]+st[.]?(reet)?[\s]*.*)|(.*[\s]+ave[.]?(nue)?[\s]*.*)|(.*[\s]+r(oa)?d[\s]*.*)|(.*[\s]+|(a)?n(e)?[\s]*.*)|(.[\s]+cir(cle)?[\s]*.* |
-| Address Line2 - before | ADDRESS_LINE2 | Column              | ^(?:(?!email|ID).)*(||n||in|line)?2{1}_?addre?s?s?(?:(?!email|ID).)$                                                                                                      |
-| Address Line2 - after  | ADDRESS_LINE2 | Column              | ^(?:(?!email|ID).)*addre?s?s?_?(||n||in|line)?_?2{1}(?:(?!email|ID).)*$                                                                                                   |
-| Data - Address Line 2  | ADDRESS_LINE2 | Data                | (.*[\s]*ap(ar)?t(ment)?[\s]+.*)|(.*[\s]*s(ui)?te[\s]+.*)|(c(are)?[\s]*[\\\\]?[/]?o(f)?[\s]+.*)                                                                            |
+| **Expression Name** |  **Domain** | **Expression Level**| **Expression** |
+| ---| --- | --- | --- |
+| Address                | ADDRESS       | Column |`^(?:(?!postalcode\|city\|state\|country\|email\|(l\|ln\|lin\|line)?_?2{1}\|ID).)*addre?s?s?_?(?:(?!city\|state\|country\|email|(l\|ln\|lin\|line)?_?2{1}\|ID).)*$`|
+| Street Address         | ADDRESS       | Column | `(?>(str(eet)?_?addre?s?s?\|street))(?!\w*(ID\|type))`|
+| Data - Address         | ADDRESS       | Data | `(.*[\s]+b(ou)?|(e)?v(ar)?d[\d]*.*)\|(.*[\s]+st[.]?(reet)?[\s]*.*)\|(.*[\s]+ave[.]?(nue)?[\s]*.*)\|(.*[\s]+r(oa)?d[\s]*.*)\|(.*[\s]+\|(a)?n(e)?[\s]*.*)\|(.[\s]+cir(cle)?[\s]*.*1 |
+| Address Line2 - before | ADDRESS_LINE2 | Column | `^(?:(?!email\|ID).)*(l\|ln\|lin\|line)?2{1}_?addre?s?s?(?:(?!email\|ID).)*$`|
+| Address Line2 - after  | ADDRESS_LINE2 | Column  | `^(?:(?!email\|ID).)*addre?s?s?_?(l\|ln\|lin\|line)?_?2{1}(?:(?!email\|ID).)*$`|
+| Data - Address Line 2  | ADDRESS_LINE2 | Data | `(.*[\s]*ap(ar)?t(ment)?[\s]+.*)|(.*[\s]*s(ui)?te[\s]+.*)\|(c(are)?[\s]*[\\\\]?[/]?o(f)?[\s]+.*)`|
 
 ## Beneficiary ID 
 
