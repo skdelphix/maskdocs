@@ -32,7 +32,7 @@ downstream environments. Consistent masking of data while maintaining
 referential integrity across heterogeneous data sources enables Delphix
 masking to provide superior coverage compared to other solutions—all
 without the need for programming expertise. Moreover, the Delphix
-platform seamlessly integrates masking with data delivery capabilities,
+seamlessly integrates masking with data delivery capabilities,
 ensuring the security of sensitive data before it is made available for
 development and testing, or sent to an offsite data center or the public
 cloud.
