@@ -1,4 +1,4 @@
-# Masking Data Source Support
+# Data Source Support
 
 The Delphix Masking service supports profiling, masking, and tokenizing
 a variety of different data sources including distributed databases,
@@ -41,13 +41,10 @@ matrices</span>](https://docs.delphix.com/display/DOCS525/Support+Matrices).
 
 DB2 for Linux, UNIX and Windows is a database server product developed
 by IBM. Sometimes
-
 called DB2 LUW for brevity, it is part of the DB2 family of database
 products. DB2 LUW is the
-
 "Common Server" product member of the DB2 family, designed to run on
 most popular
-
 operating systems. By contrast, all other DB2 products are specific to a
 single platform.
 
