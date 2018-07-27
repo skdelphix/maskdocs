@@ -4,7 +4,7 @@ Before masking your data, it is important to prepare your database. This
 section explains the required changes, reasons for the changes, and instructions
 on how to make the changes.
 
-##Archive Logging 
+## Archive Logging 
 
 **What is Archive Logging?** 
 
@@ -31,7 +31,7 @@ redo log files can require you to perform extra administrative operations.
 
 `ALTER DATABASE NOARCHIVELOG;`
 
-##DB/VDB Memory Allocation
+## DB/VDB Memory Allocation
 
 **What is SGA?** 
 A system global area (SGA) is a group of shared memory structures that contain
@@ -68,7 +68,7 @@ on the diagnosis from the AWR report generated during a masking job. The DBA is
 best suited to make the appropriate tuning changes to the SGA parameters for the
 version of oracle being masked.
 
-##Undo Tablespace Size And Undo Retention Time:
+## Undo Tablespace Size And Undo Retention Time:
 
 **What is tablespace?** 
 Every Oracle Database must have a method of maintaining information that is used
@@ -110,7 +110,7 @@ the size of the larges table(s), or if there are multiple tables running at the
 same time, then all tables combined. A DBA is best suited to make the necessary
 UDNO Space and the UNDO Retention changes.
 
-##Redo Logs Are Optimally Sized 
+## Redo Logs Are Optimally Sized 
 
 **What is Redo Logs?** 
 
@@ -129,7 +129,7 @@ up valuable Oracle resource.
 
 A DBA is best suited to make these changes appropriately.
 
-##Change PCTFREE to 40-50:
+## Change PCTFREE to 40-50:
 
 **What is PCTFREE?** 
 
@@ -146,7 +146,7 @@ can be done without DB overhead the faster the masking jobs run.
 
 A DBA is best suited to make these changes.
 
-##Change Primary Key To ROWID:
+## Change Primary Key To ROWID:
 
 **What is ROWID?** 
 
