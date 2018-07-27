@@ -103,34 +103,34 @@ individual who will have access to the masking service.
 
 To create a new user follow these steps:
 
-  **1.** Login into the **Masking Engine** and select the
+  1. Login into the **Masking Engine** and select the
     **Admin** tab.
 
-  **2.** Click **Add** **User** at the upper right of the Users
+  2. Click **Add** **User** at the upper right of the Users
     screen.
 
-  **3.** You will be prompted for the following information:
+  3. You will be prompted for the following information:
     
-      a.  **First Name** — The user's given name
-    
-      b.  **Last Name** — The user's surname
-    
-      c.  **User Name** — The login name for the user
-    
-      d.  **Email** — The user's e-mail address (mailable from the
+      -  **First Name** — The user's given name
+
+      -  **Last Name** — The user's surname
+
+      -  **User Name** — The login name for the user
+
+      -  **Email** — The user's e-mail address (mailable from the
         Delphix Masking Engine server for purposes of job completion
         e-mail messages)
-    
-      e.  **Password** — The password that the Delphix Masking Engine
+
+      -  **Password** — The password that the Delphix Masking Engine
         uses to authenticate the user on the login page. The password
         must be at least six characters long, and contain a minimum of
         one uppercase character, one wild character (\!@\#$%^&\*), and
         one number.
-    
-      f.  **Confirm Password** — Confirm the password with double-entry
+
+      -  **Confirm Password** — Confirm the password with double-entry
         to avoid data entry error.
-    
-      g.  **Administrator** — (Optional) Select the Administrator check
+
+      -  **Administrator** — (Optional) Select the Administrator check
         box if you want to give this user Administrator privileges.
         (Administrator privileges allow the user to perform all
         Delphix Masking Engine tasks, including creating and editing
@@ -138,15 +138,15 @@ To create a new user follow these steps:
         Administrator check box, the Roles and Environments fields
         disappear because Administrator privileges include all roles
         and environments.
-    
-      h.  **Role** — Select the role to grant to this user. The choices
+
+      -  **Role** — Select the role to grant to this user. The choices
         here depend on the custom roles that you have created. You can
         assign one role per user name.
-    
-      i.  **Environment** — Enter as many environments as this user will
+
+      -  **Environment** — Enter as many environments as this user will
         be able to access. Granting a user access to a given
         environment does not give them unlimited access to that
         environment. The user's access is still limited to their
         assigned role.
 
-  **4.** When you are finished, click **Save**.
+  4. When you are finished, click **Save**.
