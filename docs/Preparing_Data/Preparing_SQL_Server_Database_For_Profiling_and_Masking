@@ -1,3 +1,13 @@
 Before masking your data, it is important to prepare your database. This section
 explains the required changes, reasons for the change, and the instructions to
 make the change.
+
+## Archive Logging 
+
+**What is Archive Logging?** 
+
+Oracle Database lets you save filled groups of redo log files to one or more
+offline destinations, known collectively as the archived redo log, or more
+simply the archive log. The process of turning redo log files into archived redo
+log files is called archiving. This process is only possible if the database is
+running in 
