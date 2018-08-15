@@ -53,25 +53,16 @@ will expand over the course of subsequent releases.
 
 For a full list of supported APIs, the best place to look is the API
 client on your Masking Engine
--
 
 [<span class="underline">http://myMaskingEngine.com:8282/masking/api-client.</span>](http://mymaskingengine.com:8282/masking/api-client.)High-level
 operations that are **not currently supported** via the v5 APIs include,
 but are not limited to:
-
-  - Algorithm CRUD
-
-  - Custom Algorithm CRUD
-
-  - Users and Roles
 
   - Job Scheduler
 
   - Audit and application logs
 
   - Copybook formats
-
-  - XML formats
 
   - Tokenization jobs
 
@@ -84,13 +75,13 @@ administrative APIs:
 
   - Analytics APIs
 
-  - These APIs are for including Masking performance information in the
+    - These APIs are for including Masking performance information in the
     support bundle and do not need to be used unless that information is
     requested.
 
   - Application Setting APIs
 
-  - Application Setting APIs allow an administrator to change the
+    - Application Setting APIs allow an administrator to change the
     Delphix Masking Engine settings. Presently there are five categories
     of settings: analytics settings, LDAP settings, general settings,
     mask settings and profile settings. Over time, more settings will be

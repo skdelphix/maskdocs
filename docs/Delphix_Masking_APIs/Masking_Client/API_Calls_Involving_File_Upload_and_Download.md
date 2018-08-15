@@ -1,5 +1,18 @@
-# API Calls Involving File Upload
+# API Calls Involving File Upload and Download
 
+## File Download
+API calls involving file download through API client are noteworthy because if the request fails, the API client will continue to show the "loading"  icon indefinitely.
+
+To avoid this, make all file download calls through CURL instead. An example of a file download call using CURL is below.
+
+```
+curl -X GET --header 'Accept: application/octet-stream' --header
+'Authorization: ec443730-124e-4958-a872-324a975bb500'
+-o "/home/user/downloads"
+'http://<myMaskingEngine>:8282/masking/api/file-downloads/EXPORT-ZXhwb3J0X2RvY3VtZW50X2dGZU9JMVYxLmpzb24%3D'
+```
+The `-o` flag from above specifies the location to save the file to.
+## File Upload
 API calls involving file upload are noteworthy because the generated
 curl from the Masking API client will be **missing the parameter
 referencing the file**; as such, those commands from the Masking API

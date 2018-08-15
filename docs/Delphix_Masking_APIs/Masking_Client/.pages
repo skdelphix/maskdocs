@@ -2,7 +2,7 @@ arrange:
   - Masking_API_Client.md
   - API_Calls_for_Creating_an_Inventory.md
   - API_Calls_for_Creating_and_Running_Masking_Jobs.md
-  - API_Calls_Involving_File_Upload.md
+  - API_Calls_Involving_File_Upload_and_Download.md
   - Backwards_Compatibility_API_Usage.md
   - Incubating_API_Endpoints.md
   - Algorithm_Extensions.md
