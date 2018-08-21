@@ -1,11 +1,11 @@
 site_name: Delphix Masking 5.3
 theme: 
-  name: 'material'
+  name: material
+  custom_dir: 'material/'
   palette:
-    primary: 'indigo'
-    accent: 'light blue'
-  logo: 
-    icon: 'library_books'
+    primary: 
+    accent: 
+  logo: 'images/delphix-logo-white.png'
   favicon: 'images/logo.png'
 
 extra_css:
