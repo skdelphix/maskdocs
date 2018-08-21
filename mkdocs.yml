@@ -7,6 +7,24 @@ theme:
     accent: 
   logo: 'images/delphix-logo-white.png'
   favicon: 'images/logo.png'
+  font:
+    text: Helvetica Neue
+    code: Ubuntu Mono
+
+copyright: Copyright &copy; 2018 Delphix Corp.
+
+extra:
+  social:
+    - type: sitemap
+      link: https://www.delphix.com/
+    - type: facebook
+      link: https://www.facebook.com/DelphixCorp/
+    - type: twitter
+      link: https://twitter.com/delphix
+    - type: linkedin
+      link: https://www.linkedin.com/company/delphix
+    - type: github
+      link: https://github.com/delphix
 
 extra_css:
   - 'stylesheets/extra.css'
