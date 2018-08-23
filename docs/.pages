@@ -5,3 +5,4 @@ arrange:
   - Connecting_Data_to_Masking_Service
   - Identifying_Sensitive_Data
   - Securing_Your_Sensitive_Data
+  - Managing_Multiple_Engines_for_Masking
