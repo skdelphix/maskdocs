@@ -76,3 +76,38 @@ To use the Job Wizard from the masking application, click the Create Job button
 in the upper right-hand corner, as highlighted in the screenshot below.
 
 ![](create_job.png)
+
+# Creating a New Masking Job
+The Job Wizard makes creating a new masking job much easier by guiding you 
+through the process. You can create new objects or choose to use existing ones
+that have already been defined.  When creating a new masking job, the Job Wizard
+follows this sequence:
+
+- Job Naming
+- Application/Environment Selection
+- Connection Selection
+- Rule Set Selection
+- Inventory Selection
+- Summary Page
+
+You can navigate back and forth through the pages of the Job Wizard.
+
+!!! note
+    If the product times out due to long inactivity, you will need to start over. |
+
+To create a new masking Job using the new Job Wizard, follow the procedure below: 
+
+1. Log into your Delphix Masking Engine and from the Welcome screen select  Run.
+2. Select the New radio button and enter a name for your Masking job.
+3. Click Next.
+4. From the drop-down menu select an Application and Environment. If none exist use the Add button to add one.
+5. Click Next.
+6. Select a Connector from the drop-down menu. If none exists select the Add button, then use the Add Connector dialog to add a new connector. The Job Wizard only supports the following  Connector types:
+   - Database - MS SQL
+   - Database - Oracle
+   - Database - RDS Oracle
+   - Database - Sybase
+7.Click Next. 
+8. On the Rule Set screen select an existing Rule set or create a new one by clicking the Add button.
+9. Click Next.
+From the Inventory screen select how your data will be masked. In the screenshot below we are masking subscriber last names.
