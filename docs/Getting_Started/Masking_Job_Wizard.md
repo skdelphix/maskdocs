@@ -71,4 +71,8 @@ When you first login to masking, the welcome screen offers a link to learn more
 or begin masking immediately. To open the Job Wizard, click Run on the welcome
 page.
 
-![](./images/welcome.png)
+![](welcome.png)
+To use the Job Wizard from the masking application, click the Create Job button
+in the upper right-hand corner, as highlighted in the screenshot below.
+
+![](create_job.png)
