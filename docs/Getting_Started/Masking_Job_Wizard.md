@@ -110,4 +110,36 @@ To create a new masking Job using the new Job Wizard, follow the procedure below
 7.Click Next. 
 8. On the Rule Set screen select an existing Rule set or create a new one by clicking the Add button.
 9. Click Next.
-From the Inventory screen select how your data will be masked. In the screenshot below we are masking subscriber last names.
+10. From the Inventory screen select how your data will be masked. In the screenshot below we are masking subscriber last names.
+11. Click Next.
+12. The final screen of the Job Wizard displays a Summary of your selections.
+13. Clicking Run Masking Job Now and go to Monitor progress, saves your job and runs it immediately. Save Job allows you to save your job and run it at a later date. Note: Selecting this option means your data will not be masked until you run the job.
+
+## When Objects Are Saved
+Application, environment, connector, and rule set objects are created and
+persist after you click the Add button and see a success message. If you cancel
+the Job Wizard before completing the job setup, the objects you created will be
+saved, and they will be available for use the next time you launch the Job Wizard.
+
+The Inventory definition is saved when you change the selection of a table or
+column, or when another View filter is applied.
+
+The masking job is saved when you click either Save Job or Run Masking Job Now
+and go to Monitor progress and a success message is returned on the
+Summary screen.
+
+# Updating an Existing Masking Job
+You can use the Job Wizard to modify any masking job that targets a supported
+data type.
+
+1. On the Job screen of the Job Wizard, select Modify Existing
+2. From the list of available jobs slect the one you want to modify. This list only shows jobs that are supported in the wizard. You can filter the job list by selecting the filter icon .
+3. Once you select a job, you can change the following as part of the Modify flow:
+   - Change/create new connector
+   - Change/create new rule set
+   - Update inventory
+   - Save or run the modified job
+
+ You cannot alter application and environment settings as part of the Modify
+ flow, but you can do so in the main masking application.
+
