@@ -33,7 +33,7 @@ While creating a masking job in the Job Wizard, you are able to do the following
 - Run an updated job immediately after the update
 
 !!! note
-    Operations marked with an asterisk are limited in the Job Wizard but fully supported in the main application. |
+    Operations marked with an asterisk are limited in the Job Wizard but fully supported in the main application. 
 
 ## What is Not Supported in the Wizard
 The following data platforms and operations are not supported in the Job Wizard.
