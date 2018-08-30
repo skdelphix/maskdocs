@@ -26,7 +26,13 @@ To create a new connector:
     the ability to specify the exact JDBC URL & add parameters that
     may not be available in Basic Mode.
 
-    ![](./media/image6.png)
+    ![](./media/create_connector.png)
+    
+The fields that appear on the Connector screen are specific to the selected DBMS Type, the following two fields have been updated in 5.3:
+
+**Kerberos Authentication** — (Oracle only, optional) Whether to use Kerberos to authenticate to the database. This box is clear by default. Before Kerberos may be used, the appliance must be properly configured - refer to these instructions (link to appliance Kerberos configuration instructions[1]). If this box is checked, the application authenticates with the Kerberos KDC before connecting to the database, then uses its Kerberos credentials to authenticate to the database instead of a login/password. When Kerberos is enabled, the "Login ID" field is treated as the Kerberos user principal name. The password, if supplied, is used to authenticate the user principal with the KDC. The password field may be left blank if the keytab set during appliance configuration contains keys for the user principal.
+
+**Principal Name** — (only with Kerberos Authentication) The name of the Kerberos user principal to use when authenticating with the KDC. The realm portion of the principal may be omitted if it matches the configured default realm.
 
 3.  Click **Save**.
 
