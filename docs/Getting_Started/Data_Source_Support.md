@@ -101,7 +101,7 @@ marketed by Oracle Corporation.
 | **11gR1**   | Supported     | Supported     | Supported     |
 | **11gR2**   | Supported     | Supported     | Supported     |
 | **12c**     | Supported     | Supported     | Supported     |
-| **12cR2**   | Not Supported | Not Supported | Not Supported |
+| **12cR2**   | Supported     | Supported    | Supported |
 
 #### Available Features
 
