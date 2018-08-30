@@ -35,7 +35,7 @@ We'll be using `pipenv` to create a virtual build environment. If you're not fam
 
 Now that `pipenv` is installed, we can add in the packages necessary to run your own local docsdev. `cd` into the docsdev folder created by your `git clone` command and run:
 
-`pipenv install`
+`pipenv install mkdocs`
 
 Congratulations! You're all set up!
 
