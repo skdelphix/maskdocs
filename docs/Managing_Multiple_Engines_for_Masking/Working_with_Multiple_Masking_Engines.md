@@ -1,28 +1,8 @@
 Your organization may have more than one masking engine, and in certain
 circumstances, it may want to coordinate the operation of those engines.
-There are two specific scenarios in which an organization will want to
-have some level of interaction and orchestration between multiple
-masking engines:
-
-  - Software Development Life Cycle (SDLC)
-  - Distributed Execution
-
-For both of these use cases, you will need to be able to move various
-objects between masking engines. These objects may include the
-following:
-
-  - Algorithms
-  - Connectors
-  - Domains
-  - Inventory
-  - Masking Jobs
-  - Rulesets
-  - Profile Expressions
-  - Profiling Jobs
-  - Profile Sets
-
-You can move a subset of these objects between engines using the Masking
-V5 APIs. See the following sections for instructions.
+In particular, there are two specific scenarios in which an organization 
+could benefit from some level of interaction and orchestration between multiple
+masking engines.
 
 ## Software Development Life Cycle (SDLC)
 
@@ -41,6 +21,24 @@ on the organization's needs.
 
 ![Screen Shot 2017-08-06 at 4.10.01 PM.png](./media/image2.png)
 
+
+For both of these use cases, you will need to be able to move various
+objects between masking engines. These objects may include the
+following:
+
+  - Algorithms
+  - Connectors
+  - Domains
+  - File Formats
+  - Inventories
+  - Masking Jobs
+  - Rulesets
+
+You can move a subset of these objects between engines using the Masking
+V5 APIs. See the following sections for instructions.
+
+
+
 ## Best Practice Guide & Example Architectures for Synchronizing
 
 Engine synchronization provides a general and flexible way to move
@@ -48,8 +46,8 @@ masking algorithms and objects necessary to run an identical job on
 another engine. It is recommended that the syncable objects move in only
 one direction. That is, objects should be exported from one engine and
 imported into others but should not go in the other direction. This
-recommendation is primarily to simplify management of the engines and
-keeping track of what objects exist on which engines.
+recommendation is primarily to simplify management of which objects 
+exist on which engine.
 
 Two example architectures are described below. Note that the two
 architectures could be combined by having multiple production engines
