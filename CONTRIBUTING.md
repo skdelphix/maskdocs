@@ -4,8 +4,14 @@ This guide will help get you set up to author, edit, and review documentation wi
 
 ----
 
-- TOC
-{:toc}
+- [Contributions and Reviews](#contributions-and-reviews)
+	- [Roles & Tools](#roles-tools)
+		- [Requirements for Authoring and Editing](#requirements-for-authoring-and-editing)
+		- [Requirements for Reviewing](#requirements-for-reviewing)
+	- [Guidelines](#guidelines)
+		- [Authoring Guidelines](#authoring-guidelines)
+		- [Reviewing Guidelines](#reviewing-guidelines)
+	- [Publishing](#publishing)
 
 ----
 
