@@ -6,12 +6,12 @@ mainframe, PaaS databases, and files. At a high level, Delphix Masking
 breaks up support for data sources into two categories:
 
   - **Dedicated Delphix Connectors:** These are data sources that the
-    Delphix Engine can connect directly using built-in connectors
+    Delphix Engine can connect to directly using built-in connectors
     that have been optimized to perform masking, profiling and
     tokenization.
 
   - **FEML Sources:** FEML (File Extract Mask and Load) is a method
-    used to mask, and tokenize data sources that do not have dedicated
+    used to mask and tokenize data sources that do not have dedicated
     Delphix Connectors. FEML uses existing APIs from data sources to
     extract the data to a file, masks the file, and then uses APIs to
     load the masked file back into the database.
@@ -24,16 +24,14 @@ data sources:
   - **Distributed Database:** DB2 LUW, Oracle, MS SQL, MySQL, SAP ASE
     (Sybase), PostgreSQL, MariaDB
 
-  - **Mainframe:** DB2 Z/OS, DB2 iSeries, VSAM
+  - **Mainframe/Midrange:** DB2 Z/OS, DB2 iSeries, VSAM
 
   - **PaaS Database:** AWS RDS Oracle
 
   - **Files:** Excel, Fixed Width, Delimited, XML
 
 For a detailed view of all the versions, features, etc Delphix supports
-on each data source - see the sections below. For a higher level matrix
-please see our [<span class="underline">Data Source support
-matrices</span>](https://docs.delphix.com/display/DOCS525/Support+Matrices).
+on each data source - see the sections below.
 
 ### DB2 LUW Connector
 
@@ -44,7 +42,7 @@ by IBM. Sometimes
 called DB2 LUW for brevity, it is part of the DB2 family of database
 products. DB2 LUW is the
 "Common Server" product member of the DB2 family, designed to run on
-most popular
+the most popular
 operating systems. By contrast, all other DB2 products are specific to a
 single platform.
 
@@ -101,7 +99,7 @@ marketed by Oracle Corporation.
 | **11gR1**   | Supported     | Supported     | Supported     |
 | **11gR2**   | Supported     | Supported     | Supported     |
 | **12c**     | Supported     | Supported     | Supported     |
-| **12cR2**   | Not Supported | Not Supported | Not Supported |
+| **12cR2**   | Supported as of 5.2.5.0 | Supported as of 5.2.5.0 | Supported as of 5.2.5.0 |
 
 #### Available Features
 
@@ -172,7 +170,7 @@ The MS SQL connector supports profiling and masking/tokenization features. Below
 
 #### Introduction
 
-PostgreSQL, often simply Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. PostgreSQL is developed by the PostgreSQL Global Development Group, a diverse group of many companies and individual contributors.[15] It is free and open-source, released under the terms of the PostgreSQL License, a permissive software license.
+PostgreSQL, often simply Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. PostgreSQL is developed by the PostgreSQL Global Development Group, a diverse group of many companies and individual contributors. It is free and open-source, released under the terms of the PostgreSQL License, a permissive software license.
 
 #### Support Matrix
 
@@ -205,7 +203,7 @@ The PostgreSQL connector supports profiling and masking/tokenization features. B
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Unavailable      |
 
-### MySQL Connector
+### MySQL / MariaDB Connector
 
 #### Introduction
 
@@ -213,13 +211,27 @@ MySQL is an open-source relational database management system (RDBMS).
 MySQL was owned and sponsored by a single for-profit firm, the Swedish
 company MySQL AB. MySQL is now owned by Oracle Corporation.
 
-#### Support Matrix
+MariaDB is a community-developed fork of the MySQL relational database
+management system intended to remain free under the GNU GPL. Development
+is led by some of the original developers of MySQL, who forked it due to
+concerns over its acquisition by Oracle Corporation.
+
+A MySQL Connector may be used to connect to either a MySQL or MariaDB 
+database instanace.
+
+#### MySQL Support Matrix
 
 | **Version** | **Linux** | **Unix**  | **Windows** |
 | ----------- | --------- | --------- | ----------- |
 | **5.5**     | Supported | Supported | Supported   |
 | **5.6**     | Supported | Supported | Supported   |
 | **5.7**     | Supported | Supported | Supported   |
+
+#### MariaDB Support Matrix
+
+| **Version** | **Linux** | **Unix**  | **Windows** |
+| ----------- | --------- | --------- | ----------- |
+| **10**      | Supported | Supported | Supported   |
 
 #### Available Features
 
@@ -256,7 +268,6 @@ Sybase Corporation which became part of SAP AG.
 
 | **Version** | **Linux** | **Unix**  | **Windows** |
 | ----------- | --------- | --------- | ----------- |
-| **12.5**    | Supported | Supported | Supported   |
 | **15.03**   | Supported | Supported | Supported   |
 | **15.5**    | Supported | Supported | Supported   |
 | **15.7**    | Supported | Supported | Supported   |
@@ -283,25 +294,6 @@ The SAP ASE (Sybase) connector supports profiling and masking/tokeniztion featur
 |                             | Create Target           | Available        |
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Available        |
-
-### MariaDB Connector
-
-#### Introduction
-
-MariaDB is a community-developed fork of the MySQL relational database
-management system intended to remain free under the GNU GPL. Development
-is led by some of the original developers of MySQL, who forked it due to
-concerns over its acquisition by Oracle Corporation.
-
-#### Support Matrix
-
-| **Version** | **Linux** | **Unix**  | **Windows** |
-| ----------- | --------- | --------- | ----------- |
-| **10**      | Supported | Supported | Supported   |
-
-#### Available Features
-
-ADD SECTION FOR SETUP / SPECIAL CONSIDERATIONS WHEN MASKING ORACLE.
 
 ### DB2 Z/OS and iSeries Connectors
 

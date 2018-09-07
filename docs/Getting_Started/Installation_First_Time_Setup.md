@@ -7,7 +7,7 @@ Azure).
 ## Installing OVA on VMware
 
 For detailed recommendations on hardware prerequisites for VMware,
-please see Getting Started - Prerequisites. Here are the steps to
+please see [Getting Started - Prerequisites](Prerequisites/). Here are the steps to
 getting your OVA installed:
 
   1. Download the OVA file from Delphix’s Download site.
@@ -60,7 +60,7 @@ getting your OVA installed:
 ## Installing AMI on AWS EC2
 
 For detailed recommendations on hardware prerequisites for AWS EC2,
-please see Getting Started - Prerequisites. Here are the steps to
+please see [Getting Started - Prerequisites](Prerequisites/). Here are the steps to
 getting your AMI installed:
 
   1. On the Delphix download site, click the AMI you would
@@ -94,7 +94,7 @@ getting your AMI installed:
 ## Installing VHD on AZURE
 
 For detailed recommendations on hardware prerequisites for Azure, please
-see Getting Started - Prerequisites. Here are the steps to getting your
+see [Getting Started - Prerequisites](Prerequisites/). Here are the steps to getting your
 VHD installed:
 
   1. On the [Microsoft Azure
@@ -124,9 +124,9 @@ To activate the Masking service via the CLI, do the following:
     startMasking ; commit ; exit
 
   3. Access the UI by navigating to http://&lt;Delphix Engine
-    IP or DNS name&gt;:8282/dmsuite.
+    IP or DNS name&gt;:8282/masking.
 
-  4. Login as user **Admin** and password **Admin_12**.
+  4. Login as user **Admin** and password **Admin-12**.
 
   5. Change the **Admin** password to a unique value for
     your installation.
@@ -136,13 +136,7 @@ To activate the Masking service via the CLI, do the following:
      b.  Click **Users**.
     
      c.  Edit the **Admin** user.
-
-  6. Generate a unique secret key for your installation.
-    
-     a.  In the **Admin** tab, click **Users**.
-    
-     b.  Click **Generate New Key**. Once your Delphix Masking Engine
-        is installed and enabled, you can prepare your data for
-        masking
+     
+     d.  Change the **Admin** user's password.
 
 Congratulations\! You are now ready to start using the masking service\!

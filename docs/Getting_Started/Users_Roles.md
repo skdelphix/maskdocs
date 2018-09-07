@@ -8,12 +8,12 @@ perform.
 ## What are Roles?
 
 A defined role is what is used to give a certain user privileges over
-certain environment and tasks. Roles can be defined by selecting a
+certain environments and tasks. Roles can be defined by selecting a
 subset of actions that can be taken on certain objects.
 
 ### Actions
 
-When defining a role, you can select one or more of the following action
+When defining a role, you can select one or more of the following actions
 for the role to be able to perform:
 
   - **View:** Be able to view the object and important information
@@ -29,8 +29,7 @@ for the role to be able to perform:
 
   - **Export:** Be able to export an object from a Delphix Engine.
 
-  - **Import:** Be able to import an object into a Delphix Engine that
-    has been exported
+  - **Import:** Be able to import an exported object into a Delphix Engine
 
 Please note that not all of these actions are available for all objects
 in the masking service.
@@ -50,14 +49,13 @@ defined on a per object basis. These objects include:
 |             |             | File Format  |
 |             |             | Users        |
 
-Please see Masking Terms and Definitions for details on what these
-objects are.
+Please see [Delphix Masking Terminology](Definitions_-_Terms_and_Meanings/) for definitions of these objects.
 
 ### Adding A Role
 
 To add a role follow these steps:
 
-  **1.:** Login into the **Masking Engine** and select the
+  **1.** Login into the **Masking Engine** and select the
     **Settings** tab.
 
   **2.** Click the **Add Roles** button.
@@ -65,7 +63,7 @@ To add a role follow these steps:
   **3.** Enter a **Role Name**. The far-left column lists the
     items for which you can set privileges.
 
-  **.** Select the check boxes for the corresponding
+  **4.** Select the check boxes for the corresponding
     privileges that you want to apply. If there is no check box, that
     privilege is not available. For example, if you want this role to
     have View, Add, Update, and Run privileges for masking jobs,
