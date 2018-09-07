@@ -8,7 +8,7 @@ Before attempting to create a Masked VDB, you should be familiar with both Delph
 
 ## Restrictions
 - A single masking job cannot be assigned to multiple VDBs simultaneously. If you are using the same masking ruleset on multiple VDBs, be sure to create a unique job for each VDB to avoid any issues with provisioning or refreshing.
-- Provisioning or refreshing masked VDBs is only supported for Oracle, MS SQL Server and Syste. Provisioning or refreshing other types of masked VDBs such as DB2 are not support.
+- Provisioning or refreshing masked VDBs is only supported for Oracle, MS SQL Server and Sysbase. Provisioning or refreshing other types of masked VDBs such as DB2 are not support.
 - You cannot apply additional masking jobs to a masked VDB or its children.
 - If a masking job has been applied to a VDB, you cannot create an unmasked snapshot of that VDB.
 - Masking must take place during the process of provisioning a VDB. If an existing VDB has not had a masking job applied to it, then you cannot mask that particular VDB at any point in the future. All the data within the VDB and its parents will be accessible if it is replicated using SDD.
