@@ -56,7 +56,7 @@ Technically, all you need to do a review is access to reviewboard. Since Markdow
 
 To provide a more thorough review or gatekeeper review, you should [set up your local dev environment](https://gitlab.delphix.com/docs/docsdev) so you can download the diff as a patch and check out the changes visually, or simply use the rbt patch command to sync your local repo up with a review. For example, assuming you already have a local docsdev environment and are reviewing reviewboard ID 99999:
 
-1. cd ~/<docsdev location>
+1. cd ~/\<docsdev location\>
 2. git checkout -B review-99999
 3. rbt patch 99999
 
