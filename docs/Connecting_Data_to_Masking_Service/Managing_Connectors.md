@@ -2,12 +2,31 @@
 
 This section describes how you can create and manage your connectors.
 
-As a reminder connectors are the way users can define data sources that
-the masking engine should connect to. Connectors are grouped within
-environments. In order to navigate to the connectors screen, click on an
-environment and then click the connectors tab.
+As a reminder, connectors are the way users define the data sources to which
+the masking engine should connect. Connectors are grouped within
+environments. In order to navigate to the **connectors** screen, click on an
+environment and then click the **Connector** tab.
 
 ![](./media/image5.png)
+
+The **connectors** screen contains the following information and actions:
+
+  - **Connector ID** — The numeric ID of the connector used to refer
+    to the connector from the Masking API.
+
+  - **Connector** — The name of the connector.
+
+  - **Meta Data Source** — The type of connector. One of Database, File, or
+    Mainframe.
+
+  - **Type** — The specific type of connector.
+
+  - **Edit** — Edit the connector. See more details below.
+
+  - **Delete** — Delete the connector. See more details below.
+
+The connectors on the screen can be sorted by the various informational
+fields by clicking on the respective field.
 
 ## Creating a Connector
 
@@ -28,11 +47,8 @@ To create a new connector:
 
     ![](./media/create_connector.png)
     
-The fields that appear on the Connector screen are specific to the selected DBMS Type, the following two fields have been updated in 5.3:
-
-**Kerberos Authentication** — (Oracle only, optional) Whether to use Kerberos to authenticate to the database. This box is clear by default. Before Kerberos may be used, the appliance must be properly configured - refer to these instructions (link to appliance Kerberos configuration instructions[1]). If this box is checked, the application authenticates with the Kerberos KDC before connecting to the database, then uses its Kerberos credentials to authenticate to the database instead of a login/password. When Kerberos is enabled, the "Login ID" field is treated as the Kerberos user principal name. The password, if supplied, is used to authenticate the user principal with the KDC. The password field may be left blank if the keytab set during appliance configuration contains keys for the user principal.
-
-**Principal Name** — (only with Kerberos Authentication) The name of the Kerberos user principal to use when authenticating with the KDC. The realm portion of the principal may be omitted if it matches the configured default realm.
+    The fields that appear on the Connector screen are specific to the selected
+    Connector Type (see Connector Types below).
 
 3.  Click **Save**.
 
@@ -61,49 +77,59 @@ connector name.
 !!! warning 
     When you delete a connector, you also delete its rule sets and inventory data.
 
-**Database Connectors**
+## Connector Types
+
+### **Database Connectors**
 
 The fields that appear are specific to the DBMS Type you select. If you
 need assistance determining these values, please contact your database
-administrator. All required fields are marked with an asterisk on the
-screen.
+administrator.
 
 You can only create connectors for the databases and/or files listed. If
 your database or file type is not listed here, you cannot create a
 connector for it.
 
-  - **Connection Type** — (Oracle or MS SQL Server only) Choose a
+  - **Connection Type** — (Oracle, MS SQL Server, and Sybase only) Choose a
     connection type:
     
       - **Basic** — Basic connection information.
     
-      - **Advanced** — The full JDBC connect string.
+      - **Advanced** — The full JDBC connect string including any database parameters.
 
   - **Connection Name** — The name of the database connector (specific
     for your Delphix application).
     
-      - For each Connection Name, you must manually define a
-        corresponding connector with the same name.
-
   - **Schema Name** — The schema that contains the tables that this
     connector will access.
 
   - **Database Name** — The name of the database to which you are
     connecting.
 
-  - **Host Name / IP** or **Hostname/IP**—The network host name or IP
+  - **Host Name/ IP** — The network host name or IP
     address of the database server.
 
-  - **Username** — (Oracle only)
+  - **Use Kerberos Authentication** - (Oracle, MS SQL Server, and Sybase only) Specified
+    to use Kerberos Authentication. This box is clear by default. Before Kerberos may be used,
+    the appliance must be properly configured (contact Delphix support for information).
+    If this box is checked, the application authenticates with the Kerberos KDC before
+    connecting to the database, then uses its Kerberos credentials to authenticate to the
+    database instead of a login/password. The password, if supplied, is used to authenticate
+    the user principal with the KDC. The password field may be left blank if the keytab
+    set during appliance configuration contains keys for the user principal.
 
-  - **ODBC DNS Name** — (ODBC and Microsoft Access only)
-
-  - **Login ID** — The user login this connector will use to connect
-    to the database.
+  - **Login ID** — The user login this connector will use to connect to the database (not applicable
+    to Kerberos Authentication).
 
   - **Password** — The password associated with the Login ID or
     Username. (This password is stored encrypted.)
 
+  - **Principal Name** - (Kerberos Authentication only) The name of the Kerberos user principal 
+    to use when authenticating with the KDC. The realm portion of the principal may be omitted 
+    if it matches the configured default realm.
+
+  - **Service Principal** - (Sybase with Use Kerberos Authentication only) The name of the 
+    Sybase service instance.
+ 
   - **Port** — The TCP port of the server.
 
   - **SID** — (Oracle only) Oracle System ID (SID).
@@ -117,14 +143,12 @@ connector for it.
     as well as the particular port that the SQL Server instance
     listens to.
 
-  - **Server Name** — (Informix only) The name of the Informix server.
+  - **Custom Driver Name** — (Generic only) The name of the
+    JDBC driver class, including Java package name.
 
-  - **Custom Driver Name** — (SQL Anywhere only) The name of the
-    custom driver.
-
-  - **JDBC URL** — (SQL Anywhere and Advanced connector mode for
-    Oracle, MS SQL Server, and Sybase only) The name of the custom
-    JDBC URL.
+  - **JDBC URL** — (Generic and Advanced connector mode for
+    Oracle, MS SQL Server, and Sybase only) The custom
+    JDBC URL, typically including hostname/IP and port number.
 
 All database types have a **Test Connection** button at the bottom left
 of the New Connector window. We highly recommend that you test your
@@ -133,22 +157,17 @@ you click **Test Connection**, Delphix uses the information in the form
 to attempt a database connection. When finished, a status message
 appears indicating success or failure.
 
-**File Connectors**
+### **File Connectors**
 
-The values that appear correlate to the **File Type** you select. All
-required fields are marked with an asterisk on the screen.
+The values that appear correlate to the **File Type** you select.
 
   - **Connector Name** — The name of the file connector (specific to
     your Delphix application and unrelated to the file itself).
 
-  - **Connection Mode** — Local Files, SFTP, FTP, HTTP & HTTPS.
+  - **Connection Mode** — SFTP, FTP, Local Files
 
   - **Path** — The path to the directory where the file(s) are
     located.
-
-  - **Operating System** — Choose the operating system on which the
-    file resides: **Windows** or **Linux**. (This value does not
-    appear for Mainframe Copybooks.)
 
 If you select **SFTP** or **FTP** for **Connection Mode**, the following
 additional values appear:
@@ -156,19 +175,19 @@ additional values appear:
   - **Server Name** — The name of the server used to connect to the
     file.
 
-  - **User Name** — The User Name to connect to the server.
+  - **Port** — The port used to connect to the
+server.
+
+  - **User Name** — The user name to connect to the server.
+
+  - **Password** — (non-Public Key Authentication only) The associated password
+    for the server.
 
   - **Public Key Authentication** — (Optional) (Only appears for
-    SFTP.) Check this box to specify a public key.
-
-When you check this box, the Available Keys dropdown appears. Choose a
-key from the dropdown. (The path on the server to the location that
-contains the keys is configured in a Delphix property files.)
-
-  - **Password** — The associated Password for the server.
-
-  - **Port** — The Port used to connect to the
-server.
+    SFTP.) Check this box to specify a public key. When you check this box, the
+    **Available Keys** dropdown appears. Choose a key from the dropdown. See
+    Delphix Masking APIs for information on uploading public keys to the masking
+    engine.
 
 !!! info
     "Local" File Connectors have restricted access to the local (Masking Engine) file system. By default, the Path for "Local" File Connectors is automatically prepended with /mnt/; in other words, they are restricted to /mnt and its sub-directories.
