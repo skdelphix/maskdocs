@@ -1,31 +1,31 @@
 # Discovering Your Sensitive Data
 
-After connecting data to the masking service, the next step is discover
+After connecting data to the masking service, the next step is to discover
 which of the data should be secured. This sensitive data discovery is
 done using two different methods, column level profiling and data level
 profiling.  
   
 **Column Level Profiling**  
-Column level profiling uses REGEX expressions to scan the column names
-(metadata) of the select data sources. There are several dozen
-pre-configured profile expressions (like the one below) designed to
+Column level profiling uses regular expressions (regex) to scan the metadata (column 
+names) of the selected data sources. There are several dozen
+pre-configured profile Expressions (like the one below) designed to
 identify common sensitive data types (SSN, Name, Addresses, etc). You
-also have the ability to write/import your own profile expressions.  
+also have the ability to write your own profile Expressions.  
   
 
 *First Name Expression*  <([A-Z][A-Z0-9]*)\b[^>]*>(.*?)&lt;/\1&gt;
   
   
 **Data Level Profiling**  
-Data level profiling also uses REGEX expressions, but to scan the actual
+Data level profiling also uses regex, but to scan the actual
 data instead of the metadata. Similar to column level profiling, there
-are several dozen pre-configured expressions (like the one below) and
-you can write/import your own.  
+are several dozen pre-configured Expressions (like the one below) and
+you can add your own.  
   
-*Social Security Expression*  <([A-Z][A-Z0-9]*)\b[^>]*>(.*?)&lt;/\1&gt;
+*Social Security Number Expression*  <([A-Z][A-Z0-9]*)\b[^>]*>(.*?)&lt;/\1&gt;
   
-For both column and data level profiling, when a data is identified as
-sensitive, Delphix recommends/assigns particular algorithms to be used
+For both column and data level profiling, when a data item is identified as
+sensitive, Delphix recommends/assigns particular masking algorithms to be used
 when securing the data. The platform comes with several dozen
 pre-configured algorithms which are recommended when the profiler finds
 certain sensitive data.

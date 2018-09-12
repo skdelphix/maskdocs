@@ -1,29 +1,31 @@
 # Creating A Profiling Job
 
-This section describes how users can create a profile job.
+This section describes how users can create a Profiling job. You can 
+create Profiling jobs for databases, copybooks, delimited files, fixed-width, 
+and Excel files.
+
+The Profiler assigns each sensitive data element to a domain, with each domain
+having a default masking algorithm. Then, in the inventory, masking
+algorithms can be manually updated as needed to establish the
+masking rulesets for your data sources.
+
+Profiling Jobs are grouped within environments on the **Environment Overview** page 
+along with all masking jobs. In order to navigate to the **Overview** screen, click 
+on an environment and the **Overview** tab should automatically display. 
+
+![](./media/JobOverview.png)
 
 ## Creating a New Profiling Job
 
-You can create profiling jobs for databases, copybooks, delimited files,
-fixed-width, and Excel files.
+To create a new Profiling job:
 
-A Profiling job for a mainframe system cannot assign groups because it
-does not have the heuristics needed to determine sensitive elements per
-group. The Profiler assigns group-sensitive elements to a single group.
-Then, in inventory, groups are updated as needed to establish the
-sensitive element field group sets.
-
-To create a new profiling job:
-
-1.  Click **Profile**.
+1.  Click the **Profile** button on the upper side of the page.
 
 2.  The **Create Profiling Job** window appears.
 
-    Need image ....
+    ![](./media/CreateProfileJob.png)
 
-3.  *Create Profile Job*
-
-4.  You will be prompted for the following information:
+3.  You will be prompted for the following information:
     
        -  **Job Name** — A free-form name for the job you are creating.
         Must be unique.
@@ -31,21 +33,14 @@ To create a new profiling job:
        -  **Multi Tenant** — Check the box if the job is for a
         multi-tenant database. This option allows existing rulesets to
         be re-used to mask identical schemas via different connectors.
-        The connector can be selected at job execution time.
+        The connector is selected at job execution time.
     
-       -  **Rule Set** — Select a rule set that this job will execute
-        against.
+       -  **Rule Set** — Select the rule set that this job will profile.
     
-       -  **Generator** — The default value is **Delphix**.
        -  **No. of Streams** — The number of parallel streams to use
         when running the jobs. For example, you can select two streams
-        to run two tables in the ruleset concurrently in the job
+        to profile two tables in the ruleset concurrently in the job
         instead of one table at a time.
-    
-       -  **Remote Server** — (optional) The remote server that will
-        execute the jobs. This option lets you choose to execute jobs
-        on a remote server, rather than on the local Delphix instance.
-        Note: This is an add-on feature for Delphix Standard Edition.
     
        -  **Min Memory (MB)** — (optional) Minimum amount of memory to
         allocate for the job, in megabytes.
@@ -60,12 +55,16 @@ To create a new profiling job:
         than the actual number of rows in a job, the progress for that
         job will only show 0 or 100%.
     
-       - **Profile Sets** — (Optional) The name of a profiler set,
-        which is a subset of expressions (for example, a subset of
+       - **Multiple PHI** - Check the box if the job should run all Profile
+         Expressions against the result set instead of finding the first
+         matching Profile Expression. With this option, the Profiler report
+         will indicate all matching Profile expressions, and if multiple Profile
+         Expressions match, will assign the default Multiple PHI masking
+         algorithm.
+
+       - **Profile Sets** — The name of the Profile Set to use.
+        A Profile Set is a set of Profile Expressions (for example, a set of
         financial expressions). (See Delphix Administrator's Guide.)
-    
-       - **Note:** If you do not select a profile set, Delphix will use
-        all defined expressions instead of just a subset.
     
        - **Comments** — (optional) Add comments related to this job.
     
