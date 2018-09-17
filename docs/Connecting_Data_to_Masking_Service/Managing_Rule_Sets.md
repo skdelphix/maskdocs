@@ -3,16 +3,42 @@
 This section describes how Rule Sets can be created, edited, and
 removed.
 
-## The Rule Set Screen
+## The Rule Sets Screen
 
 From anywhere within an Environment, click the **Rule Set** tab to
-display the Rule Sets associated with that environment. The **Rule Set**
+display the Rule Sets associated with that environment. The **Rule Sets**
 screen appears. If you have not yet created any rule sets, the Rule Set
 list is empty.
 
-## The Create Rule Set Window
+![](./media/RuleSets.png)
 
-In the upper right-hand corner, click the **+Create Rule Set** button.
+The **Rule Sets** screen contains the following information and actions:
+
+  - **Rule Set ID** — The numeric ID of the rule set used to refer
+    to the rule set from the Masking API.
+
+  - **Name** — The name of the rule set.
+
+  - **Meta Data Source** — The type of rule set. One of Database, File, or
+    Mainframe.
+
+  - **Type** — The specific type of rule set.
+
+  - **Edit** — Edit the rule set. See more details below.
+
+  - **Refresh/Save** — Refresh the rule set. Only applies to Database rule sets.
+    See more details below.
+
+  - **Copy** — Copy the rule set. See more details below.
+
+  - **Delete** — Delete the rule set. See more details below.
+
+The rule sets on the screen can be sorted by the various informational
+fields by clicking on the respective field.
+
+## The Create/Edit Rule Set Window
+
+In the upper right-hand corner, click the **Create Rule Set** button.
 
 The **Create Rule Set** window appears.
 
@@ -33,7 +59,7 @@ The **Create Rule Set** window appears.
 <tr class="even">
 <td><p>3</p></td>
 <td><p><strong>Table or File List</strong></p>
-<p>If a database connector is selected in the connector list, all available tables in the database will appear in this list. If a file connector is selected, all available files will appear in this list.</p></td>
+<p>If a database connector is selected in the connector list, all available tables in the database schema associated with the connector will appear in this list. If a file connector is selected, all available files in the directory associated with the connector will appear in this list.</p></td>
 </tr>
 <tr class="odd">
 <td><p>4</p></td>
@@ -67,7 +93,7 @@ The **Create Rule Set** window appears.
 <tr class="odd">
 <td><p>8</p></td>
 <td><p><strong>Clear All Button</strong></p>
-<p>Click to deselect all tables or files.</p></td>
+<p>Click to deselect all tables or files in the table or file list.</p></td>
 </tr>
 <tr class="even">
 <td><p>9</p></td>
@@ -100,7 +126,7 @@ To create a new rule set:
     Set** tab.
 
 2.  In the upper right-hand corner of the **Rule Set** screen, click
-    **+Create Rule Set**.
+    **Create Rule Set**.
 
 3.  The **Create Rule Set** screen lets you specify which tables
     belong in the rule set.
@@ -112,25 +138,43 @@ To create a new rule set:
 6.  The list of tables for that connector appears. If you have not yet
     created any connectors, the list is empty. Click individual table
     names to select them, or click **Select All** to select all the
-    tables in the connector.
+    tables in the connector. See "Create/Edit Rule Set Window" for
+    a description of the screen and other options.
 
 7.  Click **Save**.
 
 You may then need to define the Rule Set by modifying the table settings
-as described in [<span class="underline">Managing Rule
-Sets</span>](https://docs.delphix.com/display/DOCSDEV/.Managing+Rule+Sets+vJocacean).
+as described in "Modifying Tables in a Rule Set" below.
 
 For example:
 
-  - For a table, you may want to filter data from the table.
+  - For a table in a database rule set, you may want to filter data from the table.
 
-  - For a file, you must select a File Format to use.
+  - For a file in a file or mainframe rule set, you must select a File Format to use.
+
+## Refreshing a Rule Set
+
+Refreshing a rule set will result in the columns in the tables in the rule set 
+being rescanned. As a result, the inventory associated with the rule set
+will also be refreshed, but any pre-existing algorithm assignments will be
+retained. 
+
+To refresh a rule set:
+
+1.  Click the **Refresh/Save** icon to the right of the rule set on the **Rule
+    Set** screen.
+
+2.  The **Refresh/Savet** icon will turn to an hour glass as the the associated
+    tables are rescanned.
+
+3.  After the refresh is complete, the **Refresh/Savet** icon will return to the
+    circular arrow.
 
 ## Copying a Rule Set
 
-  - This feature is disabled for a mainframe environment.
-
-  - When you copy a rule set, you also copy the ' for that rule set.
+If you copy a Rule Set, the inventory associated with that Rule Set
+will also be copied. Also, any filter conditions defined for that 
+Rule Set will be copied.
 
 To copy a rule set:
 
@@ -146,12 +190,37 @@ To copy a rule set:
 5.  Modify the rule set as you want, using the procedures described
     above.
 
+## Deleting a Rule Set
+
+If you delete a Rule Set, the inventory associated with that Rule Set
+will also be deleted. Also, any filter conditions defined for that Rule
+Set will be deleted.
+
+To delete a rule set, click the **Delete** icon to the right of the rule
+set on the **Rule Set** screen.
+
+## The Rule Set Screen
+
+From the **Rule Set** tab, click on a rule set to display the tables or 
+files in the rule set. The **Rule Set** screen appears.
+
+![](./media/RuleSet.png)
+
+The **Rule Set** screen contains the following information and actions:
+
+  - **Table** or **File or Pattern**  — The name of the table or file/file pattern
+    in the rule set.
+
+  - **Edit** — Edit the table or file in the rule set. See more details below.
+
+  - **Delete** — Delete the table or file from the rule set.
+
+For rule sets with a large number of tables or files, the **Rule Set** screen will
+be displayed on pages which can be navigated by the controls at the bottom of the list
+on the page. The tables or files displayed may also be filtered using the **Search**
+field and button.
+
 ## Editing/Modifying a Rule Set
-
-  - This feature is disabled for a mainframe environment.
-
-  - The **Edit Rule Set** feature is disabled for a mainframe
-    environment.
 
 To edit a rule set:
 
@@ -165,28 +234,24 @@ To edit a rule set:
 
 4.  Modify the rule set as you want, using the preceding procedures.
 
-If you have tables with names that change monthly, for example tables
-that are appended with the current date, you can set a table suffix for
-a rule set.
+## Removing a Table or File
 
-## Deleting a Rule Set
+To remove a table or file from a rule set:
 
-If you delete a Rule Set, any inventory associated with that Rule Set
-will also be deleted. Also, any filter conditions defined for that Rule
-Set will be deleted.
+1.  From the **Rule Set** screen, click the **name** of the desired
+    rule set.
 
-To delete a rule set, click the **Delete** icon to the right of the rule
-set on the **Rule Set** screen.
+2.  Click the red **delete** icon to the right of the table or file
+    you want to remove.
 
-## Modifying Tables in a Rule Set (For Distributed Environment)
+!!! note "INFO"
+    If you remove a table/file from a rule set and that table/file has an inventory,
+    that inventory will also be removed.
 
-  - The features in this section are disabled for a mainframe
-    environment.
+## Modifying Tables in a Rule Set
 
-  - For additional information about any of the features in this
-    section, see [<span class="underline">Provisioning and/or
-    Subsetting
-    Data</span>](https://docs.delphix.com/pages/viewpage.action?pageId=49775111).
+The features in this section are disabled for file and mainframe
+rule sets.
 
 You can modify tables in a rule set as follows:
 
@@ -262,6 +327,10 @@ specify.
 2.  Click **Save**.
 
 ### **Table Suffix**
+
+If you have tables with names that change monthly, for example tables
+that are appended with the current date, you can set a table suffix for
+a rule set.
 
 To set a table suffix for a rule set:
 
@@ -353,17 +422,3 @@ To add or edit a list:
 5.  To remove an existing list file, click **Delete**.
 
 6.  Click **Save**.
-
-## Removing a Table
-
-To remove a table from the rule set:
-
-1.  From the **Rule Set** screen, click the **name** of the desired
-    rule set.
-
-2.  Click the red **delete** icon to the right of the table you want
-    to
-remove.
-
-!!! note "INFO"
-    If you remove a table from a rule set and that table has an inventory, that inventory will also be removed.

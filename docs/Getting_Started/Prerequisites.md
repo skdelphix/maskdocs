@@ -1,16 +1,32 @@
 # Prerequisites 
 
 This section will detail the hardware/software requirements needed to
-deploy the Delphix Masking (service on the Delphix Engine). The Delphix
+deploy the Delphix Engine with the Masking service. The Delphix
 Engine is a self-contained operating environment and application that is
 provided as a Virtual Appliance. Our Virtual Appliance is certified to
 run on a variety of platforms including VMware, AWS, and Azure.
 
 The Delphix Engine should be placed on a server where it will not
 contend with other VMs for network, storage or other compute resources.
-The Delphix Engine is an I/O intensive application, and deploying it in
+The Delphix Engine is a CPU and I/O intensive application, and deploying it in
 an environment where it must share resources with other virtual
 machines, can significantly reduce performance.
+
+Delphix Masking and Delphix Virtualization should never be
+run inside the same virtual machine. Always use seperate, dedicated Delphix Engines for Masking and Virtualization.
+
+## Client Web Browser
+
+The Delphix Engine's graphical interface can be accessed from a variety of 
+different web browsers. The Delphix Engine currently supports the following web browsers:
+
+* Microsoft Internet Explorer 10.0 or higher
+* Mozilla Firefox 35.0 or higher
+* Chrome 40 or higher
+
+
+!!! tip "TIP - Microsoft Internet Explorer"
+    Make sure that Internet Explorer is not configured for compatibility mode.
 
 ## VMware Virtual Platform
 
@@ -19,9 +35,8 @@ a dedicated Delphix Masking Engine on the VMware Virtual platform.
 
 #### VMWare Platform
 
-The Delphix Engine can be run on several version of VMware ESX/ESXI(see
-support matrix). With that being said, we highly recommend running
-versions 5.0 or above for optimal performance.
+The Delphix Engine can be run on several version of VMware ESX/ESXI ([see
+support matrix](https://docs.delphix.com/docs/system-installation-configuration-and-management/installation-and-initial-configuration-requirements/virtual-machine-requirements-for-vmware-platform)).
 
 #### Virtual CPUs
 
@@ -34,7 +49,7 @@ the full complement of vCPUs even when resources are overcommitted.
 
 The minimum amount of virtual memory is 16GB vRAM but we highly
 recommend 32GB or higher. The masking service on the Delphix Engine uses
-its memory to cache database blocks. More memory provides better
+its memory to process database and file blocks. More memory provides better
 performance. Memory reservation is a requirement for the Delphix VM.
 Overcommitting memory resources in the ESX server will significantly
 impact the performance of the Delphix Engine. Reservation ensures that
@@ -58,24 +73,11 @@ case, the datastore must have sufficient space to hold the Delphix VM
 configuration, the VMDK for the system disk, and a paging area if a
 memory reservation was not enabled for the Delphix Engine.
 
-!!! tip "TIP - Less Storage Is Needed For Earlier Versions"
-    For versions 5.1.2 and below the recommended storage is 150 GB.
-
-#### Client Browser
-
-The Delphix Engine can be utilized from a variety of different browsers.
-The Delphix Engine currently supports several browsers (see support
-matrix).
-
-!!! tip "TIP - Microsoft Internet Explorer"
-    Make sure that Internet Explorer is not configured for compatibility mode.
-
 ## AWS EC2 Platform
 
 This section covers the virtual machine requirements for installation of
 a dedicated Delphix Masking Engine on Amazon's Elastic Cloud Compute
-(EC2) platform. Delphix Masking and Delphix Virtualization should not be
-run on the same EC2 instance.
+(EC2) platform. 
 
 For best performance, the Delphix Masking Engine and all database
 servers should be in the same AWS region.
@@ -146,13 +148,12 @@ shortfalls under high I/O throughput conditions. Larger instances also
 provide more memory, which the Delphix Engine uses to cache database
 blocks. More memory will provide better read performance. For more
 information please refer to, [<span class="underline">Virtual Machine
-Requirements for AWS EC2
-Platform</span>](https://docs.delphix.com/display/DOCSDEV/.Virtual+Machine+Requirements+for+AWS+EC2+Platform+vJocaceanMaint).
+Requirements for AWS EC2 Platform</span>](https://docs.delphix.com/docs/system-installation-configuration-and-management/installation-and-initial-configuration-requirements/virtual-machine-requirements-for-aws-ec2-platform).
 
 #### Network Configurations
 
-You must deploy the Delphix Engine and all of the source and target
-environments in a VPC network to ensure that private IP addresses are
+You must deploy the Delphix Engine and all database or file hosts 
+in a VPC network to ensure that private IP addresses are
 static and do not change when you restart instances. When adding
 environments to the Delphix Engine, you must use the host's VPC (static
 private) IP addresses.
@@ -166,7 +167,7 @@ IP
 Addresses.
 
 !!! tip "TIP - Port Configuration"
-    The default security group will only open port 22 for secure shell (SSH) access. You must modify the security group to allow access to all of the networking ports used by the Delphix Engine and the various source and target engines. See **(insert link to more detailed section)** for information about specific port configurations.
+    The default security group will only open port 22 for secure shell (SSH) access. You must modify the security group to allow access to all of the networking ports used by the Delphix Engine and the various source and target engines. See [<span class="underline">General Network and Connectivity Requirements</span>](https://docs.delphix.com/docs/system-installation-configuration-and-management/installation-and-initial-configuration-requirements/general-network-and-connectivity-requirements) for information about specific port configurations.
 
 #### EBS Configurations
 
@@ -183,7 +184,8 @@ predictable performance. The number of provisioned IOPs depends on the
 estimated IO workload on the Delphix Engine. Provisioned IOPs volumes
 must be configured with a volume size at least 30 GiB times the number
 of provisioned IOPs. For example, a volume with 3,000 IOPS must be
-configured with at least 100 GiB.  
+configured with at least 100 GiB.
+  
 I/O requests of up to 256 kilobytes (KB) are counted as a single I/O
 operation (IOP) for provisioned IOPs volumes. Each volume can be
 configured for up to 4,000 IOPs.
@@ -208,9 +210,7 @@ operations to its storage.
 ## Azure Platform
 
 This section covers the virtual machine requirements for installation of
-a dedicated Delphix Masking Engine on Microsoft's Azure cloud platform.
-Delphix Masking and Delphix Virtualization should not be run on the same
-Azure instance.  
+a dedicated Delphix Masking Engine on Microsoft's Azure cloud platform.  
   
 For best performance, the Delphix Masking Engine and all database
 servers should be in the same Azure Region.
@@ -237,7 +237,7 @@ same virtual
 network.
 
 !!! tip "TIP - Port Configuration"
-    You must modify the security group to allow access to all of the networking ports used by the Delphix Engine and the various source and target engines. See **(insert link to more detailed section)** for information about specific port configurations.
+    You must modify the security group to allow access to all of the networking ports used by the Delphix Engine and the various source and target engines. See [<span class="underline">General Network and Connectivity Requirements</span>](https://docs.delphix.com/docs/system-installation-configuration-and-management/installation-and-initial-configuration-requirements/general-network-and-connectivity-requirements) for information about specific port configurations.
 
 #### Storage Configurations
 

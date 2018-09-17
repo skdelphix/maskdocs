@@ -5,7 +5,7 @@ be exported. Any object which can be exported, can be imported into
 another engine. The endpoint takes an optional parameter to filter by a
 specific object type. Each object is listed with its revision\_hash.
 Note that if a syncable object depends on a non-syncable object (i.e.
-DOMAIN using a mapping algorithm), it will say so in “revisionHash”
+DOMAIN using a mapping algorithm), it will say so in the “revisionHash”
 attribute, and will not be exportable.
 
 Example CURL command:
@@ -99,7 +99,7 @@ If an error occurs while exporting one or more elements in the export
 document, the entire export will
 abort.
 
-## Import Document from Another Engine
+## POST /import
 
 ```
 POST /import?force_overwrite=<true|false>[&environment_id=<id>][&source_environment_id=<id>]
@@ -153,7 +153,7 @@ curl -X POST
 'http://masking-engine.com:8282/masking/api/import?force_overwrite=true'
 ```
 
-## Import Asynchronously
+## POST /import-async
 
 ```
 POST /import-async?force_overwrite=<true|false>[&environment_id=<id>][&source_environment_id=<id>]

@@ -1,6 +1,9 @@
 # Running A Profiling Job
 
-This section describes how users can run a profiling job.
+This section describes how users can run a profiling job from the
+**Environment Overview** screen.
+
+![](./media/RunProfileJob.png)
 
 To run or rerun a job from the **Environment Overview** screen:
 
@@ -22,9 +25,3 @@ To stop a running job from the **Environment Overview** screen:
     **OK**.
 
     When the job has been stopped, its status changes.
-
-4.  After the job completes successfully, return to the **Inventory**
-    and check that the **Domain** and **Method** populated
-    automatically for sensitive data. Sample screenshot below.
-
-![](./media/image2.png)

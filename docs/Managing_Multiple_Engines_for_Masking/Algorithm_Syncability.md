@@ -2,8 +2,7 @@ The following tables specify which algorithms are syncable between
 masking engines (in addition to the masking engine key).
 
 !!! note
-    Only users with masking admin privilege are able to export
-and import algorithms.
+    Only users with masking admin privilege are able to export and import algorithms.
 
 ## User-defined Algorithms
 
@@ -22,10 +21,8 @@ and import algorithms.
 ## Built-In Algorithms
 
 Note that syncing built-in algorithms do not actually import the
-contents, but simply overwrites the revision\_identifier and
-revision\_number so that the revision\_hash becomes equal. Algorithms
-that have their own individual keys will also synchronize the keys as
-well.
+files associated with them but just updates their individual keys if they
+have them.
 
 While some of the built in algorithms are not synchronizable, mainly due
 to them being non-deterministic, we still can support export of

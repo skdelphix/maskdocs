@@ -32,10 +32,10 @@ downstream environments. Consistent masking of data while maintaining
 referential integrity across heterogeneous data sources enables Delphix
 masking to provide superior coverage compared to other solutions—all
 without the need for programming expertise. Moreover, the Delphix
-seamlessly integrates masking with data delivery capabilities,
-ensuring the security of sensitive data before it is made available for
-development and testing, or sent to an offsite data center or the public
-cloud.
+Dynamic Data Platform seamlessly integrates masking with data delivery 
+capabilities, ensuring the security of sensitive data before it is made 
+available for development and testing, or sent to an offsite data center 
+or the public cloud.
 
 Delphix Masking is a multi-user, browser-based web application that
 provides complete, secure, and scalable software for your sensitive data
@@ -46,8 +46,8 @@ successfully protect sensitive data across the enterprise:
 
   - **End-to-End Masking** — The Delphix platform automatically detects
     confidential information, irreversibly masks data values, then
-    generates reports and alerts to ensure that all sensitive data has
-    been masked.
+    generates reports and email notifications to confirm that all sensitive 
+    data has been masked.
 
   - **Realistic Data** — Data masked with the Delphix platform is
     production-like in quality. Masked application data in
@@ -59,7 +59,7 @@ successfully protect sensitive data across the enterprise:
     and masking data and lack delivery capabilities for downstream
     environments. The Delphix Dynamic Data Platform seamlessly
     integrates data masking with [<span class="underline">data
-    virtualization</span>](https://docs.delphix.com/display/DOCS524/Database+Virtualization+with+Delphix),
+    virtualization</span>](https://docs.delphix.com/docs/introduction/database-virtualization-with-delphix),
     allowing teams to quickly deliver masked, virtual data copies on
     premises or into private, public, and hybrid cloud environments.
 
@@ -69,14 +69,15 @@ successfully protect sensitive data across the enterprise:
     between elements so that data is masked the same way across
     different tables and databases.
 
-  - **Algorithms/Frameworks** — Seven out-of-the-box algorithms help
-    businesses mask everything from names and social security numbers to
-    images and text fields. Algorithms can be configured or customized
-    to match specific security policies. Moreover, the Delphix platform
-    includes prepackaged masking framework sets for healthcare and
-    financial information, as well as the ability to perform
-    tokenization: a process that can be used to obfuscate data sent for
-    processing, then reversed when the processed data set is returned.
+  - **Algorithms/Frameworks** — Seven algorithm frameworks allow users 
+    to create and configure algorithms to match specific security policies.
+    Over twenty five out-of-the-box, preconfigured algorithms help businesses
+    mask everything from names and addresses to credit card numbers and text 
+    fields. Moreover, the Delphix platform includes prepackaged profiling 
+    sets for healthcare and financial information, as well as the ability 
+    to perform tokenization: a process that can be used to obfuscate data 
+    sent for processing, then reversed when the processed data set is 
+    returned.
 
   - **Ease of Use** — With a single solution, Delphix customers can mask
     data across a variety of platforms. Moreover, businesses are not
@@ -97,9 +98,9 @@ The Delphix Dynamic Data Platform is made up of 4 main services each of
 which play a very important part in delivering fresh secure data to
 anybody that needs it. These include:
 
-  - **Virtualize —** Delphix compresses the data that it gathers to
-    one-third of the original size. From that compressed data footprint,
-    Delphix virtualizes the data and allows operators to create
+  - **Virtualize —** Delphix compresses the data that it gathers, often to
+    one-third or more of the original size. From that compressed data 
+    footprint, Delphix virtualizes the data and allows operators to create
     lightweight, virtual data copies. Virtual copies are fully
     readable/writable and independent. They can be spun up or torn down
     in just minutes. And they take up a fraction of the storage space of
@@ -114,7 +115,7 @@ anybody that needs it. These include:
     applies custom or predefined masking algorithms. By seamlessly
     integrating data masking and provisioning into a single platform,
     Delphix ensures that secure data delivery is effortless and
-    repeatable
+    repeatable.
 
   - **Manage —** Data operators can now quickly provision secure data
     copies -- in minutes -- to users in their target environments. The
@@ -166,7 +167,7 @@ certain sensitive data.
 # How Delphix Secures Your Sensitive Data
 
 Delphix strives to make available multiple methods for securing your
-data, depending on your needs. The two secure methods delphix currently
+data, depending on your needs. The two secure methods Delphix currently
 supports are masking (anonymization) and tokenization
 (pseudonymization).
 

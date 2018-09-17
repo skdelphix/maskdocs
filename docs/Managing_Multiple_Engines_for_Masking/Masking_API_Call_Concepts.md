@@ -5,8 +5,8 @@
 Syncable objects are external representations of objects within the
 masking engine that can be exported from one engine and imported into
 another. EngineSync currently supports exporting a subset of algorithms,
-the encryption key and all the objects necessary for a masking job as
-syncable objects.
+the encryption key and all the objects necessary for a masking job. 
+Note: We do not currently support VSAM masking jobs.
 
 ## Object Identifiers and Types
 
@@ -58,12 +58,10 @@ environment
 
 ## Object Revision Tracking
 
-We are concerned with whether the behavior of a syncable object is the
+The revision hash is used to help you determine whether the behavior of a syncable object is the
 same between engines. Because objects within the Masking Engine are
 compositional, the behavior of an object is influenced by all of its
-dependencies. We need a single point of truth to compare the behavior
-without having to compute the set of dependencies that may influence the
-behavior of an object. When a syncable object is listed or exported, the
+dependencies. When a syncable object is listed or exported, the
 Masking Engine computes a revision\_hash, which uniquely identifies the
 object’s behavior.
 
@@ -76,13 +74,13 @@ have two lookup algorithms with the same name, lookup file, and key, and
 they do not necessarily guaranteed to have the same revision hash.
 
 !!! note
-    revision\_hash does not change when the password or the ssh key for either the FILE\_CONNECTOR or DATABASE\_CONNECTOR is updated. This is intentionally done because we do not export the password or the ssh key for security purposes. This allows users to update the password after import without changing the revision\_hash. If a user is **overriding** a connector that already has a password set, the import **does not** reset the password and will leave the current, pre-import value.
+    The revision\_hash does not change when the password or the ssh key for either the FILE\_CONNECTOR or DATABASE\_CONNECTOR is updated. This is intentionally done because we do not export the password or the ssh key for security purposes. This allows users to update the password after import without changing the revision\_hash. If a user is **overriding** a connector that already has a password set, the import **does not** reset the password and will leave the current, pre-import value.
 
 ## Export Document
 
 You can export one or more syncable objects that are listed in the
 */syncable-objects* endpoint. The export document will include the set
-of objects that you requested for export and all dependencies that are
+of objects that you requested for export and all of their dependencies that are
 required to properly import those objects into another engine.
 
 The export document is exported as an opaque blob. Do not edit it
@@ -226,7 +224,7 @@ exported.
 
 This separation was added because global objects 1) containing large
 lookup files are projected to be time consuming and 2) are expected to
-be synchronized much infrequently than any masking job related metadata.
+be synchronized much less frequently than any masking job related metadata.
 Examples on how to use it will be available in the **Example User
 Workflow** section.
 
@@ -245,7 +243,7 @@ algorithm.
 
 ## On-The-Fly Masking Jobs 
 
-By definition On-The-Fly (OTF) masking jobs work with a source
+By definition, On-The-Fly (OTF) masking jobs work with a source
 environment/connector and a target environment/connector, masking the
 data from the source connector into that of the target connector. With
 masking jobs, a target *environment\_id* is always required to specify
@@ -262,4 +260,3 @@ to their DATABASE\_CONNECTOR and FILE\_CONNECTOR counterparts, but are
 represented differently in the OTF jobs to distinguish them from the
 target connector (i.e., DATABASE\_CONNECTOR or FILE\_CONNECTOR).
 
-Bas

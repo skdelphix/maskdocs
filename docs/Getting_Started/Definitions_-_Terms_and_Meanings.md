@@ -19,7 +19,7 @@ These concepts are the high level concepts users run into.
 <tbody>
 <tr class="odd">
 <td>Application</td>
-<td>An Application is a tag that can be assigned to a defined group of jobs. The application should be the name of the application associated with the data source connected.</td>
+<td>An Application is a tag that is assigned to one or more environments. We recommend using an application name that is the same as the application associated with the environments.</td>
 </tr>
 <tr class="even">
 <td>Connector</td>
@@ -31,7 +31,7 @@ These concepts are the high level concepts users run into.
 </tr>
 <tr class="even">
 <td>Environment</td>
-<td>An environment is a construct that can be used to describe collection of masking jobs associated with a group of data sources.</td>
+<td>An environment is a construct that can be used to describe a collection of masking jobs associated with a group of data sources.</td>
 </tr>
 <tr class="odd">
 <td>In-place</td>
@@ -47,12 +47,12 @@ These concepts are the high level concepts users run into.
 </tr>
 <tr class="even">
 <td>Profile</td>
-<td><p>Profile uses a variety of different methods to classify data in a data source into different categories. These categories are known as domains..</p>
-<p>The profile process also assigns recommended methods of securing the data based on the the domain.</p></td>
+<td><p>Profiling uses a variety of different methods to classify data in a data source into different categories. These categories are known as domains.</p>
+<p>The profile process also assigns recommended algorithms for securing the data based on the the domain.</p></td>
 </tr>
 <tr class="odd">
 <td>Ruleset</td>
-<td>A rule set is group of tables or flat files within a particular data source that a user may choose to run profile or mask jobs.</td>
+<td>A rule set is group of tables or flat files within a particular data source that a user may choose to run profile, masking, or tokenizaiton jobs on.</td>
 </tr>
 </tbody>
 </table>
@@ -72,7 +72,7 @@ may use to secure their data.
 <tbody>
 <tr class="odd">
 <td>Secure Lookup</td>
-<td>The most commonly used type of algorithm. It is easy to generate and works with different languages. When this algorithm replaces real, sensitive data with fictional data, it is possible that it will create repeating data patterns, known as “collisions.” For example, the name “Tom” and “Peter” could both be masked as “Matt.” Because names and addresses naturally recur in real data, this mimics an actual data set. However, if you want the masking engine to mask all data in unique outputs, you should use segmented mapping, described below.</td>
+<td>The most commonly used type of algorithm. It is easy to generate and works with different languages. When this algorithm replaces real, sensitive data with fictional data, it is possible that it will create repeating data patterns, known as “collisions.” For example, the name “Tom” and “Peter” could both be masked as “Matt.” Because names and addresses naturally recur in real data, this mimics an actual data set. However, if you want the masking engine to mask all data to unique outputs, you should use segmented mapping, described below.</td>
 </tr>
 <tr class="even">
 <td>Segment Mapping</td>
@@ -80,7 +80,7 @@ may use to secure their data.
 </tr>
 <tr class="odd">
 <td>Mapping</td>
-<td><p>Allows you to state what value will replace the original data. There will be no collisions in the masked data, because it always matches the same input to the same output. For example “David” will always become “Ragu” and “Melissa” will always become “Jasmine.” The algorithm checks whether an input has already been mapped; if so, the algorithm changes the data to its designated output. You can use a mapping algorithm on any set of value, of any length, but you must know how many values you plan to mask.</p>
+<td><p>Allows you to state what value will replace the original data. There will be no collisions in the masked data, because it always matches the same input to the same output. For example “David” will always become “Ragu” and “Melissa” will always become “Jasmine.” The algorithm checks whether an input has already been mapped; if so, the algorithm changes the data to its designated output. You can use a mapping algorithm on any set of values, of any length, but you must know how many values you plan to mask.</p>
 <p>NOTE: When you use a mapping algorithm, you cannot mask more than one table at a time. You must mask tables serially.</p></td>
 </tr>
 <tr class="even">
@@ -134,17 +134,10 @@ configuring a profiling job.
 <td>Rule Set</td>
 <td>Select a ruleset that this job will execute against.</td>
 </tr>
-<tr class="even">
-<td>Generator</td>
-<td>The default value is Delphix.</td>
 </tr>
 <tr class="odd">
 <td>No. of Streams</td>
 <td>The number of parallel streams to use when running the jobs. For example, you can select two streams to run two tables in the ruleset concurrently in the job instead of one table at a time.</td>
-</tr>
-<tr class="even">
-<td>Remote Server <em>optional</em></td>
-<td>The remote server that will execute the jobs. This option lets you choose to execute jobs on a remote server, rather than on the local Delphix instance. This is an add-on feature for Delphix Standard Edition.</td>
 </tr>
 <tr class="odd">
 <td>Min Memory (MB) <em>optional</em></td>
@@ -160,8 +153,8 @@ configuring a profiling job.
 </tr>
 <tr class="even">
 <td>Profile Sets <em>optional</em></td>
-<td><p>The name of a profile set, which is a subset of expressions (for example, a subset of financial expressions). (See Delphix Administrator’s Guide.)</p>
-<p>Note: If you do not select a profile set, Delphix will used all defined expressions instead of just a subset.</p></td>
+<td><p>The name of a profile set, which is a subset of expressions (for example, a subset of financial expressions).</p>
+</td>
 </tr>
 <tr class="odd">
 <td>Comments <em>optional</em></td>
@@ -204,29 +197,8 @@ masking job.
 <td>Select a ruleset for this job to execute against.</td>
 </tr>
 <tr class="odd">
-<td>Generator</td>
-<td>The default value is Delphix.</td>
-</tr>
-<tr class="even">
-<td>Repository Folder Name</td>
-<td>The folder name in the repository where the objects should be imported.</td>
-</tr>
-<tr class="odd">
-<td>Parameter File Path <em>optional</em></td>
-<td>If checked, this tells Delphix to configure the sessions and workflows to use a parameter file that contains the source and target connection information. If unchecked, the Delphix Engine will generate sessions/workflows that use the connector names as defined within the Delphix Engine, which will require connections with the same names defined within the repository.</td>
-</tr>
-<tr class="even">
-<td>Import Mapplet <em>optional</em></td>
-<td>If checked, this tells the Delphix Engine to import mapplets that are assigned to columns in the inventory along with mappings/sessions/workflows. If unchecked, Delphix will not attempt to import any mapplets that are assigned in the inventory.</td>
-</tr>
-<tr class="odd">
 <td>Masking Method</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Remote Server <em>optional</em></td>
-<td><p>The remote server that will execute the jobs. This option lets you choose to execute jobs on a remote server, rather than on the local Delphix instance.</p>
-<p>Note: This is an optional feature for Delphix.</p></td>
+<td>Select either In-place or On-the-fly.</td>
 </tr>
 <tr class="odd">
 <td>Min Memory (MB) optional</td>

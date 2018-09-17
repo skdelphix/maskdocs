@@ -1,6 +1,6 @@
 ## New Syncable Objects
 
-We have the following new syncable objects added in 5.3. Refer to the
+We added the following new syncable objects in 5.3. Refer to the
 main documentation for more information on what they are, and how to use
 them.
 
@@ -26,7 +26,7 @@ Management** section for more detail.
 
 ## Changed Model of Import Status Reporting
 
-In pre-Krypton, the import status looked like this:
+In 5.2, the import status looked like this:
 
 ``` json
 {
@@ -43,13 +43,13 @@ include the id or name it has imported into to reduce any confusion
 introduced with IntegerIdentifiers. For more information on the reason
 for this change, refer to Logic Behind Overwrite of IntegerIdentifier
 and StringIdentifier. For examples on what it now looks like, refer to
-the **Example User Workflow** page.
+the **Example User Workflow** section.
 
 ## Changed Granularity of Transactions for Import
 
-Starting in Krypton, an import of however many objects becomes an atomic
-execution rather a per-object basic atomicity. This means that the
-execution will either succeed or fail in importing all objects or none
+Starting in 5.3, an import of however many objects is performed as an atomic
+execution rather than using per-object atomicity. This means that the
+execution will either succeed at importing all objects or fail and import none
 at all. Refer to the Error Handling of Import logic flow diagram for
 more information.
 
@@ -57,8 +57,8 @@ more information.
 
 Now that we have a large list of syncable objects, we have added a new
 feature for filtering based on the object type. Refer to the
-**Endpoint** section in the main documentation and the **Example User
-Workflow** page for more information.
+**Endpoint** page and the **Example User
+Workflow** section for more information.
 
 ## Async Endpoints
 

@@ -1,24 +1,20 @@
-# Storing Database Passwords
+# Security
+
+## Storing Database Passwords
 The Delphix Masking Engine uses encryption and stores all passwords encrypted in
 the application's repository database.
 
-# Authenticating Users
-If you choose to use the Delphix Masking Engine internal authentication, the
-engine uses encryption and stores passwords for each user encrypted in the
-engine relational repository.
+## User Authentication
 
 When a user logs in to the Delphix Masking Engine and enters their username and
 password, the engine verifies that the user is an active user with the Delphix
-Masking Engine, and then authenticates their password.
+Masking Engine, and then authenticates their password. The application may be configured to authenticate passwords using either:
 
-Optionally, the Delphix Masking Engine can integrate with external
-authentication software (Microsoft Active Directory, CA SiteMinder, or LDAP) to
-authenticate users. If you integrate with external authentication software, the
-Delphix Masking Engine will validate that the user has rights to access the
-application and will login the user automatically. (No additional Delphix
-Masking Engine password will be required.)
+* Local authentication: A user's password is validated using information stored in the appliction's repository database. Following password management best practices, the user's actual password is not stored in application's repository.
 
-# Authorizing Users (Roles)
+* Active Directory/LDAP Authentication: A user's password is validated by consulting Active Directory/LDAP.
+
+## User Authorization (Roles)
 With the built-in Delphix Masking Engine Administrator role, which is similar to
 a superuser role, the administrator can add roles and assign the roles to users. 
 By creating specific roles and assigning them, the administrator can control
