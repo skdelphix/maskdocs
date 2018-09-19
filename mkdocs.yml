@@ -13,6 +13,10 @@ theme:
 
 copyright: Copyright &copy; 2018 Delphix Corp.
 
+google_analytics:
+  - 'UA-35429885-3'
+  - 'auto'
+
 extra:
   social:
     - type: sitemap
