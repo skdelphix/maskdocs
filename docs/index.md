@@ -107,7 +107,7 @@ anybody that needs it. These include:
     physical copies -- 10 virtual copies can fit into the space of one
     physical copy.
 
-  - **Secure —** The Delphix platform continuously protects sensitive
+  - **Identify and Secure —** The Delphix platform continuously protects sensitive
     information with integrated data masking. Masking secures
     confidential data -- names, email addresses, patient records, SSNs
     -- by replacing sensitive values with fictitious, yet realistic
@@ -133,16 +133,14 @@ anybody that needs it. These include:
 
 ![](./media/image1.png)
 
-# How Delphix Discovers Sensitive Data 
+# How Delphix Identifies Sensitive Data 
 
-Our platform helps you quickly discover your organization’s sensitive
-data. This sensitive data discovery is done using two different methods,
-column level profiling and data level profiling.
+Our platform helps you quickly identify your organization’s sensitive data. This sensitive data identification is done using two different methods, column level profiling and data level profiling.
 
 **Column Level Profiling**
 
 Column level profiling uses REGEX expressions to scan the column names
-(metadata) of the select data sources. There are several dozen
+(metadata) of the selected data sources. There are several dozen
 pre-configured profile expressions (like the one below) designed to
 identify common sensitive data types (SSN, Name, Addresses, etc). You
 also have the ability to write/import your own profile expressions.

@@ -164,13 +164,10 @@ The values that appear correlate to the **File Type** you select.
   - **Connector Name** — The name of the file connector (specific to
     your Delphix application and unrelated to the file itself).
 
-  - **Connection Mode** — SFTP, FTP, Local Files
+  - **Connection Mode** — SFTP, FTP
 
   - **Path** — The path to the directory where the file(s) are
     located.
-
-If you select **SFTP** or **FTP** for **Connection Mode**, the following
-additional values appear:
 
   - **Server Name** — The name of the server used to connect to the
     file.
@@ -188,6 +185,3 @@ server.
     **Available Keys** dropdown appears. Choose a key from the dropdown. See
     Delphix Masking APIs for information on uploading public keys to the masking
     engine.
-
-!!! info
-    "Local" File Connectors have restricted access to the local (Masking Engine) file system. By default, the Path for "Local" File Connectors is automatically prepended with /mnt/; in other words, they are restricted to /mnt and its sub-directories.

@@ -1,7 +1,6 @@
-# Out Of The Box Algorithm Frameworks and Pre-Configured Algorithms 
+# Out Of The Box Algorithm Frameworks
 
-This section describes the different algorithm frameworks (Secure Lookup, Segment Mapping, etc)
-and pre-configured algorithms that are available.
+This section describes the different algorithm frameworks (Secure Lookup, Segment Mapping, etc) that are available.
 
 
 ## Secure Lookup Algorithm Framework
