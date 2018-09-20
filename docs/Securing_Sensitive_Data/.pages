@@ -1,5 +1,7 @@
 arrange:
-  - Out_Of_The_Box_Secure_Methods_and_Algorithms.md
+  - Out_Of_The_Box_Algorithm_Frameworks.md
   - Configuring_Your_Own_Algorithms.md
   - Creating_Masking_Job.md
+  - Provision_Masked_VDBs.md
   - Monitoring_Masking_Job.md
+  - Masking_Job_Wizard.md
