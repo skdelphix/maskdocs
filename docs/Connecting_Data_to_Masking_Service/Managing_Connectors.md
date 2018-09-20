@@ -120,11 +120,6 @@ connector for it.
     user principal with the KDC. The password field may be left blank if the 
     keytab set during appliance configuration contains keys for the user 
     principal.
-  
-  - ** Principal Name** — (only with Kerberos Authentication) The name of the 
-   kerberos user principal to use when authenticating with the KDC. The realm 
-   portion of the principal may be omitted if it matches the configured default 
-   realm. 
 
   - **Login ID** — The user login this connector will use to connect to the database (not applicable
     to Kerberos Authentication).
