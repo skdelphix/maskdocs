@@ -2,6 +2,6 @@ arrange:
   - Prerequisites.md
   - Data_Source_Support.md
   - Installation_First_Time_Setup.md
-  - Configuring_Virtualization_Service_For_Masked_Provisioning.md
+  - Configuring_Virtualization_Service_for_Masked_Provisioning.md
   - Users_Roles.md
   - Definitions_-_Terms_and_Meanings.md
