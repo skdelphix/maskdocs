@@ -73,21 +73,17 @@ To add a secure lookup algorithm:
     Make sure there are no spaces or returns at the end of the last line
     in the file. The following is sample file content:
 
-    | **Code Block: Example Lookup File**             |
-    | -------------------- |
-    | Smallville |
-    | Clarkville |
-    | Farmville |
-    | Townville |
-    | Cityname |
-    | Citytown |
-    | Towneaster |
+        Smallville
+        Clarkville
+        Farmville
+        Townville
+        Cityname
+        Citytown
+        Towneaster
 
 6.  When you are finished, click **Save**.
 
-7.  Before you can use the algorithm (specify it in a profiling or
-    masking job), you must add it to a
-domain.
+7.  Before you can use the algorithm in a profiling job, you must add it to a domain.
 
 !!! info
     The masking engine supports lookup files saved in ASCII or UTF-8 format only. If the lookup file contains foreign alphabet characters, the file must be saved in UTF-8 format with no BOM (Byte Order Marker) for Masking Engine to read the Unicode text correctly. Some applications, e.g. Notepad on Windows, write a BOM (Byte Order Marker) at the beginning of Unicode files which irritates the masking engine and will lead to SQL update or insert errors when trying to run a masking job that applies a Secure Lookup algorithm that has been created based on a UTF-8 file that included a BOM.
@@ -138,8 +134,8 @@ domain.
 
 10. When you are finished, click **Save**.
 
-11. Before you can use the algorithm (specify it in a profiling or
-    masking job), you must add it to a domain. If you are not using
+11. Before you can use the algorithm in a profiling job,
+    you must add it to a domain. If you are not using
     the Masking Engine Profiler to create your inventory, you do not
     need to associate the algorithm with a domain.
 
@@ -232,22 +228,20 @@ to fail.
 
 5.  Enter a **Description**.
 
-6.  Specify a **Lookup File (**.txt){\*}.
+6.  Specify a **Lookup File**.
 
 7.  The value file must have NO header. Make sure there are no spaces
     or returns at the end of the last line in the file. The following
     is sample file content. Notice that there is no header and only a
     list of values.
 
-    ```
-    Smallville
-    Clarkville
-    Farmville
-    Townville
-    Cityname
-    Citytown
-    Towneaster
-    ```
+        Smallville
+        Clarkville
+        Farmville
+        Townville
+        Cityname
+        Citytown
+        Towneaster
 
 8.  To ignore specific characters, enter one or more characters in the
     **Ignore Character List** box. Separate values with a comma.
@@ -257,14 +251,10 @@ to fail.
 
 10. When you are finished, click **Save**.
 
-Before you can use the algorithm by specifying it in a profiling or
-masking job, you must add it to a domain. If you are not using the
+Before you can use the algorithm by specifying it in a profiling 
+job, you must add it to a domain. If you are not using the
 Masking Engine Profiler to create your inventory, you do not need to
 associate the algorithm with a domain.
-
-See [<span class="underline">Adding New
-Domains</span>](https://docs.delphix.com/display/DOCSDEV/.Managing+Domain+Settings+vJocacean#id-.ManagingDomainSettingsvJocacean-_Adding_New_Domains).
-(Do we need this link?)
 
 ### Masking Binary Lookup Algorithm Framework
 
@@ -301,14 +291,14 @@ Once you have created an algorithm, you will need to associate it with a
 domain.
 
 1.  Navigate to the **Home\>Settings\>Domains** page and click **Add
-    Domain**. You will see the popup below:
+    Domain**. 
 
 2.  Enter a domain name.
 
 3.  From the **Tokenization Algorithm Name** drop-down menu, select
     your algorithm.
 
-**Create a Tokenization Environment**
+Next, create a Tokenization Environment:
 
 1.  On the home page, click **Environments**.
 
@@ -376,13 +366,13 @@ format prior to masking.
 
 ![](./media/image26.png)
 
-1.  Enter Algorithm **Name**.
+1.  Enter an **Algorithm Name**.
 
 2.  Enter a **Description**.
 
 3.  Select **Lookup File** location.
 
-4.  Enter default **Delimiter**. Key and Value separator is =. You can
+4.  Specify a **Delimiter** (key and value separator). The default delimiter is =. You can
     change this to match the lookup file.
 
 5.  Click **Save**.
@@ -391,12 +381,10 @@ Below is an example of a lookup input file. It does not require a
 header. Make sure there are no spaces or returns at the end of the last
 line in the file. The following is sample file content:
 
-|Example Lookup File|
-|-------------------|
-|NYC=NY|
-|NY City=NY|
-|New York=NY|
-|Manhattan=NY|
+    NYC=NY
+    NY City=NY
+    New York=NY
+    Manhattan=NY
 
 ### Free Text Algorithm Framework
 
@@ -404,7 +392,7 @@ To add a free text redaction algorith:
 
 ![](./media/image28.png)
 
-1.  Enter **Algorithm Name**.
+1.  Enter an **Algorithm Name**.
 
 2.  Enter a **Description**.
 
@@ -423,12 +411,12 @@ To add a free text redaction algorith:
 
 2.  Create input file using notepad. Enter the following text:
 
-3.  "The customer Bob Jones is satisfied with the terms of the sales
-    agreement. Please call to confirm at 718-223-7896."
+        The customer Bob Jones is satisfied with the terms of the sales
+        agreement. Please call to confirm at 718-223-7896.
 
-4.  Save file as txt.
+3.  Save file as txt.
 
-5.  Create lookup file.
+4.  Create lookup file.
     
     1.  Create a lookup file.
     
@@ -436,11 +424,9 @@ To add a free text redaction algorith:
         Be sure to hit return after each field. The lookup flat file
         contains the following data:
     
-        ```
-        Bob
-        Jones
-        Agreement
-        ```
+            Bob
+            Jones
+            Agreement
 
 ##### Create an Algorithm
 
@@ -481,7 +467,7 @@ You will be prompted for the following information:
 
 The results of the masking job will show the following:
 
-Redacted Input File: The customer xxxx xxxx is satisfied with the terms
-of the sales xxxx. Please call to confirm at 718-223-7896.
+    The customer xxxx xxxx is satisfied with the terms
+    of the sales xxxx. Please call to confirm at 718-223-7896.
 
 "Bob," "Jones," and "agreement" are redacted.
