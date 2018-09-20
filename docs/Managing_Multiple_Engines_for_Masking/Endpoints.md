@@ -90,7 +90,7 @@ Example CURL command:
 curl -s -X GET 
 --header 'Accept: application/octet-stream' 
 --header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231' 
--o "<OUTPUT_FILE_PATH>" "http://masking-engine.come:8282/masking/api/file-downloads/EXPORT-ZXhwb3J0X2RvY3VtZW50XzJjcm1EV09yLmpzb24="
+-o "<OUTPUT_FILE_PATH>" "http://masking-engine.com:8282/masking/api/file-downloads/EXPORT-ZXhwb3J0X2RvY3VtZW50XzJjcm1EV09yLmpzb24="
 ```
 
 ### Error handling
