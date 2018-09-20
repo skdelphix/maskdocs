@@ -4,3 +4,4 @@ arrange:
   - Creating_Masking_Job.md
   - Provision_Masked_VDBs.md
   - Monitoring_Masking_Job.md
+  - Masking_Job_Wizard.md
