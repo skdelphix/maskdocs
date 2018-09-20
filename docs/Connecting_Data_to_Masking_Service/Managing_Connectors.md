@@ -121,7 +121,7 @@ connector for it.
     keytab set during appliance configuration contains keys for the user 
     principal.
   
-  -** Principal Name** — (only with Kerberos Authentication) The name of the 
+  - ** Principal Name** — (only with Kerberos Authentication) The name of the 
    kerberos user principal to use when authenticating with the KDC. The realm 
    portion of the principal may be omitted if it matches the configured default 
    realm. 
