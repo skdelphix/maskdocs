@@ -108,14 +108,23 @@ connector for it.
   - **Host Name/ IP** — The network host name or IP
     address of the database server.
 
-  - **Use Kerberos Authentication** - (Oracle, MS SQL Server, and Sybase only) Specified
-    to use Kerberos Authentication. This box is clear by default. Before Kerberos may be used,
-    the appliance must be properly configured (contact Delphix support for information).
-    If this box is checked, the application authenticates with the Kerberos KDC before
-    connecting to the database, then uses its Kerberos credentials to authenticate to the
-    database instead of a login/password. The password, if supplied, is used to authenticate
-    the user principal with the KDC. The password field may be left blank if the keytab
-    set during appliance configuration contains keys for the user principal.
+  - **Use Kerberos Authentication** - (Oracle only, optional) Whether to use 
+    kerberos to authenticate to the database. This box is clear by default. 
+    Before Kerberos may be used, the appliance must be properly configured - 
+    refer to these instructions (link to appliance kerberos configuration 
+    instructions[1]). If this box is checked, the application authenticates with
+    the kerberos KDC before connecting to the database, then uses its kerberos 
+    credentials to authenticate to the database instead of a login/password. 
+    When kerberos is enabled, the "Login ID" field is treated as the kerberos 
+    user principal name. The password, if supplied, is used to authenticate the 
+    user principal with the KDC. The password field may be left blank if the 
+    keytab set during appliance configuration contains keys for the user 
+    principal.
+  
+  -** Principal Name** — (only with Kerberos Authentication) The name of the 
+   kerberos user principal to use when authenticating with the KDC. The realm 
+   portion of the principal may be omitted if it matches the configured default 
+   realm. 
 
   - **Login ID** — The user login this connector will use to connect to the database (not applicable
     to Kerberos Authentication).
