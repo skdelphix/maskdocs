@@ -69,10 +69,10 @@ The DB2 LUW connector supports profiling and masking/tokenization features. Belo
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        | 
-|                             | Batch Update            | Available        | 
+|                             | Bulk Update             | Available        |
+|                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Available        |
-|                             | Disable Trigger         | Unavailable      | 
+|                             | Disable Trigger         | Unavailable      |
 |                             | Disable Constraint      | Unavailable      |
 |                             | Identity Column Support | Unavailable      |
 | **On-The-Fly Masking Mode** | Restart Ability         | Available        |
@@ -109,10 +109,10 @@ The Oracle connector supports profiling and masking/tokenization features. Below
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        | 
-|                             | Batch Update            | Available        | 
+|                             | Bulk Update             | Available        |
+|                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Available        |
-|                             | Disable Trigger         | Available        | 
+|                             | Disable Trigger         | Available        |
 |                             | Disable Constraint      | Available        |
 |                             | Identity Column Support | Available        |
 | **On-The-Fly Masking Mode** | Restart Ability         | Available        |
@@ -152,10 +152,10 @@ The MS SQL connector supports profiling and masking/tokenization features. Below
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        | 
-|                             | Batch Update            | Available        | 
+|                             | Bulk Update             | Available        |
+|                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Available        |
-|                             | Disable Trigger         | Available        | 
+|                             | Disable Trigger         | Available        |
 |                             | Disable Constraint      | Available        |
 |                             | Identity Column Support | Available        |
 | **On-The-Fly Masking Mode** | Restart Ability         | Available        |
@@ -189,10 +189,10 @@ The PostgreSQL connector supports profiling and masking/tokenization features. B
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        | 
-|                             | Batch Update            | Available        | 
+|                             | Bulk Update             | Available        |
+|                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Unavailable      |
-|                             | Disable Trigger         | Unavailable      | 
+|                             | Disable Trigger         | Unavailable      |
 |                             | Disable Constraint      | Unavailable      |
 |                             | Identity Column Support | Available        |
 | **On-The-Fly Masking Mode** | Restart Ability         | Unavailable      |
@@ -216,7 +216,7 @@ management system intended to remain free under the GNU GPL. Development
 is led by some of the original developers of MySQL, who forked it due to
 concerns over its acquisition by Oracle Corporation.
 
-A MySQL Connector may be used to connect to either a MySQL or MariaDB 
+A MySQL Connector may be used to connect to either a MySQL or MariaDB
 database instanace.
 
 #### MySQL Support Matrix
@@ -235,16 +235,16 @@ database instanace.
 
 #### Available Features
 
-The MySQL connector supports profiling and masking/tokenization features. Belwo is a list of which options are and are not available for jobs using the MySQL connector:
+The MySQL connector supports profiling and masking/tokenization features. Below is a list of which options are and are not available for jobs using the MySQL connector:
 
 |                             | **Feature**             | **Availability** |
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        | 
-|                             | Batch Update            | Available        | 
+|                             | Bulk Update             | Available        |
+|                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Available        |
-|                             | Disable Trigger         | Unavailable      | 
+|                             | Disable Trigger         | Unavailable      |
 |                             | Disable Constraint      | Unavailable      |
 |                             | Identity Column Support | Available        |
 | **On-The-Fly Masking Mode** | Restart Ability         | Unavailable      |
@@ -281,10 +281,10 @@ The SAP ASE (Sybase) connector supports profiling and masking/tokeniztion featur
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        | 
-|                             | Batch Update            | Available        | 
+|                             | Bulk Update             | Available        |
+|                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Available        |
-|                             | Disable Trigger         | Available        | 
+|                             | Disable Trigger         | Available        |
 |                             | Disable Constraint      | Available        |
 |                             | Identity Column Support | Available        |
 | **On-The-Fly Masking Mode** | Restart Ability         | Available        |
@@ -321,10 +321,10 @@ The DB2 for z/OS and iSeries connectors support profilinng and masking/tokenizat
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        | 
-|                             | Batch Update            | Available        | 
+|                             | Bulk Update             | Available        |
+|                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Unavailable      |
-|                             | Disable Trigger         | Unavailable      | 
+|                             | Disable Trigger         | Unavailable      |
 |                             | Disable Constraint      | Unavailable      |
 |                             | Identity Column Support | Unavailable      |
 | **On-The-Fly Masking Mode** | Restart Ability         | Unavailable      |
@@ -358,10 +358,10 @@ The AWS RDS connector supports profilinng and masking/tokenization features. Bel
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        | 
-|                             | Batch Update            | Available        | 
+|                             | Bulk Update             | Available        |
+|                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Available        |
-|                             | Disable Trigger         | Available        | 
+|                             | Disable Trigger         | Available        |
 |                             | Disable Constraint      | Available        |
 | **On-The-Fly Masking Mode** | Restart Ability         | Available        |
 |                             | Truncate                | Available        |
@@ -385,5 +385,3 @@ Much of the time data will live outside of databases. The data can be stored in 
 | **Delimited**            | Supported         |
 | **XML**                  | Supported         |
 | **JSON**                 | Not Supported     |
-
-

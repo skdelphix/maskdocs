@@ -52,7 +52,7 @@ These concepts are the high level concepts users run into.
 </tr>
 <tr class="odd">
 <td>Ruleset</td>
-<td>A rule set is group of tables or flat files within a particular data source that a user may choose to run profile, masking, or tokenizaiton jobs on.</td>
+<td>A rule set is group of tables or flat files within a particular data source that a user may choose to run profile, masking, or tokenization jobs on.</td>
 </tr>
 </tbody>
 </table>

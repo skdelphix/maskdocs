@@ -1,4 +1,4 @@
-# Prerequisites 
+# Prerequisites
 
 This section will detail the hardware/software requirements needed to
 deploy the Delphix Engine with the Masking service. The Delphix
@@ -17,7 +17,7 @@ run inside the same virtual machine. Always use seperate, dedicated Delphix Engi
 
 ## Client Web Browser
 
-The Delphix Engine's graphical interface can be accessed from a variety of 
+The Delphix Engine's graphical interface can be accessed from a variety of
 different web browsers. The Delphix Engine currently supports the following web browsers:
 
 * Microsoft Internet Explorer 10.0 or higher
@@ -59,7 +59,7 @@ page in the engine’s memory.
 !!! tip "TIP - Do not allocate all memory to the Delphix Engine"
 
     Never allocate all available physical memory to the Delphix VM. You must set aside memory for the ESX Server to perform hypervisor activities before you assign memory to Delphix and other VMs. The default ESX minimum free memory requirement is 6% of total RAM. When free memory falls below 6%, ESX starts swapping out the Delphix guest OS. We recommend leaving about 8-10% free to avoid swapping
-    
+
     For example, when running on an ESX Host with 512GB of physical memory, allocate no more than 470GB (92%) to the Delphix VM (and all other VMs on that host).
 
 #### Delphix Engine System Disk Storage
@@ -77,7 +77,7 @@ memory reservation was not enabled for the Delphix Engine.
 
 This section covers the virtual machine requirements for installation of
 a dedicated Delphix Masking Engine on Amazon's Elastic Cloud Compute
-(EC2) platform. 
+(EC2) platform.
 
 For best performance, the Delphix Masking Engine and all database
 servers should be in the same AWS region.
@@ -152,7 +152,7 @@ Requirements for AWS EC2 Platform</span>](https://docs.delphix.com/docs/system-i
 
 #### Network Configurations
 
-You must deploy the Delphix Engine and all database or file hosts 
+You must deploy the Delphix Engine and all database or file hosts
 in a VPC network to ensure that private IP addresses are
 static and do not change when you restart instances. When adding
 environments to the Delphix Engine, you must use the host's VPC (static
@@ -185,33 +185,24 @@ estimated IO workload on the Delphix Engine. Provisioned IOPs volumes
 must be configured with a volume size at least 30 GiB times the number
 of provisioned IOPs. For example, a volume with 3,000 IOPS must be
 configured with at least 100 GiB.
-  
+
 I/O requests of up to 256 kilobytes (KB) are counted as a single I/O
 operation (IOP) for provisioned IOPs volumes. Each volume can be
 configured for up to 4,000 IOPs.
 
 #### General Storage Configurations
 
-Allocate initial storage equal to the size of the physical source
-databases. For high redo rates and/or high DB change rates, allocate an
-additional 10-20% storage.
+The minimum recommended storage on the Delphix Engine System Disk is 300GB. The System disk may need to be substantially larger if bulk logging will be enabled. The actual size will depend on the data being masked.
 
-Add storage when storage capacity approaches 30% free. Keep all EBS
-volumes the same size. Add new storage by provisioning new volumes of
-the same size.
+Add storage when storage capacity approaches 30% free. Keep all EBS volumes the same size. Add new storage by provisioning new volumes of the same size.
 
-Maximize Delphix Engine RAM for a larger system cache to service reads.
-Use at least 3 EBS volumes to maximize performance. This enables the
-Delphix File System (DxFS) to make sure that its file systems are always
-consistent on disk without additional serialization. This also enables
-the Delphix Engine to achieve higher I/O rates by queueing more I/O
-operations to its storage.
+Use at least 3 EBS volumes to maximize performance. This enables the Delphix File System (DxFS) to make sure that its file systems are always consistent on disk without additional serialization. This also enables the Delphix Engine to achieve higher I/O rates by queueing more I/O operations to its storage.
 
 ## Azure Platform
 
 This section covers the virtual machine requirements for installation of
 a dedicated Delphix Masking Engine on Microsoft's Azure cloud platform.  
-  
+
 For best performance, the Delphix Masking Engine and all database
 servers should be in the same Azure Region.
 

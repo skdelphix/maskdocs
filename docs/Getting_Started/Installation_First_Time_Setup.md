@@ -35,13 +35,9 @@ getting your OVA installed:
     datastore can be thin-provisioned and must have enough free space
     to accommodate the 300GB comprising the Delphix operating system.
 
-  9. Select four (4) or more data stores for Database
-    Storage for the Delphix Engine. The Delphix Engine will stripe all
-    of the Database Storage across these VMDKs, so for optimal I/O
-    performance each VMDK must be equal in size and be configured
-    Thick Provisioned - Eager Zeroed. Additionally, these VMDKs should
-    be distributed as evenly as possible across all four SCSI I/O
-    controllers, as described in KB045 Re-configuring Controllers.
+  9. The Delphix VM Configuration Storage requires a minimum of 10GB. The VMFS volume should have enough available space to hold all ESX configuration and log files associated with the Delphix Engine.
+
+      The Delphix Engine system disk should be stored in a VMDK system drive. The VMFS volume where the .ova is deployed should therefore have at least 300GB of free space prior to deploying the .ova. The VMFS volume must be located on shared storage in order to use vMotion and HA features.	
 
   10. Select the virtual network you want to use. If using
     multiple physical NICs for link aggregation, you must use vSphere
@@ -70,12 +66,12 @@ getting your AMI installed:
 
   2. On the Amazon Web Services Account Details form
     presented:
-    
+
       - Enter your AWS Account Identifier, which can be found here:
         https://console.aws.amazon.com/billing/home?\#/account. If you
         want to use the GovCloud AWS Region, be sure to enter the ID
         for the AWS Account which has GovCloud enabled.
-    
+
       - Select which AWS Region you would like the AMI to be shared
         in. If you would like the AMI shared in a different region,
         contact your Delphix account representative to make the proper
@@ -109,7 +105,7 @@ VHD installed:
     to learn how to activate the masking service now that you have the
     software installed.
 
-## Activating the Masking Service 
+## Activating the Masking Service
 
 Once you have installed your Delphix Engine, you will need to activate
 the masking service through the CLI and then set up your first
@@ -130,13 +126,13 @@ To activate the Masking service via the CLI, do the following:
 
   5. Change the **Admin** password to a unique value for
     your installation.
-    
+
      a.  To change the password, go to the **Admin** tab.
-    
+
      b.  Click **Users**.
-    
+
      c.  Edit the **Admin** user.
-     
+
      d.  Change the **Admin** user's password.
 
 Congratulations\! You are now ready to start using the masking service\!
