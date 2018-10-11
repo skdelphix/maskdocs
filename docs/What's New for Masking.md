@@ -1,4 +1,4 @@
-# What's New for Masking Engines
+# What's New for Masking
 ## Synchronizing Masking Jobs & Universal Settings Across Engines
 In 5.2 we introduced the ability to synchronize Masking Algorithms between engines to ensure consistent masking, regardless of the engine executing the masking. In 5.3 are expanding the list of syncable objects to include:
 
@@ -75,4 +75,3 @@ In addition to the net new API endpoints, we have improved pre-existing API endp
 - Addition of dataType to column metadata
 
 For more information please on Delphix Masking APIs please see [API documentation](https://maskingdocs.delphix.com/Delphix_Masking_APIs/Masking_Client/Masking_API_Client/).  Please note that the previous generation of Masking APIs (commonly referred to as V4) is EOL and no longer supported in this release. All users are encouraged to migrate to the V5 APIs.
-
