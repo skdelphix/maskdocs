@@ -249,6 +249,13 @@ Controls how many minutes the password reset link is valid for.
 <td>MSAD Domain for LDAP authentication</td>
 <td>AD</td>
 </tr>
+<tr class="odd">
+<td></td>
+<td>LdapTlsEnable</td>
+<td>Boolean</td>
+<td>Enable and disable the use of TLS for LDAP connections.</td>
+<td>false</td>
+</tr>
 </tbody>
 </table>
 
