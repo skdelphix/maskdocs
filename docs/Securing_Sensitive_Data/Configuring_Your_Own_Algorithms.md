@@ -4,7 +4,7 @@ This section describes how users can configure their own algorithms
 using Delphix’s built in algorithm frameworks.
 
 
-## Algorithm Settings 
+## Algorithm Settings
 
 The **Algorithm** tab displays algorithm Names along with Type and
 Description. This is where you add (or create) new algorithms. The
@@ -16,12 +16,12 @@ decrypted during the masking process.
 
 ## Creating New Algorithms
 
-If none of the default algorithms meet your needs, you might want to 
+If none of the default algorithms meet your needs, you might want to
 create a new algorithm.
 
-Algorithm Frameworks give you the ability to quickly and easily define the 
-algorithms you want, directly on the Settings page. Then, you can immediately 
-propagate them. Anyone in your organization who has the Delphix Masking Engine 
+Algorithm Frameworks give you the ability to quickly and easily define the
+algorithms you want, directly on the Settings page. Then, you can immediately
+propagate them. Anyone in your organization who has the Delphix Masking Engine
 can then access the information.
 
 Administrators can update **system**-defined algorithms. User-defined
@@ -44,8 +44,8 @@ algorithm.
 
 ## Choosing an Algorithm Framework
 
-See Out Of The Box Secure Methods/Algorithms for detailed description on each 
-Algorithm Framework. The algorithm framework you choose will depend on the 
+See Out Of The Box Secure Methods/Algorithms for detailed description on each
+Algorithm Framework. The algorithm framework you choose will depend on the
 format of the data & your internal data security guidelines.
 
 ### Secure Lookup Algorithm Framework
@@ -88,7 +88,7 @@ To add a secure lookup algorithm:
 !!! info
     The masking engine supports lookup files saved in ASCII or UTF-8 format only. If the lookup file contains foreign alphabet characters, the file must be saved in UTF-8 format with no BOM (Byte Order Marker) for Masking Engine to read the Unicode text correctly. Some applications, e.g. Notepad on Windows, write a BOM (Byte Order Marker) at the beginning of Unicode files which irritates the masking engine and will lead to SQL update or insert errors when trying to run a masking job that applies a Secure Lookup algorithm that has been created based on a UTF-8 file that included a BOM.
 
-### Segmented Mapping ALgorithm Framework
+### Segmented Mapping Algorithm Framework
 
 1.  In the upper right-hand region of the **Algorithm** tab, click
     **Add Algorithm**.
@@ -251,7 +251,7 @@ to fail.
 
 10. When you are finished, click **Save**.
 
-Before you can use the algorithm by specifying it in a profiling 
+Before you can use the algorithm by specifying it in a profiling
 job, you must add it to a domain. If you are not using the
 Masking Engine Profiler to create your inventory, you do not need to
 associate the algorithm with a domain.
@@ -291,7 +291,7 @@ Once you have created an algorithm, you will need to associate it with a
 domain.
 
 1.  Navigate to the **Home\>Settings\>Domains** page and click **Add
-    Domain**. 
+    Domain**.
 
 2.  Enter a domain name.
 
@@ -417,13 +417,13 @@ To add a free text redaction algorith:
 3.  Save file as txt.
 
 4.  Create lookup file.
-    
+
     1.  Create a lookup file.
-    
+
     2.  Use notepad to create a txt file and save the file as a TXT.
         Be sure to hit return after each field. The lookup flat file
         contains the following data:
-    
+
             Bob
             Jones
             Agreement
