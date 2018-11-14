@@ -13,8 +13,8 @@ masking engines (in addition to the masking engine key).
 | Segmented Mapping        | Yes          | NA                                                    |
 | Mapping                  | No           | None                                                  |
 | Tokenization             | Yes          | NA                                                    |
-| Minmax                   | No           | Enter the same min, max and replacement values        |
-| Cleansing                | No           | Upload the same cleansing rules file                  |
+| Minmax                   | Yes          | NA                                                    |
+| Cleansing                | Yes          | NA                                                    |
 | Free Text Redaction      | No           | Enter the same redaction rules                        |
 | Custom Algorithm/Mapplet | Yes          | NA (see “Custom Algorithm Syncability Guide” section) |
 
@@ -28,8 +28,7 @@ While some of the built in algorithms are not synchronizable, mainly due
 to them being non-deterministic, we still can support export of
 inventories that contain any built in algorithm. We just do not
 guarantee consistent masking of those non-synchronizable built in
-algorithms between
-engines.
+algorithms between engines.
 
 | **Algorithm API Name**    | **Algorithm UI Name**     | **Type**     | **Syncable** | **Workaround**       |
 | ------------------------- | ------------------------- | ------------ | ------------ | -------------------- |
