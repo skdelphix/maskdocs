@@ -1,4 +1,4 @@
-# Overview
+# Kerberos Configuration
 
 ## Introduction
 
@@ -571,31 +571,31 @@ config changes.
 privileges to your kerberos authentication login on a particular database within
 the instance. Below is an example of doing so with the database **potatoes**:
 
-  `>> sql5
+  `>> sql5`
 
-  1> use potatoes
+  `1> use potatoes`
 
-  2> go
+  `2> go`
 
-  1> sp_addalias instructions, dbo
+  `1> sp_addalias instructions, dbo`
 
-  2> go
+  `2> go`
 
-  Alias user added.
+  `Alias user added.`
 
-  (return status = 0)`
+  `(return status = 0)`
 
 11. Now, to access the Sybase instance via kerberos and confirm success, you
 can do the following set of commands (I put these three lines into a script
 called **connect.sh** for future convenience):
 
-  `#!/bin/sh
+  `#!/bin/sh`
 
-  kinit -k -t /krb/v5srvtab <yourPrincipalName>
+  `kinit -k -t /krb/v5srvtab <yourPrincipalName>`
 
-  export SYBASE='/opt/sybase/15-5'
+  `export SYBASE='/opt/sybase/15-5'`
 
-  /opt/sybase/15-5/OCS-15_0/bin/isql64 -V -SASE1550_S5`
+  `/opt/sybase/15-5/OCS-15_0/bin/isql64 -V -SASE1550_S5`
 
 **Testing by creating a Kerberos Connector on the Delphix Engine**
 
