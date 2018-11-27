@@ -48,9 +48,7 @@ the full complement of vCPUs even when resources are overcommitted.
 #### Virtual Memory
 
 The minimum amount of virtual memory is 16GB vRAM but we highly
-recommend 32GB or higher. The masking service on the Delphix Engine uses
-its memory to process database and file blocks. More memory provides better
-performance. Memory reservation is a requirement for the Delphix VM.
+recommend 32GB or higher. The masking service on the Delphix Engine uses its memory to process database and file blocks. More memory can sometimes improve performance. Memory reservation is a requirement for the Delphix VM.
 Overcommitting memory resources in the ESX server will significantly
 impact the performance of the Delphix Engine. Reservation ensures that
 the Delphix Engine will not stall while waiting for the ESX server to
