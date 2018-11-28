@@ -29,8 +29,8 @@ While user upload a file which contain \ in the file name. eg. file name:  \key.
 }
 ```
 
-Please refer the below screenshots.
+Please refer the below screenshot.
 
 ![](./media/api-response.png)
 
-In above screenshot \ is converted by \\ by Swagger API.
+In above screenshot ```\``` is converted by ```\\``` by Swagger API.
