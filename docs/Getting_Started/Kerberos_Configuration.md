@@ -17,6 +17,7 @@ validated by Delphix.
 Throughout this document, the following example values are used. To recreate
 these reference environments, these values must be replaced with real values
 appropriate for your network environment:
+
 - .bar.com - the DNS domain of then network
 - BAR.COM - the Kerberos domain
 - me-host - the hostname of the masking engine
@@ -34,16 +35,19 @@ You may see a warning indicating that special permission is required to enable K
 This warning can be ignored when enabling Kerberos for use with Masking only.
 In the following examples, `me-hosts` is the hostname of your masking engine.
 
-`$ ssh sysadmin@me-host.bar.com
+```
+$ ssh sysadmin@me-host.bar.com
 me-host> system
 me-host system> enableFeatureFlag
 me-host system enableFeatureFlag *> set name=KERBEROS
 me-host system enableFeatureFlag *> commit
-me-host system> exit`
+me-host system> exit
+```
 
 **Step 2** On the Delphix System Setup CLI, configure and enable Kerberos.
 
-`$ ssh sysadmin@me-host.bar.com
+```
+$ ssh sysadmin@me-host.bar.com
 me-host service> kerberos
 me-host service kerberos> update
 me-host service kerberos update *> set name=Kerberos_Conf
@@ -54,7 +58,8 @@ me-host service kerberos update kdcs *> back
 me-host service kerberos update *> set realm=BAR.COM
 me-host service kerberos update *> set principal=krbuser
 me-host service kerberos update *> set keytab=_krbuser_keytab_base64_
-me-host service kerberos update *> commit`
+me-host service kerberos update *> commit
+```
 
 In this case, **_krbuser_keytab_base64_** is the base64 encoded contents of the
  keytab file for krbuser. The kerberos keytab for a user is typically available
@@ -108,6 +113,7 @@ environment and security needs.
 
 This document describes how to set up an Oracle DB instance for kerberized
 connections. The following steps are described:
+
 - Creating a service principal and adding it to the DB system
 - Configuring the database to use kerberos authentication
 - Creating DB users identified via kerberos
@@ -121,6 +127,7 @@ database versions 11.2.0.2, 11.2.0.4 and 12.2.1. Oracle database version
 12.1.0.1 did not work in our testing.
 
 You will need the following from your kerberos environment:
+
 - The krb5.conf file
 - A user principal and associated password or keytab you'd like to use to log
   into the database
@@ -128,15 +135,15 @@ You will need the following from your kerberos environment:
 
 This section of the document uses these example values in addition to those
 mentioned above:
+
 - The oracle database is: ora-db.bar.com.
 - The oracle service name is: oracle
 
 **Creating the Oracle Service Principal**
 
-The service principal will be named:
-<service_name>/<hostname>@<domain>
-Given our default values above, this works out to:
-oracle/ora-db@bar.com
+The service principal will be named: <service_name>/<hostname>@<domain>
+
+Given our default values above, this works out to: oracle/ora-db@bar.com
 
 Notice that the hostname is whatever the database system thinks its hostname
 is - that is, the output of "uname -n" on the database system, rather than the
@@ -145,9 +152,11 @@ same, but this is not always the case.
 
 On the KDC, run:
 
-`# kadmin.local
+```
+# kadmin.local
 kadmin.local: addprinc -randkey oracle/ora-db@bar.com
-kadmin.local: ktadd -norandkey -k /var/tmp/ora-db.keytab oracle/ora-db@bar.com`
+kadmin.local: ktadd -norandkey -k /var/tmp/ora-db.keytab oracle/ora-db@bar.com
+```
 
 Copy the resulting keytab file (/var/tmp/ora-db.keytab) to the Oracle DB system
 at this location:  /etc/v5srvtab
@@ -155,9 +164,10 @@ at this location:  /etc/v5srvtab
 As root on the Oracle DB system, ensure that the keytab has the correct
 permissions:
 
-`# chown root:oinstall /etc/v5srvtab`
-
-`# chmod 440 /etc/v5srvtab`
+```
+# chown root:oinstall /etc/v5srvtab
+# chmod 440 /etc/v5srvtab
+```
 
 Finally, this is a good opportunity to copy /etc/krb5.conf from the KDC to
 /etc/krb5.conf on the Oracle DB system. This file should be readable by all users.
@@ -166,26 +176,34 @@ Finally, this is a good opportunity to copy /etc/krb5.conf from the KDC to
 
 Log into the Oracle DB system as the appropriate use for the database in question.
 
-`$ cd $ORACLE_HOME
-$ vi network/admin/sqlnet.ora`
+```
+$ cd $ORACLE_HOME
+$ vi network/admin/sqlnet.ora
+```
 
 Add the following for Oracle 11:
 
-`SQLNET.KERBEROS5_CONF=/etc/krb5.conf
+```
+SQLNET.KERBEROS5_CONF=/etc/krb5.conf
 SQLNET.AUTHENTICATION_SERVICES=(BEQ,KERBEROS5)
 SQLNET.KERBEROS5_CONF_MIT=true
-SQLNET.AUTHENTICATION_KERBEROS5_SERVICE=oracle`
+SQLNET.AUTHENTICATION_KERBEROS5_SERVICE=oracle
+```
 
 Or the following for Oracle 12:
 
-`NAMES.DIRECTORY_PATH=(TNSNAMES, EZCONNECT, HOSTNAME)
+```
+NAMES.DIRECTORY_PATH=(TNSNAMES, EZCONNECT, HOSTNAME)
 SQLNET.KERBEROS5_CONF=/etc/krb5.conf
 SQLNET.AUTHENTICATION_SERVICES=(BEQ,KERBEROS5PRE,KERBEROS5)
 SQLNET.KERBEROS5_CONF_MIT=true
-SQLNET.AUTHENTICATION_KERBEROS5_SERVICE=oracle`
+SQLNET.AUTHENTICATION_KERBEROS5_SERVICE=oracle
+```
 
 If the database is Oracle 11 (not necessary on Oracle 12):
+
 `$ vi dbs/init.ora`
+
 Add this line at the end: `OS_AUTHENT_PREFIX=""`
 
 **Creating a DB User Identified via Kerberos**
@@ -197,6 +215,7 @@ database session as the DBA:
 
 On Oracle 12, you may wish to alter your session to create the user in one of
 the PDBs:
+
 `SQL> alter session set container=MYPDB;`
 
 Create the user that will connect to the DB using kerberos:
@@ -213,30 +232,22 @@ Oracle 11:
 
 Oracle 12: (Customize permissions as necessary for your environment).
 
-`SQL> grant connect,resource to krbdbuser;
-
+```
+SQL> grant connect,resource to krbdbuser;
 SQL> grant create tablespace, drop tablespace to krbdbuser;
-
 SQL> grant create table to krbdbuser;
-
 SQL> grant create sequence to krbdbuser;
-
 SQL> grant select_catalog_role to krbdbuser;
-
 SQL> grant unlimited tablespace to krbdbuser;
-
 SQL> grant select_catalog_role to krbdbuser;
-
 SQL> grant alter system to krbdbuser;
-
 SQL> grant sysoper to krbdbuser;
-
-SQL> grant dba to krbdbuser;`
-
+SQL> grant dba to krbdbuser;
+```
 
 **Troubleshooting Tips**
 
-- Connecting via JDBC with kerberos authentication from Delphix Masking involves two steps - a kerberos login, followed by JDBC connect. A failure stack with an error in the login function indicates a misconfiguration on either the engine or KDC - the engine hasn't even attempted to communicate with the database at that point. Failure stacks are saved in the debugging log for masking.
+- Connecting via JDBC with kerberos authentication from Delphix Masking involves two steps: a kerberos login, followed by JDBC connect. A failure stack with an error in the login function indicates a misconfiguration on either the engine or KDC - the engine hasn't even attempted to communicate with the database at that point. Failure stacks are saved in the debugging log for masking.
 - Login exceptions that mention a checksum error mean either the password or keytab supplied doesn't match the expected password/key on the KDC for the principal you're trying to use. Server Setup verifies that your keytab works at configuration time, but it could stop working if the key for your principal is updated on the KDC.
 - Prior to version 12, Oracle databases instances assume they can create/write a particular temporary file to store kerberos credentials for the DB. This means if you attempt to run multiple kerberized instances of Oracle 11 on the same system or VM, and the databases run as different system users, the first Oracle instance that performs kerberos auth will create and own this file. Kerberos authentication will fail to function on all other instances.
 
@@ -250,6 +261,7 @@ already uses Kerberos for authentication, little or no additional configuration
 is need on the MS SQL Database server.
 
 The following steps are described in this section:
+
 - Create the necessary SPNs (Service Principal Names) for your MSSQL Database service in AD
 - Create the DB Connector on the masking engine
 - Creating a keytab for an AD User
@@ -265,6 +277,7 @@ The example below assumes this kind of configuration.
 
 This section of the document uses these example values in addition to or instead
 of those mentioned above:
+
 - The MSSQL server database is named mssql-db.bar.com.
 - The AD user configured for masking access to the MSSQL database is aduser (rather than krbuser in other examples elsewhere in this document).
 - The AD user that start the MS SQL Server service on the DB Server is dbuser.
@@ -276,9 +289,10 @@ However, there are several conditions which can cause these SPNs to not be
 registered successfully, or to be registered with service names other than those
 that are expected by the jTDS JDBC driver employed by Delphix Masking.
 
-The service principal name for an MS SQL Server expected by Delphix Masking is:
-MSSQLSvc/<FQDN>:<PORT>
+The service principal name for an MS SQL Server expected by Delphix Masking is: MSSQLSvc/<FQDN>:<PORT>
+
 For example, the SPN for our example MS SQL Server would be:
+
 `MSSQLSvc/mssql-db.bar.com:1433`
 
 In addition, it is **required** that a reverse mapping exist in DNS from the IP
@@ -299,7 +313,6 @@ Here's how to create the SPN describe above:
 
 `setspn -U -S MSSQLSvc/mssql-db.bar.com:1433 dbuser`
 
-
 **Creating the Database Connector on the Masking Engine**
 
 Once the above steps are complete, creating the database connector can be
@@ -316,64 +329,51 @@ manually, to avoid having a password in the DB Connector.
 
 On a unix or MAC system with MIT kerberos CLI utilities installed:
 
-`# ktutil`
+```
+# ktutil
+ktutil: addent -password -p krbuser -k 1 -e arcfour-hmac
+<type password for krbuser>
+ktutil: addent -password -p krbuser -k 1 -e aes128-cts-hmac-sha1-96
+<type password for krbuser>
+ktutil: addent -password -p krbuser -k 1 -e aes256-cts-hmac-sha1-96
+<type password for krbuser>
+ktutil: write_kt /var/tmp/krbuser.keytab
+ktutil: exit
+# base64 /var/tmp/krbuser.keytab ;# This is string to user for keytab in Server Setup kerberos configuration
+```
 
-`ktutil: addent -password -p krbuser -k 1 -e arcfour-hmac`
-
-`<type password for krbuser>`
-
-`ktutil: addent -password -p krbuser -k 1 -e aes128-cts-hmac-sha1-96`
-
-`<type password for krbuser>`
-
-`ktutil: addent -password -p krbuser -k 1 -e aes256-cts-hmac-sha1-96`
-
-`<type password for krbuser>`
-
-`ktutil: write_kt /var/tmp/krbuser.keytab`
-
-`ktutil: exit`
-
- `# base64 /var/tmp/krbuser.keytab ;# This is string to user for keytab in Server Setup kerberos configuration`
-
-**Note**
-kvno doesn't matter when using kerberos keytabs with AD. The password must match
-the active password for the AD user in question.
+!!! note
+    kvno doesn't matter when using kerberos keytabs with AD. The password must match the active password for the AD user in question.
 
 **Troubleshooting Tips**
 
 The client uses the incorrect service name
 This will typically manifest an exception mentioning cred, like:
 
-`Caused by: org.ietf.jgss.GSSException: No valid credentials provided (Mechanism level: Fail to create credential. (63) - No service creds)`
-
-  `at sun.security.jgss.krb5.Krb5Context.initSecContext(Krb5Context.java:770)`
-
-  `at sun.security.jgss.GSSContextImpl.initSecContext(GSSContextImpl.java:248)`
-
-  `at sun.security.jgss.GSSContextImpl.initSecContext(GSSContextImpl.java:179)`
-
-  `at com.microsoft.sqlserver.jdbc.KerbAuthentication.intAuthHandShake(KerbAuthentication.java:163)
-        ... 101 common frames omitted`
-
-`Caused by: sun.security.krb5.internal.KrbApErrException: Fail to create credential. (63) - No service creds`
-  `at sun.security.krb5.internal.CredentialsUtil.acquireServiceCreds(CredentialsUtil.java:162)`
-
-  `at sun.security.krb5.Credentials.acquireServiceCreds(Credentials.java:458)`
-
-  ` at sun.security.jgss.krb5.Krb5Context.initSecContext(Krb5Context.java:693)
+```
+Caused by: org.ietf.jgss.GSSException: No valid credentials provided (Mechanism level: Fail to create credential. (63) - No service creds)
+  at sun.security.jgss.krb5.Krb5Context.initSecContext(Krb5Context.java:770)
+  at sun.security.jgss.GSSContextImpl.initSecContext(GSSContextImpl.java:248)
+  at sun.security.jgss.GSSContextImpl.initSecContext(GSSContextImpl.java:179)
+  at com.microsoft.sqlserver.jdbc.KerbAuthentication.intAuthHandShake(KerbAuthentication.java:163)
+        ... 101 common frames omitted
+Caused by: sun.security.krb5.internal.KrbApErrException: Fail to create credential. (63) - No service creds
+  at sun.security.krb5.internal.CredentialsUtil.acquireServiceCreds(CredentialsUtil.java:162)
+  at sun.security.krb5.Credentials.acquireServiceCreds(Credentials.java:458)
+   at sun.security.jgss.krb5.Krb5Context.initSecContext(Krb5Context.java:693)
         ... 104 common frames omitted
-`
+```
 
 Why might this happen:
+
 - You're using the JTDS JDBC driver, and your MSSQL Server's IP address doesn't
  have a reverse mapping in DNS. In this case, the driver may construct a service
- name like: MSSQLSvc/<IP>:<PORT> and try to use that.  Either correct DNS to have
- a valid reverse mapping for the IP of your SQL server, or manually add an SPN to
- active directory for the name the JDBC client is trying to use:
- - Determine the user that starts MSSQL Server on your DB machine.
- - From powershell, do: setspn -AU MSSQLSvc/<IP>:1433 <USER>
-   Example: setspn -AU MSSQLSvc/10.43.100.101:1433 AD\dbuser
+ name like: MSSQLSvc/<IP>:<PORT> and try to use that.  Either correct DNS to have a valid reverse mapping for the IP of your SQL server, or manually add an SPN to active directory for the name the JDBC client is trying to use:
+    - Determine the user that starts MSSQL Server on your DB machine.
+    - From powershell, do: setspn -AU MSSQLSvc/<IP>:1433 <USER>
+
+         Example: setspn -AU MSSQLSvc/10.43.100.101:1433 AD\dbuser
+
 - The database server has multiple DNS names (FQDNs). In this case, SPNs may be
 registered only for some of them. It may be necessary to add SPNs for the other
 FQDNs as above.
@@ -382,10 +382,8 @@ the thousands) to the number of SPNs that may be registered for a given AD user.
 It is quite possible to hit this limit in an environment where many MS SQL Server
 VMs are actively created and destroyed with the same configuration.
 
-**Note**
-In Active Directory, setspn isn't creating a service principal with distinct key
-as is typical for services on MIT KDCs - rather it's mapping the service principal
-to the key for the AD user in question.
+!!! note
+    In Active Directory, setspn isn't creating a service principal with distinct key as is typical for services on MIT KDCs - rather it's mapping the service principal to the key for the AD user in question.
 
 **The SPN for the SQL Server is registered to the incorrect AD account**
 
@@ -418,11 +416,9 @@ This will unregister the SPN from that user
 4. Once you’ve created the principal and provided it a password, we need to
 generate a keytab for it. Do so via the following command:
 
-  `ktadd -norandkey -k v5srvtab krbuser`
+    `ktadd -norandkey -k v5srvtab krbuser`
 
-  In this case, v5srvtab is the keytab filename, and it will be placed into
-  whatever directory you’ve invoked kadmin.local from. Presumably this will be
-  the home directory of the machine.
+    In this case, v5srvtab is the keytab filename, and it will be placed into whatever directory you’ve invoked kadmin.local from. Presumably this will be the home directory of the machine.
 
 5. You now have everything you need done on the KDC, but you will need your
 keytab file later as well as the **krb5.conf** file that is located in the home
@@ -432,137 +428,95 @@ machine) that will be convenient for you to access later.
 **Configuring the Sybase image for Kerberos**
 
 1. Start up a Sybase database.
-  - **Note**: Each sybase database machine may have multiple sybase instances running
-  on it at a given point in time. In this case, I am configuring the ASE_1550_S5
-  instance, but these steps can be done on any instance so long as you change the
-  $SYBASE_HOME directories accordingly.
+    - **Note**: Each sybase database machine may have multiple sybase instances running on it at a given point in time. In this case, I am configuring the ASE_1550_S5 instance, but these steps can be done on any instance so long as you change the $SYBASE_HOME directories accordingly.
 2. Connect to the particular sybase instance you are working on and invoke the
 following sql statement:
 
-  `sp_configure ‘use security services’, 1`
+    `sp_configure ‘use security services’, 1`
 
-3. Continue to create a user with the same name as the principal name you created
-previously on the KDC, in this case **krbuser**:
+3. Continue to create a user with the same name as the principal name you created previously on the KDC, in this case **krbuser**:
 
-	 `sp_addlogin krbuser, <password>`
+	  `sp_addlogin krbuser, <password>`
 
 4. Change your **$SYBASE** environment variable to point to the sybase directory
 for whichever instance you are configuring. In this case, we want to do:
 
-  `export SYBASE=/opt/sybase/15-5`
+    `export SYBASE=/opt/sybase/15-5`
 
-5. Open the **$SYBASE/interfaces file**, and find the header for whichever Sybase
-instance you are configuring. In our case, it is **ASE_1550_S5**. You should see
-something that looks like this:
+5. Open the **$SYBASE/interfaces file**, and find the header for whichever Sybase instance you are configuring. In our case, it is **ASE_1550_S5**. You should see something that looks like this:
 
-  `ASE1550_S5`
+        ASE1550_S5
+        master tcp ether 10.43.89.241 5500
+        master tcp ether localhost 5500
+        query tcp ether 10.43.89.241 5500
+        query tcp ether localhost 5500
 
-    `master tcp ether 10.43.89.241 5500`
+    You want to add the following line to this:
 
-    `master tcp ether localhost 5500`
+    `secmech 1.3.6.1.4.1.897.4.6.6`
 
-    `query tcp ether 10.43.89.241 5500`
+	  This line is static, while the other lines in this section are dynamically generated for your instance. So, your final result should look something like this:
 
-    `query tcp ether localhost 5500`
-
-
-
-
-  You want to add the following line to this:
-
-  `secmech 1.3.6.1.4.1.897.4.6.6`
-
-	This line is static, while the other lines in this section are dynamically generated for your instance. So, your final result should look something like this:
-
-  `ASE1550_S5`
-
-  `master tcp ether 10.43.89.241 5500` **< your numbers will vary**
-
-  `master tcp ether localhost 5500` **< your numbers will vary**
-
-  `query tcp ether 10.43.89.241 5500` **< your numbers will vary**
-
-  `query tcp ether localhost 5500` **< your numbers will vary**
+        ASE1550_S5
+        master tcp ether 10.43.89.241 5500 **< your numbers will vary**
+        master tcp ether localhost 5500 **< your numbers will vary**
+        query tcp ether 10.43.89.241 5500 **< your numbers will vary**
+        query tcp ether localhost 5500 **< your numbers will vary**
 
 
 6. Navigate to **$SYBASE/OCS-15_0/config**. You should see **libtcl64.cfg** and
 **libtcl.cfg**
 
-  a. Change the contents of **libtcl64.cfg** to be this:
+    a. Change the contents of **libtcl64.cfg** to be this:
 
-    `[DIRECTORY]`
+        [DIRECTORY]
+        ;ldap=libsybdldap.so ldap://ldaphost/dc=sybase,dc=com
+        [SECURITY]
+        csfkrb5=libsybskrb64.so secbase=@bar.com libgss=/lib64/libgssapi_krb5.so.2.2
+        [FILTERS]
+        ;ssl=libsybfssl.so
 
-    `;ldap=libsybdldap.so ldap://ldaphost/dc=sybase,dc=com`
+    b. Change the contents of **libtcl.cfg** to be this:
 
-    `[SECURITY]`
-    `csfkrb5=libsybskrb64.so secbase=@bar.com libgss=/lib64/libgssapi_krb5.so.2.2
-`
-    `[FILTERS]`
-    `;ssl=libsybfssl.so`
+        [DIRECTORY]
+        ;ldap=libsybdldap.so ldap://ldaphost/dc=sybase,dc=com
+        [SECURITY]
+        csfkrb5=libsybskrb.so secbase=@bar.com
+        libgss=/lib64/libgssapi_krb5.so.2.2
+        [FILTERS]
+        ;ssl=libsybfssl.so
 
-  b. Change the contents of **libtcl.cfg** to be this:
-
-      `[DIRECTORY]`
-
-      `;ldap=libsybdldap.so ldap://ldaphost/dc=sybase,dc=com`
-
-      `[SECURITY]`
-
-      `csfkrb5=libsybskrb.so secbase=@bar.com libgss=/lib64/libgssapi_krb5.so.2.2`
-
-      `[FILTERS]`
-
-      `;ssl=libsybfssl.so`
-
-  c. **Note** that the @bar.com value is our realm name that is determined by the KDC. Realistically, you should never have to deal with this, and it should never change, but if for some reason it does, that value needs to be updated.
+    c. **Note** that the @bar.com value is our realm name that is determined by the KDC. Realistically, you should never have to deal with this, and it should never change, but if for some reason it does, that value needs to be updated.
 
 7. Create a directory for those Kerberos config files you created on the KDC in
 the previous set of steps:
 
-  `sudo mkdir /krb`
+    `sudo mkdir /krb`
 
-  Copy into /krb your keytab file **v5srvtab** and config file **krb5.conf** that you
-  took off of the KDC earlier.
+    Copy into /krb your keytab file **v5srvtab** and config file **krb5.conf** that you took off of the KDC earlier.
 
 8. Head to **$SYBASE/ASE-15_0/install** and open the **RUN_ASE1550_S5** file.
 We’re going to add information so that Sybase knows where to find our
 keytab and our krb5.conf file, so change the content to look like this:
 
-  `#!/bin/sh`
-
-  `#`
-
-  `# ASE page size (KB) :    4096`
-
-  `# Master device path:   /opt/sybase/devices/data5/S5_master.dat`
-
-  `# Error log path:       /opt/sybase/errorlogs/ASE1550_S5.log`
-
-  `# Configuration file path:      /opt/sybase/15-5/ASE-15_0/ASE1550_S5.cfg`
-
-  `# Directory for shared memory files:    /opt/sybase/15-5/ASE-15_0`
-
-  `# Adaptive Server name: ASE1550_S5`
-
-  `#`
-
-  `export **KRB5_KTNAME**=/krb/v5srvtab`
-
-  `export **KRB5_CONFIG**=/krb/krb5.conf`
-
-  `/opt/sybase/15-5/ASE-15_0/bin/dataserver \`
-
-  `-kASE1550_S5@bar.com \`
-
-  `-d/opt/sybase/devices/data5/S5_master.dat \`
-
-  `-e/opt/sybase/errorlogs/ASE1550_S5.log \`
-
-  `-c/opt/sybase/15-5/ASE-15_0/ASE1550_S5.cfg \`
-
-  `-M/opt/sybase/15-5/ASE-15_0 \`
-
-  `-sASE1550_S5 \`
+        #!/bin/sh
+        #
+        # ASE page size (KB) :    4096
+        # Master device path:   /opt/sybase/devices/data5/S5_master.dat
+        # Error log path:       /opt/sybase/errorlogs/ASE1550_S5.log
+        # Configuration file path:      /opt/sybase/15-5/ASE-15_0/ASE1550_S5.cfg
+        # Directory for shared memory files:    /opt/sybase/15-5/ASE-15_0
+        # Adaptive Server name: ASE1550_S5
+        #
+        export **KRB5_KTNAME**=/krb/v5srvtab
+        export **KRB5_CONFIG**=/krb/krb5.conf
+        /opt/sybase/15-5/ASE-15_0/bin/dataserver \
+        -kASE1550_S5@bar.com \
+        -d/opt/sybase/devices/data5/S5_master.dat \
+        -e/opt/sybase/errorlogs/ASE1550_S5.log \
+        -c/opt/sybase/15-5/ASE-15_0/ASE1550_S5.cfg \
+        -M/opt/sybase/15-5/ASE-15_0 \
+        -sASE1550_S5
 
 9. Reboot the Sybase instance you’re working so that it reads in all of these
 config changes.
@@ -571,31 +525,22 @@ config changes.
 privileges to your kerberos authentication login on a particular database within
 the instance. Below is an example of doing so with the database **potatoes**:
 
-  `>> sql5`
-
-  `1> use potatoes`
-
-  `2> go`
-
-  `1> sp_addalias instructions, dbo`
-
-  `2> go`
-
-  `Alias user added.`
-
-  `(return status = 0)`
+        >> sql5
+        1> use potatoes
+        2> go
+        1> sp_addalias instructions, dbo
+        2> go
+        Alias user added.
+        (return status = 0)
 
 11. Now, to access the Sybase instance via kerberos and confirm success, you
 can do the following set of commands (I put these three lines into a script
 called **connect.sh** for future convenience):
 
-  `#!/bin/sh`
-
-  `kinit -k -t /krb/v5srvtab <yourPrincipalName>`
-
-  `export SYBASE='/opt/sybase/15-5'`
-
-  `/opt/sybase/15-5/OCS-15_0/bin/isql64 -V -SASE1550_S5`
+        #!/bin/sh
+        kinit -k -t /krb/v5srvtab <yourPrincipalName>
+        export SYBASE='/opt/sybase/15-5'
+        /opt/sybase/15-5/OCS-15_0/bin/isql64 -V -SASE1550_S5
 
 **Testing by creating a Kerberos Connector on the Delphix Engine**
 
@@ -606,16 +551,15 @@ delphix user and run the following command:
 
 2. Log into the virtualization engine and proceed through first-time setup if
   you need to.
+
 3. Once first-time setup is complete, log into the Delphix Setup page, proceed
 to Preferences > Kerberos Configuration. Add the information for your KDC to
-configure it with the principal name you created earlier, **krbuser**. You can get
-the keytab by running the following command on your keytab file:
+configure it with the principal name you created earlier, **krbuser**. You can get the keytab by running the following command on your keytab file:
 
-  base64 v5srvtab
+    `base64 v5srvtab`
 
-  Copy the output as plaintext into the keytab field of the kerberos configuration box.
+    Copy the output as plaintext into the keytab field of the kerberos configuration box.
 
-  Finally, create a Sybase connector with parameters that look like this, and if
-  your “test connection” attempt succeeds you’re all set!
+4. Finally, create a Sybase connector with parameters that look like this, and if your “test connection” attempt succeeds you’re all set!
 
-  ![](./media/kerberos_connection.png)
+    ![](./media/kerberos_connection.png)
