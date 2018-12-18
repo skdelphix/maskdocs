@@ -1,5 +1,6 @@
 arrange:
   - index.md
+  - What's New for Masking.md
   - Getting_Started
   - Preparing_Data
   - Connecting_Data_to_Masking_Service
