@@ -16,7 +16,7 @@
     gate-release = 5.3.1.2
  [branch "5.3/release"]
     gate-allowed-issuetypes = 10405
-    gate-release = 5.3.1.0
+    gate-release = 5.3.2.0
  [branch "5.3/stage"]
     gate-allowed-issuetypes = 10405
-    gate-release = 5.3.2.0
+    gate-release = 5.3.3.0
