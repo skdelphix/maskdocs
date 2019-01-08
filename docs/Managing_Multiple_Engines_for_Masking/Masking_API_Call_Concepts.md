@@ -23,12 +23,18 @@ engine. The follow object types are currently supported:
   - KEY
   - Certain algorithms:
     - BINARYLOOKUP
+    - CLEANSING
     - DATE_SHIFT
     - LOOKUP
+    - MIN_MAX
+    - REDACTION
     - SEGMENT
     - TOKENIZATION
     - MAPPLET
   - MASKING_JOB
+  - PROFILE_EXPRESSION
+  - PROFILE_JOB
+  - PROFILE_SET
 
 The following lists the object types that are simply for the purpose of
 referencing a particular state of the exported object. These are not
@@ -37,6 +43,8 @@ explained in the latter sections.
 
   - ALGORITHM_REFERENCE
   - DOMAIN_REFERENCE
+  - PROFILE_EXPRESSION_REFERENCE
+  - PROFILE_SET_REFERENCE
   - SOURCE_DATABASE_CONNECTOR
   - SOURCE_FILE_CONNECTOR
 
@@ -214,11 +222,14 @@ with relevant error messages.
 ## Global Objects
 
 GLOBAL\_OBJECT is a syncable object type that is a collection of all
-syncable algorithms, DOMAIN(s), and KEY (global key). This represents
+syncable algorithms, DOMAIN(s), PROFILE\_SET(s), PROFILE\_EXPRESSION(s)
+and KEY (global key). This represents
 objects in the Masking Engine that are available across all
 environments, and are not a part of any specific environment. When a
-user requests to export GLOBAL\_OBJECT, every syncable algorithm and
-domain on the engine will be exported as the bundle. If a DOMAIN has a
+user requests to export GLOBAL\_OBJECT, every syncable algorithm, profile
+set, profile expression and
+domain on the engine will be exported as the bundle. If a DOMAIN,
+PROFILE\_SET, or PROFILE\_EXPRESSION has a
 dependency on a non-syncable algorithm, such as Mapping, it will not be
 exported.
 
@@ -228,17 +239,18 @@ be synchronized much less frequently than any masking job related metadata.
 Examples on how to use it will be available in the **Example User
 Workflow** section.
 
-## Algorithm and Domain References 
+## References Objects
 
 As mentioned in the *Global Objects* section, we expect the users to
 synchronize global objects and masking jobs at different frequencies. To
 avoid any unnecessary export of large algorithms, any objects
-(MASKING\_JOB, DATABASE\_RULESET, FILE\_FORMAT and FILE\_RULESET) that
+(MASKING\_JOB, PROFILE\_JOB, DATABASE\_RULESET, FILE\_FORMAT and FILE\_RULESET) that
 have dependencies on algorithms will export just the references to the
 objects by default. This way we check whether the necessary dependency
 exists on the importing engine by comparing the references; if not, we
-fail the import execution with an appropriate message. Domains are the
-one exception to this. Exporting a domain will also export the full
+fail the import execution with an appropriate message. Domains, profile 
+sets, and profile expressions are the
+exception to this. Exporting any of these objects will also export the full
 algorithm.
 
 ## On-The-Fly Masking Jobs 
@@ -259,4 +271,20 @@ in the export document. These source connectors are virtually identical
 to their DATABASE\_CONNECTOR and FILE\_CONNECTOR counterparts, but are
 represented differently in the OTF jobs to distinguish them from the
 target connector (i.e., DATABASE\_CONNECTOR or FILE\_CONNECTOR).
+
+## Circular Dependencies
+
+It is possible to have a set of objects that end up depending
+on each other. This would be the case if a PROFILE\_SET depended on a
+PROFILE\_EXPRESSION that depended on a DOMAIN that depended on a REDACTION
+algorithm that depended on the original PROFILE\_SET. The masking application
+will detect such scenarios on export and refuse to export such configurations.
+
+This can be worked around by creating a second PROFILE\_SET that contains
+PROFILE\_EXPRESSIONS that do not depend on a DOMAIN that depends on a REDACTION
+algorithm. Simply ensure that the regular expressions are the same in the newly
+created PROFILE\_EXPRESSIONs and assign the REDACTION algorithm to the new
+PROFILE\_SET instead. The REDACTION algorithm will function the same but the
+dependency loop will have been broken.
+
 

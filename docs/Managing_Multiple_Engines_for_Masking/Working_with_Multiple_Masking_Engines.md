@@ -32,6 +32,9 @@ following:
   - File Formats
   - Inventories
   - Masking Jobs
+  - Profile Expressions
+  - Profile Jobs
+  - Profile Sets
   - Rulesets
 
 You can move a subset of these objects between engines using the Masking

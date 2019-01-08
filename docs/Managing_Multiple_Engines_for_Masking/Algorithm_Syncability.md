@@ -15,7 +15,7 @@ masking engines (in addition to the masking engine key).
 | Tokenization             | Yes          | NA                                                    |
 | Minmax                   | Yes          | NA                                                    |
 | Cleansing                | Yes          | NA                                                    |
-| Free Text Redaction      | No           | Enter the same redaction rules                        |
+| Free Text Redaction      | Yes          | NA                                                    |
 | Custom Algorithm/Mapplet | Yes          | NA (see “Custom Algorithm Syncability Guide” section) |
 
 ## Built-In Algorithms

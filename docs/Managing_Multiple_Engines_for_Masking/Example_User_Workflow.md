@@ -222,6 +222,8 @@ BODY
 }
 ]
 ```
+!!!note
+    To sync a profile job, swap out the objectType for "PROFILE_JOB" and provide the id of the profile job to sync. Profile jobs are syncable starting in version 5.3.2.0.
 
 Expected Result:
 ```
