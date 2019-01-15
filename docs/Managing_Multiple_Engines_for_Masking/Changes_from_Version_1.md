@@ -13,6 +13,15 @@ them.
   - FILE_RULESET
   - GLOBAL_OBJECT
   - MASKING_JOB
+  - PROFILE_EXPRESSION (5.3.3.0)
+  - PROFILE_JOB (5.3.3.0)
+  - PROFILE_SET (5.3.3.0)
+
+We also added the following new syncable algorithms in 5.3.
+
+ - CLEANSING (5.3.2.0)
+ - MIN_MAX (5.3.2.0)
+ - REDACTION (5.3.3.0)
 
 ## Key per Algorithm
 
