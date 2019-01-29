@@ -5,8 +5,8 @@
 Syncable objects are external representations of objects within the
 masking engine that can be exported from one engine and imported into
 another. EngineSync currently supports exporting a subset of algorithms,
-the encryption key and all the objects necessary for a masking job. 
-Note: We do not currently support VSAM masking jobs.
+the encryption key and all the objects necessary for a masking job.
+Note: We do not currently support Mainframe masking jobs.
 
 ## Object Identifiers and Types
 
@@ -135,7 +135,7 @@ was imported:
 
 ```
 2017-07-19 10:17:06,075 [http-nio-8282-exec-4] INFO
-c.d.s.marshallers.SyncableMarshaller - Skipping import process for 
+c.d.s.marshallers.SyncableMarshaller - Skipping import process for
 {  
 "objectType": "DATABASE_CONNECTOR",  
 "id": {  
@@ -145,7 +145,7 @@ c.d.s.marshallers.SyncableMarshaller - Skipping import process for
 }, due to no discrepancy between the existing and importing object
 ```
 
-#### 
+####
 
 Depending on the object type, some define an object by a String (name)
 and some by an Integer (object id). Objects that can have the same name
@@ -209,7 +209,7 @@ import of B, the engine encounters an error. The import of A will roll
 back, and import of C will never execute. This will leave the engine in
 a state identical to the one it was in prior to the failed import.
 
-## Concurrent Sync Operations 
+## Concurrent Sync Operations
 
 To prevent race conditions with concurrent imports and jobs running, we
 currently do not allow concurrent import operations. We also do not
@@ -248,12 +248,12 @@ avoid any unnecessary export of large algorithms, any objects
 have dependencies on algorithms will export just the references to the
 objects by default. This way we check whether the necessary dependency
 exists on the importing engine by comparing the references; if not, we
-fail the import execution with an appropriate message. Domains, profile 
+fail the import execution with an appropriate message. Domains, profile
 sets, and profile expressions are the
 exception to this. Exporting any of these objects will also export the full
 algorithm.
 
-## On-The-Fly Masking Jobs 
+## On-The-Fly Masking Jobs
 
 By definition, On-The-Fly (OTF) masking jobs work with a source
 environment/connector and a target environment/connector, masking the
@@ -286,5 +286,3 @@ algorithm. Simply ensure that the regular expressions are the same in the newly
 created PROFILE\_EXPRESSIONs and assign the REDACTION algorithm to the new
 PROFILE\_SET instead. The REDACTION algorithm will function the same but the
 dependency loop will have been broken.
-
-

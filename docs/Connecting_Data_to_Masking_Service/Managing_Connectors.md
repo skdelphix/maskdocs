@@ -46,7 +46,7 @@ To create a new connector:
     may not be available in Basic Mode.
 
     ![](./media/create_connector.png)
-    
+
     The fields that appear on the Connector screen are specific to the selected
     Connector Type (see Connector Types below).
 
@@ -60,9 +60,9 @@ To edit a connector:
     connector you want to edit.
 
 2.  Change any information necessary. To change the password:
-    
+
     1.  Select the checkbox next to **Change Password**.
-    
+
     2.  In the field that appears, enter the new **password**.
 
     ![](./media/image3.png)
@@ -74,8 +74,9 @@ To edit a connector:
 To delete a connector, click the **Delete** icon to the far right of the
 connector name.
 
-!!! warning 
-    When you delete a connector, you also delete its rule sets and inventory data.
+**Warning:**
+    When you delete a connector, you also delete its rule sets and inventory
+    data.
 
 ## Connector Types
 
@@ -85,20 +86,19 @@ The fields that appear are specific to the DBMS Type you select. If you
 need assistance determining these values, please contact your database
 administrator.
 
-You can only create connectors for the databases and/or files listed. If
-your database or file type is not listed here, you cannot create a
-connector for it.
+You can only create connectors for the databases and/or files listed. If your
+database or file type is not listed here, you cannot create a connector for it.
 
   - **Connection Type** — (Oracle, MS SQL Server, and Sybase only) Choose a
     connection type:
-    
+
       - **Basic** — Basic connection information.
-    
+
       - **Advanced** — The full JDBC connect string including any database parameters.
 
   - **Connection Name** — The name of the database connector (specific
     for your Delphix application).
-    
+
   - **Schema Name** — The schema that contains the tables that this
     connector will access.
 
@@ -108,17 +108,17 @@ connector for it.
   - **Host Name/ IP** — The network host name or IP
     address of the database server.
 
-  - **Use Kerberos Authentication** - (Oracle only, optional) Whether to use 
-    kerberos to authenticate to the database. This box is clear by default. 
-    Before Kerberos may be used, the appliance must be properly configured - 
-    refer to these instructions (link to appliance kerberos configuration 
+  - **Use Kerberos Authentication** - (Oracle only, optional) Whether to use
+    kerberos to authenticate to the database. This box is clear by default.
+    Before Kerberos may be used, the appliance must be properly configured -
+    refer to these instructions (link to appliance kerberos configuration
     instructions[1]). If this box is checked, the application authenticates with
-    the kerberos KDC before connecting to the database, then uses its kerberos 
-    credentials to authenticate to the database instead of a login/password. 
-    When kerberos is enabled, the "Login ID" field is treated as the kerberos 
-    user principal name. The password, if supplied, is used to authenticate the 
-    user principal with the KDC. The password field may be left blank if the 
-    keytab set during appliance configuration contains keys for the user 
+    the kerberos KDC before connecting to the database, then uses its kerberos
+    credentials to authenticate to the database instead of a login/password.
+    When kerberos is enabled, the "Login ID" field is treated as the kerberos
+    user principal name. The password, if supplied, is used to authenticate the
+    user principal with the KDC. The password field may be left blank if the
+    keytab set during appliance configuration contains keys for the user
     principal.
 
   - **Login ID** — The user login this connector will use to connect to the database (not applicable
@@ -127,13 +127,13 @@ connector for it.
   - **Password** — The password associated with the Login ID or
     Username. (This password is stored encrypted.)
 
-  - **Principal Name** - (Kerberos Authentication only) The name of the Kerberos user principal 
-    to use when authenticating with the KDC. The realm portion of the principal may be omitted 
+  - **Principal Name** - (Kerberos Authentication only) The name of the Kerberos user principal
+    to use when authenticating with the KDC. The realm portion of the principal may be omitted
     if it matches the configured default realm.
 
-  - **Service Principal** - (Sybase with Use Kerberos Authentication only) The name of the 
+  - **Service Principal** - (Sybase with Use Kerberos Authentication only) The name of the
     Sybase service instance.
- 
+
   - **Port** — The TCP port of the server.
 
   - **SID** — (Oracle only) Oracle System ID (SID).
@@ -189,3 +189,6 @@ server.
     **Available Keys** dropdown appears. Choose a key from the dropdown. See
     Delphix Masking APIs for information on uploading public keys to the masking
     engine.
+
+    **Note:**
+    If you plan to do on-the-fly masking then you will need to create a separate environment and connector to be the source for the files to be masked. The masked files will get put into the directory pointed to by the connector you created previously (the target). However, the file path specified in the connector of the target rule set must point to an existing file the target directory. It does not have to be a copy of the file, just an entry in the directory with the same name. It will be replaced by the masked file.

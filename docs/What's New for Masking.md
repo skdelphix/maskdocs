@@ -63,7 +63,7 @@ In 5.2 we released an all-new set of API endpoints allowing for the automation o
 |  | GET /file-downloads/{fileDownloadId}|Download file|
 |System Information|GET /system-information | Get version, etc.|
 |Login/Logout|PUT /logout | User logout|
-|Executions|GET /execution-components | Status for a table, file, or VSAM file|
+|Executions|GET /execution-components | Status for a table, file, or Mainframe file|
 
 
 In addition to the net new API endpoints, we have improved pre-existing API endpoints. Some of the improvements include:

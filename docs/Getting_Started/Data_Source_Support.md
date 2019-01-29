@@ -24,7 +24,7 @@ data sources:
   - **Distributed Database:** DB2 LUW, Oracle, MS SQL, MySQL, SAP ASE
     (Sybase), PostgreSQL, MariaDB
 
-  - **Mainframe/Midrange:** DB2 Z/OS, DB2 iSeries, VSAM
+  - **Mainframe/Midrange:** DB2 Z/OS, DB2 iSeries, Mainframe
 
   - **PaaS Database:** AWS RDS Oracle
 
@@ -219,7 +219,7 @@ is led by some of the original developers of MySQL, who forked it due to
 concerns over its acquisition by Oracle Corporation.
 
 A MySQL Connector may be used to connect to either a MySQL or MariaDB
-database instanace.
+database instance.
 
 #### MySQL Support Matrix
 
@@ -277,7 +277,7 @@ Sybase Corporation which became part of SAP AG.
 
 #### Available Features
 
-The SAP ASE (Sybase) connector supports profiling and masking/tokeniztion features. Below is a list of which options are and are not available for jobs using the SAP ASE connector:
+The SAP ASE (Sybase) connector supports profiling and masking/tokenization features. Below is a list of which options are and are not available for jobs using the SAP ASE connector:
 
 |                             | **Feature**             | **Availability** |
 | -------------------------   | ---------------------   | ---------------- |
@@ -313,11 +313,11 @@ DB2 for z/OS and iSeries are relational database management systems that run on 
 | **9**       | Supported | N/A          |
 | **10**      | Supported | N/A          |
 | **11**      | Supported | N/A          |
-| **VSAM**    | Supported | N/A          |
+| **Mainframe**    | Supported | N/A          |
 
 #### Available Features
 
-The DB2 for z/OS and iSeries connectors support profilinng and masking/tokenization features. Below is a list of which options are and are not available for jobs using the DB2 and z/OS and iSeries connectors:
+The DB2 for z/OS and iSeries connectors support profiling and masking/tokenization features. Below is a list of which options are and are not available for jobs using the DB2 and z/OS and iSeries connectors:
 
 |                             | **Feature**             | **Availability** |
 | -------------------------   | ---------------------   | ---------------- |
@@ -354,7 +354,7 @@ re-sizable hardware capacity.
 | **11.2.04** | Supported         |
 
 #### Available Features
-The AWS RDS connector supports profilinng and masking/tokenization features. Below is a list of which options are and are not available for jobs using the AWS RDS connector:
+The AWS RDS connector supports profiling and masking/tokenization features. Below is a list of which options are and are not available for jobs using the AWS RDS connector:
 
 |                             | **Feature**             | **Availability** |
 | -------------------------   | ---------------------   | ---------------- |

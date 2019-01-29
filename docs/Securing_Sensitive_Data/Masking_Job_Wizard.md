@@ -1,5 +1,5 @@
 # Masking Job Wizard  
-The Delphix Masking job wizard enables users to create and modify masking jobs. 
+The Delphix Masking job wizard enables users to create and modify masking jobs.
 While the wizard facilitates a number of workflows and operations, more
 advanced functionality and a finer control of features is available directly
 in the masking application. The Job Wizard currently functions only with certain
@@ -33,7 +33,7 @@ While creating a masking job in the Job Wizard, you are able to do the following
 - Run an updated job immediately after the update
 
 !!! note
-    Operations marked with an asterisk are limited in the Job Wizard but fully supported in the main application. 
+    Operations marked with an asterisk are limited in the Job Wizard but fully supported in the main application.
 
 ## What is Not Supported in the Wizard
 The following data platforms and operations are not supported in the Job Wizard.
@@ -49,7 +49,7 @@ but are not currently supported in the Job Wizard:
 - Delimited File
 - Excel Sheet File
 - Fixed File
-- Mainframe - VSAM File
+- Mainframe File
 - XML File
 
 ### Unsupported Operations
@@ -79,7 +79,7 @@ in the upper right-hand corner, as highlighted in the screenshot below.
 ![](./media/create_job.png)
 
 ## Creating a New Masking Job
-The Job Wizard makes creating a new masking job much easier by guiding you 
+The Job Wizard makes creating a new masking job much easier by guiding you
 through the process. You can create new objects or choose to use existing ones
 that have already been defined.  When creating a new masking job, the Job Wizard
 follows this sequence:
@@ -96,7 +96,7 @@ You can navigate back and forth through the pages of the Job Wizard.
 !!! note
     If the product times out due to long inactivity, you will need to start over. |
 
-To create a new masking Job using the new Job Wizard, follow the procedure below: 
+To create a new masking Job using the new Job Wizard, follow the procedure below:
 
 1. Log into your Delphix Masking Engine and from the Welcome screen select  Run.
 2. Select the New radio button and enter a name for your Masking job.
@@ -111,7 +111,7 @@ To create a new masking Job using the new Job Wizard, follow the procedure below
    - Database - RDS Oracle
    - Database - Sybase
    ![] (./media/job_connection.png)
-7.Click Next. 
+7.Click Next.
 8. On the Rule Set screen select an existing Rule set or create a new one by clicking the Add button.
   ![] (./media/job_rule_set.png)
 9. Click Next.
@@ -149,4 +149,3 @@ data type.
 
  You cannot alter application and environment settings as part of the Modify
  flow, but you can do so in the main masking application.
-
