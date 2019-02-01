@@ -22,14 +22,14 @@ To create a new masking job:
     ![](./media/image7.png)
 
 2.  You will be prompted for the following information:
-    
+
     1.  **Job Name** — A free-form name for the job you are creating.
         Must be unique across the entire application.
-    
+
     2.  **Masking Method** — Select either **In-Place** or
         **On-The-Fly**. For more information on masking type, see Mask
         Data. \[Need to create this link\]
-    
+
     3.  **Multi Tenant** — Check box if the job is for a multi-tenant
         database.
 
@@ -60,15 +60,15 @@ To create a new masking job:
         are assigned in the inventory.
 
     10. **Mask Method** — Choose either of the following:
-    
+
         1.  **No. of Streams**—The number of parallel streams to use when
             running the jobs. For example, you can select two streams to
             run two tables in the Rule Set concurrently in the job instead
             of one table at a time.
-    
+
         2.  **Import** — When you click the Run icon, creates the mappings
             but does not execute the workflow. You later run the job.
-    
+
         3.  **Import and Run** — When you click the Run icon, creates the
             mappings and executes the workflow.
 
@@ -88,7 +88,7 @@ To create a new masking job:
 
         !!! info
             Multiple threads should not be used if the masking job contains any table without an index. Multi-threaded masking jobs can lead to deadlocks on the database engine.
-        
+
             Multiple threads can cause database engine deadlocks for databases using T-SQL If masking jobs fail and a deadlock error exists on the database engine, then reduce the number of threads.
 
     15. **Commit Size** — (optional) The number of rows to process before
@@ -110,9 +110,7 @@ To create a new masking job:
     18. **Disable Constraint** — (optional) Whether to automatically
         disable database constraints. The default is for this check box to
         be clear and therefore not perform automatic disabling of
-        constraints. For more information about database constraints, see
-        [<span class="underline">Enabling and Disabling Database
-        Constraints</span>](https://docs.delphix.com/display/DOCSDEV/.Scheduler+Tab+vJocacean#id-.SchedulerTabvJocacean-EnablingDisablingDatabaseConstraints).
+        constraints. For more information about database constraints.
 
     19. **Batch Update** — (optional) Enable or disable use of a batch for
         updates. A job's statements can either be executed individually,
@@ -135,10 +133,7 @@ To create a new masking job:
         a prescript file is already specified, you can click the
         **Delete** button to remove the file. (The Delete button only
         appears if a prescript file was already specified.) For
-        information about creating your own prescript files, see
-        [<span class="underline">Creating SQL Statements to Run Before and
-        After
-        Jobs</span>](https://docs.delphix.com/display/DOCSDEV/.Scheduler+Tab+vJocacean#id-.SchedulerTabvJocacean-creatingsqlstatementstorunbeforeandafter).
+        information about creating your own prescript files.
 
     23. **Postscript** — (optional) Specify the full pathname of a file
         that contains SQL statements to be run after the job finishes, or
@@ -146,10 +141,7 @@ To create a new masking job:
         a postscript file is already specified, you can click the
         **Delete** button to remove the file. (The Delete button only
         appears if a postscript file was already specified.) For
-        information about creating your own postscript files, see
-        [<span class="underline">Creating SQL Statements to Run Before and
-        After
-        Jobs</span>](https://docs.delphix.com/display/DOCSDEV/.Scheduler+Tab+vJocacean#id-.SchedulerTabvJocacean-creatingsqlstatementstorunbeforeandafter).
+        information about creating your own postscript files.
 
     24. **Comments** — (optional) Add comments related to this masking
         job.
