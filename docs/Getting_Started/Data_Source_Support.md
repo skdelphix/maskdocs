@@ -26,7 +26,8 @@ data sources:
 
   - **Mainframe/Midrange:** DB2 Z/OS, DB2 iSeries, Mainframe
 
-  - **PaaS Database:** AWS RDS Oracle
+  - **PaaS Database:** AWS RDS Oracle, RDS PostgreSQL, RDS MYSQL, RDS MariaDB,
+    RDS MS SQL Server
 
   - **Files:** Excel, Fixed Width, Delimited, XML
 
@@ -93,13 +94,14 @@ marketed by Oracle Corporation.
 
 #### Support Matrix
 
-| **Version** | **Linux**     | **Unix**      | **Windows**   |
-| ----------- | ------------- | ------------- | ------------- |
-| **10g**     | Supported     | Supported     | Supported     |
-| **11gR1**   | Supported     | Supported     | Supported     |
-| **11gR2**   | Supported     | Supported     | Supported     |
-| **12c**     | Supported     | Supported     | Supported     |
-| **12cR2**   | Supported as of 5.2.5.0 | Supported as of 5.2.5.0 | Supported as of 5.2.5.0 |
+| **Version** | **Linux**     | **Unix**      | **Windows**   | **AWS RDS** |
+| ----------- | ------------- | ------------- | ------------- | ----------- |
+| **10g**     | Supported     | Supported     | Supported     | N/A         |
+| **11gR1**   | Supported     | Supported     | Supported     | N/A         |
+| **11gR2**   | Supported     | Supported     | Supported     | Supported   |
+| **12c**     | Supported     | Supported     | Supported     | Supported   |
+| **12cR2**   | Supported     | Supported     | Supported     | N/A         |
+| **18c**     | Supported     | Supported     | Supported     | N/A         |
 
 #### Available Features
 
@@ -135,14 +137,14 @@ on another computer across a network (including the Internet).
 
 #### Support Matrix
 
-| **Version** | **Linux** | **Unix** | **Windows** |
-| ----------- | --------- | -------- | ----------- |
-| **2005**    | N/A       | N/A      | Supported   |
-| **2008**    | N/A       | N/A      | Supported   |
-| **2008 R2** | N/A       | N/A      | Supported   |
-| **2012**    | N/A       | N/A      | Supported   |
-| **2014**    | N/A       | N/A      | Supported   |
-| **2016**    | Supported | N/A      | Supported   |
+| **Version** | **Linux** | **Unix** | **Windows** | **AWS RDS** |
+| ----------- | --------- | -------- | ----------- | ----------  |
+| **2005**    | N/A       | N/A      | Supported   | N/A         |
+| **2008**    | N/A       | N/A      | Supported   | N/A         |
+| **2008 R2** | N/A       | N/A      | Supported   | Supported   |
+| **2012**    | N/A       | N/A      | Supported   | Supported   |
+| **2014**    | N/A       | N/A      | Supported   | Supported   |
+| **2016**    | Supported | N/A      | Supported   | Supported   |
 
 #### Available Features
 
@@ -174,14 +176,14 @@ PostgreSQL, often simply Postgres, is an object-relational database management s
 
 #### Support Matrix
 
-| **Version** | **Linux** | **Unix** | **Windows** |
-| ----------- | --------- | -------- | ----------- |
-| **9.2**     | Supported | Supported| Supported   |
-| **9.3**     | Supported | Supported| Supported   |
-| **9.4**     | Supported | Supported| Supported   |
-| **9.5**     | Supported | Supported| Supported   |
-| **9.6**     | Supported | Supported| Supported   |
-| **10**      | Supported | Supported| Supported   |
+| **Version** | **Linux** | **Unix** | **Windows** | **AWS RDS**  |
+| ----------- | --------- | -------- | ----------- | ------------
+| **9.2**     | Supported | Supported| Supported   | N/A          |
+| **9.3**     | Supported | Supported| Supported   | N/A          |
+| **9.4**     | Supported | Supported| Supported   | Supported    |
+| **9.5**     | Supported | Supported| Supported   | Supported    |
+| **9.6**     | Supported | Supported| Supported   | Supported    |
+| **10**      | Supported | Supported| Supported   | Supported    |
 
 #### Available Features
 
@@ -223,17 +225,17 @@ database instance.
 
 #### MySQL Support Matrix
 
-| **Version** | **Linux** | **Unix**  | **Windows** |
-| ----------- | --------- | --------- | ----------- |
-| **5.5**     | Supported | Supported | Supported   |
-| **5.6**     | Supported | Supported | Supported   |
-| **5.7**     | Supported | Supported | Supported   |
+| **Version** | **Linux** | **Unix**  | **Windows** | *AWS RDS**  |
+| ----------- | --------- | --------- | ----------- | ----------- |
+| **5.5**     | Supported | Supported | Supported   | Supported   |
+| **5.6**     | Supported | Supported | Supported   | Supported   |
+| **5.7**     | Supported | Supported | Supported   | Supported   |
 
 #### MariaDB Support Matrix
 
-| **Version** | **Linux** | **Unix**  | **Windows** |
-| ----------- | --------- | --------- | ----------- |
-| **10**      | Supported | Supported | Supported   |
+| **Version** | **Linux** | **Unix**  | **Windows** | **AWS RDS** |
+| ----------- | --------- | --------- | ----------- | ----------- |
+| **10**      | Supported | Supported | Supported   |Supported    |
 
 #### Available Features
 
@@ -337,6 +339,8 @@ The DB2 for z/OS and iSeries connectors support profiling and masking/tokenizati
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Available        |
 
+<<<<<<< HEAD
+=======
 ### AWS RDS Oracle Connector
 
 #### Introduction
@@ -372,6 +376,7 @@ The AWS RDS connector supports profiling and masking/tokenization features. Belo
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Available        |
 
+>>>>>>> 9294c62867d82e5d0a57fb8e84de07aef85628d8
 ### Files Connector
 
 #### Introduction
