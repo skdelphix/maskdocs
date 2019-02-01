@@ -2,4 +2,5 @@ arrange:
   - Managing_Environments.md
   - Managing_Connectors.md
   - Managing_Rule_Sets.md
-  - Managing_Domains.md
+  - Managing_File_Formats.md
+  - Managing_Inventories.md

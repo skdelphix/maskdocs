@@ -154,10 +154,10 @@ For example:
 
 ## Refreshing a Rule Set
 
-Refreshing a rule set will result in the columns in the tables in the rule set 
+Refreshing a rule set will result in the columns in the tables in the rule set
 being rescanned. As a result, the inventory associated with the rule set
 will also be refreshed, but any pre-existing algorithm assignments will be
-retained. 
+retained.
 
 To refresh a rule set:
 
@@ -173,7 +173,7 @@ To refresh a rule set:
 ## Copying a Rule Set
 
 If you copy a Rule Set, the inventory associated with that Rule Set
-will also be copied. Also, any filter conditions defined for that 
+will also be copied. Also, any filter conditions defined for that
 Rule Set will be copied.
 
 To copy a rule set:
@@ -201,7 +201,7 @@ set on the **Rule Set** screen.
 
 ## The Rule Set Screen
 
-From the **Rule Set** tab, click on a rule set to display the tables or 
+From the **Rule Set** tab, click on a rule set to display the tables or
 files in the rule set. The **Rule Set** screen appears.
 
 ![](./media/RuleSet.png)
@@ -411,14 +411,25 @@ To add or edit a list:
 3.  On the left, select **List**.
 
 4.  Edit the text file properties for this list.
-    
+
     1.  Select a **column**.
-    
+
     2.  Enter or browse for a **filename**.
-    
+
     3.  Files that have already been specified appear next to
         **Existing File**.
 
 5.  To remove an existing list file, click **Delete**.
 
 6.  Click **Save**.
+
+## Creating a Ruleset For File Formats
+
+Once you create a ruleset with a file or set of files, you will need to assign those files to their appropriate file format.
+
+This is accomplished by editing the ruleset. Click on the edit button for the file the Edit File window will appear with the file name. From the format drop-down select the proper format for the file.
+
+ - If the file is a Mainframe data sets file with a copybook you will see a checkbox to signify if the file is variable length.
+ - For all other file types, select the end-of-record to let Delphix know whether the file is in windows/dos format (CR+LF) or Linux format (LF).
+ - If the file is a delimited file you will have a space to put in the delimiter.
+ - If there are multiple files in the ruleset you will have to edit each one individually and assign it to the appropriate file format.
