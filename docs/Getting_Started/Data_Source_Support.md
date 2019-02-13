@@ -24,7 +24,7 @@ data sources:
   - **Distributed Database:** DB2 LUW, Oracle, MS SQL, MySQL, SAP ASE
     (Sybase), PostgreSQL, MariaDB
 
-  - **Mainframe/Midrange:** DB2 Z/OS, DB2 iSeries, Mainframe
+  - **Mainframe/Midrange:** DB2 Z/OS, DB2 iSeries, Mainframe data sets
 
   - **PaaS Database:** AWS RDS Oracle, RDS PostgreSQL, RDS MYSQL, RDS MariaDB,
     RDS MS SQL Server

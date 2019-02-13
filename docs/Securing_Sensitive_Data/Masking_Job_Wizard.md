@@ -49,7 +49,7 @@ but are not currently supported in the Job Wizard:
 - Delimited File
 - Excel Sheet File
 - Fixed File
-- Mainframe File
+- Mainframe Data Set
 - XML File
 
 ### Unsupported Operations
