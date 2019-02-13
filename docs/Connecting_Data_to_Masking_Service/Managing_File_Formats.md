@@ -25,7 +25,11 @@ To input the file format for fixed files create a text document with the column 
 - City,20
 - State,2
 
-Then input this file as the file format. The name of the text file will be the name of the file format. To create a format manually, you can just click the create format button and give the format a name. We will input the details of the format a little later in this document.
+Then input this file as the file format. The name of the text file will be the name of the file format.
+
+## To Create a New File Format
+
+To create a format manually, you can just click the create format button and give the format a name. We will input the details of the format a little later in this document.
 
 ![](./media/new_connector.png)
 
