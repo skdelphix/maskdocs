@@ -64,7 +64,7 @@ LUW:
 
 #### Available Features
 
-The DB2 LUW connector supports profiling and masking/tokenization features. Below is a list of which options are & are not available for jobs using the DB2 LUW connector:
+The DB2 LUW connector supports profiling and masking/tokenization features. Below is a list of which options are and are not available for jobs using the DB2 LUW connector:
 
 |                             | **Feature**             | **Availability** |
 | -------------------------   | ---------------------   | ---------------- |
@@ -187,7 +187,7 @@ PostgreSQL, often simply Postgres, is an object-relational database management s
 
 #### Available Features
 
-The PostgreSQL connector supports profiling and masking/tokenization features. Below is a list of which options are & are not available for jobs using the PostgreSQL connector:
+The PostgreSQL connector supports profiling and masking/tokenization features. Below is a list of which options are and are not available for jobs using the PostgreSQL connector:
 
 |                             | **Feature**             | **Availability**
 | -------------------------   | ---------------------   | ---------------- |
@@ -225,11 +225,11 @@ database instance.
 
 #### MySQL Support Matrix
 
-| **Version** | **Linux** | **Unix**  | **Windows** | *AWS RDS**  |
-| ----------- | --------- | --------- | ----------- | ----------- |
-| **5.5**     | Supported | Supported | Supported   | Supported   |
-| **5.6**     | Supported | Supported | Supported   | Supported   |
-| **5.7**     | Supported | Supported | Supported   | Supported   |
+| **Version** | **Linux** | **Unix**  | **Windows** | **AWS RDS**  |
+| ----------- | --------- | --------- | ----------- | ------------ |
+| **5.5**     | Supported | Supported | Supported   | Supported    |
+| **5.6**     | Supported | Supported | Supported   | Supported    |
+| **5.7**     | Supported | Supported | Supported   | Supported    |
 
 #### MariaDB Support Matrix
 
@@ -339,8 +339,6 @@ The DB2 for z/OS and iSeries connectors support profiling and masking/tokenizati
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Available        |
 
-<<<<<<< HEAD
-=======
 ### AWS RDS Oracle Connector
 
 #### Introduction
@@ -376,7 +374,6 @@ The AWS RDS connector supports profiling and masking/tokenization features. Belo
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Available        |
 
->>>>>>> 9294c62867d82e5d0a57fb8e84de07aef85628d8
 ### Files Connector
 
 #### Introduction
@@ -385,10 +382,10 @@ Much of the time data will live outside of databases. The data can be stored in 
 
 #### Support Matrix
 
-| **File Type/Format**     | **Support Level** |
-| ------------------------ | ----------------- |
-| **Excel (.xls & .xlsx)** | Supported         |
-| **Fixed Width**          | Supported         |
-| **Delimited**            | Supported         |
-| **XML**                  | Supported         |
-| **JSON**                 | Not Supported     |
+| **File Type/Format**       | **Support Level** |
+| -------------------------- | ----------------- |
+| **Excel (.xls and .xlsx)** | Supported         |
+| **Fixed Width**            | Supported         |
+| **Delimited**              | Supported         |
+| **XML**                    | Supported         |
+| **JSON**                   | Not Supported     |

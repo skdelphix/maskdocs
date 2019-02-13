@@ -46,7 +46,7 @@ algorithm.
 
 See Out Of The Box Secure Methods/Algorithms for detailed description on each
 Algorithm Framework. The algorithm framework you choose will depend on the
-format of the data & your internal data security guidelines.
+format of the data and your internal data security guidelines.
 
 ### Secure Lookup Algorithm Framework
 
