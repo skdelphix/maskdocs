@@ -184,6 +184,7 @@ PostgreSQL, often simply Postgres, is an object-relational database management s
 | **9.5**     | Supported | Supported| Supported   | Supported    |
 | **9.6**     | Supported | Supported| Supported   | Supported    |
 | **10**      | Supported | Supported| Supported   | Supported    |
+| **11**      | Supported | Supported| Supported   | Supported    |
 
 #### Available Features
 
