@@ -42,7 +42,7 @@ V5 APIs. See the following sections for instructions.
 
 
 
-## Best Practice Guide & Example Architectures for Synchronizing
+## Best Practice Guide and Example Architectures for Synchronizing
 
 Engine synchronization provides a general and flexible way to move
 masking algorithms and objects necessary to run an identical job on

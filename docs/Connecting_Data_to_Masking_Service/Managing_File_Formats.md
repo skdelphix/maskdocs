@@ -4,7 +4,7 @@
 
 Unlike databases files for the most part do not have built in metadata to describe the format of the fields in the file. You must provide this to Delphix so it can update the file appropriately. This is done through the settings tab where you will see a menu item on the left for File Format. Select File Format and you will see options to create a file format or input a file format. This will depend on the type of file and how you want to let Delphix know the format of the file.
 
-##Mainframe and XML files
+##Mainframe data sets and XML files
 
 For Mainframe data sets, you can specify the file format via Input Format option which will import the copybook directly into Delphix. You can input this file from SFTP or FTP. Please select Copybook as the Import Format Type.
 For XML files you can also input the file format with the input format option. You can use the file you want to mask as the format. Delphix will input the format of the file directly. You can input this file from SFTP or FTP. Please select XML as the Import Format Type.
@@ -25,7 +25,11 @@ To input the file format for fixed files create a text document with the column 
 - City,20
 - State,2
 
-Then input this file as the file format. The name of the text file will be the name of the file format. To create a format manually, you can just click the create format button and give the format a name. We will input the details of the format a little later in this document.
+Then input this file as the file format. The name of the text file will be the name of the file format.
+
+## To Create a New File Format
+
+To create a format manually, you can just click the create format button and give the format a name. We will input the details of the format a little later in this document.
 
 ![](./media/new_connector.png)
 

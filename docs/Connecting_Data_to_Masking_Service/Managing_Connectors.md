@@ -42,7 +42,7 @@ To create a new connector:
 
 2.  Several of our connector types offer two different modes of
     connecting, **Basic** and **Advanced Mode**. Advanced Mode gives you
-    the ability to specify the exact JDBC URL & add parameters that
+    the ability to specify the exact JDBC URL and add parameters that
     may not be available in Basic Mode.
 
     ![](./media/create_connector.png)

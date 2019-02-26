@@ -1,5 +1,5 @@
 # What's New for Masking Engines
-## Synchronizing Masking Jobs & Universal Settings Across Engines
+## Synchronizing Masking Jobs and Universal Settings Across Engines
 In 5.2 we introduced the ability to synchronize Masking Algorithms between engines to ensure consistent masking, regardless of the engine executing the masking. In 5.3 are expanding the list of syncable objects to include:
 
 - Masking Jobs
@@ -63,13 +63,13 @@ In 5.2 we released an all-new set of API endpoints allowing for the automation o
 |  | GET /file-downloads/{fileDownloadId}|Download file|
 |System Information|GET /system-information | Get version, etc.|
 |Login/Logout|PUT /logout | User logout|
-|Executions|GET /execution-components | Status for a table, file, or Mainframe file|
+|Executions|GET /execution-components | Status for a table, file, or Mainframe data set|
 
 
 In addition to the net new API endpoints, we have improved pre-existing API endpoints. Some of the improvements include:
 
-- Addition of DB2 iSeries & Mainframe to connector endpoints.
-- Addition of Kerberos configuration on Oracle, SQL Server & Sybase connectors
+- Addition of DB2 iSeries and Mainframe to connector endpoints.
+- Addition of Kerberos configuration on Oracle, SQL Server and Sybase connectors
 - Ability to have ruleset refresh drop tables
 - Support for XML file types
 - Addition of dataType to column metadata
