@@ -9,10 +9,17 @@ using Delphix’s built in algorithm frameworks.
 The **Algorithm** tab displays algorithm Names along with Type and
 Description. This is where you add (or create) new algorithms. The
 default algorithms and any algorithms you have defined appear on this tab.
-All algorithm values are stored encrypted. These values are only
-decrypted during the masking process.
 
-![](./media/image25.png)
+![](./media/AlgorithmSettings.png)
+
+At the top of the page, **If Nonconforming data is encountered** is
+displayed to specify how all algorithms should behave if they encounter data values
+in an unexpected format. **Mark job as Failed** instructs algorithms to throw
+an exception that will result in the job failing. **Mark job as Succeeded** instructs
+algorithms to ignore the nonconforming data and not throw an exception. Note that **Mark
+job as Succeeded** will result in the nonconforming data not being masked should
+the job succeed, but the **Monitor** page will display a warning that can be used to report
+the nonconforming data events.
 
 ## Creating New Algorithms
 
@@ -96,7 +103,7 @@ To add a secure lookup algorithm:
 2.  Select **Segment Mapping Algorithm**. The Create Segment Mapping
     Algorithm pane appears.
 
-    ![](./media/image19.png)
+    ![](./media/SegmentMappingAlgorithm.png)
 
 3.  Enter a **Rule Name**.
 
@@ -132,9 +139,19 @@ To add a secure lookup algorithm:
 
     If you need additional value fields, click **Add**.
 
-10. When you are finished, click **Save**.
+10. To override the behavior of the segment mapping algorithm when it encounters data values in an
+    unexpected format, you can change the selection under **If Nonconforming data is encountered**. 
+    By default, the segment mapping algorithm will **Use global setting** as specified on the **Algorithm Settings**
+    page. Selecting **Mark job as Failed** will instruct the segment mapping algorithm to throw
+    an exception that will result in the job failing. Selecting **Mark job as Succeeded** will instruct
+    the segment mapping algorithm to ignore the nonconforming data and not throw an exception. 
+    Note that **Mark job as Succeeded** will result in the nonconforming data not being masked should
+    the job succeed, but the **Monitor** page will display a warning that can be used to report the nonconforming
+    data events.
 
-11. Before you can use the algorithm in a profiling job,
+11. When you are finished, click **Save**.
+
+12. Before you can use the algorithm in a profiling job,
     you must add it to a domain. If you are not using
     the Masking Engine Profiler to create your inventory, you do not
     need to associate the algorithm with a domain.
