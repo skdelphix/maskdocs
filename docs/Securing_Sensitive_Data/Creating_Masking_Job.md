@@ -64,6 +64,11 @@ To create a new masking job:
 
         * **Stop job on first occurrence** - (optional) To abort a job on first occurrence of nonconforming data. The default is for this check box to be clear.
 
+        !!! info
+            The job behavior depends on the setting specified in the **If Nonconforming data is encountered** field on the **Algorithm Settings** page.
+            If **Mark job as Failed** is selected then the job would be aborted on first occurrence of nonconforming data.
+            If **Mark job as Succeeded** is selected then the job will not be aborted.
+
     11. **Commit Size** — (optional) The number of rows to process before
         issuing a commit to the database.
 
