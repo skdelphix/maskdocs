@@ -47,10 +47,63 @@ encountered can be accessed by clicking the Success or Fail icon next to each ta
 
 ![](./media/masking_report.png)
 
-Clicking the icon will bring up the masking report for the associated table or file, where the nonconforming data events are displayed followed by the masking log for the table or file. If there were
-not any nonconformant data event, "None" is displayed under **NONCONFORMING DATA**. Otherwise for each type of nonconforming data, a row will be displayed reporting the:
+The nonconforming data events are displayed followed by the masking log for the table or file. If there were no nonconformant data events, "None" is displayed under **NONCONFORMING DATA**, otherwise for each type of nonconforming data, a row will be displayed with the following information:
 
 - **Event type**: either JOB_ABORTED or UNMASKED_DATA if the job was not aborted.
 - **Cause**: always PATTERN_MATCH_FAILURE.
 - **Approximate Row Count**: approximate number of rows with nonconformant data (at least within an order of magnitude).
 - **Description**: details the name of the column or field with nonconformant data and the associated algorithm name along with samples of the top nonconforming data patterns.
+
+## Interpreting Samples of Nonconforming Data Patterns
+
+Each character in the nonconforming data is sampled per its [Unicode Character Property](https://en.wikipedia.org/wiki/Unicode_character_property).
+
+ - N for digits
+ - L for letters
+ - M for marks
+ - P for punctuation
+ - S for symbols
+ - Z for separator
+ - O for other
+ - U for unknown
+
+## Tracking Nonconforming Data
+
+!!! info
+    Please note that actual personal data is never displayed, only the samples (a.k.a. patterns) of nonconforming data are displayed on this page
+
+Using the DataBase specific SQL query, it is possible to locate data corresponding to the nonconforming data sample.
+The table and column names can be found on the table report.
+In the example above, the table name is "testdata_XML" and the column name is "RCHARS64_T1_0".
+
+!!! note
+    The pattern might be not an exact representation of the data in the field, but a part of the data. For instance, white spaces at the beginning or at the end of the data might be truncated.
+
+### Oracle DB specific example
+
+Below are the [Oracle character classes](https://docs.oracle.com/cd/B12037_01/server.101/b10759/ap_posix001.htm), used in the regular expression:
+
+| Character Class Syntax | Meaning |
+| --------------------- | ------- |
+| [:alnum:]	| All alphanumeric characters
+| [:alpha:]	| All alphabetic characters
+| [:blank:]	| All blank space characters.
+| [:cntrl:]	| All control characters (nonprinting)
+| [:digit:]	| All numeric digits
+| [:graph:]	| All [:punct:], [:upper:], [:lower:], and [:digit:] characters.
+| [:lower:]	| All lowercase alphabetic characters
+| [:print:]	| All printable characters
+| [:punct:]	| All punctuation characters
+| [:space:]	| All space characters (nonprinting)
+| [:upper:]	| All uppercase alphabetic characters
+| [:xdigit:]	| All valid hexadecimal characters
+
+For the LLLLL sample in the example above, Oracle DB SQL query would look like:
+```
+SELECT RCHARS64_T1_0 FROM testdata_XML WHERE regexp_like(PHONE_MASK, '[[:alpha:]]{5}');
+```
+For the LLLLZLLLZLLLL sample, the Oracle DB SQL query would look like:
+```
+SELECT RCHARS64_T1_0 FROM testdata_XML WHERE regexp_like(PHONE_MASK, '[[:alpha:]]{4}[[:space:]][[:alpha:]]{3}[[:space:]][[:alpha:]]{4}');
+```
+
