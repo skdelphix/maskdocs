@@ -84,6 +84,19 @@ they do not necessarily guaranteed to have the same revision hash.
 !!! note
     The revision\_hash does not change when the password or the ssh key for either the FILE\_CONNECTOR or DATABASE\_CONNECTOR is updated. This is intentionally done because we do not export the password or the ssh key for security purposes. This allows users to update the password after import without changing the revision\_hash. If a user is **overriding** a connector that already has a password set, the import **does not** reset the password and will leave the current, pre-import value.
 
+!!! Note
+    The revision\_hash may change from version to version, and the hash comparison should be done only if both the source engine and the target engine are on the same version of the product. It is also not guaranteed to be the same between two engines at the same version if they are synced from an engine at some other version. E.g. There are three engines as follows
+
+    | Engine | Version |
+    | ------ | ------- |
+    | A      | 5.3.2.0 |
+    | B      | 5.3.3.0 |
+    | C      | 5.3.3.0 |
+
+    If B and C are synced from A, then the revision\_hash is not guaranteed to be same between B and C.
+
+    **Best Practice:** A -> B -> C.
+
 ## Export Document
 
 You can export one or more syncable objects that are listed in the
@@ -136,12 +149,12 @@ was imported:
 ```
 2017-07-19 10:17:06,075 [http-nio-8282-exec-4] INFO
 c.d.s.marshallers.SyncableMarshaller - Skipping import process for
-{  
-"objectType": "DATABASE_CONNECTOR",  
-"id": {  
-"@type": "type.googleapis.com/IntegerIdentifier",  
-"id": 1  
-}  
+{
+"objectType": "DATABASE_CONNECTOR",
+"id": {
+"@type": "type.googleapis.com/IntegerIdentifier",
+"id": 1
+}
 }, due to no discrepancy between the existing and importing object
 ```
 
@@ -162,9 +175,9 @@ For example, if I export a database connector named *testConnector* with
 the following export object metadata:
 
 ``` json
-{  
-"objectIdentifier": {  
-"id": 5  
+{
+"objectIdentifier": {
+"id": 5
 },
 "objectType": "DATABASE_CONNECTOR",
 "revisionHash": "68eaffef400e426520a5fcbb683419db3be53317"
