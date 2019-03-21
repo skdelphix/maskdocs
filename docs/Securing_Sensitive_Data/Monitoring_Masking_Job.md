@@ -100,10 +100,10 @@ Below are the [Oracle character classes](https://docs.oracle.com/cd/B12037_01/se
 
 For the LLLLL sample in the example above, Oracle DB SQL query would look like:
 ```
-SELECT RCHARS64_T1_0 FROM testdata_XML WHERE regexp_like(PHONE_MASK, '[[:alpha:]]{5}');
+SELECT RCHARS64_T1_0 FROM testdata_XML WHERE regexp_like(RCHARS64_T1_0, '[[:alpha:]]{5}');
 ```
 For the LLLLZLLLZLLLL sample, the Oracle DB SQL query would look like:
 ```
-SELECT RCHARS64_T1_0 FROM testdata_XML WHERE regexp_like(PHONE_MASK, '[[:alpha:]]{4}[[:space:]][[:alpha:]]{3}[[:space:]][[:alpha:]]{4}');
+SELECT RCHARS64_T1_0 FROM testdata_XML WHERE regexp_like(RCHARS64_T1_0, '[[:alpha:]]{4}[[:space:]][[:alpha:]]{3}[[:space:]][[:alpha:]]{4}');
 ```
 
