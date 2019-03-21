@@ -78,4 +78,7 @@ Checking in a change requires two ship its on Review Board. The review should in
 
 * `git review`: the familiar command used to post reviews for any Delphix Git repositories
 
-* `git docsdev-review`: a command built specifically for this docsdev repository. The `git docsdev-review` command builds the documentation, copies the documentation to a user specified virtual machine that is running an HTTP server, and then posts a review with a web link to the virtual machine's documentation. The web link is very helpful for reviewers, especially for large reviews or reviews with inline images. See `git docsdev-review -h` for help
+* `git docsdev-review`: a command built specifically for this docsdev repository. The `git docsdev-review` command builds the documentation, copies the documentation to a user specified virtual machine that is running an HTTP server, and then posts a review with a web link to the virtual machine's documentation. The web link is very helpful for reviewers, especially for large reviews or reviews with inline images. For convience, pre-created VM images for use with `git docsdev-review` are available using the docsdev-server group at:
+  * Dcenter (`dcenter.delphix.com`)
+  * DCoA (`dlpxdc.co`)
+See `git docsdev-review -h` for help.
