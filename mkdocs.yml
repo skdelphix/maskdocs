@@ -1,15 +1,20 @@
+<<<<<<< HEAD
 site_name: Delphix Masking 5.3
 theme: 
+=======
+site_name: Delphix Masking 5.3.2
+theme:
+>>>>>>> a55fb9a... DOC-160 CSS Color changes
   name: material
   custom_dir: 'material/'
   palette:
-    primary: 
-    accent: 
+    primary:
+    accent:
   logo: 'images/delphix-logo-white.png'
   favicon: 'images/logo.png'
   font:
     text: Helvetica Neue
-    code: Ubuntu Mono
+    code: Consolas
 
 copyright: Copyright &copy; 2018 Delphix Corp.
 
