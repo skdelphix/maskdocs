@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 site_name: Delphix Masking 5.3
-theme: 
-=======
-site_name: Delphix Masking 5.3.2
 theme:
->>>>>>> a55fb9a... DOC-160 CSS Color changes
   name: material
   custom_dir: 'material/'
   palette:
