@@ -37,7 +37,7 @@ getting your OVA installed:
 
   9. The Delphix VM Configuration Storage requires a minimum of 10GB. The VMFS volume should have enough available space to hold all ESX configuration and log files associated with the Delphix Engine.
 
-      The Delphix Engine system disk should be stored in a VMDK system drive. The VMFS volume where the .ova is deployed should therefore have at least 300GB of free space prior to deploying the .ova. The VMFS volume must be located on shared storage in order to use vMotion and HA features.	
+      The Delphix Engine system disk should be stored in a VMDK system drive. The VMFS volume where the .ova is deployed should therefore have at least 300GB of free space prior to deploying the .ova. The VMFS volume must be located on shared storage in order to use vMotion and HA features.
 
   10. Select the virtual network you want to use. If using
     multiple physical NICs for link aggregation, you must use vSphere
@@ -105,34 +105,38 @@ VHD installed:
     to learn how to activate the masking service now that you have the
     software installed.
 
-## Activating the Masking Service
+## Setting up the Delphix Engine
 
-Once you have installed your Delphix Engine, you will need to activate
-the masking service through the CLI and then set up your first
-administrator user.
+Once you setup the network access for your Delphix Engine, enter the Delphix Engine URL in your browser for server setup. The Unified Setup wizard Welcome screen below will appear for you to begin your Delphix Engine setup.
 
-To activate the Masking service via the CLI, do the following:
+![](./media/setup_welcome.png)
 
-  1. Connect to the CLI via SSH as **sysadmin** or with
-    other system administrator credentials.
+The Welcome page allows you to to setup Masking-specific settings such as Masking admin user’s email and password as well as Masking SMTP settings directly from the setup wizard. It will then redirect the customer to the corresponding login page based on the engine type selected.
 
-  2. Start the Delphix Masking Engine with: system ;
-    startMasking ; commit ; exit
+When Masking is selected, the following will be added to the Welcome screen; "admin" with the password you defined. This will be the Masking administrator responsible for setting up users and other administrative actions in Masking.
 
-  3. Access the UI by navigating to http://&lt;Delphix Engine
-    IP or DNS name&gt;:8282/masking.
+There are limitations to this feature:
 
-  4. Login as user **Admin** and password **Admin-12**.
+  - Only Masking user settings (email and password) and SMTP settings are supported. Customers will need to use the API to setup LDAP.
+  - Once set, these settings can only be updated via the Masking API. There are no corresponding sections in the system dashboard.
+  - Engine Type cannot be modified once set in the Setup Wizard because it has other dependencies such as SSO.
 
-  5. Change the **Admin** password to a unique value for
-    your installation.
+!!! note
 
-     a.  To change the password, go to the **Admin** tab.
-
-     b.  Click **Users**.
-
-     c.  Edit the **Admin** user.
-
-     d.  Change the **Admin** user's password.
-
-Congratulations\! You are now ready to start using the masking service\!
+    If the wrong password is entered, after 3 times the user will be locked out of the Masking service.
+    
+1. On the **Welcome** tab select **Masking** and then click **Next**.
+2. In the Masking Password tab enter the current default (out-of-box) password for Masking. (Currently the default is **Admin-12**.)
+3. Click **Validate** or **Next**. This causes the engine to validate the entered password with the masking service.
+4. In the Administrators tab enter **System Administrator**, **Masking Administrator**, and **Engine Administrator** credentials. Then click **Next**.
+5. Select an option for maintaining system time. Then click **Next**.
+6. Configure your network interfaces and services and then select **Next**.
+7.  Delphix installs certificates signed by the Engines Certificate Authority. You can replace any certificate. Once you are ready click **Next**.
+8. The Delphix Engine automatically discovers and displays storage devices. For each device, set the Usage Assignment to Data and set the Storage Profile to Striped. Then click **Next**.
+9. Enter the **Masking SMTP** settings and then click **Next**.
+10. The Authentication tab allows users to configure Virtualization LDAP settings. But Masking LDAP settings must be configured via the Masking API.
+11. To enable SAML/SSO, set the Audience Restriction (SP entity ID, Partner’s Entity ID) in the identity provider to be the Engine UUID 564d184b-e217-ed35-b0dc-002f1bd08ea7. Select **Use SAML/SSO**.IdP metadata is an XML document which must be exported from the application created in your IdPCopy and pasted in the IdP Metadata field. Click **Next**.
+12. If using Kerberos authentication select **Use Kerberos authentication** and complete all fields. Then enter **Next**.
+13. If the Delphix Engine has access to the external Internet (either directly or through a web proxy), then you can auto-register the Delphix Engine. If external connectivity is not immediately available, you must perform manual registration. Copy the Delphix Engine registration code.
+14. Click **Next**.
+15. The final Summary tab will enable you to review your configuration. Click **Submit** to acknowledge the configuration.
