@@ -1,3 +1,5 @@
+# Algorithm Syncability
+
 The following tables specify which algorithms are syncable between
 masking engines (in addition to the masking engine key).
 

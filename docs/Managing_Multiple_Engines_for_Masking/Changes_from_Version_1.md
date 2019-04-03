@@ -47,7 +47,7 @@ In 5.2, the import status looked like this:
 }
 ```
 
-Starting in Krypton, the import status of an object has extended to
+Starting in 5.3.0, the import status of an object has extended to
 include the id or name it has imported into to reduce any confusion
 introduced with IntegerIdentifiers. For more information on the reason
 for this change, refer to Logic Behind Overwrite of IntegerIdentifier

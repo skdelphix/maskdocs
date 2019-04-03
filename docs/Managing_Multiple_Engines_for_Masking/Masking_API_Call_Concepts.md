@@ -147,7 +147,7 @@ Below is an example log statement when an identical database connector
 was imported:
 
 ```
-2017-07-19 10:17:06,075 [http-nio-8282-exec-4] INFO
+2017-07-19 10:17:06,075 [http-nio-exec-4] INFO
 c.d.s.marshallers.SyncableMarshaller - Skipping import process for
 {
 "objectType": "DATABASE_CONNECTOR",

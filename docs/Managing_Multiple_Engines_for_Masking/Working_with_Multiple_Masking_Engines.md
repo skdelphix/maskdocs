@@ -1,6 +1,8 @@
+# Working with Multiple Masking Engines
+
 Your organization may have more than one masking engine, and in certain
 circumstances, it may want to coordinate the operation of those engines.
-In particular, there are two specific scenarios in which an organization 
+In particular, there are two specific scenarios in which an organization
 could benefit from some level of interaction and orchestration between multiple
 masking engines.
 
@@ -49,7 +51,7 @@ masking algorithms and objects necessary to run an identical job on
 another engine. It is recommended that the syncable objects move in only
 one direction. That is, objects should be exported from one engine and
 imported into others but should not go in the other direction. This
-recommendation is primarily to simplify management of which objects 
+recommendation is primarily to simplify management of which objects
 exist on which engine.
 
 Two example architectures are described below. Note that the two

@@ -21,7 +21,7 @@ Masking product.
 
 ## Pinning Down a Version Number To Guarantee Backwards-Compatibility
 
-**'http://&lt;myMaskingEngine&gt;:8282/masking/api/v5.0.0/environments'**
+**'http://&lt;myMaskingEngine&gt;/masking/api/v5.0.0/environments'**
 
 This is the format for specifying a version in the URL of an API request
 targeting the **environments** endpoints. The only possible version
@@ -49,7 +49,7 @@ specification.
 
 ## Omitted Version Numbers
 
-**'http://&lt;myMaskingEngine&gt;:8282/masking/api/environments'**
+**'http://&lt;myMaskingEngine&gt;/masking/api/environments'**
 
 This is the format for not specifying a version in the URL of an API
 request targeting the **environments** endpoints. When the API version
