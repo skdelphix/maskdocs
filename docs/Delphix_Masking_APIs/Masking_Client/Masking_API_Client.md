@@ -54,7 +54,7 @@ will expand over the course of subsequent releases.
 For a full list of supported APIs, the best place to look is the API
 client on your Masking Engine
 
-[<span class="underline">http://myMaskingEngine.com:8282/masking/api-client.</span>](http://mymaskingengine.com:8282/masking/api-client.)High-level
+[<span class="underline">http://myMaskingEngine.com/masking/api-client.</span>](http://mymaskingengine.com:8282/masking/api-client.)High-level
 operations that are **not currently supported** via the v5 APIs include,
 but are not limited to:
 

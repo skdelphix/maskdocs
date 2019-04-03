@@ -3,7 +3,7 @@
 Below are examples of requests you might enter and responses you might
 receive from the Masking API client. For commands specific to your
 masking engine, work with your interactive client at
-http://**&lt;myMaskingEngine&gt;:8282**/masking/api-client/
+http://**&lt;myMaskingEngine&gt**/masking/api-client/
 
 !!! warning
     HTTPS (SSL/TLS) is recommended, but for explanatory purposes these examples use insecure HTTP
@@ -26,7 +26,7 @@ for
 ``` bash
 curl -X GET --header 'Accept: application/json' --header 'Authorization:
 7c856e3d-5b20-4261-b5fe-cc2ffcee5ae0'
-'http://<myMaskingEngine>:8282/masking/api/database-connectors/1/fetch’
+'http://<myMaskingEngine>/masking/api/database-connectors/1/fetch’
 ```
 
 ### **RESPONSE**
@@ -37,7 +37,7 @@ curl -X GET --header 'Accept: application/json' --header 'Authorization:
 
 ### **More info**
 
-http://&lt;myMaskingEngine&gt;:8282/masking/api-client/#!/databaseConnector/fetchTableMetadata
+http://&lt;myMaskingEngine&gt;/masking/api-client/#!/databaseConnector/fetchTableMetadata
 
 ### **Example**
 
@@ -58,7 +58,7 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept:
 application/json' --header 'Authorization:
 7c856e3d-5b20-4261-b5fe-cc2ffcee5ae0' -d '{ "tableName": "ALL_COLUMNS",
 "rulesetId": 2 }'
-'http://<myMaskingEngine>:8282/masking/api/table-metadata'
+'http://<myMaskingEngine>/masking/api/table-metadata'
 ```
 
 ### **RESPONSE**
@@ -70,7 +70,7 @@ application/json' --header 'Authorization:
 
 ### **More info**
 
-http://&lt;myMaskingEngine&gt;:8282/masking/api-client/#!/tableMetadata/createTableMetadata
+http://&lt;myMaskingEngine&gt;/masking/api-client/#!/tableMetadata/createTableMetadata
 
 ### **Example**
 
@@ -85,7 +85,7 @@ Object references you will need:
 for
 
 !!! tip
-    This table metadata ID (2, in this example) is included in the QUERY STRING for this operation, NOT the payload. 
+    This table metadata ID (2, in this example) is included in the QUERY STRING for this operation, NOT the payload.
 
 ### **REQUEST**
 
@@ -109,7 +109,7 @@ documentation.
 
 ### **More info**
 
-http://&lt;myMaskingEngine&gt;:8282/masking/api-client/#!/columnMetadata/getAllColumnMetadata
+http://&lt;myMaskingEngine&gt;/masking/api-client/#!/columnMetadata/getAllColumnMetadata
 
 ### **Example**
 
@@ -124,7 +124,7 @@ Object references you will need:
 update
 
 !!! tip
-    This column metadata ID (20, in this example) is included in the PATH for this operation, NOT the payload. 
+    This column metadata ID (20, in this example) is included in the PATH for this operation, NOT the payload.
 
   - Since the names can vary in the API and UI, you should use the names
     obtained through the API (these may not align with the UI).
@@ -153,7 +153,7 @@ false, "isIndex": false, "isForeignKey": false
 
 ### **More info**
 
-http://&lt;myMaskingEngine&gt;:8282/masking/api-client/#!/columnMetadata/updateColumnMetadata
+http://&lt;myMaskingEngine&gt;/masking/api-client/#!/columnMetadata/updateColumnMetadata
 
 ###  **Example**
 

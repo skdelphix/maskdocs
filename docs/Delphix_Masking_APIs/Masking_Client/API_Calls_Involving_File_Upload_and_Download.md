@@ -9,7 +9,7 @@ To avoid this, make all file download calls through CURL instead. An example of 
 curl -X GET --header 'Accept: application/octet-stream' --header
 'Authorization: ec443730-124e-4958-a872-324a975bb500'
 -o "/home/user/downloads"
-'http://<myMaskingEngine>:8282/masking/api/file-downloads/EXPORT-ZXhwb3J0X2RvY3VtZW50X2dGZU9JMVYxLmpzb24%3D'
+'http://<myMaskingEngine>/masking/api/file-downloads/EXPORT-ZXhwb3J0X2RvY3VtZW50X2dGZU9JMVYxLmpzb24%3D'
 ```
 The `-o` flag from above specifies the location to save the file to.
 ## File Upload
@@ -23,7 +23,7 @@ calls involving file upload.
 
 For commands specific to your masking engine, work with your interactive
 client at
-http://**&lt;myMaskingEngine&gt;**:8282/masking/api-client/
+http://**&lt;myMaskingEngine&gt;**/masking/api-client/
 
 !!! warning
     HTTPS (SSL/TLS) is recommended, but for explanatory purposes these examples use insecure HTTP.
@@ -41,7 +41,7 @@ curl -X POST --header 'Content-Type: multipart/form-data' --header
 d1313dd8-2ed9-4699-8e88-2b6a089ae2a6' -F
 fileFormat=@/path/to/file_format/delimited_format.txt -F
 fileFormatType=DELIMITED
-'http://<myMaskingEngine>:8282/masking/api/file-formats'
+'http://<myMaskingEngine>/masking/api/file-formats'
 ```
 ### **RESPONSE**
 
@@ -53,7 +53,7 @@ fileFormatType=DELIMITED
 
 ### **More info**
 
-http://&lt;myMaskingEngine&gt;:8282/masking/api-client/#!/fileFormat/createFileFormat
+http://&lt;myMaskingEngine&gt;/masking/api-client/#!/fileFormat/createFileFormat
 
 ## Creating an SSH Key
 
@@ -64,7 +64,7 @@ curl -X POST --header 'Content-Type: multipart/form-data' --header
 'Accept: application/json' --header 'Authorization:
 d1313dd8-2ed9-4699-8e88-2b6a089ae2a6' -F
 sshKey=@/path/to/ssh_key/this_file_name_is_your_ssh_key_name.txt
-'http://<myMaskingEngine>:8282/masking/api/ssh-keys'
+'http://<myMaskingEngine>/masking/api/ssh-keys'
 ```
 
 ### **RESPONSE**
@@ -76,4 +76,4 @@ sshKey=@/path/to/ssh_key/this_file_name_is_your_ssh_key_name.txt
 
 ### **More info**
 
-http://&lt;myMaskingEngine&gt;:8282/masking/api-client/#!/sshKey/createSshKey
+http://&lt;myMaskingEngine&gt;/masking/api-client/#!/sshKey/createSshKey

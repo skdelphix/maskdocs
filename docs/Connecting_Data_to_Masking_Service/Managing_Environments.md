@@ -42,14 +42,14 @@ listed can be filtered using the **Search** field. See more details below.
 
 ## Adding An Application
 
-For an environmment to be created, an application needs to be specified. Here
+For an environment to be created, an application needs to be specified. Here
 are the steps to add an application:
 
 1. On the main environments page, near the upper right-hand
 corner of the screen, click **Add Application**.
 
 2. The screen prompts you for the following items:
-   
+
     a.  Application Name
 
 3. Click **Save** to return to the **Environments
@@ -86,11 +86,11 @@ To change the properties of an environment, do the following
 1.  Click the **Edit** icon to the right of the environment status.
 
 2.  The popup prompts you for the following information:
-   
+
     a.  Environment Name
-   
+
     b.  Purpose
-   
+
     c.  Application Name
 
     d.  Enable Approval Workflow
@@ -117,9 +117,9 @@ environment:
 1.  Click the **Export** icon.
 
 2.  The popup fills in the following items:
-    
+
     a.  Environment Name
-    
+
     b.  File Name.
 
 3.  Click **Export**.
@@ -171,11 +171,11 @@ environment do the following:
 1.  Click the **Copy** icon to the right of the environment status.
 
 2.  The popup prompts you for the following information:
-    
+
     a.  Environment Name
-    
+
     b.  Purpose
-    
+
     c.  Application Name
 
     d.  Enable Approval Workflow
@@ -190,7 +190,7 @@ To delete an environment:
     and copy
 icon.
 
-!!! warning 
+!!! warning
     Clicking the **Delete** icon deletes EVERYTHING for that environment: connections, inventory, rule sets, and so on. It does not delete universal settings like algorithms, domains, etc.
 
 ## Searching For Environments

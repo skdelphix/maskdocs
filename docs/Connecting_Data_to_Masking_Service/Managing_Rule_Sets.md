@@ -164,10 +164,10 @@ To refresh a rule set:
 1.  Click the **Refresh/Save** icon to the right of the rule set on the **Rule
     Set** screen.
 
-2.  The **Refresh/Savet** icon will turn to an hour glass as the the associated
+2.  The **Refresh/Save** icon will turn to an hour glass as the the associated
     tables are rescanned.
 
-3.  After the refresh is complete, the **Refresh/Savet** icon will return to the
+3.  After the refresh is complete, the **Refresh/Save** icon will return to the
     circular arrow.
 
 ## Copying a Rule Set

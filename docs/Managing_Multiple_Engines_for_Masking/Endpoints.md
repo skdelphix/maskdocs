@@ -1,3 +1,5 @@
+# Endpoints
+
 ## GET /syncable-objects\[?object\_type=\<type\>\]
 
 This endpoint lists all objects in an engine that are syncable and can
@@ -11,10 +13,10 @@ attribute, and will not be exportable.
 Example CURL command:
 
 ``` ssh
-curl -X GET 
---header 'Accept: application/json' 
---header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231' 
-'http://masking-engine.com:8282/masking/api/syncable-objects?page_number=1'
+curl -X GET
+--header 'Accept: application/json'
+--header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231'
+'http://masking-engine.com/masking/api/syncable-objects?page_number=1'
 ```
 
 ## POST /export
@@ -31,18 +33,18 @@ the passphrase, the export document will be encrypted using it.
 Example CURL command:
 
 ``` ssh
-curl -X POST 
---header 'Content-Type: application/json' 
---header 'Accept: application/json' 
---header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231' 
+curl -X POST
+--header 'Content-Type: application/json'
+--header 'Accept: application/json'
+--header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231'
 -d '[
 {  
 "objectIdentifier": {“id”: 1},  
 "objectType": "MASKING_JOB",  
 "revisionHash": "asdfjkl12jijfdsaklfj21ojasdk"  
 }  
-]' 
-'http://masking-engine.com:8282/masking/api/export'
+]'
+'http://masking-engine.com/masking/api/export'
 ```
 
 ## POST /export-async
@@ -65,18 +67,18 @@ of this:
 Example CURL command:
 
 ``` ssh
-curl -s -X POST 
---header 'Content-Type: application/json' 
---header 'Accept: application/json' 
---header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231' 
+curl -s -X POST
+--header 'Content-Type: application/json'
+--header 'Accept: application/json'
+--header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231'
 -d "[  
 {  
 "objectIdentifier": {“id”: 1},  
 "objectType": "MASKING_JOB",  
 "revisionHash": "asdfjkl12jijfdsaklfj21ojasdk"  
 }  
-]" 
-"http://masking-engine.com:8282/masking/api/export-async"
+]"
+"http://masking-engine.com/masking/api/export-async"
 ```
 
 The *reference* is used to retrieve the export document of completed
@@ -87,10 +89,10 @@ from /export.
 Example CURL command:
 
 ``` ssh
-curl -s -X GET 
---header 'Accept: application/octet-stream' 
---header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231' 
--o "<OUTPUT_FILE_PATH>" "http://masking-engine.com:8282/masking/api/file-downloads/EXPORT-ZXhwb3J0X2RvY3VtZW50XzJjcm1EV09yLmpzb24="
+curl -s -X GET
+--header 'Accept: application/octet-stream'
+--header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231'
+-o "<OUTPUT_FILE_PATH>" "http://masking-engine.com/masking/api/file-downloads/EXPORT-ZXhwb3J0X2RvY3VtZW50XzJjcm1EV09yLmpzb24="
 ```
 
 ### Error handling
@@ -147,10 +149,10 @@ curl -X POST
 ]  
 },
 "blob": "<OMITTED>",
-"signature": "<OMITTED>", \ 
+"signature": "<OMITTED>", \
 "publicKey": "<OMITTED>" \  
 }'
-'http://masking-engine.com:8282/masking/api/import?force_overwrite=true'
+'http://masking-engine.com/masking/api/import?force_overwrite=true'
 ```
 
 ## POST /import-async
@@ -187,5 +189,5 @@ curl -s -X POST
 --header 'Accept: application/json'
 --header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231'
 -F "file=@<DOWNLOADED_FILE_PATH>"
-"http://masking-engine.com:8282/masking/api/import-async?force_overwrite=true"
+"http://masking-engine.com/masking/api/import-async?force_overwrite=true"
 ```

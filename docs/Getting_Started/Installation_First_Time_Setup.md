@@ -124,7 +124,7 @@ There are limitations to this feature:
 !!! note
 
     If the wrong password is entered, after 3 times the user will be locked out of the Masking service.
-    
+
 1. On the **Welcome** tab select **Masking** and then click **Next**.
 2. In the Masking Password tab enter the current default (out-of-box) password for Masking. (Currently the default is **Admin-12**.)
 3. Click **Validate** or **Next**. This causes the engine to validate the entered password with the masking service.
@@ -135,8 +135,14 @@ There are limitations to this feature:
 8. The Delphix Engine automatically discovers and displays storage devices. For each device, set the Usage Assignment to Data and set the Storage Profile to Striped. Then click **Next**.
 9. Enter the **Masking SMTP** settings and then click **Next**.
 10. The Authentication tab allows users to configure Virtualization LDAP settings. But Masking LDAP settings must be configured via the Masking API.
-11. To enable SAML/SSO, set the Audience Restriction (SP entity ID, Partner’s Entity ID) in the identity provider to be the Engine UUID 564d184b-e217-ed35-b0dc-002f1bd08ea7. Select **Use SAML/SSO**.IdP metadata is an XML document which must be exported from the application created in your IdPCopy and pasted in the IdP Metadata field. Click **Next**.
+11. To enable SAML/SSO, set the Audience Restriction (SP entity ID, Partner’s Entity ID) in the identity provider to be the Engine UUID. Select **Use SAML/SSO**.IdP metadata is an XML document which must be exported from the application created in your IdPCopy and pasted in the IdP Metadata field. Click **Next**.
 12. If using Kerberos authentication select **Use Kerberos authentication** and complete all fields. Then enter **Next**.
 13. If the Delphix Engine has access to the external Internet (either directly or through a web proxy), then you can auto-register the Delphix Engine. If external connectivity is not immediately available, you must perform manual registration. Copy the Delphix Engine registration code.
 14. Click **Next**.
 15. The final Summary tab will enable you to review your configuration. Click **Submit** to acknowledge the configuration.
+
+## Logging in to the Delphix Masking Engine
+
+1. Login to a web browser that points to  http://<server_or_IPAddress>/masking.
+2. Enter default username: admin.
+3. Enter default user password:  Admin_12.

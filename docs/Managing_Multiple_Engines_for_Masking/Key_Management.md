@@ -1,3 +1,5 @@
+# Key Management
+
 One important piece of data used by many masking algorithms is the key,
 which determines the masked outcome of some value. Changing the key
 changes the output of these algorithms. For example, if the FIRST NAME
@@ -71,5 +73,5 @@ algorithm itself, not separately. These individually associated keys can
 be randomized with an endpoint.
 
 ```
-PUT http://masking-engine-A:8282/masking/api/algorithms/{algorithmName}/randomize-key
+PUT http://masking-engine-A/masking/api/algorithms/{algorithmName}/randomize-key
 ```

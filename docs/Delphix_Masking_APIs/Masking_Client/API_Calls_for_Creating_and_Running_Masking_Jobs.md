@@ -3,7 +3,7 @@
 Below are examples of requests you might enter and responses you might
 receive from the Masking API client. For commands specific to your
 masking engine, work with your interactive client at
-http://**&lt;myMaskingEngine&gt;**:8282/masking/api-client/
+http://**&lt;myMaskingEngine&gt;**/masking/api-client/
 
 !!! note
     In all code examples, replace **&lt;myMaskingEngine&gt;** with the hostname or IP address of your virtual machine.
@@ -28,7 +28,7 @@ illustrates a MaskingJob with just a handful of the possible fields set.
 It is meant to exemplify a simple JSON body that can be passed to the
 endpoint to create a MaskingJob.", "feedbackSize": 100000,
 "onTheFlyMasking": false }'
-'http://<myMaskingEngine>:8282/masking/api/masking-jobs'
+'http://<myMaskingEngine>/masking/api/masking-jobs'
 ```
 
 ### **RESPONSE**
@@ -49,7 +49,7 @@ passed to the endpoint to create a MaskingJob.", "maxMemory": 1024,
 
 ### **More info**
 
-http://&lt;myMaskingEngine&gt;:8282/masking/api-client/#!/job/createMaskingJob
+http://&lt;myMaskingEngine&gt;/masking/api-client/#!/job/createMaskingJob
 
 ## Running a Masking Job
 
@@ -65,7 +65,7 @@ Object references you will need:
 curl -X POST --header 'Content-Type: application/json' --header 'Accept:
 application/json' --header 'Authorization:
 e23bad24-8760-4091-a131-34f235d9b2d6' -d '{ "jobId": 1 }'
-'http://<myMaskingEngine>:8282/masking/api/executions'
+'http://<myMaskingEngine>/masking/api/executions'
 ```
 
 ### **RESPONSE**
@@ -77,7 +77,7 @@ e23bad24-8760-4091-a131-34f235d9b2d6' -d '{ "jobId": 1 }'
 
 ### **More info**
 
-http://&lt;myMaskingEngine&gt;:8282/masking/api-client/#!/execution/createExecution
+http://&lt;myMaskingEngine&gt;/masking/api-client/#!/execution/createExecution
 
 ## Checking the Status of a Masking Job
 
@@ -93,7 +93,7 @@ Object references you will need:
 ``` bash
 curl -X GET --header 'Accept: application/json' --header 'Authorization:
 8935f7f7-6de6-40ba-80d8-d8956b71248b'
-'http://<myMaskingEngine>:8282/masking/api/executions/1'
+'http://<myMaskingEngine>/masking/api/executions/1'
 ```
 
 ### **RESPONSE**
@@ -112,7 +112,7 @@ curl -X GET --header 'Accept: application/json' --header 'Authorization:
 
 ### **More info**
 
-http://&lt;myMaskingEngine&gt;:8282/masking/api-client/#!/execution/getExecutionById
+http://&lt;myMaskingEngine&gt;/masking/api-client/#!/execution/getExecutionById
 
 ## Retrieving Execution Events related to a Masking Job
 
@@ -130,7 +130,7 @@ Object references you will need:
 ``` bash
 curl -X GET --header 'Accept: application/json' --header 'Authorization:
 8935f7f7-6de6-40ba-80d8-d8956b71248b'
-'http://<myMaskingEngine>:8282/masking/api/execution-events?execution_id=1&page_number=1'
+'http://<myMaskingEngine>/masking/api/execution-events?execution_id=1&page_number=1'
 ```
 
 ### **RESPONSE**
@@ -160,13 +160,13 @@ curl -X GET --header 'Accept: application/json' --header 'Authorization:
 
 ### **More info**
 
-http://&lt;myMaskingEngine&gt;:8282/masking/api-client/#!/execution-events/getAllExecutionEvents
+http://&lt;myMaskingEngine&gt;/masking/api-client/#!/execution-events/getAllExecutionEvents
 
 ## Retrieving Nonconformant Data Samples associated with an Execution Event
 
 Object references you will need:
 
-  - The ID(s) of the execution event(s) you want to check (as one or more URL parameters). 
+  - The ID(s) of the execution event(s) you want to check (as one or more URL parameters).
 
 !!! note
     This execution event id (1, in this example) is specified as a URL parameter for this operation.
@@ -179,7 +179,7 @@ Object references you will need:
 ``` bash
 curl -X GET --header 'Accept: application/json' --header 'Authorization:
 8935f7f7-6de6-40ba-80d8-d8956b71248b'
-'http://<myMaskingEngine>:8282/masking/api/non-conformant-data-sample?execution_event_id=1&page_number=1'
+'http://<myMaskingEngine>/masking/api/non-conformant-data-sample?execution_event_id=1&page_number=1'
 ```
 
 ### **RESPONSE**
@@ -239,4 +239,4 @@ curl -X GET --header 'Accept: application/json' --header 'Authorization:
 
 ### **More info**
 
-http://&lt;myMaskingEngine&gt;:8282/masking/api-client/#!/non-conformant-data-sample/getAllNon-conformantDataSamples
+http://&lt;myMaskingEngine&gt;/masking/api-client/#!/non-conformant-data-sample/getAllNon-conformantDataSamples

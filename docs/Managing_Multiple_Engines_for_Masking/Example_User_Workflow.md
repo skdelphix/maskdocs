@@ -1,3 +1,4 @@
+# User Workflow examples
 This page provides some examples of some typical user workflows. More information on exactly how each endpoint works is available on the Endpoints page.
 
 ## Syncing all Global Objects
@@ -6,7 +7,7 @@ The following steps can be used to sync all global objects from Masking Engine A
 *  On Masking Engine A, get the Authorization from the /login API
 
 ```
-POST http://masking-engine-A:8282/masking/api/login
+POST http://masking-engine-A:/masking/api/login
 
 HEADER
 Content-Type : application/json
@@ -23,7 +24,7 @@ Expected Result:
 
 * On Masking Engine A, call GET /syncable-objects to get a list of syncable objects.
 ```
-GET http://masking-engine-A:8282/masking/api/syncable-objects
+GET http://masking-engine-A/masking/api/syncable-objects
 
 HEADER
 Authorization : dc2cff8b-e20d-4e28-8b7e-5d7c4aad0e2a (whatever you get from login)
@@ -67,7 +68,7 @@ Expected Result:
 
 * On Masking EngineA, call /export-async on GLOBAL_OBJECT.
 ```
-POST http://masking-engine-A:8282/masking/api/export-async
+POST http://masking-engine-A/masking/api/export-async
 
 HEADER
 Authorization : dc2cff8b-e20d-4e28-8b7e-5d7c4aad0e2a
@@ -99,7 +100,7 @@ EXPECTED RESULT
 
 * Download the export document with the reference above via the /file-download endpoint.
 ```
-GET http://masking-engine-A:8282/masking/api/file-downloads/EXPORT-ZXhwb3J0X2RvY3VtZW50Xzk0Wjlva3JDLmpzb24=
+GET http://masking-engine-A/masking/api/file-downloads/EXPORT-ZXhwb3J0X2RvY3VtZW50Xzk0Wjlva3JDLmpzb24=
 
 HEADER
 Authorization : dc2cff8b-e20d-4e28-8b7e-5d7c4aad0e2a
@@ -150,7 +151,7 @@ An example export document will look like this.
 
 * On Masking Engine B, use the import-async endpoint to import the document downloaded from engine A.
 ```
-POST http://masking-engine-B:8282/masking/api/import-async?force_overwrite=true
+POST http://masking-engine-B/masking/api/import-async?force_overwrite=true
 HEADER
 Authorization : dc2cff8b-e20d-4e28-8b7e-5d7c4aad0e2a
 Accept: application/octet-stream
@@ -186,7 +187,7 @@ EXPECTED RESULT
 
 * On Masking Engine B, retrieve the completed import status using the reference from the returned Async Task response with /file-downloads
 ```
-GET http://masking-engine-A:8282/masking/api/file-downloads/IMPORT-AWhwb3J0X2Ru2VtZW50Xzk0Wjlva3JDLmpzb24=
+GET http://masking-engine-A/masking/api/file-downloads/IMPORT-AWhwb3J0X2Ru2VtZW50Xzk0Wjlva3JDLmpzb24=
 
 HEADER
 Authorization : dc2cff8b-e20d-4e28-8b7e-5d7c4aad0e2a
@@ -204,7 +205,7 @@ The following steps provide an example of how to export a Masking Job from Maski
 
 * On Masking Engine A, export the MASKING_JOB using the /export endpoint.
 ```
-POST http://masking-engine-A:8282/masking/api/export
+POST http://masking-engine-A/masking/api/export
 
 HEADER
 Authorization : dc2cff8b-e20d-4e28-8b7e-5d7c4aad0e2a (whatever you get from login)
@@ -290,7 +291,7 @@ Expected Result:
 
 * On Masking Engine B, import the masking job. You will need to provide an environment for it to import into.
 ```
-POST http://masking-engine-B:8282/masking/api/import?force_overwrite=false&environment_id=1
+POST http://masking-engine-B/masking/api/import?force_overwrite=false&environment_id=1
 
 HEADER
 (same as export)

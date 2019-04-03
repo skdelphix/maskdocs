@@ -6,3 +6,4 @@ arrange:
   - Backwards_Compatibility_API_Usage.md
   - Incubating_API_Endpoints.md
   - Algorithm_Extensions.md
+  - API_Response_Escaping.md
