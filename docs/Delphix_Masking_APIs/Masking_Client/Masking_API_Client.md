@@ -195,6 +195,28 @@ Controls how many minutes the password reset link is valid for.
 </tbody>
 </table>
 
+#### Algorithm Group Settings
+
+<table>
+<tbody>
+<tr class="odd">
+<td><strong>Setting Group</strong></td>
+<td><strong>Setting Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Description</strong></td>
+<td><strong>Default Value</strong></td>
+</tr>
+<tr class="even">
+<td>algorithm</td>
+<td>DefaultNonConformantDataHandling</td>
+<td>String
+{DONT_MASK, FAIL}</td>
+<td>Default algorithm behavior for Handling of NonConformant Data patterns.</td>
+<td>DONT_MASK</td>
+</tr>
+</tbody>
+</table>
+
 #### LDAP Group Settings
 
 <table>
