@@ -7,6 +7,7 @@ In 5.2 we introduced the ability to synchronize Masking Algorithms between engin
 - Rulesets
 - Domains
 - File Formats
+- Mount Information
 
 The sync of objects is possible through improvements to several sync API endpoints, including:
 
@@ -64,6 +65,14 @@ In 5.2 we released an all-new set of API endpoints allowing for the automation o
 |System Information|GET /system-information | Get version, etc.|
 |Login/Logout|PUT /logout | User logout|
 |Executions|GET /execution-components | Status for a table, file, or Mainframe data set|
+|Mount Filesystem|GET /mount-filesystem | Get all mounts |
+||POST /mount-filesystem | Create a mount |
+||GET /mount-filesystem/{mountId} | Get a mount by ID |
+||DELETE /mount-filesystem/{mountId} | Delete a mount by ID |
+||PUT /mount-filesystem/{mountId} | Update a mount by ID |
+||PUT /mount-filesystem/{mountId}/connect | Connect a mount by ID |
+||PUT /mount-filesystem/{mountId}/disconnect | Disconnect a mount by ID |
+||PUT /mount-filesystem/{mountId}/remount | Remount a mount by ID |
 
 
 In addition to the net new API endpoints, we have improved pre-existing API endpoints. Some of the improvements include:
@@ -73,5 +82,5 @@ In addition to the net new API endpoints, we have improved pre-existing API endp
 - Ability to have ruleset refresh drop tables
 - Support for XML file types
 - Addition of dataType to column metadata
-
+- Addition of mountName in the ConnectionInfo of a file connector and a mainframe dataset connector to use a filesystem mount point.
 For more information please on Delphix Masking APIs please see [API documentation](https://maskingdocs.delphix.com/Delphix_Masking_APIs/Masking_Client/Masking_API_Client/).  Please note that the previous generation of Masking APIs (commonly referred to as V4) is EOL and no longer supported in this release. All users are encouraged to migrate to the V5 APIs.

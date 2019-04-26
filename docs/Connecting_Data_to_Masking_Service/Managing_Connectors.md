@@ -163,12 +163,16 @@ appears indicating success or failure.
 
 ### **File Connectors**
 
-The values that appear correlate to the **File Type** you select.
+Following values appear when any of the file connector types are selected:
 
   - **Connector Name** — The name of the file connector (specific to
     your Delphix application and unrelated to the file itself).
 
-  - **Connection Mode** — SFTP, FTP
+  - **Connection Mode** —  Filesystem Mount Point, SFTP and FTP
+
+![](./media/ShowMountOptions.png)
+
+Rest of the values appear based on the selected **Connection Mode** value. For **Filesystem Mount Point** connection mode, refer to the corresponding section in the [Managing Remote Mounts](./Managing_Remote_Mounts/#file-connector) page. For other connection modes, following values appear:
 
   - **Path** — The path to the directory where the file(s) are
     located.

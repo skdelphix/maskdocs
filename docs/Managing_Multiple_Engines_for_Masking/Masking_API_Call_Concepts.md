@@ -13,6 +13,7 @@ Note: We do not currently support Mainframe masking jobs.
 EngineSync uses object identifiers to name unique objects within the
 engine. The follow object types are currently supported:
 
+  - APPLICATION_SETTINGS
   - DATABASE_CONNECTOR
   - DATABASE_RULESET
   - DOMAIN
@@ -26,12 +27,13 @@ engine. The follow object types are currently supported:
     - CLEANSING
     - DATE_SHIFT
     - LOOKUP
+    - MAPPLET
     - MIN_MAX
     - REDACTION
     - SEGMENT
     - TOKENIZATION
-    - MAPPLET
   - MASKING_JOB
+  - MOUNT_INFORMATION
   - PROFILE_EXPRESSION
   - PROFILE_JOB
   - PROFILE_SET
@@ -63,6 +65,7 @@ entire engine), and blue represents objects that need to be a part of an
 environment
 
 ![](./media/masking_api_call_concepts_dependencies.png)
+<!-- Location of the image https://docs.google.com/drawings/d/1RtTF_pXDW3UokKWba4_oT6ac6lHRcUtykBhERtRx9Ng/edit?usp=sharing -->
 
 ## Object Revision Tracking
 

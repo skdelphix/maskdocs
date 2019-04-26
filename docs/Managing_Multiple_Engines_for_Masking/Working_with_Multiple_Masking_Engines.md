@@ -34,6 +34,7 @@ following:
   - File Formats
   - Inventories
   - Masking Jobs
+  - Mount Information
   - Profile Expressions
   - Profile Jobs
   - Profile Sets

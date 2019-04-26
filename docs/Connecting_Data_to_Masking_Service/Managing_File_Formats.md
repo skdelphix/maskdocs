@@ -6,8 +6,8 @@ Unlike databases files for the most part do not have built in metadata to descri
 
 ##Mainframe data sets and XML files
 
-For Mainframe data sets, you can specify the file format via Input Format option which will import the copybook directly into Delphix. You can input this file from SFTP or FTP. Please select Copybook as the Import Format Type.
-For XML files you can also input the file format with the input format option. You can use the file you want to mask as the format. Delphix will input the format of the file directly. You can input this file from SFTP or FTP. Please select XML as the Import Format Type.
+For Mainframe data sets, you can specify the file format via Input Format option which will import the copybook directly into Delphix. You can input this file from Filesystem Mount Point, SFTP or FTP. Please select Copybook as the Import Format Type.
+For XML files you can also input the file format with the input format option. You can use the file you want to mask as the format. Delphix will input the format of the file directly. You can input this file from Filesystem Mount Point, SFTP or FTP. Please select XML as the Import Format Type.
 
 ##Delimited, Excel, Fixed files
 
@@ -57,7 +57,7 @@ To create a format manually, you can just click the create format button and giv
 ### For a Format Type of Copybook or XML
 
  1. Select a **Connection Mode**.
- 2. Fill out the required fields of the selected **Connection Mode**.
+ 2. Fill out the required fields of the selected **Connection Mode**. For Filesytem Mount Point connection mode, refer the [Managing Remote Mounts](./Managing_Remote_Mounts/#file-format) page to fill out the required fields.
  3. Click **Browse**.
  4. Click the **Select** button to the right of the desired import file format.
  5. Enter a **Logical Name**.
