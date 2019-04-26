@@ -92,7 +92,7 @@ for
 ``` bash
 curl -X GET --header 'Accept: application/json' --header 'Authorization:
 7c856e3d-5b20-4261-b5fe-cc2ffcee5ae0'
-'http://<myMaskingEngine>:8282/masking/api/column-metadata?table_metadata_id=2'
+'http://<myMaskingEngine>/masking/api/column-metadata?table_metadata_id=2'
 ```
 
 ### **RESPONSE**
@@ -137,8 +137,8 @@ update
 curl -X PUT --header 'Content-Type: application/json' --header 'Accept:
 application/json' --header 'Authorization:
 7c856e3d-5b20-4261-b5fe-cc2ffcee5ae0' -d '{ "algorithmName":
-"AddrLine2Lookup", "domainName": "ADDRESS_LINE2" }'
-'http://<myMaskingEngine>:8282/masking/api/column-metadata/20'
+"AddrLine2Lookup", "domainName": "ADDRESS_LINE2", "isProfilerWritable": false }'
+'http://<myMaskingEngine>/masking/api/column-metadata/20'
 ```
 
 ### **RESPONSE**
@@ -146,7 +146,7 @@ application/json' --header 'Authorization:
 ``` json
 { "columnMetadataId": 20, "columnName": "l2_address",
 "tableMetadataId": 2, "algorithmName": "AddrLine2Lookup", "domainName":
-"ADDRESS_LINE2", "columnLength": 512, "isMasked": true, "isPrimaryKey":
+"ADDRESS_LINE2", "columnLength": 512, "isMasked": true, "isProfilerWritable": false, "isPrimaryKey":
 false, "isIndex": false, "isForeignKey": false
 }
 ```

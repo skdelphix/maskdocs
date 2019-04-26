@@ -114,7 +114,7 @@ An example export document will look like this.
 ```
 {
 "exportResponseMetadata": {
-"exportHost": "masking-engine-A:8282",
+"exportHost": "masking-engine-A",
 "exportDate": "Fri Jun 15 20:16:20 UTC 2018",
 "requestedObjectList": [
 {
@@ -230,7 +230,7 @@ Expected Result:
 ```
 {
 "exportResponseMetadata": {
-"exportHost": "masking-engine-A:8282",
+"exportHost": "masking-engine-A",
 "exportDate": "Fri Jun 15 20:16:20 UTC 2018",
 "requestedObjectList": [
 {
