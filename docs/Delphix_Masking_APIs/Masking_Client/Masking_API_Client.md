@@ -217,6 +217,30 @@ Controls how many minutes the password reset link is valid for.
 </tbody>
 </table>
 
+#### Database Group Settings
+
+<table>
+<tbody>
+<tr class="odd">
+<td><strong>Setting Group</strong></td>
+<td><strong>Setting Name</strong></td>
+<td><strong>Type</strong></td>
+<td><strong>Description</strong></td>
+<td><strong>Default Value</strong></td>
+</tr>
+<tr class="even">
+<td>database</td>
+<td>DB2zDateFormat</td>
+<td>String</td>
+<td>Default Date String format to use for DB2 zOS if the database is not using one of the
+<a href="https://www.ibm.com/support/knowledgecenter/en/SSEPEK_11.0.0/sqlref/src/tpc/db2z_datetimestringrepresentation.html">pre-defined IBM DB2 zOS Date String formats</a>.
+Default is ISO Date String format.
+</td>
+<td>yyyy-MM-dd</td>
+</tr>
+</tbody>
+</table>
+
 #### LDAP Group Settings
 
 <table>
