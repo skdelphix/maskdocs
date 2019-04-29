@@ -18,7 +18,7 @@ masking engines (in addition to the masking engine key).
 | Minmax                   | Yes          | NA                                                    |
 | Cleansing                | Yes          | NA                                                    |
 | Free Text Redaction      | Yes          | NA                                                    |
-| Custom Algorithm/Mapplet | Yes          | NA (see “Custom Algorithm Syncability Guide” section) |
+| Custom Algorithm/Mapplet | Yes          | NA ([see Custom Algorithm](http://127.0.0.1:8000/Managing_Multiple_Engines_for_Masking/Algorithm_Syncability/#custom-algorithms)).
 
 ## Built-In Algorithms
 
@@ -64,3 +64,7 @@ algorithms between engines.
 | USstatesLookup            | USSTATES\_SL              | lookup       | Yes          | NA                   |
 | WebURLsLookup             | WEB\_URLS\_SL             | lookup       | Yes          | NA                   |
 | RepeatFirstDigit          | ZIP+4                     | calculated   | No           | Already synchronized |
+
+## Custom Algorithms
+
+Custom algorithms (mapplets) are syncable between masking engines if they are self-contained in the mapplet implementation file. Any other dependencies outside the implementation file, including the masking encryption key, will not be exported from one masking engine and imported into another unless you explicitly manage them. You can manage dependencies on the masking engine encryption key by explicitly requesting the export of the encryption key along with the custom algorithm. Other dependencies, such as data on local file systems or databases (including MDS), must be manually copied from one Delphix Masking Engine to another.
