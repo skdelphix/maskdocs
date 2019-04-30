@@ -70,7 +70,8 @@ The **Create Rule Set** window appears.
 <td><p>5</p></td>
 <td><p><strong>Search Query Input Field</strong></p>
 <p>You can enter a search query here. After typing the search query, press <strong>ENTER</strong> to execute the search query.</p>
-<p><strong>INFO: search query</strong></p>
+<div class="admonition note">
+<p class="admonition-title">NOTE - search query</p>
 <ul>
 <li>
 <p>Use * to match any characters in the names of tables or files.</p>
@@ -78,7 +79,7 @@ The **Create Rule Set** window appears.
 <li>
 <p>If you have selected a table or file before searching and it is not in the search results, it will not be included in the rule set. You can add back the table or file by removing the search query.</p>
 </li>
-</ul></td>
+</ul></div></td>
 </tr>
 <tr class="odd">
 <td><p>6</p></td>
@@ -108,7 +109,17 @@ The **Create Rule Set** window appears.
 <tr class="even">
 <td><p>11</p></td>
 <td><p><strong>File Pattern Input Field</strong></p>
-<p>Enter the file pattern here.</p></td>
+<p>Enter the file pattern here.</p>
+<div class="admonition note">
+<p class="admonition-title">NOTE - file pattern syntax</p>
+<ul>
+<li>
+<p>A file pattern uses the regular expression syntax defined by the Java Pattern class. The syntax is documented <a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html">here</a>.</p>
+</li>
+<li>
+<p>For example, the pattern <pre>.*\.txt</pre> will match any file with a .txt extension such as example.txt.</p>
+</li>
+</ul></div></td>
 </tr>
 <tr class="odd">
 <td><p>12</p></td>
