@@ -497,3 +497,24 @@ When disabled, profile all rows when running data level profiling jobs.</td>
 </tr>
 </tbody>
 </table>
+
+#### Job Group Settings
+<table>
+<tbody>
+<tr class="odd">
+  <td><strong>Setting Group</strong></td>
+  <td><strong>Setting Name</strong></td>
+  <td><strong>Type</strong></td>
+  <td><strong>Description</strong></td>
+  <td><strong>Default Value</strong></td>
+</tr>
+<tr class="even">
+  <td>job</td>
+  <td>JobLoggingLevel</td>
+  <td>String
+  {Basic, Detailed}</td>
+  <td>It controls amount of information being logged from a job's output.</td>
+  <td>Basic</td>
+</tr>
+</tbody>
+</table>
