@@ -49,7 +49,7 @@ getting your OVA installed:
   11. Click Finish. The installation will begin and the
     Delphix Engine will be created in the location you specified.
 
-  12. Jump to “Activating the Masking Service” section
+  12. Jump to “Setting up the Delphix Engine” section
     below to learn how to activate the masking service now that you
     have the software installed.
 
@@ -83,7 +83,7 @@ getting your AMI installed:
   4. Reference the Installation and Configuration
     Requirements for AWS/EC2 when deploying the AMI.
 
-  5. Jump to “Activating the Masking Service” section below
+  5. Jump to “Setting up the Delphix Engine” section below
     to learn how to activate the masking service now that you have the
     software installed.
 
@@ -101,7 +101,7 @@ VHD installed:
     Requirements for the Delphix Engine in Azure when deploying the
     VHD.
 
-  3. Jump to “Activating the Masking Service” section below
+  3. Jump to “Setting up the Delphix Engine” section below
     to learn how to activate the masking service now that you have the
     software installed.
 
@@ -143,6 +143,6 @@ There are limitations to this feature:
 
 ## Logging in to the Delphix Masking Engine
 
-1. Login to a web browser that points to  http://<server_or_IPAddress>/masking.
+1. Login to a web browser that points to  http://masking-engine.example.com/masking.
 2. Enter default username: admin.
-3. Enter default user password:  Admin_12.
+3. Enter default user password:  Admin-12
