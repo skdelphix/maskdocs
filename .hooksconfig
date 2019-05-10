@@ -6,6 +6,7 @@
     slack-color = ff00ff
     slack-notify = docs-pushes
     approvers = gatekeepers-docs
+    nreviews = 1
  [branch "master"]
     gate-release = Lumen
     gate-release-check = skip
