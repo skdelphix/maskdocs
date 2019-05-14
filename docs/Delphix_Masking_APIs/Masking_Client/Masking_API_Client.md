@@ -40,7 +40,7 @@ API Client, which can be used to generate cURL commands for all
 operations.
 
 To access the API client on your Masking Engine, go to
-[<span class="underline">http://myMaskingEngine.myDomain.com:8282/masking/api-client</span>](http://mymaskingengine.mydomain.com:8282/masking/api-client).
+[<span class="underline">http://myMaskingEngine.myDomain.com/masking/api-client</span>](http://mymaskingengine.mydomain.com/masking/api-client).
 
 To see how to log into the API client and for some starter recipes,
 please check out API Cookbook document. Happy programming\!
@@ -54,7 +54,7 @@ will expand over the course of subsequent releases.
 For a full list of supported APIs, the best place to look is the API
 client on your Masking Engine
 
-[<span class="underline">http://myMaskingEngine.com/masking/api-client.</span>](http://mymaskingengine.com:8282/masking/api-client.)High-level
+[<span class="underline">http://myMaskingEngine.com/masking/api-client.</span>](http://mymaskingengine.com/masking/api-client.)High-level
 operations that are **not currently supported** via the v5 APIs include,
 but are not limited to:
 

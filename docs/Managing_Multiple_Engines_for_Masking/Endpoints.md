@@ -38,11 +38,11 @@ curl -X POST
 --header 'Accept: application/json'
 --header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231'
 -d '[
-{  
-"objectIdentifier": {“id”: 1},  
-"objectType": "MASKING_JOB",  
-"revisionHash": "asdfjkl12jijfdsaklfj21ojasdk"  
-}  
+{
+"objectIdentifier": {“id”: 1},
+"objectType": "MASKING_JOB",
+"revisionHash": "asdfjkl12jijfdsaklfj21ojasdk"
+}
 ]'
 'http://masking-engine.com/masking/api/export'
 ```
@@ -54,13 +54,13 @@ is done asynchronously. The response returns an async task in the form
 of this:
 
 ``` json
-{  
-"asyncTaskId": 66,  
-"operation": "EXPORT",  
-"reference": "EXPORT-ZXhwb3J0X2RvY3VtZW50XzJjcm1EV09yLmpzb24=",  
-"status": "RUNNING",  
-"startTime": "2018-04-13T17:49:55.354+0000",  
-"cancellable": false  
+{
+"asyncTaskId": 66,
+"operation": "EXPORT",
+"reference": "EXPORT-ZXhwb3J0X2RvY3VtZW50XzJjcm1EV09yLmpzb24=",
+"status": "RUNNING",
+"startTime": "2018-04-13T17:49:55.354+0000",
+"cancellable": false
 }
 ```
 
@@ -71,12 +71,12 @@ curl -s -X POST
 --header 'Content-Type: application/json'
 --header 'Accept: application/json'
 --header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231'
--d "[  
-{  
-"objectIdentifier": {“id”: 1},  
-"objectType": "MASKING_JOB",  
-"revisionHash": "asdfjkl12jijfdsaklfj21ojasdk"  
-}  
+-d "[
+{
+"objectIdentifier": {“id”: 1},
+"objectType": "MASKING_JOB",
+"revisionHash": "asdfjkl12jijfdsaklfj21ojasdk"
+}
 ]"
 "http://masking-engine.com/masking/api/export-async"
 ```
@@ -127,30 +127,30 @@ curl -X POST
 --header 'Content-Type: application/json'
 --header 'Accept: application/json'
 --header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231'
--d '{  
-"exportResponseMetadata": {  
-"exportHost": "masking-engine.com:8282",  
-"exportDate": "Mon Aug 13 16:29:30 UTC 2018",  
-"exportedObjectList": [  
-{  
-"objectIdentifier": {  
-"algorithmName": "lookup_alg"  
-},  
-"objectType": "LOOKUP",  
-"revisionHash": "cf84d82c21f0e9d4105d37ae7979c0848486d861"  
-},  
-{  
-"objectIdentifier": {  
-"keyId": "global"  
-},  
-"objectType": "KEY",  
-"revisionHash": "1d8e9bc552d3ca1dcd218f9e197ea3955ccc29be"  
-}  
-]  
+-d '{
+"exportResponseMetadata": {
+"exportHost": "masking-engine.com",
+"exportDate": "Mon Aug 13 16:29:30 UTC 2018",
+"exportedObjectList": [
+{
+"objectIdentifier": {
+"algorithmName": "lookup_alg"
+},
+"objectType": "LOOKUP",
+"revisionHash": "cf84d82c21f0e9d4105d37ae7979c0848486d861"
+},
+{
+"objectIdentifier": {
+"keyId": "global"
+},
+"objectType": "KEY",
+"revisionHash": "1d8e9bc552d3ca1dcd218f9e197ea3955ccc29be"
+}
+]
 },
 "blob": "<OMITTED>",
 "signature": "<OMITTED>", \
-"publicKey": "<OMITTED>" \  
+"publicKey": "<OMITTED>" \
 }'
 'http://masking-engine.com/masking/api/import?force_overwrite=true'
 ```
@@ -166,13 +166,13 @@ is done asynchronously and the body is taken in as a file. The response
 returns an async task in the form of this:
 
 ``` json
-{  
-"asyncTaskId": 67,  
-"operation": "IMPORT",  
-"reference": "IMPORT-ZXhwb3J0X2RvY3VtZW50XzJjcm1EV09yLmpzb24=",  
-"status": "RUNNING",  
-"startTime": "2018-04-13T17:49:55.354+0000",  
-"cancellable": false  
+{
+"asyncTaskId": 67,
+"operation": "IMPORT",
+"reference": "IMPORT-ZXhwb3J0X2RvY3VtZW50XzJjcm1EV09yLmpzb24=",
+"status": "RUNNING",
+"startTime": "2018-04-13T17:49:55.354+0000",
+"cancellable": false
 }
 ```
 

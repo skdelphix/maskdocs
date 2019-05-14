@@ -49,7 +49,7 @@ passed to the endpoint to create a MaskingJob.", "maxMemory": 1024,
 
 ### **More info**
 
-http://&lt;myMaskingEngine&gt;/masking/api-client/#!/job/createMaskingJob
+http://&lt;myMaskingEngine&gt;/masking/api-client/#!/maskingJob/createMaskingJob
 
 ## Running a Masking Job
 
