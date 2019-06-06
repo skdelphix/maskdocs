@@ -100,7 +100,7 @@ marketed by Oracle Corporation.
 | **11gR1**   | Supported     | Supported     | Supported     | N/A         |
 | **11gR2**   | Supported     | Supported     | Supported     | Supported   |
 | **12c**     | Supported     | Supported     | Supported     | Supported   |
-| **12cR2**   | Supported     | Supported     | Supported     | N/A         |
+| **12cR2**   | Supported     | Supported     | Supported     | Supported      |
 | **18c**     | Supported     | Supported     | Supported     | N/A         |
 
 #### Available Features
@@ -176,15 +176,15 @@ PostgreSQL, often simply Postgres, is an object-relational database management s
 
 #### Support Matrix
 
-| **Version** | **Linux** | **Unix** | **Windows** | **AWS RDS**  |
-| ----------- | --------- | -------- | ----------- | ------------
-| **9.2**     | Supported | Supported| Supported   | N/A          |
-| **9.3**     | Supported | Supported| Supported   | N/A          |
-| **9.4**     | Supported | Supported| Supported   | Supported    |
-| **9.5**     | Supported | Supported| Supported   | Supported    |
-| **9.6**     | Supported | Supported| Supported   | Supported    |
-| **10**      | Supported | Supported| Supported   | Supported    |
-| **11**      | Supported | Supported| Supported   | Supported    |
+| **Version** | **Linux** | **Unix** | **Windows** | **AWS RDS**  | **AWS Aurora** |
+| ----------- | --------- | -------- | ----------- | ------------ | -------------- |
+| **9.2**     | Supported | Supported| Supported   | N/A          | N/A |
+| **9.3**     | Supported | Supported| Supported   | N/A          | N/A |
+| **9.4**     | Supported | Supported| Supported   | Supported    | Supported |
+| **9.5**     | Supported | Supported| Supported   | Supported    | Supported |
+| **9.6**     | Supported | Supported| Supported   | Supported    | Supported |
+| **10**      | Supported | Supported| Supported   | Supported    | Supported |
+| **11**      | Supported | Supported| Supported   | Supported    | Supported |
 
 #### Available Features
 
@@ -226,11 +226,11 @@ database instance.
 
 #### MySQL Support Matrix
 
-| **Version** | **Linux** | **Unix**  | **Windows** | **AWS RDS**  |
+| **Version** | **Linux** | **Unix**  | **Windows** | **AWS RDS**  | **AWS Aurora**|
 | ----------- | --------- | --------- | ----------- | ------------ |
-| **5.5**     | Supported | Supported | Supported   | Supported    |
-| **5.6**     | Supported | Supported | Supported   | Supported    |
-| **5.7**     | Supported | Supported | Supported   | Supported    |
+| **5.5**     | Supported | Supported | Supported   | Supported    | Supported |
+| **5.6**     | Supported | Supported | Supported   | Supported    | Supported |
+| **5.7**     | Supported | Supported | Supported   | Supported    | Supported |
 
 #### MariaDB Support Matrix
 
@@ -316,7 +316,6 @@ DB2 for z/OS and iSeries are relational database management systems that run on 
 | **9**       | Supported | N/A          |
 | **10**      | Supported | N/A          |
 | **11**      | Supported | N/A          |
-| **Mainframe**    | Supported | N/A          |
 
 #### Available Features
 
@@ -337,41 +336,6 @@ The DB2 for z/OS and iSeries connectors support profiling and masking/tokenizati
 |                             | Disable Trigger         | Unavailable      |
 |                             | Disable Constraint      | Unavailable      |
 |                             | Create Target           | Unavailable      |
-| **Profiling**               | Multi-Tenant            | Available        |
-|                             | Streams                 | Available        |
-
-### AWS RDS Oracle Connector
-
-#### Introduction
-
-Oracle Database is a relational database management system developed by
-Oracle. Amazon RDS makes it easy to set up, operate, and scale Oracle
-Database deployments in the cloud. With Amazon RDS, you can deploy
-multiple editions of Oracle Database in minutes with cost-efficient and
-re-sizable hardware capacity.
-
-#### Support Matrix
-
-| **Version** | **Support Level** |
-| ----------- | ----------------- |
-| **11.2.04** | Supported         |
-
-#### Available Features
-The AWS RDS connector supports profiling and masking/tokenization features. Below is a list of which options are and are not available for jobs using the AWS RDS connector:
-
-|                             | **Feature**             | **Availability** |
-| -------------------------   | ---------------------   | ---------------- |
-| **In-Place Masking Mode**   | Multi-Tenant            | Available        |
-|                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        |
-|                             | Batch Update            | Available        |
-|                             | Drop Indexes            | Available        |
-|                             | Disable Trigger         | Available        |
-|                             | Disable Constraint      | Available        |
-| **On-The-Fly Masking Mode** | Restart Ability         | Available        |
-|                             | Truncate                | Available        |
-|                             | Disable Trigger         | Available        |
-|                             | Disable Constraint      | Available        |
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Available        |
 

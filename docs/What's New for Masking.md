@@ -7,6 +7,9 @@ In 5.2 we introduced the ability to synchronize Masking Algorithms between engin
 - Rulesets
 - Domains
 - File Formats
+- tokenization
+- Re-identification Jobs
+- Database Rulesets
 
 The sync of objects is possible through improvements to several sync API endpoints, including:
 
@@ -64,6 +67,7 @@ In 5.2 we released an all-new set of API endpoints allowing for the automation o
 |System Information|GET /system-information | Get version, etc.|
 |Login/Logout|PUT /logout | User logout|
 |Executions|GET /execution-components | Status for a table, file, or Mainframe data set|
+<<<<<<< ours
 | tokenizationJob  | GET /tokenization-jobs | Get all tokenization jobs|
 | | POST /tokenization-jobs | Create tokenization job|
 | | DELETE /tokenization-jobs/{tokenizationJobid}| Delete tokenization job by ID|
@@ -75,6 +79,19 @@ In 5.2 we released an all-new set of API endpoints allowing for the automation o
 |  | GET /reidentification-jobs/{reidentificationJobid| Get re-identification job by ID|
 |  | PUT /reidentification-jobs/{reidentificationJobid} |Update re-identification job by ID|
 | Database Ruleset endpoint  | PUT  | Refreshes Rule Set|
+=======
+| Tokenization Job  | GET /tokenization-jobs | Get all tokenization jobs|
+| | POST /tokenization-jobs | Create tokenization job|
+| | DELETE /tokenization-jobs/{tokenizationJobid}| Delete tokenization job by ID|
+|  | GET /tokenization-jobs/{tokenizationJobid}| Get tokenization job by ID|
+|  | PUT /tokenization-jobs/{tokenizationJobid} |Update tokenization job by ID|
+| Re-identificationJob  | GET /reidentification-jobs | Get all re-identification jobs|
+| | POST /reidentification-jobs | Create re-identification job|
+| | DELETE /reidentification-jobs/{reidentificationJobid}| Delete re-identification job by ID|
+|  | GET /reidentification-jobs/{reidentificationJobid}| Get re-identification job by ID|
+|  | PUT /reidentification-jobs/{reidentificationJobid} |Update re-identification job by ID|
+| Database Rulesets  | PUT  | Update Database Ruleset by ID|
+>>>>>>> theirs
 
 
 In addition to the net new API endpoints, we have improved pre-existing API endpoints. Some of the improvements include:
