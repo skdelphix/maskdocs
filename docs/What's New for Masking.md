@@ -64,6 +64,17 @@ In 5.2 we released an all-new set of API endpoints allowing for the automation o
 |System Information|GET /system-information | Get version, etc.|
 |Login/Logout|PUT /logout | User logout|
 |Executions|GET /execution-components | Status for a table, file, or Mainframe data set|
+| tokenizationJob  | GET /tokenization-jobs | Get all tokenization jobs|
+| | POST /tokenization-jobs | Create tokenization job|
+| | DELETE /tokenization-jobs/{tokenizationJobid}| Delete tokenization job by ID|
+|  | GET /tokenization-jobs/{tokenizationJobid| Get tokenization job by ID|
+|  | PUT /tokenization-jobs/{tokenizationJobid} |Update tokenization job by ID|
+| reidentificationJob  | GET /reidentification-jobs | Get all re-identification jobs|
+| | POST /reidentification-jobs | Create re-identification job|
+| | DELETE /reidentification-jobs/{reidentificationJobid}| Delete re-identification job by ID|
+|  | GET /reidentification-jobs/{reidentificationJobid| Get re-identification job by ID|
+|  | PUT /reidentification-jobs/{reidentificationJobid} |Update re-identification job by ID|
+| Database Ruleset endpoint  | PUT  | Refreshes Rule Set|
 
 
 In addition to the net new API endpoints, we have improved pre-existing API endpoints. Some of the improvements include:
@@ -73,6 +84,9 @@ In addition to the net new API endpoints, we have improved pre-existing API endp
 - Ability to have ruleset refresh drop tables
 - Support for XML file types
 - Addition of dataType to column metadata
+- Addition of isProfilerWritable field to file-field-metadata endpoints. This is now represented in the API as a new *isProfilerWritable* boolean field in the body of a file-field-metadata. When the isProfilerWritable field is set to true,  the algorithm/domain assignment on a column can be overwritten by the profiler. When the field is false, it may not be overwritten.
+- Addition of multipleProfilerCheck field to Profile Job endpoints. This feature is turned on using the boolean field in the body of a profile job. The job profiler normally stops profiling a column as soon as it flags a field as sensitive. If *multipleProfilerCheck* is true, the profiler will continue to scan the column for additional sensitive patterns. In the event that it finds more than one pattern, it will tag all the data domains found and apply 'one' standard algorithm for all those domains. The standard algorithm is ‘Null SL’ as of 5.3.4.0.
+This feature was formerly called ‘multi PHI’.
+
 
 For more information please on Delphix Masking APIs please see [API documentation](https://maskingdocs.delphix.com/Delphix_Masking_APIs/Masking_Client/Masking_API_Client/).  Please note that the previous generation of Masking APIs (commonly referred to as V4) is EOL and no longer supported in this release. All users are encouraged to migrate to the V5 APIs.
-
