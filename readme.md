@@ -69,3 +69,16 @@ This will activate the virtualenv in which you can run `mkdocs serve` or whateve
 ## Running mkdocs after install
 
 When you need to start your local mkdocs server, it's really simple. Just make sure you're in the 'docsdev' directory locally (e.g. `cd ~/docsdev`), then run: `pipenv run mkdocs serve`
+
+## Checking in Changes
+
+After following the steps above, you will be ready to make changes to the documentation. Like most other repositories, each change to the documentation is tracked by a JIRA issue. Start by creating a JIRA issue in the DOC project. Next create a branch to work on, use your favorite editor to make changes, view the changes for correctness, and commit the changes using the JIRA issues summary.
+
+Checking in a change requires two ship its on Review Board. The review should include the following groups: all-masking-gate, docs, gatekeepers-docs, masking. There are two ways to post a documentation review:
+
+* `git review`: the familiar command used to post reviews for any Delphix Git repositories
+
+* `git docsdev-review`: a command built specifically for this docsdev repository. The `git docsdev-review` command builds the documentation, copies the documentation to a user specified virtual machine that is running an HTTP server, and then posts a review with a web link to the virtual machine's documentation. The web link is very helpful for reviewers, especially for large reviews or reviews with inline images. For convience, pre-created VM images for use with `git docsdev-review` are available using the docsdev-server group at:
+  * Dcenter (`dcenter.delphix.com`)
+  * DCoA (`dlpxdc.co`)
+See `git docsdev-review -h` for help.

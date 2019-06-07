@@ -22,11 +22,13 @@ If the Virtualization Engine and Masking Engine are on different hosts, use thes
 
 To change the Virtualization Engine's connection details for its Masking Engine:
 
-1. Using a shell, login to the **CLI** using **delphix_admin**.
+1. Using a shell, login to the **CLI** using:
+    * On 5.2 and earlier releases: **delphix_admin**.
+    * On 5.3 and later releases: **admin**.
 2. At the **CLI** root prompt, type **maskingjob**.
 3. At the **maskingjob** prompt, type **serviceconfig**.
 4. To list service configurations, type **ls**.
-5. At the serviceconfig, type select **`MASKING_SERVICE_CONFIG-1**.
+5. At the serviceconfig, type **select `MASKING_SERVICE_CONFIG-1**.
 6. To view the configurations, type **ls**.
 7. With this service config selected, enter **update**.
 8. In the update mode, use the **set** command to modify the configuration. For example, type **set port=[YOUR DESIRED PORT NUMBER]** to change the port number.

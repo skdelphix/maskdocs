@@ -28,12 +28,12 @@ different web browsers. The Delphix Engine currently supports the following web 
 !!! tip "TIP - Microsoft Internet Explorer"
     Make sure that Internet Explorer is not configured for compatibility mode.
 
-## VMware Virtual Platform
+## VMware Platform
 
 This section covers the virtual machine requirements for installation of
 a dedicated Delphix Masking Engine on the VMware Virtual platform.
 
-#### VMWare Platform
+#### Versions
 
 The Delphix Engine can be run on several version of VMware ESX/ESXI ([see
 support matrix](https://docs.delphix.com/docs/system-installation-configuration-and-management/installation-and-initial-configuration-requirements/virtual-machine-requirements-for-vmware-platform)).
@@ -54,22 +54,27 @@ impact the performance of the Delphix Engine. Reservation ensures that
 the Delphix Engine will not stall while waiting for the ESX server to
 page in the engine’s memory.
 
-!!! tip "TIP - Do not allocate all memory to the Delphix Engine"
+!!! tip "TIP - Do not allocate all memory to the Delphix VM"
 
     Never allocate all available physical memory to the Delphix VM. You must set aside memory for the ESX Server to perform hypervisor activities before you assign memory to Delphix and other VMs. The default ESX minimum free memory requirement is 6% of total RAM. When free memory falls below 6%, ESX starts swapping out the Delphix guest OS. We recommend leaving about 8-10% free to avoid swapping
 
     For example, when running on an ESX Host with 512GB of physical memory, allocate no more than 470GB (92%) to the Delphix VM (and all other VMs on that host).
 
-#### Delphix Engine System Disk Storage
+#### Storage
 
-The minimum recommended storage on the Delphix Engine System Disk is
-300GB. The System disk may need to be substantially larger if bulk
-logging will be enabled. The actual size will depend on the data being
-masked. The VMDK for the Delphix Engine system disk storage is often
-created in the same VMFS volume as the Delphix VM definition. In that
-case, the datastore must have sufficient space to hold the Delphix VM
-configuration, the VMDK for the system disk, and a paging area if a
-memory reservation was not enabled for the Delphix Engine.
+##### System Disk
+
+The minimum recommended storage size of the System Disk (rpool) is 300 GB.
+
+The System Disk may need to be substantially larger if masking jobs use the bulk data option. The actual size will depend on the amount of bulk data being masked.
+
+The VMFS volume must be located on shared storage in order to use vMotion and HA features.
+
+The VMDK for the System Disk is often created in the same VMFS volume as the Delphix VM definition. In that case, the datastore must have sufficient space to hold the VMDK for the System Disk and the Delphix VM definition.
+
+##### Configuration Disk(s)
+
+The minimum recommended storage size of the Configuration Volume (domain0) is 50 GB.
 
 ## AWS EC2 Platform
 
@@ -77,15 +82,13 @@ This section covers the virtual machine requirements for installation of
 a dedicated Delphix Masking Engine on Amazon's Elastic Cloud Compute
 (EC2) platform.
 
-For best performance, the Delphix Masking Engine and all database
+For best performance, the Delphix Masking Engine and all database/file
 servers should be in the same AWS region.
 
 #### Instance Types
 
-The Delphix Engine can run on a variety of different instances,
-including large memory instances (preferred) and high I/O instances. The
-Delphix Engine most closely resembles a storage appliance and performs
-best when provisioned using a storage optimized instance type. We
+The Delphix Masking Engine can run on a variety of different instances,
+including large memory instances (preferred) and high I/O instances. We
 recommend the following large memory and high I/O instances:
 
 <table>
@@ -127,26 +130,20 @@ recommend the following large memory and high I/O instances:
 <li>
 <p>i3.8xlarge</p>
 </li>
-<li>
-<p>i2.2xlarge</p>
-</li>
-<li>
-<p>i2.4xlarge</p>
-</li>
-<li>
-<p>i2.8xlarge</p>
-</li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
 Larger instance types provide more CPU, which can prevent resource
-shortfalls under high I/O throughput conditions. Larger instances also
-provide more memory, which the Delphix Engine uses to cache database
-blocks. More memory will provide better read performance. For more
+shortfalls under high I/O throughput conditions. For more
 information please refer to, [<span class="underline">Virtual Machine
 Requirements for AWS EC2 Platform</span>](https://docs.delphix.com/docs/system-installation-configuration-and-management/installation-and-initial-configuration-requirements/virtual-machine-requirements-for-aws-ec2-platform).
+
+!!! tip "TIP - Estimating Delphix VM Memory Requirements"
+
+    On the AWS EC2 platform, the Delphix Masking Engine must have sufficient memory to operate when multiple masking jobs are running. Our recommendation is to provide 8 GB of memory for the Delphix Masking Engine in addition to any memory that will be used by running jobs.
+
 
 #### Network Configurations
 
@@ -167,7 +164,9 @@ Addresses.
 !!! tip "TIP - Port Configuration"
     The default security group will only open port 22 for secure shell (SSH) access. You must modify the security group to allow access to all of the networking ports used by the Delphix Engine and the various source and target engines. See [<span class="underline">General Network and Connectivity Requirements</span>](https://docs.delphix.com/docs/system-installation-configuration-and-management/installation-and-initial-configuration-requirements/general-network-and-connectivity-requirements) for information about specific port configurations.
 
-#### EBS Configurations
+#### Storage Configurations
+
+##### Elastic Block Store (EBS) Requirements
 
 All attached storage devices must be EBS volumes. Delphix does not
 support the use of instance store volumes. Because EBS volumes are
@@ -188,52 +187,68 @@ I/O requests of up to 256 kilobytes (KB) are counted as a single I/O
 operation (IOP) for provisioned IOPs volumes. Each volume can be
 configured for up to 4,000 IOPs.
 
-#### General Storage Configurations
+##### System Disk
 
-The minimum recommended storage on the Delphix Engine System Disk is 300GB. The System disk may need to be substantially larger if bulk logging will be enabled. The actual size will depend on the data being masked.
+The minimum recommended storage size for the System Disk (rpool) is 300 GB.
 
-Add storage when storage capacity approaches 30% free. Keep all EBS volumes the same size. Add new storage by provisioning new volumes of the same size.
+The System Disk may need to be substantially larger if masking jobs use the bulk data option. The actual size will depend on the amount of bulk data being masked.
 
-Use at least 3 EBS volumes to maximize performance. This enables the Delphix File System (DxFS) to make sure that its file systems are always consistent on disk without additional serialization. This also enables the Delphix Engine to achieve higher I/O rates by queueing more I/O operations to its storage.
+##### Configuration Disk(s)
+
+The minimum recommended storage size of the Configuration Volume (domain0) is 50 GB.
 
 ## Azure Platform
 
 This section covers the virtual machine requirements for installation of
 a dedicated Delphix Masking Engine on Microsoft's Azure cloud platform.  
 
-For best performance, the Delphix Masking Engine and all database
+For best performance, the Delphix Masking Engine and all database/file
 servers should be in the same Azure Region.
 
 #### Instance Types
 
 The Delphix Engine can run on a variety of different Azure instances.
-The Delphix Engine most closely resembles a storage appliance and
-performs best when provisioned using a storage optimized instance type.
-We recommend the following memory and storage optimized instances:
+We recommend the following instances:
 
-  - GS3 - 8 CPUs, 112GB, 16 TB (20,000 IOPS)
+  - DS14v2 - 16 CPUs, 112GB, 32 devices
 
-  - GS4 - 16 CPUs, 244GB, 32 TB (40,000 IOPS)
+  - DS15v2 - 20 CPU, 140GB, 40 devices
 
-  - GS5 - 32 CPUs, 448GB, 64 TB (80,000 IOPS)
+  - GS3 - 8 CPUs, 112GB, 16 devices
+
+  - GS4 - 16 CPUs, 244GB, 32 devices
+
+  - GS5 - 32 CPUs, 448GB, 64 devices
+
+!!! tip "TIP - Estimating Delphix VM Memory Requirements"
+
+    On the Azure platform, the Delphix Masking Engine must have sufficient memory to operate when multiple masking jobs are running. Our recommendation is to provide 8 GB of memory for the Delphix Masking Engine in addition to any memory that will be used by running jobs.
 
 #### Network Configurations
 
-Network Configuration for Delphix Engines running on the Azure Platform
-can be configured on the Azure Virtual Network (VNet). Delphix Engine
-and all the source and target environments must be accessible within the
-same virtual
-network.
+The Delphix Engine and all database/file servers must be in the same Azure Virtual Network (VNet).
 
 !!! tip "TIP - Port Configuration"
-    You must modify the security group to allow access to all of the networking ports used by the Delphix Engine and the various source and target engines. See [<span class="underline">General Network and Connectivity Requirements</span>](https://docs.delphix.com/docs/system-installation-configuration-and-management/installation-and-initial-configuration-requirements/general-network-and-connectivity-requirements) for information about specific port configurations.
+    You must modify the Network Security Group (NSG) to allow access to all of the networking ports used by the Delphix Engine and the various data sources. See [<span class="underline">General Network and Connectivity Requirements</span>](https://docs.delphix.com/docs/system-installation-configuration-and-management/installation-and-initial-configuration-requirements/general-network-and-connectivity-requirements) for information about specific port configurations.
 
 #### Storage Configurations
 
+##### Requirements
+
 When configuring storage for the Delphix Engine we recommend Azure
-Premium Storage which uses solid-state drives (SSDs). Devices up to 1024
-are supported with a total maximum of 64tb.
+Premium Storage which uses solid-state drives (SSDs). Devices up to 4096 GB
+are supported with a total maximum of 256 TB.
 
 I/O requests of up to 256 kilobytes (KB) are counted as a single I/O
 operation (IOP) for provisioned IOPs volumes. IOPS vary based on storage
-size with a maximum of 5,000 IOPS.
+size with a maximum of 7,500 IOPS.
+
+##### System Disk
+
+The minimum recommended storage size for the System Disk (rpool) is 300 GB.
+
+The System Disk may need to be substantially larger if masking jobs use the bulk data option. The actual size will depend on the amount of bulk data being masked.
+
+##### Configuration Disk(s)
+
+The minimum recommended storage size of the Configuration Volume (domain0) is 50 GB.
