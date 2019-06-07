@@ -227,7 +227,7 @@ database instance.
 #### MySQL Support Matrix
 
 | **Version** | **Linux** | **Unix**  | **Windows** | **AWS RDS**  | **AWS Aurora**|
-| ----------- | --------- | --------- | ----------- | ------------ |
+| ----------- | --------- | --------- | ----------- | ------------ | -------------|
 | **5.5**     | Supported | Supported | Supported   | Supported    | Supported |
 | **5.6**     | Supported | Supported | Supported   | Supported    | Supported |
 | **5.7**     | Supported | Supported | Supported   | Supported    | Supported |
