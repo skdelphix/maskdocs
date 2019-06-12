@@ -2,14 +2,14 @@ Before masking your data, it is important to prepare your database. This section
 explains the required changes, reasons for the change, and the instructions to
 make the change.
 
-## Logging 
+## Logging
 
 **What is Simple Recovery Model?**
 
 SQL Database Simple Recovery model - Automatically reclaims log space to keep
 space requirements small, essentially eliminating the need to manage the
 transaction log space. Operations that require transaction log backups are not
-supported by the simple recovery model. 
+supported by the simple recovery model.
 
 **Why is it important to make this change?**
 
@@ -18,21 +18,22 @@ before checkpoints increases the masking speed significantly.
 
 **How exactly do I make this change?**
 
-Using SQL Server Management Studio open the DB properties dialog box and select
-the “simple recovery model” or from a SQL Query tool enter “SET RECOVERY SIMPLE.”
-Please see _____ for more details. 
+Either (a) use SQL Server Management Studio to open the DB properties
+dialog box and select the “simple recovery model” or (b) issue the
+`SET RECOVERY SIMPLE` statement from a SQL query tool. Please see
+[this reference](https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server) for more details.
 
 
-## DB/VDB Memory Allocation 
+## DB/VDB Memory Allocation
 
 **What is min/max memory in SQL Server?**
 
 Memory is allocated at the SQL Server level, so all the DBs will share the
-entire load. Max memory should be close the maximum available on the server. 
+entire load. Max memory should be close the maximum available on the server.
 
 **Why is it important to make this change?**
 
-To assure that masking jobs will perform at an optimum level.  
+To assure that masking jobs will perform at an optimum level.
 
 **How exactly do I make this change?**
 
@@ -44,7 +45,7 @@ server.
 
 **What is a key?**
 
-A key is a unique, non-null value that identifies a row in the database.  
+A key is a unique, non-null value that identifies a row in the database.
 
 **Why is it important to make this change?**
 
