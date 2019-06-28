@@ -513,7 +513,10 @@ When disabled, profile all rows when running data level profiling jobs.</td>
   <td>JobLoggingLevel</td>
   <td>String
   {Basic, Detailed}</td>
-  <td>It controls amount of information being logged from a job's output.</td>
+  <td>Controls the amount of information being logged from a job's
+      output. Warning: the Detailed setting may log sensitive
+      information when errors occur. Although this information can be very
+      valuable when debugging a problem, it should be used with care.</td>
   <td>Basic</td>
 </tr>
 </tbody>
