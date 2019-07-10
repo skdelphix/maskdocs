@@ -27,6 +27,12 @@ To input the file format for fixed files create a text document with the column 
 
 Then input this file as the file format. The name of the text file will be the name of the file format.
 
+!!! note "NOTE - Column length Mismatch between Fixed File and File Format"
+    For Fixed Files, caution should be taken to ensure that the column length is in accordance with the File Format definition. Failure to do so will result in masking a column with the incorrect offset, which would have the unintended consequence of not masking what was intended.
+
+!!! note "NOTE - Multi-byte Characters"
+    For Fixed Files, column length is determined by the number of characters rather than the number of bytes.
+
 ## To Create a New File Format
 
 To create a format manually, you can just click the create format button and give the format a name. We will input the details of the format a little later in this document.
