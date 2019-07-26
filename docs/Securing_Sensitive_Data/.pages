@@ -4,4 +4,5 @@ arrange:
   - Creating_Masking_Job.md
   - Running_Stopping_Jobs.md
   - Monitoring_Masking_Job.md
+  - Scheduling_Jobs.md
   - Masking_Job_Wizard.md
