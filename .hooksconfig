@@ -7,7 +7,7 @@
     slack-notify = docs-pushes
     approvers = gatekeepers-docs
     nreviews = 1
-    review-check skip
+    review-check = skip
  [branch "master"]
     gate-release = Lumen
     gate-is-major-release = true
