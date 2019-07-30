@@ -247,10 +247,6 @@ masking job.
 <td>Feedback Size</td>
 <td>The number of rows to process before writing a message to the logs. Set this parameter to the appropriate level of detail required for monitoring your job. For example, if you set this number significantly higher than the actual number of rows in a job, the progress that job will show 0% or 100%.</td>
 </tr>
-<tr class="even">
-<td>Bulk Data <em>optional</em></td>
-<td>For In-Place masking only. The default is for this check box to be clear. If you are masking very large tables in-place and require performance improvements, check this box. Delphix will mask data to a flat file, and then use inserts instead of updates to bulk load the target table.</td>
-</tr>
 <tr class="odd">
 <td>Disable Trigger <em>optional</em></td>
 <td>Whether to automatically disable database triggers. The default is for this check box to be clear and therefore not perform automatic disabling of triggers.</td>

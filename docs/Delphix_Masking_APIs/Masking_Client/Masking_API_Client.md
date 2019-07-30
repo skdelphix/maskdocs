@@ -341,25 +341,10 @@ Integer
 [1, ∞)
 </td>
 <td>
-Controls how many rows are updated (Batch Update) or inserted (Bulk Data) to the database before the transaction is committed.
+Controls how many rows are updated (Batch Update) to the database before the transaction is committed.
 </td>
 <td>
 10000
-</td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>
-BulkDataSeparator
-</td>
-<td>
-String
-</td>
-<td>
-Characters used to separate fields in a bulk data masking job.
-</td>
-<td>
-#;#
 </td>
 </tr>
 <tr class="even">

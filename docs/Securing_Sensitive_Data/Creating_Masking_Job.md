@@ -79,12 +79,6 @@ To create a new masking job:
         actual number of rows in a job, the progress for that job will
         only show 0 or 100%.
 
-    13. **Bulk Data** — (optional) For In-Place masking only. The default
-        is for this check box to be clear. If you are masking very large
-        tables in-place and require performance improvements, check this
-        box. Delphix will mask data to a flat file, and then use inserts
-        instead of updates to bulk load the target table.
-
     14. **Disable Constraint** — (optional) Whether to automatically
         disable database constraints. The default is for this check box to
         be clear and therefore not perform automatic disabling of

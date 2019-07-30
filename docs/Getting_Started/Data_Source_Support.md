@@ -70,7 +70,6 @@ The DB2 LUW connector supports profiling and masking/tokenization features. Belo
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        |
 |                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Available        |
 |                             | Disable Trigger         | Unavailable      |
@@ -111,7 +110,6 @@ The Oracle connector supports profiling and masking/tokenization features. Below
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        |
 |                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Available        |
 |                             | Disable Trigger         | Available        |
@@ -154,7 +152,6 @@ The MS SQL connector supports profiling and masking/tokenization features. Below
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        |
 |                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Available        |
 |                             | Disable Trigger         | Available        |
@@ -194,7 +191,6 @@ The PostgreSQL connector supports profiling and masking/tokenization features. B
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        |
 |                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Unavailable      |
 |                             | Disable Trigger         | Unavailable      |
@@ -246,7 +242,6 @@ The MySQL connector supports profiling and masking/tokenization features. Below 
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        |
 |                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Available        |
 |                             | Disable Trigger         | Unavailable      |
@@ -286,7 +281,6 @@ The SAP ASE (Sybase) connector supports profiling and masking/tokenization featu
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        |
 |                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Available        |
 |                             | Disable Trigger         | Available        |
@@ -326,7 +320,6 @@ The DB2 for z/OS and iSeries connectors support profiling and masking/tokenizati
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        |
 |                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Unavailable      |
 |                             | Disable Trigger         | Unavailable      |
@@ -363,7 +356,6 @@ The AWS RDS connector supports profiling and masking/tokenization features. Belo
 | -------------------------   | ---------------------   | ---------------- |
 | **In-Place Masking Mode**   | Multi-Tenant            | Available        |
 |                             | Streams / Threads       | Available        |
-|                             | Bulk Update             | Available        |
 |                             | Batch Update            | Available        |
 |                             | Drop Indexes            | Available        |
 |                             | Disable Trigger         | Available        |

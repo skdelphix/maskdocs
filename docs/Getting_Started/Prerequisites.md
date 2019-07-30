@@ -66,8 +66,6 @@ page in the engine’s memory.
 
 The minimum recommended storage size of the System Disk (rpool) is 300 GB.
 
-The System Disk may need to be substantially larger if masking jobs use the bulk data option. The actual size will depend on the amount of bulk data being masked.
-
 The VMFS volume must be located on shared storage in order to use vMotion and HA features.
 
 The VMDK for the System Disk is often created in the same VMFS volume as the Delphix VM definition. In that case, the datastore must have sufficient space to hold the VMDK for the System Disk and the Delphix VM definition.
@@ -191,8 +189,6 @@ configured for up to 4,000 IOPs.
 
 The minimum recommended storage size for the System Disk (rpool) is 300 GB.
 
-The System Disk may need to be substantially larger if masking jobs use the bulk data option. The actual size will depend on the amount of bulk data being masked.
-
 ##### Configuration Disk(s)
 
 The minimum recommended storage size of the Configuration Volume (domain0) is 50 GB.
@@ -200,7 +196,7 @@ The minimum recommended storage size of the Configuration Volume (domain0) is 50
 ## Azure Platform
 
 This section covers the virtual machine requirements for installation of
-a dedicated Delphix Masking Engine on Microsoft's Azure cloud platform.  
+a dedicated Delphix Masking Engine on Microsoft's Azure cloud platform.
 
 For best performance, the Delphix Masking Engine and all database/file
 servers should be in the same Azure Region.
@@ -246,8 +242,6 @@ size with a maximum of 7,500 IOPS.
 ##### System Disk
 
 The minimum recommended storage size for the System Disk (rpool) is 300 GB.
-
-The System Disk may need to be substantially larger if masking jobs use the bulk data option. The actual size will depend on the amount of bulk data being masked.
 
 ##### Configuration Disk(s)
 
