@@ -1,3 +1,8 @@
 site/
 .DS_Store
 build.sh
+
+
+# ignore IDE files
+.idea/
+*.iml
