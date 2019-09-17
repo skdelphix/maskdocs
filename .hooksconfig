@@ -9,10 +9,9 @@
     nreviews = 1
     review-check = skip
  [branch "master"]
-    gate-release = Lumen
+    gate-release = 6.0.0.0
     gate-is-major-release = true
     gate-release-check = skip
-    codename = Lumen
     gate-allowed-issuetypes = 1,3,4,5,10000,10400
  [branch "5.3/patch"]
     gate-allowed-issuetypes = 10405
