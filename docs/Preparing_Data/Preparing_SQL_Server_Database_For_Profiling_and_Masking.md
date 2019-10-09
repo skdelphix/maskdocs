@@ -59,11 +59,11 @@ A logical key can be added to a table in the Masking Engine Ruleset for each
 table, if there is a specific column that would find the row to update faster
 than the current PK/FK.
 
-## Creating a Masking User and Privileges:
+## Creating a Masking User and Privileges
 
 It is highly recommended to create a database user, and possibly a role, for use by the
-Masking Engine. This user should not be created in production but should be created in
-non-Production. The following permissions are needed:
+Masking Engine. This user should be created in a non-Production environment and not in your 
+production environment. The following permissions are needed:
 
  - db_datareader
 
