@@ -20,7 +20,7 @@ The **connectors** screen contains the following information and actions:
     Mainframe.
 
   - **Type** — The specific type of connector.
-
+  
   - **Edit** — Edit the connector. See more details below.
 
   - **Delete** — Delete the connector. See more details below.

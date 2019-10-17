@@ -1,0 +1,5 @@
+arrange:
+  - Managing_Permissions.md
+  - Preparing_Oracle_Database_For_Profiling_and_Masking.md
+  - Preparing_SQL_Server_Database_For_Profiling_and_Masking.md
+  - Preparing_Sybase_Database_For_Profiling_and_Masking.md
