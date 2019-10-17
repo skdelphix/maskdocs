@@ -17,7 +17,7 @@ The sync of objects is possible through improvements to several sync API endpoin
 - POST /import
 - POST/import-async
 
-This expansion of syncable objects ensures that users can sync their Masking Jobs and all the objects necessary for that masking job to execute successfully - regardless of the masking engine it lives on, allowing for easier scaling of Delphix Masking across the enterprise. Please see [Managing Multiple Masking Engines](https://maskingdocs.delphix.com/Managing_Multiple_Engines_for_Masking/Working_with_Multiple_Masking_Engines/)  for more details.
+This expansion of syncable objects ensures that users can sync their Masking Jobs and all the objects necessary for that masking job to execute successfully - regardless of the masking engine it lives on, allowing for easier scaling of Delphix Masking across the enterprise. Please see [Managing Multiple Masking Engines](/Managing_Multiple_Engines_for_Masking/Working_with_Multiple_Masking_Engines/)  for more details.
 
 ## Support for Kerberized Connections
 In 5.2.4 we added support for Kerberos for our Oracle Masking Connector. In 5.3 we have expanded the list of connectors that support Kerberos to:
@@ -25,7 +25,7 @@ In 5.2.4 we added support for Kerberos for our Oracle Masking Connector. In 5.3 
 - SQL Server
 - Sybase
 
-To enable Kerberized connectors your engine must be configured properly and you must configure your masking Connectors for Kerberos. Kerberos can be enabled by going to the Advanced mode on Oracle, SQL Server and Sybase. Please see [Managing Connectors](https://maskingdocs.delphix.com/Connecting_Data_to_Masking_Service/Managing_Connectors/) for more details.
+To enable Kerberized connectors your engine must be configured properly and you must configure your masking Connectors for Kerberos. Kerberos can be enabled by going to the Advanced mode on Oracle, SQL Server and Sybase. Please see [Managing Connectors](/Connecting_Data/Managing_Connectors/) for more details.
 
 ![](./media/create_kerberos.png)
 

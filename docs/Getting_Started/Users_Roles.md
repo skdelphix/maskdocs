@@ -39,15 +39,16 @@ in the masking service.
 When defining a role, permission to perform the above actions can be
 defined on a per object basis. These objects include:
 
-| **General** | **Jobs**    | **Settings** |
-| ----------- | ----------- | ------------ |
-| Environment | Profile Job | Domains      |
-| Connection  | Masking Job | Algorithms   |
-| Ruleset     | Scheduler   | Profiler     |
-| Inventory   |             | Profile Set  |
-|             |             | Mapping      |
-|             |             | File Format  |
-|             |             | Users        |
+| **General** | **Jobs**    | **Settings**      |
+| ----------- | ----------- | ----------------- |
+| Environment | Profile Job | Domains           |
+| Connection  | Masking Job | Algorithms        |
+| Ruleset     | Scheduler   | Profiler          |
+| Inventory   |             | Profiler Set      |
+|             |             | Custom Algorithms |
+|             |             | File Format       |
+|             |             | Users             |
+|             |             | Diagnostic        |
 
 Please see [Delphix Masking Terminology](Definitions_-_Terms_and_Meanings/) for definitions of these objects.
 

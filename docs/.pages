@@ -3,7 +3,7 @@ arrange:
   - What's New for Masking.md
   - Getting_Started
   - Preparing_Data
-  - Connecting_Data_to_Masking_Service
+  - Connecting_Data
   - Identifying_Sensitive_Data
   - Securing_Sensitive_Data
   - Masked_Provisioning
