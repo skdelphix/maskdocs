@@ -54,10 +54,6 @@ LUW:
 
 | **Version** | **Linux** | **Unix**  | **Windows** |
 | ----------- | --------- | --------- | ----------- |
-| **9.1**     | Supported | Supported | Supported   |
-| **9.5**     | Supported | Supported | Supported   |
-| **9.7**     | Supported | Supported | Supported   |
-| **9.8**     | Supported | Supported | Supported   |
 | **10.1**    | Supported | Supported | Supported   |
 | **10.5**    | Supported | Supported | Supported   |
 | **11.1**    | Supported | Supported | Supported   |
