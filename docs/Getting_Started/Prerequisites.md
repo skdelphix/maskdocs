@@ -20,7 +20,8 @@ run inside the same virtual machine. Always use seperate, dedicated Delphix Engi
 The Delphix Engine's graphical interface can be accessed from a variety of
 different web browsers. The Delphix Engine currently supports the following web browsers:
 
-* Microsoft Internet Explorer 10.0 or higher
+* Microsoft Internet Explorer 11.0 or higher
+* Microsoft Edge 40.x or higher
 * Mozilla Firefox 35.0 or higher
 * Chrome 40 or higher
 
