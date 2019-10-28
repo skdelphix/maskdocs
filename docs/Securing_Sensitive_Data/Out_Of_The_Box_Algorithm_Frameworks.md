@@ -14,7 +14,7 @@ Because names and addresses naturally recur in real data, this mimics an
 actual data set. However, if you want the masking engine to mask all
 data into unique outputs, you should use segment mapping.
 
-## Sement Mapping Algorithm Framework
+## Segment Mapping Algorithm Framework
 
 Segment mapping algorithms produce no overlaps or repetitions in the
 masked data. They let you create unique masked values by dividing a
@@ -156,7 +156,7 @@ number that takes the form 123-45-6789 is likely to be a Social Security
 Number.
 
 You can use a free text redaction algorithm to show or hide information
-by displaying either a “black list” or a “white list.”
+by displaying either a “blacklist” or a “whitelist.”
 
 **Blacklist** – Designated material will be redacted (removed). For
 example, you can set a blacklist to hide patient names and addresses.

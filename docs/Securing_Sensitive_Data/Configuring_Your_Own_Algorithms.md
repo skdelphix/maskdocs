@@ -67,7 +67,7 @@ To add a secure lookup algorithm:
 
     ![](./media/image30.png)
 
-3.  Enter a **Algorithm Name**.
+3.  Enter an **Algorithm Name**.
 
     !!! info
         This MUST be unique.
@@ -105,7 +105,10 @@ To add a secure lookup algorithm:
 
     ![](./media/SegmentMappingAlgorithm.png)
 
-3.  Enter a **Rule Name**.
+3.  Enter an **Algorithm Name**.
+
+    !!! info
+        This MUST be unique.
 
 4.  Enter a **Description.**
 
@@ -244,7 +247,10 @@ to fail.
 
     ![](./media/image18.png)
 
-4.  Enter a **Rule Name**. This name MUST be unique.
+4.  Enter an **Algorithm Name**.
+
+    !!! info
+        This MUST be unique.
 
 5.  Enter a **Description**.
 
@@ -284,12 +290,15 @@ associate the algorithm with a domain.
 1.  At the top right of the **Algorithm** tab, click **Add
     Algorithm**.
 
-2.  Select **Binary Lookup Algorithm**. The Binary SL Rule pane
+2.  Select **Binary Lookup Algorithm**. The Create Binary SL Algorithm pane
     appears.
 
     ![](./media/image29.png)
 
-3.  Enter a **Rule Name**.
+3.  Enter an **Algorithm Name**.
+
+    !!! info
+        This MUST be unique.
 
 4.  Enter a **Description**.
 
@@ -299,13 +308,24 @@ associate the algorithm with a domain.
 
 ### Tokenization Algorithm Framework
 
-To add a Tokenization algorithm:
+**To add a Tokenization algorithm:**
 
-1.  Enter algorithm **Name**.
+1.  At the top right of the **Algorithm** tab, click **Add
+    Algorithm**.
 
-2.  Enter a **Description**.
+2.  Select **Tokenization Algorithm**. The Create Tokenization
+    Algorithm pane appears.
 
-3.  Click **Save**.
+    ![](./media/tokenization_alg_dialog.png)
+
+3.  Enter an **Algorithm Name**.
+
+    !!! info
+        This MUST be unique.
+
+4.  Enter a **Description**.
+
+5.  Click **Save**.
 
 Once you have created an algorithm, you will need to associate it with a
 domain.
@@ -366,6 +386,9 @@ default value is used when the input cannot be evaluated.
 
 1.  Enter the **Algorithm Name**.
 
+    !!! info
+        This MUST be unique.
+
 2.  Enter a **Description**.
 
 3.  Enter **Min Value** and **Max Value**.
@@ -388,6 +411,9 @@ format prior to masking.
 
 1.  Enter an **Algorithm Name**.
 
+    !!! info
+        This MUST be unique.
+
 2.  Enter a **Description**.
 
 3.  Select **Lookup File** location.
@@ -408,7 +434,7 @@ line in the file. The following is sample file content:
 
 ### Free Text Algorithm Framework
 
-To add a free text redaction algorith:
+To add a free text redaction algorithm:
 
 ![](./media/image28.png)
 
