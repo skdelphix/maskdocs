@@ -1,6 +1,16 @@
 # What's New for Masking
+
+## 6.0.0.0 Release
+
+### Objects Names Requirements
+In 6.0 we have added validations for objects names that can be created/renamed manually.
+For more information please refer to [Naming Requirements](/Getting_Started/Naming_Requirements/).
+Please pay attention to the fact that enforcing these requirements might fail the import, sync, or upgrade from pre-6.0 release.
+Please refer to the following [Knowledge Base Article KBA5096](https://support.delphix.com/Delphix_Masking_Engine/Object_Naming_Requirements_\(KBA5096\)) on how to solve those failures.
+
+
 ## Synchronizing Masking Jobs and Universal Settings Across Engines
-In 5.2 we introduced the ability to synchronize Masking Algorithms between engines to ensure consistent masking, regardless of the engine executing the masking. In 5.3 are expanding the list of syncable objects to include:
+In 5.2 we introduced the ability to synchronize Masking Algorithms between engines to ensure consistent masking, regardless of the engine executing the masking. In 5.3 we are expanding the list of syncable objects to include:
 
 - Masking Jobs
 - Connectors
