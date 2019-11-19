@@ -52,6 +52,10 @@ explained in the latter sections.
 
 ## Dependencies
 
+!!! note
+
+    When exporting masking objects, a single export cannot contain multiple objects with the same name (e.g., two connectors with the same name).
+
 Most objects within the Masking Engine are compositional. In order to
 properly capture the behavior of a syncable object, you must export its
 dependencies along with the object itself. Fortunately, all the

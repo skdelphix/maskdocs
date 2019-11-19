@@ -1,5 +1,9 @@
 # Endpoints
 
+!!! note
+
+    When exporting masking objects, a single export cannot contain multiple objects with the same name (e.g., two connectors with the same name).
+
 ## GET /syncable-objects\[?object\_type=\<type\>\]
 
 This endpoint lists all objects in an engine that are syncable and can
