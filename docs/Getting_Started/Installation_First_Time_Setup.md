@@ -56,8 +56,14 @@ getting your OVA installed:
 ## Installing AMI on AWS EC2
 
 For detailed recommendations on hardware prerequisites for AWS EC2,
-please see [Getting Started - Prerequisites](Prerequisites/). Here are the steps to
-getting your AMI installed:
+please see [Getting Started - Prerequisites](Prerequisites/).
+The following two methods can be used to install/deploy Delphix Masking in AWS:
+
+   - Access Delphix provided AMI through the Delphix download site
+
+   - Subscribe to Delphix Masking through the Amazon Marketplace
+
+### Using the Delphix Dowload site to Deploy Masking
 
   1. On the Delphix download site, click the AMI you would
     like to share and accept the Delphix License agreement.
@@ -67,25 +73,57 @@ getting your AMI installed:
   2. On the Amazon Web Services Account Details form
     presented:
 
-      - Enter your AWS Account Identifier, which can be found here:
+    - Enter your AWS Account Identifier, which can be found here:
         https://console.aws.amazon.com/billing/home?\#/account. If you
         want to use the GovCloud AWS Region, be sure to enter the ID
         for the AWS Account which has GovCloud enabled.
 
-      - Select which AWS Region you would like the AMI to be shared
+    - Select which AWS Region you would like the AMI to be shared
         in. If you would like the AMI shared in a different region,
         contact your Delphix account representative to make the proper
         arrangements.
 
-  3. Click Share. The Delphix Engine will appear in your
+  3. Click **Share**. The Delphix Engine will appear in your
     list of AMIs in AWS momentarily.
 
   4. Reference the Installation and Configuration
     Requirements for AWS/EC2 when deploying the AMI.
 
-  5. Jump to “Setting up the Delphix Engine” section below
-    to learn how to activate the masking service now that you have the
-    software installed.
+  5. Once you have launched your Delphix Masking EC2 instance and it is accessible via web browser (port 80), proceed to *Setting up the Delphix Engine* section below
+    to configure the system.
+
+### Subscribing to Delphix Masking through Amazon Marketplace
+
+  1. Sign into the AWS Console.
+
+  2. Navigate to AWS Marketplace.
+
+  3. Typing Delphix in the search bar will find several Delphix Product offerings. Select **Delphix Masking for AWS (3TB)**.
+
+  4. Click **Continue to Subscribe**.
+
+  5. Click **Accept Terms**.
+
+  6. Wait for the subscription to be confirmed, then click **Continue to Configuration**.
+
+  7. Select or verify the correct **Region** for launch/deployment.
+
+  8. Then click **Continue to Launch**.
+
+  9. Select either to **Launch from Website** or **Launch through EC2**.
+
+  10. For either option you will need to enter the following:
+
+       a. VPC in which to launch the instance.
+
+       b. Subnet on which the instance will reside.
+
+       c. Instance Type (Recommended: r4.2xlarge).
+
+       d. Security Group (Minimal access required: 22, 80 or 443).
+
+  11. Once the Delphix EC2 instance is launched proceed to *Setting up the Delphix Engine* section below
+    to configure the system.
 
 ## Installing VHD on AZURE
 
