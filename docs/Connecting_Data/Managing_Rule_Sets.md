@@ -79,6 +79,9 @@ The **Create Rule Set** window appears.
 <li>
 <p>If you have selected a table or file before searching and it is not in the search results, it will not be included in the rule set. You can add back the table or file by removing the search query.</p>
 </li>
+<li>
+<p>Checkbox / selections do not persist through a search or a clearing of the search field.</p>
+</li>
 </ul></div></td>
 </tr>
 <tr class="odd">
