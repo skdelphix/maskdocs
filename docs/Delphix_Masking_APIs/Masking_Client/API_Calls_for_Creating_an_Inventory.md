@@ -26,7 +26,7 @@ for
 ``` bash
 curl -X GET --header 'Accept: application/json' --header 'Authorization:
 7c856e3d-5b20-4261-b5fe-cc2ffcee5ae0'
-'http://<myMaskingEngine>/masking/api/database-connectors/1/fetch’
+'http://<myMaskingEngine>/masking/api/database-connectors/1/fetch'
 ```
 
 ### **RESPONSE**
