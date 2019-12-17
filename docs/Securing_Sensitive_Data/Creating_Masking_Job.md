@@ -33,7 +33,7 @@ To create a new masking job:
         database.
 
         !!! info "INFO: Provisioning Masked VDBs."
-            A job must be Multi Tenant to use it when creating a masked virtual database (VDB).
+            A job must be Multi-Tenant to use it when creating a masked virtual database (VDB).  This option allows existing rulesets to be reused to mask identical schemas via different connectors. The connector can be selected at job execution time.
 
     4.  **Rule Set** — Select a rule set that this job will execute
         against.

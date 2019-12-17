@@ -154,7 +154,7 @@ configuring a profiling job.
 </tr>
 <tr class="even">
 <td>Multi-Tenant</td>
-<td>Check the box if the job is for a multi-tenant database. This option allows existing rulesets to be-reused to mask identical schemas via different connectors. The connector can be selected at job execution time.</td>
+<td>Check the box if the job is for a multi-tenant database. This option allows existing rulesets to be reused to mask identical schemas via different connectors. The connector can be selected at job execution time.</td>
 </tr>
 <tr class="odd">
 <td>Rule Set</td>
@@ -216,7 +216,7 @@ masking job.
 </tr>
 <tr class="odd">
 <td>Multi-Tenant</td>
-<td>Check box if the job is for a multi-tenant database.</td>
+<td>Check the box if the job is for a multi-tenant database. This option allows existing rulesets to be reused to mask identical schemas via different connectors. The connector can be selected at job execution time.</td>
 </tr>
 <tr class="even">
 <td>Rule Set</td>

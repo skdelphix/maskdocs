@@ -42,6 +42,8 @@ The Delphix Engine now considers this masking job to be applicable to this dSour
 
     Masking jobs can also be associated with virtual sources in addition to dSources.
 
+    A masking job must be Multi-Tenant for creating a masked VDB. The Multi-Tenant option allows existing rulesets to be reused to mask identical schemas via different connectors. The connector can be selected at job execution time.
+
 ### Provisioning a Masked VDB using the dSource Provisioning Wizard
 The steps required to provision a masked VDB are almost identical to the steps required to provision an unmasked VDB. Once you have created a masked VDB, you cannot un-mask it, nor can you alter which masking job it uses. All snapshots in the VDBs TimeFlow will always be masked using the masking method that you selected when you provisioned the masked VDB.
 
