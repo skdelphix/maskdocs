@@ -143,6 +143,27 @@ VHD installed:
     to learn how to activate the masking service now that you have the
     software installed.
 
+## Installing on Google Cloud Platform
+
+This section covers the requirements, including memory and data storage, for the deploymenting the Delphix Engine on Google Cloud Platform (GCP).
+
+### Prerequisites to Deploying in GCP
+
+ - A license is required to use the Delphix software. If you are a new customer contact Delphix to get started.
+
+### Deploying a Delphix Engine in GCP
+
+1. Log into Google Cloud Marketplace with your account.
+2. Search for **Delphix**.
+3. Click **Launch on Compute Engine**.
+   - Machine Type: See the table below for supported configurations.
+   - Boot disk type: SSD Persistent Disk
+   - Boot disk size in GB:  127
+   - Networking interfaces: Configure as appropriate for your environment
+   - IP forwarding: Configure as appropriate for your environment
+4. Click on **Deploy**.
+5. Once deployed, go the Site address URL and follow the instructions for “Setting up the Delphix Engine”
+
 ## Setting up the Delphix Engine
 
 Once you setup the network access for your Delphix Engine, enter the Delphix Engine URL in your browser for server setup. The Unified Setup wizard Welcome screen below will appear for you to begin your Delphix Engine setup.

@@ -247,3 +247,41 @@ The minimum recommended storage size for the System Disk (rpool) is 300 GB.
 ##### Configuration Disk(s)
 
 The minimum recommended storage size of the Configuration Volume (domain0) is 50 GB.
+
+## Google Cloud Platform
+
+This section covers the virtual machine requirements for installation of
+a dedicated Delphix Masking Engine on Google Cloud Platform (GCP).
+
+### Machine Types
+
+The following is a list of instance types that are supported to deploy Delphix on GCP. Delphix periodically certifies new instance types, which will be added to the list here.
+
+| **Requirements** | **Notes** |
+| ----------- | --------- |
+| n2-standard-(32,64,96)|Larger instance types provide more CPU, which can prevent resource shortfalls under high I/O throughput conditions.  |
+| n2-highmem-(32,64,96)| Larger instances also provide more memory, which the Delphix Engine uses to cache database blocks. More memory will provide better read performance.|
+
+### Network Configuration
+
+| **Requirements** | **Notes** |
+| ----------- | --------- |
+|Virtual Private Cloud| You must deploy the Delphix Engine and database/file servers in a VPC network to ensure that private IP addresses are static and do not change when you restart instances. When adding connectors to the Masking Engine, you must use the host's VPC (static private) IP addresses.|
+|Static Public IP| The GCP Delphix instance must be launched with a static IP address; however, the default behavior for VPC instances is to launch with a dynamic public IP address – which can change whenever you restart the instance. |
+|Security Group Configuration| The default security group will only open port 22 for SSH access. You must modify the security group to allow access to all of the networking ports used by the Delphix Engine and the various source and target engines.|
+|Premium Networking| It is recommended to use GCP Premium Tier Networking.|
+
+
+### Storage Configuration
+
+##### System Disk
+
+The minimum recommended storage size for the System Disk (rpool) is 300 GB.
+
+##### Configuration Disk(s)
+
+The minimum recommended storage size of the Configuration Volume (domain0) is 50 GB.
+
+### Additiona GCP Configuration Notes
+
+ - Delphix supports both Zonal and Regional SSD persistent disks.
