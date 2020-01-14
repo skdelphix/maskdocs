@@ -7,7 +7,6 @@
     slack-notify = docs-pushes
     approvers = gatekeepers-docs
     nreviews = 1
-    review-check = skip
  [branch "master"]
     gate-is-major-release = true
     gate-allowed-issuetypes = 1,3,4,5,10000,10400
