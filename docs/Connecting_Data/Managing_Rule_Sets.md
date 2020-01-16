@@ -322,6 +322,9 @@ customer.cust\_id \<1000).
 
 Use this function to use SQL statements to filter data for a table.
 
+!!! warning
+    The custom SQL must contain the primary key column (or columns if the table uses a composite primary key) and all  columns that will be masked.
+
 To add or edit SQL code:
 
 1.  From the **Rule Set** screen, click the **name** of the desired
