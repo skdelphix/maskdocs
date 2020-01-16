@@ -13,6 +13,7 @@ Before attempting to create a Masked VDB, you should be familiar with both Delph
 - If a masking job has been applied to a VDB, you cannot create an unmasked snapshot of that VDB.
 - Masking must take place during the process of provisioning a VDB. If an existing VDB has not had a masking job applied to it, then you cannot mask that particular VDB at any point in the future. All the data within the VDB and its parents will be accessible if it is replicated using SDD.
 - When selecting a connector to use for Masked Provisioning, a "basic" connector must be used **unless** you are masking an Oracle Pluggable Database (PDB), in which case an "advanced" connector must be used.
+- Only in-place masking jobs can be selected.
 
 ## Identifying and Navigating to Masked VDBs
 Masked VDBs appear in the Virtualization Engine's Datasets pane, just like regular VDBs. They are most obviously identified by the different icon used to represent them. In addition, a masked VDBs Configuration tab will contain information about the masking job that you applied to it. Generally, anything you can do with an unmasked VDB is also possible with a masked VDB.
@@ -27,12 +28,12 @@ To provision a masked VDB, you must first indicate that the masking job you are 
 
 1. In the **Datasets** panel on the left-hand side of the screen, click the dSource to which the masking job is applicable and with which it will be associated.
 2. Click the **Configuration** tab.
-3. Click the **Masking** tab. 
+3. Click the **Masking** tab.
   ![] (./media/masking_tab.png)
-  
+
 4. Click the **pencil** icon to edit.  All masking jobs on this Delphix Engine that have not been associated with another dSource will be listed on the right-hand side.
 5. Select the **job** you want to associate with this dSource.
-6. Click the **green checkmark** to confirm. 
+6. Click the **green checkmark** to confirm.
   ![] (./media/mask_job.png)
 7. Repeat for any other jobs that you want to associate with this dSource at this time.
 
@@ -70,7 +71,7 @@ The steps required to provision a masked VDB are almost identical to the steps r
     If you are using the same masking ruleset on multiple VDBs, be sure to create a unique job for each VDB to avoid any issues when provisioning or refreshing.
 
 ![] (./media/mask_rule_set.png)
-    
+
    - Masking using scripts(s): Alternatively, you may define some Configure Clone scripts in the Hooks step to perform masking.
 
 !!! note "**Defining Configure Clone Hooks to Mask VDB**"
@@ -95,7 +96,7 @@ If you click Actions in the the upper right-hand corner, the Actions sidebar wil
     Once you have created a masked VDB, you can provision its masked data to create additional VDBs, in the same way that you can provision normal VDBs. Since the parent masked VDB contains masked data, child VDBs will only have masked data. This is a great way to distribute multiple independent copies of masked data that is both time- and space-efficient.
 
 ## Refresh a Masked VDB
-You refresh a masked VDB in exactly the same way as you refresh a normal VDB. As with provisioning a masked VDB, the masking job will be run during the refresh process. 
+You refresh a masked VDB in exactly the same way as you refresh a normal VDB. As with provisioning a masked VDB, the masking job will be run during the refresh process.
 
 1. Login to the Delphix Management application.
 2. Click Manage.
@@ -104,7 +105,7 @@ You refresh a masked VDB in exactly the same way as you refresh a normal VDB. As
 5. Click the Refresh VDB button (2 circular arrows).
 6. Select More Accurate and Next.
 7. Select desired refresh point snapshot or click the eye icon to choose Latest available range, A point in time, or An SCN to refresh from.
-8. Click Next. 
+8. Click Next.
 9. Click Submit to confirm.
 10. Click the Actions link to watch the progress of the refresh job.
 11. To see when the VDB was last refreshed/provisioned, check the Time Point on the Status page.
@@ -122,7 +123,7 @@ The following data operations are available to masked VDBs:
 
 - Rewind : Alter the database to contain masked data from a previous point in time.  
 - Refresh : Get new data from the parent dSouce and mask it.
-- Disable	: Turn off the database and remove it from the host system.	
+- Disable	: Turn off the database and remove it from the host system.
 - Enable : Turn on the database and make it available on the host system.
 
 
@@ -135,4 +136,3 @@ The following data operations are available to masked VDBs:
 | 5.2 releases | 5.2 releases (minor versions do not need to match) |
 | 5.2.5.0 (or later 5.2 minor release) | 5.2.5.0 (or later 5.2 minor release) |
 | 5.3 releases | 5.3 releases (minor versions do not need to match) |
-
