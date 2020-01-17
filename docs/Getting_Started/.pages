@@ -2,8 +2,10 @@ arrange:
   - Prerequisites.md
   - Data_Source_Support.md
   - Installation_First_Time_Setup.md
+  - Naming_Requirements.md
   - Users_Roles.md
   - Audit_Logs.md
   - Kerberos_Configuration.md
+  - Db2_Connector_License_Installation.md
   - Masking_Icon_Reference.md
   - Definitions_-_Terms_and_Meanings.md
