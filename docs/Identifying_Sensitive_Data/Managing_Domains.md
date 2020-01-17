@@ -8,12 +8,10 @@ Delphix Agile Data Masking includes several default domains and algorithms. Thes
 
 The **Domains** tab is where you define domains, along with their classification and the default Masking Algorithm.
 
-![](./media/domains.png)
-
 ##Adding a New Domain
 1. At the top of the **Domains** tab, click **Add Domain**.
 2. Enter the new **Domain Name**. The domain name you specify will appear as a menu option on the **Inventory** screen elsewhere in the Delphix Masking Engine. Domain names must be unique.
 3. Select the **Classification** (informational only). For example, customer-facing data, employee data, or company data.
-4. Select a default **Masking Algorithm** for the new domain. 
+4. Select a default **Masking Algorithm** for the new domain.
 5. Click **Save**.
 To delete any domain, click the Delete icon to the far right of the domain name.

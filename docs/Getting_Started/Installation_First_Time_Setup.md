@@ -1,8 +1,8 @@
 # Installation/First Time Setup
 
 This section walks you step by step on how to download and install the
-Delphix Engine software onto your infrastructure (VMware, AWS EC2, or
-Azure).
+Delphix Engine software onto your infrastructure (VMware, AWS EC2,
+Azure, or GCP).
 
 ## Installing OVA on VMware
 

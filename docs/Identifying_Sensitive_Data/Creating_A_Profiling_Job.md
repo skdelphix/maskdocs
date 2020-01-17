@@ -1,8 +1,7 @@
 # Creating A Profiling Job
 
 This section describes how users can create a Profiling job. You can
-create Profiling jobs for databases, copybooks, delimited files, fixed-width,
-and Excel files.
+create Profiling jobs for databases, XML, copybooks, delimited files, and fixed-width.
 
 The Profiler assigns each sensitive data element to a domain, with each domain
 having a default masking algorithm. Then, in the inventory, masking

@@ -2,16 +2,21 @@
 
 ##File formats
 
-Unlike databases files for the most part do not have built in metadata to describe the format of the fields in the file. You must provide this to Delphix so it can update the file appropriately. This is done through the settings tab where you will see a menu item on the left for File Format. Select File Format and you will see options to create a file format or input a file format. This will depend on the type of file and how you want to let Delphix know the format of the file.
+Unlike databases files for the most part do not have built in metadata to describe the format of the fields in the file. You must provide this to Delphix so it can update the file appropriately. This is done through the settings tab where you will see a menu item on the left for File Format. Select File Format and you will see an option to import a file format. This will depend on the type of file and how you want to let Delphix know the format of the file.
 
-##Mainframe data sets and XML files
+![](./media/import_format.png) 
 
-For Mainframe data sets, you can specify the file format via Input Format option which will import the copybook directly into Delphix. You can input this file from Filesystem Mount Point, SFTP or FTP. Please select Copybook as the Import Format Type.
-For XML files you can also input the file format with the input format option. You can use the file you want to mask as the format. Delphix will input the format of the file directly. You can input this file from Filesystem Mount Point, SFTP or FTP. Please select XML as the Import Format Type.
+##Mainframe data sets and XML Files
 
-##Delimited, Excel, Fixed files
+For Mainframe data sets, you can specify the file format via the Import Format button which will import the copybook directly into Delphix. You can input this file from a Filesystem Mount Point, SFTP server, FTP server, or via upload. Please select Copybook as the Import Format Type.
 
-For Delimited, Excel, and Fixed files you can either manually create the format of the file yourself, or you can input a text file which describes the structure of the file to Delphix. To input the file format for delimited or Excel files create a text document with the column names each on its own line. For example:
+For XML files you can also import the file format with the input format option which will import the file directly into Delphix. You can use the file you want to mask as the format. You can input this file from a Filesystem Mount Point, SFTP server, FTP server, or via upload. Please select XML as the Import Format Type.
+
+##Delimited and Fixed files
+
+For Delimited and Fixed files you can import a text file which describes the structure of the file to Delphix.
+
+To input the file format for delimited files create a text document with the column names each on its own line. For example:
 
 - Name
 - Address
@@ -33,27 +38,6 @@ Then input this file as the file format. The name of the text file will be the n
 !!! note "NOTE - Multi-byte Characters"
     For Fixed Files, column length is determined by the number of characters rather than the number of bytes.
 
-## To Create a New File Format
-
-To create a format manually, you can just click the create format button and give the format a name. We will input the details of the format a little later in this document.
-
-![](./media/new_connector.png)
-
- 1. Click **Create Format** in the upper right. The Create File Format window appears.
- 2. Enter a **File Format Name**.
- 3. Choose a **File Format Type**:
-    - Delimited File
-    - Excel Sheet
-    - Fixed Width File
-
-     **Note**:
-     Creating a Copybook or XML file format is not supported. These formats must be imported instead.
-
- 4. Optionally, enter a **Description**.
- 5. Click **Submit**.
-
-    ![](./media/fileformat.png)
-
 
 ## To Import a New File Format
 
@@ -69,7 +53,7 @@ To create a format manually, you can just click the create format button and giv
  5. Enter a **Logical Name**.
  6. Click **Submit**.
 
-### For a Format Type of Delimited File, Excel sheet, or Fixed Width File
+### For a Format Type of Delimited File, or Fixed Width File
 
  1. Click **Select**.
  2. Browse for the file from which to import fields.
@@ -87,7 +71,7 @@ To create a format manually, you can just click the create format button and giv
 If you accidentally selected an incorrect file, simply click Remove button to the right of the file and repeat selection steps above.
 
 ## Samples
-The following is sample file content for Delimited or Excel file formats. With these formats just the field name is provided. Notice there is no header and only a list of values.
+The following is sample file content for Delimited file formats. With these formats just the field name is provided. Notice there is no header and only a list of values.
 
 ![](./media/sample1.png)
 

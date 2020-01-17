@@ -29,7 +29,7 @@ data sources:
   - **PaaS Database:** AWS RDS Oracle, RDS PostgreSQL, RDS MYSQL, RDS MariaDB,
     RDS MS SQL Server
 
-  - **Files:** Excel, Fixed Width, Delimited, XML
+  - **Files:** Fixed Width, Delimited, XML
 
 For a detailed view of all the versions, features, etc Delphix supports
 on each data source - see the sections below.
@@ -75,7 +75,6 @@ The DB2 LUW connector supports profiling and masking/tokenization features. Belo
 |                             | Truncate                | Available        |
 |                             | Disable Trigger         | Unavailable      |
 |                             | Disable Constraint      | Unavailable      |
-|                             | Create Target           | Available        |
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Available        |
 
@@ -115,7 +114,6 @@ The Oracle connector supports profiling and masking/tokenization features. Below
 |                             | Truncate                | Available        |
 |                             | Disable Trigger         | Available        |
 |                             | Disable Constraint      | Available        |
-|                             | Create Target           | Available        |
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Available        |
 
@@ -157,7 +155,6 @@ The MS SQL connector supports profiling and masking/tokenization features. Below
 |                             | Truncate                | Available        |
 |                             | Disable Trigger         | Available        |
 |                             | Disable Constraint      | Available        |
-|                             | Create Target           | Available        |
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Available        |
 
@@ -196,7 +193,6 @@ The PostgreSQL connector supports profiling and masking/tokenization features. B
 |                             | Truncate                | Available        |
 |                             | Disable Trigger         | Available        |
 |                             | Disable Constraint      | Available        |
-|                             | Create Target           | Available        |
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Unavailable      |
 
@@ -247,7 +243,6 @@ The MySQL connector supports profiling and masking/tokenization features. Below 
 |                             | Truncate                | Available        |
 |                             | Disable Trigger         | Unavailable      |
 |                             | Disable Constraint      | Unavailable      |
-|                             | Create Target           | Available        |
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Available        |
 
@@ -286,7 +281,6 @@ The SAP ASE (Sybase) connector supports profiling and masking/tokenization featu
 |                             | Truncate                | Available        |
 |                             | Disable Trigger         | Available        |
 |                             | Disable Constraint      | Available        |
-|                             | Create Target           | Available        |
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Available        |
 
@@ -325,7 +319,6 @@ The DB2 for z/OS and iSeries connectors support profiling and masking/tokenizati
 |                             | Truncate                | Available        |
 |                             | Disable Trigger         | Unavailable      |
 |                             | Disable Constraint      | Unavailable      |
-|                             | Create Target           | Unavailable      |
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Available        |
 
@@ -373,7 +366,6 @@ Much of the time data will live outside of databases. The data can be stored in 
 
 | **File Type/Format**       | **Support Level** |
 | -------------------------- | ----------------- |
-| **Excel (.xls and .xlsx)** | Supported         |
 | **Fixed Width**            | Supported         |
 | **Delimited**              | Supported         |
 | **XML**                    | Supported         |

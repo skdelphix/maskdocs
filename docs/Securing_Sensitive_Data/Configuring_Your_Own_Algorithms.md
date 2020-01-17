@@ -143,11 +143,11 @@ To add a secure lookup algorithm:
     If you need additional value fields, click **Add**.
 
 10. To override the behavior of the segment mapping algorithm when it encounters data values in an
-    unexpected format, you can change the selection under **If Nonconforming data is encountered**. 
+    unexpected format, you can change the selection under **If Nonconforming data is encountered**.
     By default, the segment mapping algorithm will **Use global setting** as specified on the **Algorithm Settings**
     page. Selecting **Mark job as Failed** will instruct the segment mapping algorithm to throw
     an exception that will result in the job failing. Selecting **Mark job as Succeeded** will instruct
-    the segment mapping algorithm to ignore the nonconforming data and not throw an exception. 
+    the segment mapping algorithm to ignore the nonconforming data and not throw an exception.
     Note that **Mark job as Succeeded** will result in the nonconforming data not being masked should
     the job succeed, but the **Monitor** page will display a warning that can be used to report the nonconforming
     data events.
