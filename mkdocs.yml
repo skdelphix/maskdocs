@@ -1,4 +1,5 @@
 site_name: Delphix Masking 6.0.0
+
 theme:
   name: material
   custom_dir: 'material/'
@@ -11,7 +12,7 @@ theme:
     text: Helvetica Neue
     code: Consolas
 
-copyright: Copyright &copy; 2018, 2019 Delphix Corp.
+copyright: Copyright &copy; 2018, 2020 Delphix Corp.
 
 google_analytics:
   - 'UA-35429885-3'
