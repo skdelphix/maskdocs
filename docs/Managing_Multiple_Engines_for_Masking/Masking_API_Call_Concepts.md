@@ -21,6 +21,7 @@ engine. The follow object types are currently supported:
   - FILE_FORMAT
   - FILE_RULESET
   - GLOBAL_OBJECT
+  - JDBC_DRIVER
   - KEY
   - Certain algorithms:
     - BINARYLOOKUP
@@ -242,7 +243,7 @@ with relevant error messages.
 ## Global Objects
 
 GLOBAL\_OBJECT is a syncable object type that is a collection of all
-syncable algorithms, DOMAIN(s), PROFILE\_SET(s), PROFILE\_EXPRESSION(s)
+syncable algorithms, DOMAIN(s), JDBC\_DRIVER(s), PROFILE\_SET(s), PROFILE\_EXPRESSION(s)
 and KEY (global key). This represents
 objects in the Masking Engine that are available across all
 environments, and are not a part of any specific environment. When a
