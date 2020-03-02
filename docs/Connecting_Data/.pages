@@ -2,6 +2,7 @@ arrange:
   - Managing_Environments.md
   - Managing_Remote_Mounts.md
   - Managing_Connectors.md
+  - Managing_Extended_Connectors.md
   - Managing_Rule_Sets.md
   - Managing_File_Formats.md
   - Managing_Inventories.md
