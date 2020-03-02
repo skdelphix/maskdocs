@@ -1,10 +1,14 @@
-# Endpoints
+# Sync Endpoints
 
 !!! note
 
     When exporting masking objects, a single export cannot contain multiple objects with the same name (e.g., two connectors with the same name).
 
-## GET /syncable-objects\[?object\_type=\<type\>\]
+## GET /syncable-objects
+
+```
+GET /syncable-objects[?object_type=<type>]
+```
 
 This endpoint lists all objects in an engine that are syncable and can
 be exported. Any object which can be exported, can be imported into
@@ -14,13 +18,13 @@ Note that if a syncable object depends on a non-syncable object (i.e.
 DOMAIN using a mapping algorithm), it will say so in the “revisionHash”
 attribute, and will not be exportable.
 
-Example CURL command:
+Example CURL command using the object_type parameter to only retrieve the list of LOOKUP algorithm objects:
 
 ``` ssh
 curl -X GET
 --header 'Accept: application/json'
 --header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231'
-'http://masking-engine.com/masking/api/syncable-objects?page_number=1'
+'http://masking-engine.com/masking/api/syncable-objects?object_type=LOOKUP'
 ```
 
 ## POST /export
@@ -34,13 +38,14 @@ objects to export by copying their object identifiers from the
 The endpoint has a single optional header, *passphrase*. If you provide
 the passphrase, the export document will be encrypted using it.
 
-Example CURL command:
+Example CURL command using the optional passphrase header:
 
 ``` ssh
 curl -X POST
 --header 'Content-Type: application/json'
 --header 'Accept: application/json'
 --header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231'
+--header 'passphrase: my example passphrase'
 -d '[
 {
 "objectIdentifier": {“id”: 1},
@@ -124,13 +129,16 @@ deal with conflicting objects. *environment\_id* is necessary for all
 non-global objects that need to belong in an environment.
 *source\_environment\_id* is used for On-The-Fly masking jobs.
 
-Example CURL command:
+The endpoint has a single optional header, passphrase. If you provide the passphrase, the import document will be decrypted using it.
+
+Example CURL command using the optional passphrase header:
 
 ``` ssh
 curl -X POST
 --header 'Content-Type: application/json'
 --header 'Accept: application/json'
 --header 'Authorization: 21c45f0e-82f4-4b04-9072-b49072986231'
+--header 'passphrase: my example passphrase'
 -d '{
 "exportResponseMetadata": {
 "exportHost": "masking-engine.com",

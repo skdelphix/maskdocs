@@ -18,7 +18,7 @@ masking engines (in addition to the masking engine key).
 | Minmax                   | Yes          | NA                                                    |
 | Cleansing                | Yes          | NA                                                    |
 | Free Text Redaction      | Yes          | NA                                                    |
-| Custom Algorithm/Mapplet | Yes          | NA ([see Custom Algorithm](http://127.0.0.1:8000/Managing_Multiple_Engines_for_Masking/Algorithm_Syncability/#custom-algorithms)).
+| Custom Algorithm/Mapplet | Yes          | NA ([see Custom Algorithm](/Managing_Multiple_Engines_for_Masking/Algorithm_Syncability/#custom-algorithms))
 
 ## Built-In Algorithms
 
