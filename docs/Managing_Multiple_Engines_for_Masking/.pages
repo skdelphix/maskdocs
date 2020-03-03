@@ -3,3 +3,6 @@ arrange:
   - Masking_API_Call_Concepts.md
   - Endpoints.md
   - Key_Management.md
+  - Algorithm_Syncability.md
+  - Example_User_Workflow.md
+  - Changes_from_Version_1.md

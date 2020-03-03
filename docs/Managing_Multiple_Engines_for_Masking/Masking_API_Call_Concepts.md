@@ -1,17 +1,28 @@
-# Masking API Call Concepts
+# Sync Concepts
 
 ## Syncable object
 
-Syncable objects are external representations of objects within the
-masking engine that can be exported from one engine and imported into
-another. EngineSync currently supports exporting a subset of algorithms,
-the encryption key and all the objects necessary for a masking job.
-Note: We do not currently support Mainframe masking jobs.
+Syncable objects are external representations of masking engine objects
+that can be exported from one engine and imported into
+another. Sync currently supports exporting a subset of algorithms
+(see [Algorithm Syncability](/Managing_Multiple_Engines_for_Masking/Algorithm_Syncability/) for details),
+the encryption key and all the objects necessary for a job.
+
+!!! note
+
+    Sync does not currently support the following objects:
+
+    - Applications
+    - Environments
+    - Mainframe objects such as connectors, rule sets, jobs, and formats.
 
 ## Object Identifiers and Types
 
-EngineSync uses object identifiers to name unique objects within the
-engine. The follow object types are currently supported:
+Sync uses object identifiers to name unique objects within the
+engine. The _/syncable-objects_ endpoint provides a list of all
+object identifiers for a particular object type.
+
+The follow object types are currently supported:
 
   - APPLICATION_SETTINGS
   - DATABASE_CONNECTOR
@@ -38,6 +49,8 @@ engine. The follow object types are currently supported:
   - PROFILE_EXPRESSION
   - PROFILE_JOB
   - PROFILE_SET
+  - REIDENTIFICATION_JOB
+  - TOKENIZATION_JOB
 
 The following lists the object types that are simply for the purpose of
 referencing a particular state of the exported object. These are not
@@ -115,12 +128,52 @@ required to properly import those objects into another engine.
 The export document is exported as an opaque blob. Do not edit it
 outside of the Masking Engine.
 
-## Export Document Encryption
+## Security
 
-You can request that the export document be encrypted using a
-passphrase. Once the document is encrypted with the passphrase, the
-engine forgets the passphrase. You will need to provide the same
-passphrase during import to decrypt the document.
+In most cases, an export document contains all the state necessary 
+to re-create each of its objects (see [this note](#object-revision-tracking)
+about connector objects for one exception). In some instances, users
+might consider an object to be sensitive. For example, an
+algorithm object contains all of the information needed to
+produce identical algorithm results on a different engine (the algorithm's
+secret key, etc.). If the algorithm is being used in a production
+environment, then users may consider the algorithm definition and
+any export document containing the algorithm to be sensitive information.
+Therefore, export document access control, transmission, and storage
+should all be considered with care.
+
+### Access Control
+
+The Masking Engine only allows administrative users to make 
+Sync API calls. When creating an administrative
+user account, keep in mind that the account owner will be able to
+access the Sync APIs to export and import objects. For this
+and other reasons, administrative accounts should only be created
+for trusted individuals.
+
+Non-administrative accounts are not allowed to use the Sync APIs.
+
+### Transmission Security
+
+An export document containing a sensitive object should only be
+transmitted over a secure channel. This applies to situations where the
+Masking Engine is one of the transmission endpoints and when it is not.
+For example, when uploading (downloading) an export document to (from)
+the Masking Engine, the Sync API calls, like all Masking API calls,
+should be performed over HTTPS. Similarly, if an export document is
+transferred from a user's laptop to a server, the export document should
+be transmitted securely.
+
+### Storage Security
+
+An export document containing a sensitive object should be encrypted before
+it is stored persistently. Users are free to apply an encryption mechanism
+of their choosing to an export document. As a convenience, you can request
+that the export document be encrypted by the Masking Engine using a
+passphrase. The Masking Engine will encrypt the export document with
+3DES using SHA1 (PBEWithSHA1AndDESede). Once the document is encrypted
+with the passphrase, the engine forgets the passphrase. You will need to
+provide the same passphrase during import to decrypt the document.
 
 ## Digital Signature
 
@@ -257,8 +310,8 @@ exported.
 This separation was added because global objects 1) containing large
 lookup files are projected to be time consuming and 2) are expected to
 be synchronized much less frequently than any masking job related metadata.
-Examples on how to use it will be available in the **Example User
-Workflow** section.
+Examples on how to use it will be available in the [Example User
+Workflow](Example_User_Workflow) section.
 
 ## References Objects
 
