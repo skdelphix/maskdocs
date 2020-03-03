@@ -2,51 +2,7 @@ Before masking your data, it is important to prepare the database. This section
 explains the required changes, reasons for the change, and instructions to make
 the change.
 
-## Logging Archive
-
-**What is Durability Level?** 
-Sybase has 3 Durability levels, Full, at_shutdown and no_recovery. Databases
-with a durability set to **no_recovery** or **at_shutdown**—whether they are in-memory
-or disk-resident—are referred to as low-durability databases. Data in low
-durability databases survives after a commit (provided you do not restart the
-server).
-
-Use **create database with durability=durability_level** to set a database’s
-durability level. Adaptive Server supports **full**, **no_recovery**, and
-**at_shutdown** durability levels.
-
-	
-**Why is it important to make this change?** 
-
-We recommend using the no_recovery to minimize log size and increase
-performance. This should be combined with setting the sp_dboption to ‘trunc log
-on chkpt’ to true and to set the sp_dboption to 'select into/bulkcopy/pllsort'
-to true. It is also recommended at the table level to use DML_Logging set to
-minimal to reduce logging DML statements, such as updates. This is best for
-large tables.
-
-**How exactly do I make this change? (exact commands, etc).**
-
-Use create database with **durability=durability_level** to set a database’s
-durability level. Adaptive Server supports **full**, **no_recovery**, and
-**at_shutdown** durability levels.
-
-
-`create database database`
-
-	`on data_device = 'size of device'`
-	
-	`log on log_device = 'size of device'`
-	
-	`with durability = no_recovery;`
-
-`sp_dboption database, 'trunc log on chkpt', true;`
-
-`sp_dboption database, 'select into/bulkcopy/pllsort', true;`
-
-`ALTER TABLE tablename SET dml_logging = minimal;`
-
-##  What is min/max memory in SQL Server? 
+##  What is min/max memory in SQL Server?
 
 ### Determining the Amount of Memory SAP ASE Needs
 
@@ -65,9 +21,9 @@ given moment:
 
 `1> sp_configure "total logical memory"`
 
-|**Parameter Name**|**Default**|**Memory Used**|**Config Value**|**Run Value**|**Unit**|**Type**|
-|---|---|---|---|---|---|---|---|
-|total logical memory|33792|127550|63775|63775|memory pages(2k)|read-only|
+| **Parameter Name** | **Default** | **Memory Used** | **Config Value** | **Run Value** | **Unit** |**Type**|
+| -------- | ------- | ------- | -------- | ------ | ---- | ---- |
+| total logical memory  | 33792 | 127550 | 63775 | 63775 | memory pages(2k)|read-only|
 
 The value for the Memory Used column is represented in kilobytes, while the
 value for the Config Value column is represented in 2K pages.
@@ -80,7 +36,7 @@ command, because no two SAP ASEs are configured exactly the same.
 ### Determine the SAP ASE Memory Configuration
 
 The total memory allocated during system start-up is the sum of memory required
-for all the configuration needs of SAP ASE. You can obtain this value from the 
+for all the configuration needs of SAP ASE. You can obtain this value from the
 read-only configuration parameter **total logical memory**
 .
 This value is calculated by SAP ASE. The configuration parameter **max memory** must
@@ -89,8 +45,8 @@ the amount of memory you will allow for SAP ASE needs.
 
 During server start-up, by default, SAP ASE allocates memory based on the value
 of **total logical memory**. However, if the configuration parameter **allocate
-max shared memory** has been set, then the memory allocated will be based on 
-the value of **max memory**. The configuration parameter **allocate max shared 
+max shared memory** has been set, then the memory allocated will be based on
+the value of **max memory**. The configuration parameter **allocate max shared
 memory** enables a system administrator to allocate the maximum memory that is
 allowed to be used by SAP ASE, during server start-up.
 
@@ -99,7 +55,7 @@ The key points for memory configuration are:
  - The system administrator should determine the size of shared memory available
    to SAP ASE and set **max memory** to this value.
 
- - The configuration parameter **allocate max shared memory** can be turned on 
+ - The configuration parameter **allocate max shared memory** can be turned on
    during start-up and runtime to allocate all the shared memory up to **max
    memory** with the least number of shared memory segments. A large number of
    shared memory segments has the disadvantage of some performance degradation
@@ -132,19 +88,19 @@ To assure that masking jobs will perform at an optimum level.
 
 A key is a unique, non-null value that identifies a row in the database.  
 
-**Why is it important to make this change?** 
+**Why is it important to make this change?**
 
 Using a PK or Foreign key is critical for fast updates. When a table does not
 have an identity column with an index or a PK/FK then the masking engine will
 alter the table to have an Identity column, DMS_ROW_ID to optimize performance.
 
-**How exactly do I make this change? (exact commands, etc)**. 
+**How exactly do I make this change? (exact commands, etc)**.
 
 A logical key can be added to a table in the Masking Engine Ruleset for each
 table, if there is a specific column that would find the row to update faster
 than the current PK/FK.
 
-Note Sybase ASE will create unavoidable log entries when a table is altered 
+Note Sybase ASE will create unavoidable log entries when a table is altered
 and will increase the log size significantly. If needed, run the masking jobs
 using the On-The-Fly method to avoid log file increases.
 
@@ -156,7 +112,7 @@ non-Production. The following permissions are needed:
 
 Syntax to add user and give privileges:
 
-`sp_adduser mask_user;` 
+`sp_adduser mask_user;`
 
 `CREATE user NEWUSER;`
 
@@ -182,5 +138,3 @@ by sp_adduser.
 `sp_addlogin MASK_SUPER_USER, Delphix_123;`
 
 `GRANT ROLE sa_role TO MASK_SUPER_USER;`
-
-
