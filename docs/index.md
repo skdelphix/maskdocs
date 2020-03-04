@@ -1,4 +1,4 @@
-# Introduction to Delphix Masking 
+# Introduction to Delphix Masking
 
 ## Challenge
 
@@ -32,9 +32,9 @@ downstream environments. Consistent masking of data while maintaining
 referential integrity across heterogeneous data sources enables Delphix
 masking to provide superior coverage compared to other solutions—all
 without the need for programming expertise. Moreover, the Delphix
-Dynamic Data Platform seamlessly integrates masking with data delivery 
-capabilities, ensuring the security of sensitive data before it is made 
-available for development and testing, or sent to an offsite data center 
+Dynamic Data Platform seamlessly integrates masking with data delivery
+capabilities, ensuring the security of sensitive data before it is made
+available for development and testing, or sent to an offsite data center
 or the public cloud.
 
 Delphix Masking is a multi-user, browser-based web application that
@@ -46,7 +46,7 @@ successfully protect sensitive data across the enterprise:
 
   - **End-to-End Masking** — The Delphix platform automatically detects
     confidential information, irreversibly masks data values, then
-    generates reports and email notifications to confirm that all sensitive 
+    generates reports and email notifications to confirm that all sensitive
     data has been masked.
 
   - **Realistic Data** — Data masked with the Delphix platform is
@@ -69,14 +69,14 @@ successfully protect sensitive data across the enterprise:
     between elements so that data is masked the same way across
     different tables and databases.
 
-  - **Algorithms/Frameworks** — Seven algorithm frameworks allow users 
+  - **Algorithms/Frameworks** — Seven algorithm frameworks allow users
     to create and configure algorithms to match specific security policies.
     Over twenty five out-of-the-box, preconfigured algorithms help businesses
-    mask everything from names and addresses to credit card numbers and text 
-    fields. Moreover, the Delphix platform includes prepackaged profiling 
-    sets for healthcare and financial information, as well as the ability 
-    to perform tokenization: a process that can be used to obfuscate data 
-    sent for processing, then reversed when the processed data set is 
+    mask everything from names and addresses to credit card numbers and text
+    fields. Moreover, the Delphix platform includes prepackaged profiling
+    sets for healthcare and financial information, as well as the ability
+    to perform tokenization: a process that can be used to obfuscate data
+    sent for processing, then reversed when the processed data set is
     returned.
 
   - **Ease of Use** — With a single solution, Delphix customers can mask
@@ -92,14 +92,14 @@ successfully protect sensitive data across the enterprise:
     the time-consuming work associated with a data masking project is
     reduced significantly.
 
-# High Level Platform Architecture 
+# High Level Platform Architecture
 
 The Delphix Dynamic Data Platform is made up of 4 main services each of
 which play a very important part in delivering fresh secure data to
 anybody that needs it. These include:
 
   - **Virtualize —** Delphix compresses the data that it gathers, often to
-    one-third or more of the original size. From that compressed data 
+    one-third or more of the original size. From that compressed data
     footprint, Delphix virtualizes the data and allows operators to create
     lightweight, virtual data copies. Virtual copies are fully
     readable/writable and independent. They can be spun up or torn down
@@ -133,7 +133,7 @@ anybody that needs it. These include:
 
 ![](./media/image1.png)
 
-# How Delphix Identifies Sensitive Data 
+# How Delphix Identifies Sensitive Data
 
 Our platform helps you quickly identify your organization’s sensitive data. This sensitive data identification is done using two different methods, column level profiling and data level profiling.
 
@@ -182,9 +182,6 @@ to match specific security policies.
 **Tokenization**
 
 Tokenization uses reversible algorithms so that the data can be returned
-to its original state. Tokenization is a form of encryption where the
-actual data – such as names and addresses – are converted into tokens
-that have similar properties to the original data (text, length, etc.)
-but no longer convey any meaning.
+to its original state. Tokenization is a form of encryption where the actual data – such as names and addresses – are converted into tokens that do not convey any meaning (with regards to appearance and formatting).
 
 ![](./media/image5.png)
