@@ -94,7 +94,7 @@ marketed by Oracle Corporation.
 | **11gR1**   | Supported     | Supported     | Supported     | N/A         |
 | **11gR2**   | Supported     | Supported     | Supported     | Supported   |
 | **12c**     | Supported     | Supported     | Supported     | Supported   |
-| **12cR2**   | Supported     | Supported     | Supported     | N/A         |
+| **12cR2**   | Supported     | Supported     | Supported     | Supported   |
 | **18c**     | Supported     | Supported     | Supported     | N/A         |
 
 #### Available Features
@@ -166,15 +166,15 @@ PostgreSQL, often simply Postgres, is an object-relational database management s
 
 #### Support Matrix
 
-| **Version** | **Linux** | **Unix** | **Windows** | **AWS RDS**  |
-| ----------- | --------- | -------- | ----------- | ------------
-| **9.2**     | Supported | Supported| Supported   | N/A          |
-| **9.3**     | Supported | Supported| Supported   | N/A          |
-| **9.4**     | Supported | Supported| Supported   | Supported    |
-| **9.5**     | Supported | Supported| Supported   | Supported    |
-| **9.6**     | Supported | Supported| Supported   | Supported    |
-| **10**      | Supported | Supported| Supported   | Supported    |
-| **11**      | Supported | Supported| Supported   | Supported    |
+| **Version** | **Linux** | **Unix** | **Windows** | **AWS RDS**  | **AWS Aurora** |
+| ----------- | --------- | -------- | ----------- | ------------ | -------------- |
+| **9.2**     | Supported | Supported| Supported   | N/A          | N/A            |
+| **9.3**     | Supported | Supported| Supported   | N/A          | N/A            |
+| **9.4**     | Supported | Supported| Supported   | Supported    | Supported      |
+| **9.5**     | Supported | Supported| Supported   | Supported    | Supported      |
+| **9.6**     | Supported | Supported| Supported   | Supported    | Supported      |
+| **10**      | Supported | Supported| Supported   | Supported    | Supported      |
+| **11**      | Supported | Supported| Supported   | Supported    | Supported      |
 
 #### Available Features
 
@@ -214,11 +214,11 @@ database instance.
 
 #### MySQL Support Matrix
 
-| **Version** | **Linux** | **Unix**  | **Windows** | **AWS RDS**  |
-| ----------- | --------- | --------- | ----------- | ------------ |
-| **5.5**     | Supported | Supported | Supported   | Supported    |
-| **5.6**     | Supported | Supported | Supported   | Supported    |
-| **5.7**     | Supported | Supported | Supported   | Supported    |
+| **Version** | **Linux** | **Unix**  | **Windows** | **AWS RDS**  | **AWS Aurora** |
+| ----------- | --------- | --------- | ----------- | ------------ | -------------- |
+| **5.5**     | Supported | Supported | Supported   | Supported    | Supported      |
+| **5.6**     | Supported | Supported | Supported   | Supported    | Supported      |
+| **5.7**     | Supported | Supported | Supported   | Supported    | Supported      |
 
 #### MariaDB Support Matrix
 
