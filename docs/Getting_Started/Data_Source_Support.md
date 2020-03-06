@@ -322,40 +322,6 @@ The DB2 for z/OS and iSeries connectors support profiling and masking/tokenizati
 | **Profiling**               | Multi-Tenant            | Available        |
 |                             | Streams                 | Available        |
 
-### AWS RDS Oracle Connector
-
-#### Introduction
-
-Oracle Database is a relational database management system developed by
-Oracle. Amazon RDS makes it easy to set up, operate, and scale Oracle
-Database deployments in the cloud. With Amazon RDS, you can deploy
-multiple editions of Oracle Database in minutes with cost-efficient and
-re-sizable hardware capacity.
-
-#### Support Matrix
-
-| **Version** | **Support Level** |
-| ----------- | ----------------- |
-| **11.2.04** | Supported         |
-
-#### Available Features
-The AWS RDS connector supports profiling and masking/tokenization features. Below is a list of which options are and are not available for jobs using the AWS RDS connector:
-
-|                             | **Feature**             | **Availability** |
-| -------------------------   | ---------------------   | ---------------- |
-| **In-Place Masking Mode**   | Multi-Tenant            | Available        |
-|                             | Streams / Threads       | Available        |
-|                             | Batch Update            | Available        |
-|                             | Drop Indexes            | Available        |
-|                             | Disable Trigger         | Available        |
-|                             | Disable Constraint      | Available        |
-| **On-The-Fly Masking Mode** | Restart Ability         | Available        |
-|                             | Truncate                | Available        |
-|                             | Disable Trigger         | Available        |
-|                             | Disable Constraint      | Available        |
-| **Profiling**               | Multi-Tenant            | Available        |
-|                             | Streams                 | Available        |
-
 ### Files Connector
 
 #### Introduction
@@ -364,9 +330,9 @@ Much of the time data will live outside of databases. The data can be stored in 
 
 #### Support Matrix
 
-| **File Type/Format**       | **Support Level** |
-| -------------------------- | ----------------- |
-| **Fixed Width**            | Supported         |
-| **Delimited**              | Supported         |
-| **XML**                    | Supported         |
-| **JSON**                   | Not Supported     |
+| **File Type/Format**           | **Support Level** |
+| ---------------------   | ----------------  |
+| **Fixed Width**         | Supported         |
+| **Delimited**           | Supported         |
+| **XML**                 | Supported         |
+| **JSON**                | Not Supported     |
