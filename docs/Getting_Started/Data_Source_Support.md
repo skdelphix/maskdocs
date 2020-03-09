@@ -26,10 +26,7 @@ data sources:
 
   - **Mainframe/Midrange:** DB2 Z/OS, DB2 iSeries, Mainframe data sets
 
-  - **PaaS Database:** AWS RDS Oracle, RDS PostgreSQL, RDS MYSQL, RDS MariaDB,
-    RDS MS SQL Server
-
-  - **Files:** Excel, Fixed Width, Delimited, XML
+  - **Files:** Fixed Width, Delimited, XML
 
 For a detailed view of all the versions, features, etc Delphix supports
 on each data source - see the sections below.
