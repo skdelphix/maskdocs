@@ -42,7 +42,7 @@ operations.
 To access the API client on your Masking Engine, go to
 [<span class="underline">http://myMaskingEngine.myDomain.com/masking/api-client</span>](http://mymaskingengine.mydomain.com/masking/api-client).
 
-To access the API client documentation without an engine, please refer to the static HTML here: [Masking API 5.1.0 Documentation](/maskingApiEndpoints.html/).
+To access the API client documentation without an engine, please refer to the static HTML here: [Masking API 5.1.0 Documentation](/maskingApiEndpoints.html).
 
 To see how to log into the API client and for some starter recipes,
 please check out API Cookbook document. Happy programming\!
@@ -54,21 +54,14 @@ features that are accessible in the GUI. The list of supported features
 will expand over the course of subsequent releases.
 
 For a full list of supported APIs, the best place to look is the API
-client on your Masking Engine
+client on your Masking Engine.
 
-[<span class="underline">http://myMaskingEngine.com/masking/api-client.</span>](http://mymaskingengine.com/masking/api-client.)High-level
-operations that are **not currently supported** via the v5 APIs include,
+High-level operations that are **not currently supported** via the v5 APIs include,
 but are not limited to:
 
   - Job Scheduler
 
-  - Audit and application logs
-
   - Copybook formats
-
-  - Tokenization jobs
-
-  - Reidentification jobs
 
 ## API Calls for Masking Administration
 

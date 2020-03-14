@@ -74,7 +74,7 @@ During an upgrade of a Masking Engine to a 6.0 or later release, a name with lea
 ##Create / Rename  
 If an attempt is made to create a new entity (or to modify the name of the existing one) with leading or trailing white space or any of the special characters listed above, the operation will fail on a 6.0 or later release with a corresponding error message.
  
-##Environment [Export](/Connecting_Data_to_Masking_Service/Managing_Environments/#exporting-an-environment) - [Import](/Connecting_Data_to_Masking_Service/Managing_Environments/#importing-an-environment)
+##Environment [Export](/Connecting_Data/Managing_Environments/#exporting-an-environment) - [Import](/Connecting_Data/Managing_Environments/#importing-an-environment)
  If any entity name exported from a pre-6.0 version contains leading or trailing white spaces or the special characters listed above, the import operation will fail on a 6.0 or later release with a corresponding error message.
 
 ##Sync
