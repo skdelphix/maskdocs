@@ -1,0 +1,12 @@
+# URLs to skip when running linkcheck (https://github.com/filiph/linkcheck)
+
+# Skip links to older versions of the documentation since
+# those are not present on a local development site
+5.3.4
+5.3.5
+5.3.6
+5.3.7
+5.3.8
+
+# Skip the generated API file
+maskingApiEndpoints.html
