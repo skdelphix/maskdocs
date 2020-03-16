@@ -41,7 +41,7 @@ To enable Kerberized connectors your engine must be configured properly and you 
 
 ## Versioning Framework
 
-6.0 marks the release of version 5.1 of the Masking API. For information on how the Masking API is versioned, please refer to the documentation here: [Masking API Versioning Documentation](/Delphix_Masking_APIs/Masking_Client/Backwards_Compatibility_API_Usage/#api-versioning-context/)
+6.0 marks the release of version 5.1 of the Masking API. For information on how the Masking API is versioned, please refer to the documentation here: [Masking API Versioning Documentation](/Delphix_Masking_APIs/Masking_Client/Backwards_Compatibility_API_Usage/#api-versioning-context)
 
 ## New API Endpoints
 In 6.0 we have expanded the list of API endpoints to include:
