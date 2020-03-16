@@ -218,7 +218,7 @@ set on the **Rule Set** screen.
 From the **Rule Set** tab, click on a rule set to display the tables or
 files in the rule set. The **Rule Set** screen appears.
 
-![](./media/RuleSet.png)
+![](./media/RuleSets.png)
 
 The **Rule Set** screen contains the following information and actions:
 

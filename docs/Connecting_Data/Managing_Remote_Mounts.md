@@ -127,7 +127,7 @@ The XML and Copybook file formats can be uploaded from a remote location. To upl
 ![](./media/ShowMounts3.png)
 
 ### Sync Mounts
-A mount can be synced from a source engine to target engine using [Sync APIs](../Managing_Multiple_Engines_for_Masking/Endpoints). Syncing a file connector using a mount also syncs the related mounts. The following mount information fields are synced:
+A mount can be synced from a source engine to target engine using [Sync APIs](../Managing_Multiple_Engines_for_Masking/Endpoints/). Syncing a file connector using a mount also syncs the related mounts. The following mount information fields are synced:
 
 * mountName
 * hostAddress
