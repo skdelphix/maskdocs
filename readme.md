@@ -70,6 +70,15 @@ This will activate the virtualenv in which you can run `mkdocs serve` or whateve
 
 When you need to start your local mkdocs server, it's really simple. Just make sure you're in the 'docsdev' directory locally (e.g. `cd ~/docsdev`), then run: `pipenv run mkdocs serve`
 
+## Validation
+
+After preparing your changes and reviewing the rendered HTML in a web browser, you should check to make sure that the documentation does not have any broken links. To do this:
+
+1. Download the latest linkcheck utility from [https://github.com/filiph/linkcheck]()
+2. Rename the binary `linkcheck` and install it on your path
+3. Assuming you have started a web server on localhost as described above, run the following command `linkcheck --skip-file /path/to/docsdev/linkcheck-skip.txt :8000`
+4. Review the output for 404 errors
+
 ## Checking in Changes
 
 After following the steps above, you will be ready to make changes to the documentation. Like most other repositories, each change to the documentation is tracked by a JIRA issue. Start by creating a JIRA issue in the DOC project. Next create a branch to work on, use your favorite editor to make changes, view the changes for correctness, and commit the changes using the JIRA issues summary.
