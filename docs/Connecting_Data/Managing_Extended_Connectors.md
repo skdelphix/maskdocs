@@ -5,6 +5,8 @@ of data sources not natively supported by Delphix Masking.
 
 ## Limitations
 
+Delphix supports type 4 JDBC Drivers. These must be a pure-java .jar file that can be used simply by uploading it (or it’s zip file) to the engine. Anything that requires compilation on the engine, or execution of any kind of install or licensing script, is not supported.
+
 Extended Connectors don't support all of the features available for built in connectors like Oracle. The "Disable Constraint", "Disable Trigger" and "Drop Indexes" options are not available on jobs using extended connectors. Delphix provides support for Extended Connectors in accordance with our [Support Policy](https://www.delphix.com/masking-help/jdbc-drivers-support)
 
 Drivers that require a Java version higher than 8 are not supported.
@@ -85,7 +87,9 @@ SAP HANA requires the following permissions to be enabled in addition to the def
 
 ## Extended Logging
 
-The Delphix Masking Engine provides enhanced logging for extended connectors to assist in debugging connection problems. Enhanced logging can be enabled when the connector is created by checking the appropriate box. Enhanced logging may have an impact on performance so you should enable it only when debugging connection problems.
+The Delphix Masking Engine provides enhanced logging for extended connectors to assist in debugging connection problems. Enhanced logging can be enabled when the connector is created by checking the 'Enable Logger' box. Enhanced logging may have an impact on performance so you should enable it only when debugging connection problems.
+
+Note that extended logging will not work with signed drivers such as MSSQL.
 
 Enhanced Logging requires some additional permissions to be granted.
 
