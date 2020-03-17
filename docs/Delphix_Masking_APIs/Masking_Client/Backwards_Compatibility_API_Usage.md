@@ -33,7 +33,7 @@ Scripts that specifically pin down the version of the Masking API in the
 URL will continue to work upon future upgrades of the Masking
 product--even if a newer version of the API is available in the future
 Masking product–with the exception that
-[Incubating API Endpoints](Incubating_API_Endpoints)
+[Incubating API Endpoints](Incubating_API_Endpoints/)
 are never guaranteed to be backwards-compatible.
 
 For example, consider the scenario where a script is being developed
