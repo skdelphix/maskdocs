@@ -22,10 +22,10 @@ While creating a masking job in the Job Wizard, you are able to do the following
 
 - Create a new application or use an existing application
 - Create a new environment or use an existing environment
-- Create a new connector*
+- Create a new connector
 - Create a new rule set
-- Update inventory*
-- Create a masking job*
+- Update inventory
+- Create a masking job
 - Update a masking job
 - Change the connector for an existing job
 - Change the rule set for an existing connector
@@ -72,11 +72,11 @@ When you first login to masking, the welcome screen offers a link to learn more
 or begin masking immediately. To open the Job Wizard, click Run on the welcome
 page.
 
-![Welcome](./media/welcome.png)
+![Welcome](/media/welcome.png)
 To use the Job Wizard from the masking application, click the Create Job button
 in the upper right-hand corner, as highlighted in the screenshot below.
 
-![](./media/create_job.png)
+![](/media/wizard_job_create.png)
 
 ## Creating a New Masking Job
 The Job Wizard makes creating a new masking job much easier by guiding you
@@ -94,32 +94,32 @@ follows this sequence:
 You can navigate back and forth through the pages of the Job Wizard.
 
 !!! note
-    If the product times out due to long inactivity, you will need to start over. |
+    If the product times out due to long inactivity, you will need to start over.
 
 To create a new masking Job using the new Job Wizard, follow the procedure below:
 
 1. Log into your Delphix Masking Engine and from the Welcome screen select  Run.
 2. Select the New radio button and enter a name for your Masking job.
-   ![] (./media/job.png)
+   ![] (/media/wizard_job.png)
 3. Click Next.
 4. From the drop-down menu select an Application and Environment. If none exist use the Add button to add one.
-   ![] (./media/job_env.png)
+   ![] (/media/wizard_job_env.png)
 5. Click Next.
 6. Select a Connector from the drop-down menu. If none exists select the Add button, then use the Add Connector dialog to add a new connector. The Job Wizard only supports the following  Connector types:
-   - Database - MS SQL
-   - Database - Oracle
-   - Database - RDS Oracle
-   - Database - Sybase
-   ![] (./media/job_connection.png)
-7.Click Next.
+    - Database - MS SQL
+    - Database - Oracle
+    - Database - RDS Oracle
+    - Database - Sybase
+   ![] (/media/wizard_job_connection.png)
+7. Click Next.
 8. On the Rule Set screen select an existing Rule set or create a new one by clicking the Add button.
-  ![] (./media/job_rule_set.png)
+  ![] (/media/wizard_job_rule_set.png)
 9. Click Next.
 10. From the Inventory screen select how your data will be masked. In the screenshot below we are masking subscriber last names.
-   ![] (./media/job_inventory.png)
+   ![] (/media/wizard_job_inventory.png)
 11. Click Next.
 12. The final screen of the Job Wizard displays a Summary of your selections.
-   ![] (./media/job_summary.png)
+   ![] (/media/wizard_job_summary.png)
 13. Clicking Run Masking Job Now and go to Monitor progress, saves your job and runs it immediately. Save Job allows you to save your job and run it at a later date. Note: Selecting this option means your data will not be masked until you run the job.
 
 ### When Objects Are Saved
@@ -142,10 +142,10 @@ data type.
 1. On the Job screen of the Job Wizard, select Modify Existing
 2. From the list of available jobs slect the one you want to modify. This list only shows jobs that are supported in the wizard. You can filter the job list by selecting the filter icon .
 3. Once you select a job, you can change the following as part of the Modify flow:
-   - Change/create new connector
-   - Change/create new rule set
-   - Update inventory
-   - Save or run the modified job
+    - Change/create new connector
+    - Change/create new rule set
+    - Update inventory
+    - Save or run the modified job
 
  You cannot alter application and environment settings as part of the Modify
  flow, but you can do so in the main masking application.

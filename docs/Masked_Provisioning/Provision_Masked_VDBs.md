@@ -16,7 +16,7 @@ Before attempting to create a Masked VDB, you should be familiar with both Delph
 
 ## Identifying and Navigating to Masked VDBs
 Masked VDBs appear in the Virtualization Engine's Datasets pane, just like regular VDBs. They are most obviously identified by the different icon used to represent them. In addition, a masked VDBs Configuration tab will contain information about the masking job that you applied to it. Generally, anything you can do with an unmasked VDB is also possible with a masked VDB.
-![] (./media/masked_vdb.png)
+![] (/media/masked_vdb.png)
 
 ## Provisioning Masked VDBs
 - In the Virtualization Engine, associate a masking job with a dSource.
@@ -27,13 +27,13 @@ To provision a masked VDB, you must first indicate that the masking job you are 
 
 1. In the **Datasets** panel on the left-hand side of the screen, click the dSource to which the masking job is applicable and with which it will be associated.
 2. Click the **Configuration** tab.
-3. Click the **Masking** tab. 
-  ![] (./media/masking_tab.png)
-  
+3. Click the **Masking** tab.
+  ![] (/media/masking_tab.png)
+
 4. Click the **pencil** icon to edit.  All masking jobs on this Delphix Engine that have not been associated with another dSource will be listed on the right-hand side.
 5. Select the **job** you want to associate with this dSource.
-6. Click the **green checkmark** to confirm. 
-  ![] (./media/mask_job.png)
+6. Click the **green checkmark** to confirm.
+  ![] (/media/mask_job.png)
 7. Repeat for any other jobs that you want to associate with this dSource at this time.
 
 The Delphix Engine now considers this masking job to be applicable to this dSource and ready for use. When provisioning from snapshots of this dSource, this masking job will now be available.
@@ -50,43 +50,28 @@ The steps required to provision a masked VDB are almost identical to the steps r
 3. Click **Provision VDB** icon.
 4. Review the information for Installation Home, Database Unique Name, SID, and Database Name. Edit as necessary.
 5. Review the Mount Base and Environment User. Edit as necessary.
-  - If you want to use login credentials on the target environment that are different from the login credentials associated with the Environment User, select Specify Privileged Credentials.
+    - If you want to use login credentials on the target environment that are different from the login credentials associated with the Environment User, select Specify Privileged Credentials.
 6. Click **Next**.
 7. If necessary, edit the **Target Group** for the VDB.
-8. Select the **None** option for the Snapshot Policy for theVDB .
-
-!!! note "**Snapshot Policy Selection**"
-
-    For almost all use cases involving Masked VDBs, a Snapshot Policy of None is appropriate. Using a Snapshot Policy in conjunction with SDD can result in the leak of sensitive data.
-
+8. Select the **None** option for the Snapshot Policy for the VDB.
+    - **Snapshot Policy Selection**: For almost all use cases involving Masked VDBs, a Snapshot Policy of None is appropriate. Using a Snapshot Policy in conjunction with SDD can result in the leak of sensitive data.
 9. Click **Next**.
 10. Click **Mask this VDB**. You will be presented with two options to mask this VDB:
-   - Select an existing masking job: Choose this option if you want to mask using preconfigured Masking Job. Only masking jobs that have been associated with the parent dSource will be available.
-
-!!! note "**Selecting Unique Masking Jobs**"
-
-    If you are using the same masking ruleset on multiple VDBs, be sure to create a unique job for each VDB to avoid any issues when provisioning or refreshing.
-
-![] (./media/mask_rule_set.png)
-    
-   - Masking using scripts(s): Alternatively, you may define some Configure Clone scripts in the Hooks step to perform masking.
-
-!!! note "**Defining Configure Clone Hooks to Mask VDB**"
-
-    If you choose to mask using script(s), you must define the Configure Clone hooks to run masking jobs yourself. If you don't define any Configure Clone hooks in the Hooks step, the data will be marked as masked, but it will not be masked.
-
-![] (./media/mask_hooks.png)
-
+    - Select an existing masking job: Choose this option if you want to mask using preconfigured Masking Job. Only masking jobs that have been associated with the parent dSource will be available.
+    - **Selecting Unique Masking Jobs**: If you are using the same masking ruleset on multiple VDBs, be sure to create a unique job for each VDB to avoid any issues when provisioning or refreshing.
+    ![] (/media/mask_rule_set.png)
+    - Masking using scripts(s): Alternatively, you may define some Configure Clone scripts in the Hooks step to perform masking.
+    - **Defining Configure Clone Hooks to Mask VDB**: If you choose to mask using script(s), you must define the Configure Clone hooks to run masking jobs yourself. If you don't define any Configure Clone hooks in the Hooks step, the data will be marked as masked, but it will not be masked.
+    ![] (/media/mask_hooks.png)
 11. Click **Next**.
 12. Specify any **Pre or Post Scripts** that should be used during the provisioning process. If the VDB was configured before running the masking job using scripts that impact either user access or the database schema, those same scripts should also be used here. Be sure to define the **Configure Clone** hooks to run the masking job if you choose to mask using script(s) in the Masking step.
-![] (./media/hooks.png)
-
+    ![] (/media/hooks.png)
 13. Click **Next**.
 14. Click **Submit**.
 
 If you click Actions in the the upper right-hand corner, the Actions sidebar will appear and list an action indicating that masking is running. You can verify this and monitor progress by going to the Masking Engine page and clicking the Monitor tab.
 
-![] (./media/monitor.png)
+![] (/media/monitor.png)
 
 !!! note
 
