@@ -120,4 +120,4 @@ The following data operations are available to masked VDBs:
 | 5.1 releases | 5.1 releases (minor versions do not need to match) |
 | 5.2 releases | 5.2 releases (minor versions do not need to match) |
 | 5.2.5.0 (or later 5.2 minor release) | 5.2.5.0 (or later 5.2 minor release) |
-| 5.3 releases | 5.3 releases (minor versions do not need to match) |
+| 5.3.0.0 and later, including later major releases (e.g. 6.0) | 5.3.0.0 and later, including later major releases (e.g. 6.0) and minor versions do not need to match |
