@@ -181,9 +181,7 @@ font-style: italic;
   <body>
   <h1>Masking API</h1>
     <div class="app-desc">Schema for the Masking Engine API</div>
-    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
-    <div class="app-desc">Contact Info: <a href="hello@helloreverb.com">hello@helloreverb.com</a></div>
-    <div class="app-desc">Version: 5.1.0</div>
+    <div class="app-desc">Version: 5.1.1</div>
     
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -202,8 +200,6 @@ font-style: italic;
   <li><a href="#createAlgorithm"><code><span class="http-method">post</span> /algorithms</code></a></li>
   <li><a href="#deleteAlgorithm"><code><span class="http-method">delete</span> /algorithms/{algorithmName}</code></a></li>
   <li><a href="#getAlgorithm"><code><span class="http-method">get</span> /algorithms/{algorithmName}</code></a></li>
-  <li><a href="#getAlgorithmFramework"><code><span class="http-method">get</span> /algorithm/frameworks/id/{frameworkId}</code></a></li>
-  <li><a href="#getAllAlgorithmFrameworks"><code><span class="http-method">get</span> /algorithm/frameworks/</code></a></li>
   <li><a href="#getAllAlgorithms"><code><span class="http-method">get</span> /algorithms</code></a></li>
   <li><a href="#randomizeAlgorithmKey"><code><span class="http-method">put</span> /algorithms/{algorithmName}/randomize-key</code></a></li>
   <li><a href="#updateAlgorithm"><code><span class="http-method">put</span> /algorithms/{algorithmName}</code></a></li>
@@ -375,6 +371,15 @@ font-style: italic;
   <li><a href="#getJdbcDriverById"><code><span class="http-method">get</span> /jdbc-drivers/{jdbcDriverId}</code></a></li>
   <li><a href="#updateJdbcDriver"><code><span class="http-method">put</span> /jdbc-drivers/{jdbcDriverId}</code></a></li>
   </ul>
+  <h4><a href="#JvmPermission">JvmPermission</a></h4>
+  <ul>
+  <li><a href="#getAllJvmPermissionAction"><code><span class="http-method">get</span> /jvm-permission-actions</code></a></li>
+  <li><a href="#getAllJvmPermissionClassName"><code><span class="http-method">get</span> /jvm-permission-class-names</code></a></li>
+  <li><a href="#getAllJvmPermissionTargetName"><code><span class="http-method">get</span> /jvm-permission-target-names</code></a></li>
+  <li><a href="#getJvmPermissionActionById"><code><span class="http-method">get</span> /jvm-permission-actions/{jvmPermissionActionId}</code></a></li>
+  <li><a href="#getJvmPermissionClassNameById"><code><span class="http-method">get</span> /jvm-permission-class-names/{jvmPermissionClassNameId}</code></a></li>
+  <li><a href="#getJvmPermissionTargetNameById"><code><span class="http-method">get</span> /jvm-permission-target-names/{jvmPermissionTargetNameId}</code></a></li>
+  </ul>
   <h4><a href="#KnowledgeBaseInfo">KnowledgeBaseInfo</a></h4>
   <ul>
   <li><a href="#getAllKnowledgeBaseInfo"><code><span class="http-method">get</span> /knowledge-base-info</code></a></li>
@@ -453,14 +458,6 @@ font-style: italic;
   <ul>
   <li><a href="#getAllNonConformantDataSamples"><code><span class="http-method">get</span> /non-conformant-data-sample</code></a></li>
   </ul>
-  <h4><a href="#Plugin">Plugin</a></h4>
-  <ul>
-  <li><a href="#createPlugin"><code><span class="http-method">post</span> /plugin</code></a></li>
-  <li><a href="#deletePlugin"><code><span class="http-method">delete</span> /plugin/{pluginId}</code></a></li>
-  <li><a href="#getAllPlugins"><code><span class="http-method">get</span> /plugin</code></a></li>
-  <li><a href="#getPlugin"><code><span class="http-method">get</span> /plugin/{pluginId}</code></a></li>
-  <li><a href="#updatePlugin"><code><span class="http-method">put</span> /plugin/{pluginId}</code></a></li>
-  </ul>
   <h4><a href="#ProfileExpression">ProfileExpression</a></h4>
   <ul>
   <li><a href="#createProfileExpression"><code><span class="http-method">post</span> /profile-expressions</code></a></li>
@@ -487,19 +484,19 @@ font-style: italic;
   </ul>
   <h4><a href="#RecordType">RecordType</a></h4>
   <ul>
-  <li><a href="#createRecordType"><code><span class="http-method">post</span> /record-type</code></a></li>
-  <li><a href="#deleteRecordType"><code><span class="http-method">delete</span> /record-type/{recordTypeId}</code></a></li>
-  <li><a href="#getAllRecordTypes"><code><span class="http-method">get</span> /record-type</code></a></li>
-  <li><a href="#getRecordTypeById"><code><span class="http-method">get</span> /record-type/{recordTypeId}</code></a></li>
-  <li><a href="#updateRecordType"><code><span class="http-method">put</span> /record-type/{recordTypeId}</code></a></li>
+  <li><a href="#createRecordType"><code><span class="http-method">post</span> /record-types</code></a></li>
+  <li><a href="#deleteRecordType"><code><span class="http-method">delete</span> /record-types/{recordTypeId}</code></a></li>
+  <li><a href="#getAllRecordTypes"><code><span class="http-method">get</span> /record-types</code></a></li>
+  <li><a href="#getRecordTypeById"><code><span class="http-method">get</span> /record-types/{recordTypeId}</code></a></li>
+  <li><a href="#updateRecordType"><code><span class="http-method">put</span> /record-types/{recordTypeId}</code></a></li>
   </ul>
   <h4><a href="#RecordTypeQualifier">RecordTypeQualifier</a></h4>
   <ul>
-  <li><a href="#createRecordTypeQualifier"><code><span class="http-method">post</span> /record-type-qualifier</code></a></li>
-  <li><a href="#deleteRecordTypeQualifier"><code><span class="http-method">delete</span> /record-type-qualifier/{recordTypeQualifierId}</code></a></li>
-  <li><a href="#getAllRecordTypeQualifiers"><code><span class="http-method">get</span> /record-type-qualifier</code></a></li>
-  <li><a href="#getRecordTypeQualifierById"><code><span class="http-method">get</span> /record-type-qualifier/{recordTypeQualifierId}</code></a></li>
-  <li><a href="#updateRecordTypeQualifier"><code><span class="http-method">put</span> /record-type-qualifier/{recordTypeQualifierId}</code></a></li>
+  <li><a href="#createRecordTypeQualifier"><code><span class="http-method">post</span> /record-type-qualifiers</code></a></li>
+  <li><a href="#deleteRecordTypeQualifier"><code><span class="http-method">delete</span> /record-type-qualifiers/{recordTypeQualifierId}</code></a></li>
+  <li><a href="#getAllRecordTypeQualifiers"><code><span class="http-method">get</span> /record-type-qualifiers</code></a></li>
+  <li><a href="#getRecordTypeQualifierById"><code><span class="http-method">get</span> /record-type-qualifiers/{recordTypeQualifierId}</code></a></li>
+  <li><a href="#updateRecordTypeQualifier"><code><span class="http-method">put</span> /record-type-qualifiers/{recordTypeQualifierId}</code></a></li>
   </ul>
   <h4><a href="#ReidentificationJob">ReidentificationJob</a></h4>
   <ul>
@@ -707,7 +704,6 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "frameworkId" : 123456789,
   "algorithmExtension" : "{}",
   "algorithmType" : "aeiou",
   "createdBy" : "aeiou",
@@ -737,134 +733,6 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="getAlgorithmFramework"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /algorithm/frameworks/id/{frameworkId}</code></pre></div>
-    <div class="method-summary">Get all algorithm frameworks (<span class="nickname">getAlgorithmFramework</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">frameworkId (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The id of the framework format: int64</div>
-    </div>  <!-- field-items -->
-
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#AlgorithmFramework">AlgorithmFramework</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "frameworkId" : 123456789,
-  "frameworkName" : "aeiou",
-  "plugin" : {
-    "pluginName" : "aeiou",
-    "pluginId" : 123456789,
-    "pluginAuthor" : "aeiou"
-  },
-  "frameworkType" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    Success
-        <a href="#AlgorithmFramework">AlgorithmFramework</a>
-    <h4 class="field-label">400</h4>
-    Bad request
-        <a href="#"></a>
-    <h4 class="field-label">401</h4>
-    Unauthorized access
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="getAllAlgorithmFrameworks"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /algorithm/frameworks/</code></pre></div>
-    <div class="method-summary">Get all algorithm frameworks (<span class="nickname">getAllAlgorithmFrameworks</span>)</div>
-    <div class="method-notes"></div>
-
-
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">mask_type (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The data type of value this algorithm framework can mask. </div><div class="param">page_number (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The page number for which to get algorithm frameworks. This will default to the first page if excluded default: 1 format: int64</div><div class="param">page_size (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The maximum number of objects to return. This will default to the DEFAULT_API_PAGE_SIZE property if not provided format: int64</div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#AlgorithmFrameworkList">AlgorithmFrameworkList</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "_pageInfo" : {
-    "total" : 123456789,
-    "numberOnPage" : 123456789
-  },
-  "responseList" : [ {
-    "frameworkId" : 123456789,
-    "frameworkName" : "aeiou",
-    "plugin" : {
-      "pluginName" : "aeiou",
-      "pluginId" : 123456789,
-      "pluginAuthor" : "aeiou"
-    },
-    "frameworkType" : "aeiou"
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    Success
-        <a href="#AlgorithmFrameworkList">AlgorithmFrameworkList</a>
-    <h4 class="field-label">400</h4>
-    Bad request
-        <a href="#"></a>
-    <h4 class="field-label">401</h4>
-    Unauthorized access
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
   <div class="method"><a name="getAllAlgorithms"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -878,9 +746,7 @@ font-style: italic;
 
     <h3 class="field-label">Query parameters</h3>
     <div class="field-items">
-      <div class="param">mask_type (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The data type of value this algorithm can mask. </div><div class="param">page_number (optional)</div>
+      <div class="param">page_number (optional)</div>
 
       <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The page number for which to get algorithms. This will default to the first page if excluded default: 1 format: int64</div><div class="param">page_size (optional)</div>
 
@@ -904,7 +770,6 @@ font-style: italic;
     "numberOnPage" : 123456789
   },
   "responseList" : [ {
-    "frameworkId" : 123456789,
     "algorithmExtension" : "{}",
     "algorithmType" : "aeiou",
     "createdBy" : "aeiou",
@@ -962,7 +827,6 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "frameworkId" : 123456789,
   "algorithmExtension" : "{}",
   "algorithmType" : "aeiou",
   "createdBy" : "aeiou",
@@ -2348,6 +2212,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "servicePrincipal" : "aeiou",
+  "enableLogger" : true,
   "databaseName" : "aeiou",
   "instanceName" : "aeiou",
   "databaseConnectorId" : 123,
@@ -2421,6 +2286,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "servicePrincipal" : "aeiou",
+  "enableLogger" : true,
   "databaseName" : "aeiou",
   "instanceName" : "aeiou",
   "databaseConnectorId" : 123,
@@ -2599,6 +2465,7 @@ font-style: italic;
   },
   "responseList" : [ {
     "servicePrincipal" : "aeiou",
+    "enableLogger" : true,
     "databaseName" : "aeiou",
     "instanceName" : "aeiou",
     "databaseConnectorId" : 123,
@@ -2671,6 +2538,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "servicePrincipal" : "aeiou",
+  "enableLogger" : true,
   "databaseName" : "aeiou",
   "instanceName" : "aeiou",
   "databaseConnectorId" : 123,
@@ -2864,6 +2732,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "servicePrincipal" : "aeiou",
+  "enableLogger" : true,
   "databaseName" : "aeiou",
   "instanceName" : "aeiou",
   "databaseConnectorId" : 123,
@@ -6317,30 +6186,20 @@ font-style: italic;
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /jdbc-drivers</code></pre></div>
     <div class="method-summary">Create Jdbc Driver (<span class="nickname">createJdbcDriver</span>)</div>
-    <div class="method-notes">WARNING: The generated curl command is incorrect, so please refer to the Masking API guide for instructions on how to upload files through the API</div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>multipart/form-data</code></li>
-    </ul>
+    <div class="method-notes"></div>
 
 
 
-
-    <h3 class="field-label">Form parameters</h3>
+    <h3 class="field-label">Request body</h3>
     <div class="field-items">
-      <div class="param">driverFile (required)</div>
+      <div class="param">body <a href="#JdbcDriver">JdbcDriver</a> (required)</div>
 
-      <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash; The zip of the driver to be uploaded. </div><div class="param">driverName (required)</div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; The jdbc driver details. </div>
 
-      <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash; A name to call the driver being uploaded </div><div class="param">driverClassName (required)</div>
-
-      <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash; The name of the uploaded class that extends java.sql.Driver </div><div class="param">description (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash; A description of the driver. </div>
     </div>  <!-- field-items -->
+
+
+
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
@@ -6353,12 +6212,20 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "loggerInstalled" : true,
   "jdbcDriverId" : 123,
   "uploadDate" : "2000-01-23T04:56:07.000+00:00",
+  "pluginJvmPermissions" : [ {
+    "action" : "aeiou",
+    "className" : "aeiou",
+    "pluginJvmPermissionId" : 123,
+    "target" : "aeiou"
+  } ],
   "builtIn" : true,
   "driverClassName" : "aeiou",
   "checksum" : "aeiou",
   "description" : "aeiou",
+  "fileReferenceId" : "aeiou",
   "driverName" : "aeiou",
   "version" : "aeiou",
   "uploadedBy" : "aeiou"
@@ -6467,12 +6334,20 @@ font-style: italic;
     "numberOnPage" : 123456789
   },
   "responseList" : [ {
+    "loggerInstalled" : true,
     "jdbcDriverId" : 123,
     "uploadDate" : "2000-01-23T04:56:07.000+00:00",
+    "pluginJvmPermissions" : [ {
+      "action" : "aeiou",
+      "className" : "aeiou",
+      "pluginJvmPermissionId" : 123,
+      "target" : "aeiou"
+    } ],
     "builtIn" : true,
     "driverClassName" : "aeiou",
     "checksum" : "aeiou",
     "description" : "aeiou",
+    "fileReferenceId" : "aeiou",
     "driverName" : "aeiou",
     "version" : "aeiou",
     "uploadedBy" : "aeiou"
@@ -6525,12 +6400,20 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "loggerInstalled" : true,
   "jdbcDriverId" : 123,
   "uploadDate" : "2000-01-23T04:56:07.000+00:00",
+  "pluginJvmPermissions" : [ {
+    "action" : "aeiou",
+    "className" : "aeiou",
+    "pluginJvmPermissionId" : 123,
+    "target" : "aeiou"
+  } ],
   "builtIn" : true,
   "driverClassName" : "aeiou",
   "checksum" : "aeiou",
   "description" : "aeiou",
+  "fileReferenceId" : "aeiou",
   "driverName" : "aeiou",
   "version" : "aeiou",
   "uploadedBy" : "aeiou"
@@ -6572,25 +6455,17 @@ font-style: italic;
       <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The ID of the JDBC driver to update format: int32</div>
     </div>  <!-- field-items -->
 
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>multipart/form-data</code></li>
-    </ul>
 
-
-
-
-    <h3 class="field-label">Form parameters</h3>
+    <h3 class="field-label">Request body</h3>
     <div class="field-items">
-      <div class="param">driverClassName (required)</div>
+      <div class="param">body <a href="#JdbcDriver">JdbcDriver</a> (required)</div>
 
-      <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash; The name of the uploaded class that extends java.sql.Driver </div><div class="param">driverFile (optional)</div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; The jdbc driver details. </div>
 
-      <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash; The zip of the driver to be uploaded. </div><div class="param">description (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Form Parameter</span> &mdash; A description of the driver. </div>
     </div>  <!-- field-items -->
+
+
+
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
@@ -6603,12 +6478,20 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "loggerInstalled" : true,
   "jdbcDriverId" : 123,
   "uploadDate" : "2000-01-23T04:56:07.000+00:00",
+  "pluginJvmPermissions" : [ {
+    "action" : "aeiou",
+    "className" : "aeiou",
+    "pluginJvmPermissionId" : 123,
+    "target" : "aeiou"
+  } ],
   "builtIn" : true,
   "driverClassName" : "aeiou",
   "checksum" : "aeiou",
   "description" : "aeiou",
+  "fileReferenceId" : "aeiou",
   "driverName" : "aeiou",
   "version" : "aeiou",
   "uploadedBy" : "aeiou"
@@ -6625,6 +6508,357 @@ font-style: italic;
     <h4 class="field-label">201</h4>
     Success
         <a href="#JdbcDriver">JdbcDriver</a>
+    <h4 class="field-label">400</h4>
+    Bad request
+        <a href="#"></a>
+    <h4 class="field-label">401</h4>
+    Unauthorized access
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="JvmPermission">JvmPermission</a></h1>
+  <div class="method"><a name="getAllJvmPermissionAction"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /jvm-permission-actions</code></pre></div>
+    <div class="method-summary">Get all jvm permission actions (<span class="nickname">getAllJvmPermissionAction</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">page_number (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The page number for which to get permission actions. This will default to the first page if excluded default: 1 format: int64</div><div class="param">page_size (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The maximum number of objects to return. This will default to the DEFAULT_API_PAGE_SIZE property if not provided format: int64</div><div class="param">jvm_permission_class_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The permission class name for which to get the actions for. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#JvmPermissionActionsList">JvmPermissionActionsList</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "_pageInfo" : {
+    "total" : 123456789,
+    "numberOnPage" : 123456789
+  },
+  "responseList" : [ {
+    "jvmPermissionClassName" : "aeiou",
+    "jvmPermissionActionId" : 123,
+    "value" : "aeiou"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+        <a href="#JvmPermissionActionsList">JvmPermissionActionsList</a>
+    <h4 class="field-label">401</h4>
+    Unauthorized access
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getAllJvmPermissionClassName"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /jvm-permission-class-names</code></pre></div>
+    <div class="method-summary">Get all jvm permission class names (<span class="nickname">getAllJvmPermissionClassName</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">page_number (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The page number for which to get permission class names. This will default to the first page if excluded default: 1 format: int64</div><div class="param">page_size (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The maximum number of objects to return. This will default to the DEFAULT_API_PAGE_SIZE property if not provided format: int64</div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#JvmPermissionClassNamesList">JvmPermissionClassNamesList</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "_pageInfo" : {
+    "total" : 123456789,
+    "numberOnPage" : 123456789
+  },
+  "responseList" : [ {
+    "value" : "aeiou",
+    "jvmPermissionClassNameId" : 123
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+        <a href="#JvmPermissionClassNamesList">JvmPermissionClassNamesList</a>
+    <h4 class="field-label">401</h4>
+    Unauthorized access
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getAllJvmPermissionTargetName"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /jvm-permission-target-names</code></pre></div>
+    <div class="method-summary">Get all jvm permission target names (<span class="nickname">getAllJvmPermissionTargetName</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">page_number (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The page number for which to get permission target names. This will default to the first page if excluded default: 1 format: int64</div><div class="param">page_size (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The maximum number of objects to return. This will default to the DEFAULT_API_PAGE_SIZE property if not provided format: int64</div><div class="param">jvm_permission_class_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The permission class name for which to get the target names for. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#JvmPermissionTargetNamesList">JvmPermissionTargetNamesList</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "_pageInfo" : {
+    "total" : 123456789,
+    "numberOnPage" : 123456789
+  },
+  "responseList" : [ {
+    "jvmPermissionClassName" : "aeiou",
+    "jvmPermissionTargetNameId" : 123,
+    "value" : "aeiou"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+        <a href="#JvmPermissionTargetNamesList">JvmPermissionTargetNamesList</a>
+    <h4 class="field-label">401</h4>
+    Unauthorized access
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getJvmPermissionActionById"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /jvm-permission-actions/{jvmPermissionActionId}</code></pre></div>
+    <div class="method-summary">Get jvm permission action by ID (<span class="nickname">getJvmPermissionActionById</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">jvmPermissionActionId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The ID of the permission action to get format: int32</div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#JvmPermissionAction">JvmPermissionAction</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "jvmPermissionClassName" : "aeiou",
+  "jvmPermissionActionId" : 123,
+  "value" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+        <a href="#JvmPermissionAction">JvmPermissionAction</a>
+    <h4 class="field-label">400</h4>
+    Bad request
+        <a href="#"></a>
+    <h4 class="field-label">401</h4>
+    Unauthorized access
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getJvmPermissionClassNameById"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /jvm-permission-class-names/{jvmPermissionClassNameId}</code></pre></div>
+    <div class="method-summary">Get jvm permission class names by ID (<span class="nickname">getJvmPermissionClassNameById</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">jvmPermissionClassNameId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The ID of the permission class name to get format: int32</div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#JvmPermissionClassName">JvmPermissionClassName</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "value" : "aeiou",
+  "jvmPermissionClassNameId" : 123
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+        <a href="#JvmPermissionClassName">JvmPermissionClassName</a>
+    <h4 class="field-label">400</h4>
+    Bad request
+        <a href="#"></a>
+    <h4 class="field-label">401</h4>
+    Unauthorized access
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getJvmPermissionTargetNameById"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /jvm-permission-target-names/{jvmPermissionTargetNameId}</code></pre></div>
+    <div class="method-summary">Get jvm permission target name by ID (<span class="nickname">getJvmPermissionTargetNameById</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">jvmPermissionTargetNameId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The ID of the permission target name to get format: int32</div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#JvmPermissionTargetName">JvmPermissionTargetName</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "jvmPermissionClassName" : "aeiou",
+  "jvmPermissionTargetNameId" : 123,
+  "value" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Success
+        <a href="#JvmPermissionTargetName">JvmPermissionTargetName</a>
     <h4 class="field-label">400</h4>
     Bad request
         <a href="#"></a>
@@ -9403,288 +9637,6 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <h1><a name="Plugin">Plugin</a></h1>
-  <div class="method"><a name="createPlugin"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /plugin</code></pre></div>
-    <div class="method-summary">Install plugin (<span class="nickname">createPlugin</span>)</div>
-    <div class="method-notes">Install an uploaded plugin file onto the system</div>
-
-
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">fileReferenceId (required)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The file references ID of the uploaded plugin JAR file to install </div><div class="param">pluginName (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Override the default name of the plugin. Plugin names must be unique across all plugins on the engine. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#Plugin">Plugin</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>""</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    Success
-        <a href="#Plugin">Plugin</a>
-    <h4 class="field-label">400</h4>
-    Bad request
-        <a href="#"></a>
-    <h4 class="field-label">401</h4>
-    Unauthorized access
-        <a href="#"></a>
-    <h4 class="field-label">404</h4>
-    Not found
-        <a href="#"></a>
-    <h4 class="field-label">409</h4>
-    Conflict
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="deletePlugin"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /plugin/{pluginId}</code></pre></div>
-    <div class="method-summary">Delete plugin (<span class="nickname">deletePlugin</span>)</div>
-    <div class="method-notes">Delete an installed plugin.</div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">pluginId (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The ID of the plugin to delete format: int64</div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">force (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Force deletion of all dependent usage associated with the plugin, such as inventory and domain assignments of algorithms default: false </div>
-    </div>  <!-- field-items -->
-
-
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    Success
-        <a href="#"></a>
-    <h4 class="field-label">400</h4>
-    Bad request
-        <a href="#"></a>
-    <h4 class="field-label">401</h4>
-    Unauthorized access
-        <a href="#"></a>
-    <h4 class="field-label">404</h4>
-    Not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="getAllPlugins"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /plugin</code></pre></div>
-    <div class="method-summary">Get all plugins (<span class="nickname">getAllPlugins</span>)</div>
-    <div class="method-notes">Get a detailed list of all installed plugins</div>
-
-
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">page_number (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The page number for which to get algorithm plugins. This will default to the first page if excluded default: 1 format: int64</div><div class="param">page_size (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The maximum number of objects to return. This will default to the DEFAULT_API_PAGE_SIZE property if not provided format: int64</div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#PluginList">PluginList</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "_pageInfo" : {
-    "total" : 123456789,
-    "numberOnPage" : 123456789
-  },
-  "responseList" : [ "" ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    Success
-        <a href="#PluginList">PluginList</a>
-    <h4 class="field-label">400</h4>
-    Bad request
-        <a href="#"></a>
-    <h4 class="field-label">401</h4>
-    Unauthorized access
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="getPlugin"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /plugin/{pluginId}</code></pre></div>
-    <div class="method-summary">Get plugin detail by pluginId (<span class="nickname">getPlugin</span>)</div>
-    <div class="method-notes">Get detailed information about an installed plugin by pluginId</div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">pluginId (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The ID of the plugin to get format: int64</div>
-    </div>  <!-- field-items -->
-
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#Plugin">Plugin</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>""</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    Success
-        <a href="#Plugin">Plugin</a>
-    <h4 class="field-label">400</h4>
-    Bad request
-        <a href="#"></a>
-    <h4 class="field-label">401</h4>
-    Unauthorized access
-        <a href="#"></a>
-    <h4 class="field-label">404</h4>
-    Not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="updatePlugin"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /plugin/{pluginId}</code></pre></div>
-    <div class="method-summary">Update plugin (<span class="nickname">updatePlugin</span>)</div>
-    <div class="method-notes">Update an installed plugin to use the uploaded JAR file. The new plugin must contain all components delivered by the previous version.</div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">pluginId (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The ID of the plugin to update format: int64</div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">fileReferenceId (required)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The file references ID of the new uploaded plugin JAR file </div><div class="param">pluginName (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The name of the plugin </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#Plugin">Plugin</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>""</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    Success
-        <a href="#Plugin">Plugin</a>
-    <h4 class="field-label">400</h4>
-    Bad request
-        <a href="#"></a>
-    <h4 class="field-label">401</h4>
-    Unauthorized access
-        <a href="#"></a>
-    <h4 class="field-label">404</h4>
-    Not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
   <h1><a name="ProfileExpression">ProfileExpression</a></h1>
   <div class="method"><a name="createProfileExpression"/>
     <div class="method-path">
@@ -10630,7 +10582,7 @@ font-style: italic;
   <div class="method"><a name="createRecordType"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /record-type</code></pre></div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /record-types</code></pre></div>
     <div class="method-summary">Create record type (<span class="nickname">createRecordType</span>)</div>
     <div class="method-notes"></div>
 
@@ -10649,7 +10601,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">file_reference_id (required)</div>
 
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The reference ID of the uploaded file to be installed. This file should have been uploaded via the /fileUpload endpoint. </div>
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The reference URI of the uploaded file to be installed. This file should have been uploaded via the /fileUpload endpoint. </div>
     </div>  <!-- field-items -->
 
 
@@ -10691,7 +10643,7 @@ font-style: italic;
   <div class="method"><a name="deleteRecordType"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /record-type/{recordTypeId}</code></pre></div>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /record-types/{recordTypeId}</code></pre></div>
     <div class="method-summary">Delete record type by ID (<span class="nickname">deleteRecordType</span>)</div>
     <div class="method-notes"></div>
 
@@ -10736,7 +10688,7 @@ font-style: italic;
   <div class="method"><a name="getAllRecordTypes"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /record-type</code></pre></div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /record-types</code></pre></div>
     <div class="method-summary">Get all record type (<span class="nickname">getAllRecordTypes</span>)</div>
     <div class="method-notes"></div>
 
@@ -10797,7 +10749,7 @@ font-style: italic;
   <div class="method"><a name="getRecordTypeById"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /record-type/{recordTypeId}</code></pre></div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /record-types/{recordTypeId}</code></pre></div>
     <div class="method-summary">Get record type by ID (<span class="nickname">getRecordTypeById</span>)</div>
     <div class="method-notes"></div>
 
@@ -10854,7 +10806,7 @@ font-style: italic;
   <div class="method"><a name="updateRecordType"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /record-type/{recordTypeId}</code></pre></div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /record-types/{recordTypeId}</code></pre></div>
     <div class="method-summary">Update record type (<span class="nickname">updateRecordType</span>)</div>
     <div class="method-notes"></div>
 
@@ -10913,7 +10865,7 @@ font-style: italic;
   <div class="method"><a name="createRecordTypeQualifier"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /record-type-qualifier</code></pre></div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /record-type-qualifiers</code></pre></div>
     <div class="method-summary">Create record type qualifier (<span class="nickname">createRecordTypeQualifier</span>)</div>
     <div class="method-notes"></div>
 
@@ -10942,9 +10894,8 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "recordTypeId" : 123,
+  "fileFieldMetadataId" : 123,
   "pattern" : "aeiou",
-  "length" : 123,
-  "index" : 123,
   "recordTypeQualifierId" : 123
 }</code></pre>
 
@@ -10970,7 +10921,7 @@ font-style: italic;
   <div class="method"><a name="deleteRecordTypeQualifier"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /record-type-qualifier/{recordTypeQualifierId}</code></pre></div>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /record-type-qualifiers/{recordTypeQualifierId}</code></pre></div>
     <div class="method-summary">Delete record type qualifier by ID (<span class="nickname">deleteRecordTypeQualifier</span>)</div>
     <div class="method-notes"></div>
 
@@ -11015,7 +10966,7 @@ font-style: italic;
   <div class="method"><a name="getAllRecordTypeQualifiers"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /record-type-qualifier</code></pre></div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /record-type-qualifiers</code></pre></div>
     <div class="method-summary">Get all record type qualifiers (<span class="nickname">getAllRecordTypeQualifiers</span>)</div>
     <div class="method-notes"></div>
 
@@ -11052,9 +11003,8 @@ font-style: italic;
   },
   "responseList" : [ {
     "recordTypeId" : 123,
+    "fileFieldMetadataId" : 123,
     "pattern" : "aeiou",
-    "length" : 123,
-    "index" : 123,
     "recordTypeQualifierId" : 123
   } ]
 }</code></pre>
@@ -11078,7 +11028,7 @@ font-style: italic;
   <div class="method"><a name="getRecordTypeQualifierById"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /record-type-qualifier/{recordTypeQualifierId}</code></pre></div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /record-type-qualifiers/{recordTypeQualifierId}</code></pre></div>
     <div class="method-summary">Get record type qualifier by ID (<span class="nickname">getRecordTypeQualifierById</span>)</div>
     <div class="method-notes"></div>
 
@@ -11106,9 +11056,8 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "recordTypeId" : 123,
+  "fileFieldMetadataId" : 123,
   "pattern" : "aeiou",
-  "length" : 123,
-  "index" : 123,
   "recordTypeQualifierId" : 123
 }</code></pre>
 
@@ -11137,7 +11086,7 @@ font-style: italic;
   <div class="method"><a name="updateRecordTypeQualifier"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /record-type-qualifier/{recordTypeQualifierId}</code></pre></div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /record-type-qualifiers/{recordTypeQualifierId}</code></pre></div>
     <div class="method-summary">Update record type qualifier by ID (<span class="nickname">updateRecordTypeQualifier</span>)</div>
     <div class="method-notes"></div>
 
@@ -11172,9 +11121,8 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "recordTypeId" : 123,
+  "fileFieldMetadataId" : 123,
   "pattern" : "aeiou",
-  "length" : 123,
-  "index" : 123,
   "recordTypeQualifierId" : 123
 }</code></pre>
 
@@ -13702,8 +13650,6 @@ font-style: italic;
   <ol>
     <li><a href="#Algorithm"><code>Algorithm</code></a></li>
     <li><a href="#AlgorithmExtension"><code>AlgorithmExtension</code></a></li>
-    <li><a href="#AlgorithmFramework"><code>AlgorithmFramework</code></a></li>
-    <li><a href="#AlgorithmFrameworkList"><code>AlgorithmFrameworkList</code></a></li>
     <li><a href="#AlgorithmIdentifier"><code>AlgorithmIdentifier</code></a></li>
     <li><a href="#AlgorithmList"><code>AlgorithmList</code></a></li>
     <li><a href="#Analytics"><code>Analytics</code></a></li>
@@ -13761,6 +13707,12 @@ font-style: italic;
     <li><a href="#IntegerIdentifier"><code>IntegerIdentifier</code></a></li>
     <li><a href="#JdbcDriver"><code>JdbcDriver</code></a></li>
     <li><a href="#JdbcDriversList"><code>JdbcDriversList</code></a></li>
+    <li><a href="#JvmPermissionAction"><code>JvmPermissionAction</code></a></li>
+    <li><a href="#JvmPermissionActionsList"><code>JvmPermissionActionsList</code></a></li>
+    <li><a href="#JvmPermissionClassName"><code>JvmPermissionClassName</code></a></li>
+    <li><a href="#JvmPermissionClassNamesList"><code>JvmPermissionClassNamesList</code></a></li>
+    <li><a href="#JvmPermissionTargetName"><code>JvmPermissionTargetName</code></a></li>
+    <li><a href="#JvmPermissionTargetNamesList"><code>JvmPermissionTargetNamesList</code></a></li>
     <li><a href="#KeyIdentifier"><code>KeyIdentifier</code></a></li>
     <li><a href="#KnowledgeBaseInfo"><code>KnowledgeBaseInfo</code></a></li>
     <li><a href="#KnowledgeBaseInfoList"><code>KnowledgeBaseInfoList</code></a></li>
@@ -13795,10 +13747,7 @@ font-style: italic;
     <li><a href="#ObjectIdentifier"><code>ObjectIdentifier</code></a></li>
     <li><a href="#OnTheFlyMaskingSource"><code>OnTheFlyMaskingSource</code></a></li>
     <li><a href="#PageInfo"><code>PageInfo</code></a></li>
-    <li><a href="#Plugin"><code>Plugin</code></a></li>
-    <li><a href="#PluginBase"><code>PluginBase</code></a></li>
-    <li><a href="#PluginList"><code>PluginList</code></a></li>
-    <li><a href="#PluginObject"><code>PluginObject</code></a></li>
+    <li><a href="#PluginJvmPermission"><code>PluginJvmPermission</code></a></li>
     <li><a href="#Privilege"><code>Privilege</code></a></li>
     <li><a href="#ProfileExpression"><code>ProfileExpression</code></a></li>
     <li><a href="#ProfileExpressionList"><code>ProfileExpressionList</code></a></li>
@@ -13840,10 +13789,9 @@ font-style: italic;
       <div class="param">algorithmName </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Equivalent to the algorithm name saved by the user through the GUI. For out of the box algorithms, this will be a similar name as that in the GUI, but presented in a more user-friendly format. </div>
 <div class="param">algorithmType </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The type of algorithm </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">BINARY_LOOKUP</div><div class="param-enum">CLEANSING</div><div class="param-enum">COMPONENT</div><div class="param-enum">CUSTOM_ALGORITHM</div><div class="param-enum">DATE</div><div class="param-enum">LOOKUP</div><div class="param-enum">MAPPING</div><div class="param-enum">MINMAX</div><div class="param-enum">MISC</div><div class="param-enum">REDACTION</div><div class="param-enum">SEGMENT</div><div class="param-enum">TOKENIZATION</div>
+        <div class="param-enum">BINARY_LOOKUP</div><div class="param-enum">CLEANSING</div><div class="param-enum">CUSTOM_ALGORITHM</div><div class="param-enum">DATE</div><div class="param-enum">LOOKUP</div><div class="param-enum">MAPPING</div><div class="param-enum">MINMAX</div><div class="param-enum">MISC</div><div class="param-enum">REDACTION</div><div class="param-enum">SEGMENT</div><div class="param-enum">TOKENIZATION</div>
 <div class="param">createdBy (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the user that created the algorithm </div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The description of the algorithm </div>
-<div class="param">frameworkId (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> The algorithm framework id format: int64</div>
 <div class="param">algorithmExtension (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
     </div>  <!-- field-items -->
   </div>
@@ -13852,26 +13800,6 @@ font-style: italic;
     <div class='model-description'></div>
     <div class="field-items">
           </div>  <!-- field-items -->
-  </div>
-  <div class="model">
-    <h3 class="field-label"><a name="AlgorithmFramework">AlgorithmFramework - </a> <a class="up" href="#__Models">Up</a></h3>
-    <div class='model-description'></div>
-    <div class="field-items">
-      <div class="param">frameworkId (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> The id of the algorithm framework installed using Plugin API. format: int64</div>
-<div class="param">frameworkName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the algorithm framework installed using Plugin API. </div>
-<div class="param">frameworkType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The type of value this algorithm framework masks. </div>
-        <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">BIG_DECIMAL</div><div class="param-enum">DATE</div><div class="param-enum">STRING</div><div class="param-enum">BYTE_BUFFER</div>
-<div class="param">plugin (optional)</div><div class="param-desc"><span class="param-type"><a href="#PluginBase">PluginBase</a></span>  </div>
-    </div>  <!-- field-items -->
-  </div>
-  <div class="model">
-    <h3 class="field-label"><a name="AlgorithmFrameworkList">AlgorithmFrameworkList - </a> <a class="up" href="#__Models">Up</a></h3>
-    <div class='model-description'></div>
-    <div class="field-items">
-      <div class="param">_pageInfo (optional)</div><div class="param-desc"><span class="param-type"><a href="#PageInfo">PageInfo</a></span>  </div>
-<div class="param">responseList (optional)</div><div class="param-desc"><span class="param-type"><a href="#AlgorithmFramework">array[AlgorithmFramework]</a></span>  </div>
-    </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="AlgorithmIdentifier">AlgorithmIdentifier - </a> <a class="up" href="#__Models">Up</a></h3>
@@ -13973,7 +13901,7 @@ font-style: italic;
         <div class="param-enum">CANCEL</div><div class="param-enum">CREATE</div><div class="param-enum">CONNECT</div><div class="param-enum">DELETE</div><div class="param-enum">DISCONNECT</div><div class="param-enum">EDIT</div><div class="param-enum">EXPORT</div><div class="param-enum">GET</div><div class="param-enum">GET_ALL</div><div class="param-enum">IMPORT</div><div class="param-enum">LOCK</div><div class="param-enum">LOGIN</div><div class="param-enum">LOGOUT</div><div class="param-enum">RUN</div><div class="param-enum">TEST</div><div class="param-enum">UNLOCK</div>
 <div class="param">target (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The type object or operation that the action occurred on for this Audit Log entry. </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">ALGORITHM</div><div class="param-enum">ANALYTIC</div><div class="param-enum">APPLICATION</div><div class="param-enum">APPLICATION_LOG</div><div class="param-enum">APPLICATION_SETTING</div><div class="param-enum">ASYNC_TASK</div><div class="param-enum">AUDIT_LOG</div><div class="param-enum">COLUMN_METADATA</div><div class="param-enum">DATABASE_CONNECTOR</div><div class="param-enum">DATABASE_RULESET</div><div class="param-enum">DEBUG_BREAKPOINT</div><div class="param-enum">DOMAIN</div><div class="param-enum">ENCRYPTION_KEY</div><div class="param-enum">ENVIRONMENT</div><div class="param-enum">EXECUTION</div><div class="param-enum">EXECUTION_EVENT</div><div class="param-enum">FILE_CONNECTOR</div><div class="param-enum">FILE_DOWNLOAD</div><div class="param-enum">FILE_FIELD_METADATA</div><div class="param-enum">FILE_FORMAT</div><div class="param-enum">FILE_METADATA</div><div class="param-enum">FILE_RULESET</div><div class="param-enum">FILE_UPLOAD</div><div class="param-enum">INSTALLATION</div><div class="param-enum">JDBC_DRIVER</div><div class="param-enum">KNOWLEDGE_BASE_INFO</div><div class="param-enum">LDAP</div><div class="param-enum">MAINFRAME_DATASET_CONNECTOR</div><div class="param-enum">MAINFRAME_DATASET_FIELD_METADATA</div><div class="param-enum">MAINFRAME_DATASET_FORMAT</div><div class="param-enum">MAINFRAME_DATASET_METADATA</div><div class="param-enum">MAINFRAME_DATASET_RULESET</div><div class="param-enum">MASKING_JOB</div><div class="param-enum">MOUNT_FILESYSTEM</div><div class="param-enum">NON_CONFORMING_DATA_SAMPLE</div><div class="param-enum">PLUGIN</div><div class="param-enum">PROFILE_EXPRESSION</div><div class="param-enum">PROFILE_JOB</div><div class="param-enum">PROFILE_SET</div><div class="param-enum">RECORD_TYPE</div><div class="param-enum">RECORD_TYPE_QUALIFIER</div><div class="param-enum">REIDENTIFICATION_JOB</div><div class="param-enum">ROLE</div><div class="param-enum">SSH_KEY</div><div class="param-enum">SSO</div><div class="param-enum">SYNCABLE_OBJECT</div><div class="param-enum">SYSTEM_INFORMATION</div><div class="param-enum">TABLE_METADATA</div><div class="param-enum">TOKENIZATION_JOB</div><div class="param-enum">UNIFIED_AUTH</div><div class="param-enum">USER</div>
+        <div class="param-enum">ALGORITHM</div><div class="param-enum">ANALYTIC</div><div class="param-enum">APPLICATION</div><div class="param-enum">APPLICATION_LOG</div><div class="param-enum">APPLICATION_SETTING</div><div class="param-enum">ASYNC_TASK</div><div class="param-enum">AUDIT_LOG</div><div class="param-enum">COLUMN_METADATA</div><div class="param-enum">DATABASE_CONNECTOR</div><div class="param-enum">DATABASE_RULESET</div><div class="param-enum">DEBUG_BREAKPOINT</div><div class="param-enum">DOMAIN</div><div class="param-enum">ENCRYPTION_KEY</div><div class="param-enum">ENVIRONMENT</div><div class="param-enum">EXECUTION</div><div class="param-enum">EXECUTION_EVENT</div><div class="param-enum">FILE_CONNECTOR</div><div class="param-enum">FILE_DOWNLOAD</div><div class="param-enum">FILE_FIELD_METADATA</div><div class="param-enum">FILE_FORMAT</div><div class="param-enum">FILE_METADATA</div><div class="param-enum">FILE_RULESET</div><div class="param-enum">FILE_UPLOAD</div><div class="param-enum">INSTALLATION</div><div class="param-enum">JDBC_DRIVER</div><div class="param-enum">JVM_PERMISSION_ACTION</div><div class="param-enum">JVM_PERMISSION_CLASS_NAME</div><div class="param-enum">JVM_PERMISSION_TARGET_NAME</div><div class="param-enum">KNOWLEDGE_BASE_INFO</div><div class="param-enum">LDAP</div><div class="param-enum">MAINFRAME_DATASET_CONNECTOR</div><div class="param-enum">MAINFRAME_DATASET_FIELD_METADATA</div><div class="param-enum">MAINFRAME_DATASET_FORMAT</div><div class="param-enum">MAINFRAME_DATASET_METADATA</div><div class="param-enum">MAINFRAME_DATASET_RULESET</div><div class="param-enum">MASKING_JOB</div><div class="param-enum">MOUNT_FILESYSTEM</div><div class="param-enum">NON_CONFORMING_DATA_SAMPLE</div><div class="param-enum">PLUGIN_JVM_PERMISSION</div><div class="param-enum">PROFILE_EXPRESSION</div><div class="param-enum">PROFILE_JOB</div><div class="param-enum">PROFILE_SET</div><div class="param-enum">RECORD_TYPE</div><div class="param-enum">RECORD_TYPE_QUALIFIER</div><div class="param-enum">REIDENTIFICATION_JOB</div><div class="param-enum">ROLE</div><div class="param-enum">SSH_KEY</div><div class="param-enum">SSO</div><div class="param-enum">SYNCABLE_OBJECT</div><div class="param-enum">SYSTEM_INFORMATION</div><div class="param-enum">TABLE_METADATA</div><div class="param-enum">TOKENIZATION_JOB</div><div class="param-enum">UNIFIED_AUTH</div><div class="param-enum">USER</div>
 <div class="param">status (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The status of the action that occurred for this Audit Log entry. This can change over time as ATTEMPTED actions are completed. </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">ATTEMPTED</div><div class="param-enum">FAILED</div><div class="param-enum">SUCCEEDED</div>
@@ -13992,7 +13920,7 @@ font-style: italic;
     <h3 class="field-label"><a name="BinaryLookupExtension">BinaryLookupExtension - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
     <div class="field-items">
-      <div class="param">fileReferenceIds (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> A list of file reference UUID values returned from the endpoint for uploading files to the Masking Engine. </div>
+      <div class="param">fileReferenceIds (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> A list of file reference URI values returned from the endpoint for uploading files to the Masking Engine. </div>
 <div class="param">latestKeyResetTime (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> The last time the algorithm&#39;s key was randomized. This changes the masked results of the algorithm. format: date-time</div>
     </div>  <!-- field-items -->
   </div>
@@ -14076,7 +14004,7 @@ font-style: italic;
     <h3 class="field-label"><a name="DataCleansingExtension">DataCleansingExtension - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
     <div class="field-items">
-      <div class="param">fileReferenceId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The reference UUID value returned from the endpoint for uploading files to the Masking Engine. The file should contain a newline separated list of {value, replacement} pairs separated by the delimiter. No extraneous whitespace should be present. </div>
+      <div class="param">fileReferenceId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The reference URI value returned from the endpoint for uploading files to the Masking Engine. The file should contain a newline separated list of {value, replacement} pairs separated by the delimiter. No extraneous whitespace should be present. </div>
 <div class="param">delimiter (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The delimiter string used to separate {value, replacement} pairs in the uploaded file </div>
     </div>  <!-- field-items -->
   </div>
@@ -14103,6 +14031,7 @@ font-style: italic;
 <div class="param">kerberosAuth (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Whether to use kerberos to authenticate database connections. When kerberosAuth is enabled, the username field is treated as the kerberos principal. Kerberos must be enabled on the appliance </div>
 <div class="param">servicePrincipal (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The service principal used to access the database. This property is exclusive to Sybase connectors using Kerberos. </div>
 <div class="param">jdbcDriverId (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The ID of the JDBC driver to use for this connector. This is exclusively used for extended connectors. format: int32</div>
+<div class="param">enableLogger (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Whether to enable the logger. This is exclusively used for extended connectors. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -14290,7 +14219,7 @@ font-style: italic;
       <div class="param">objectIdentifier </div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
 <div class="param">objectType </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of object to export </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">ALGORITHM_REFERENCE</div><div class="param-enum">APPLICATION_SETTINGS</div><div class="param-enum">BINARYLOOKUP</div><div class="param-enum">CLEANSING</div><div class="param-enum">DATABASE_CONNECTOR</div><div class="param-enum">DATABASE_RULESET</div><div class="param-enum">DATE_SHIFT</div><div class="param-enum">DOMAIN</div><div class="param-enum">DOMAIN_REFERENCE</div><div class="param-enum">FILE_CONNECTOR</div><div class="param-enum">FILE_FORMAT</div><div class="param-enum">FILE_RULESET</div><div class="param-enum">GLOBAL_OBJECT</div><div class="param-enum">JDBC_DRIVER</div><div class="param-enum">KEY</div><div class="param-enum">LOOKUP</div><div class="param-enum">MAPPLET</div><div class="param-enum">MASKING_JOB</div><div class="param-enum">MIN_MAX</div><div class="param-enum">MOUNT_INFORMATION</div><div class="param-enum">PROFILE_EXPRESSION</div><div class="param-enum">PROFILE_EXPRESSION_REFERENCE</div><div class="param-enum">PROFILE_JOB</div><div class="param-enum">PROFILE_SET</div><div class="param-enum">PROFILE_SET_REFERENCE</div><div class="param-enum">REDACTION</div><div class="param-enum">SEGMENT</div><div class="param-enum">SOURCE_DATABASE_CONNECTOR</div><div class="param-enum">SOURCE_FILE_CONNECTOR</div><div class="param-enum">TOKENIZATION</div>
+        <div class="param-enum">ALGORITHM_REFERENCE</div><div class="param-enum">APPLICATION_SETTINGS</div><div class="param-enum">BINARYLOOKUP</div><div class="param-enum">CLEANSING</div><div class="param-enum">DATABASE_CONNECTOR</div><div class="param-enum">DATABASE_RULESET</div><div class="param-enum">DATE_SHIFT</div><div class="param-enum">DOMAIN</div><div class="param-enum">DOMAIN_REFERENCE</div><div class="param-enum">FILE_CONNECTOR</div><div class="param-enum">FILE_FORMAT</div><div class="param-enum">FILE_RULESET</div><div class="param-enum">GLOBAL_OBJECT</div><div class="param-enum">JDBC_DRIVER</div><div class="param-enum">KEY</div><div class="param-enum">LOOKUP</div><div class="param-enum">MAPPLET</div><div class="param-enum">MASKING_JOB</div><div class="param-enum">MIN_MAX</div><div class="param-enum">MOUNT_INFORMATION</div><div class="param-enum">PROFILE_EXPRESSION</div><div class="param-enum">PROFILE_EXPRESSION_REFERENCE</div><div class="param-enum">PROFILE_JOB</div><div class="param-enum">PROFILE_SET</div><div class="param-enum">PROFILE_SET_REFERENCE</div><div class="param-enum">REDACTION</div><div class="param-enum">REIDENTIFICATION_JOB</div><div class="param-enum">SEGMENT</div><div class="param-enum">SOURCE_DATABASE_CONNECTOR</div><div class="param-enum">SOURCE_FILE_CONNECTOR</div><div class="param-enum">TOKENIZATION</div><div class="param-enum">TOKENIZATION_JOB</div>
 <div class="param">revisionHash (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Global comparison value for syncable object </div>
     </div>  <!-- field-items -->
   </div>
@@ -14433,7 +14362,7 @@ font-style: italic;
     <h3 class="field-label"><a name="FileUpload">FileUpload - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
     <div class="field-items">
-      <div class="param">fileReferenceId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The reference ID of the uploaded file. This reference ID can be used in a subsequent API request that requires a file. </div>
+      <div class="param">fileReferenceId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The reference URI of the uploaded file. This reference ID can be used in a subsequent API request that requires a file. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -14441,7 +14370,7 @@ font-style: italic;
     <div class='model-description'></div>
     <div class="field-items">
       <div class="param">blackListRedaction (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Black list redaction if true, white list redaction if false. </div>
-<div class="param">lookupFileReferenceId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The reference UUID value returned from the endpoint for uploading the lookup file to the Masking Engine. </div>
+<div class="param">lookupFileReferenceId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The reference URI value returned from the endpoint for uploading the lookup file to the Masking Engine. </div>
 <div class="param">lookupRedactionValue (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The value to use to redact items matching entries specified in the lookup file. </div>
 <div class="param">profileSetId (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The ID number of the profile set for defining the pattern matching to use for identifying values for redaction. format: int32</div>
 <div class="param">profileSetRedactionValue (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The value to use to redact items matching patterns defined by the profile set. </div>
@@ -14455,7 +14384,7 @@ font-style: italic;
 <div class="param">importedObjectIdentifier (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span> Identifier of the imported object on this engine. </div>
 <div class="param">objectType </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of object to export </div>
         <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">ALGORITHM_REFERENCE</div><div class="param-enum">APPLICATION_SETTINGS</div><div class="param-enum">BINARYLOOKUP</div><div class="param-enum">CLEANSING</div><div class="param-enum">DATABASE_CONNECTOR</div><div class="param-enum">DATABASE_RULESET</div><div class="param-enum">DATE_SHIFT</div><div class="param-enum">DOMAIN</div><div class="param-enum">DOMAIN_REFERENCE</div><div class="param-enum">FILE_CONNECTOR</div><div class="param-enum">FILE_FORMAT</div><div class="param-enum">FILE_RULESET</div><div class="param-enum">GLOBAL_OBJECT</div><div class="param-enum">JDBC_DRIVER</div><div class="param-enum">KEY</div><div class="param-enum">LOOKUP</div><div class="param-enum">MAPPLET</div><div class="param-enum">MASKING_JOB</div><div class="param-enum">MIN_MAX</div><div class="param-enum">MOUNT_INFORMATION</div><div class="param-enum">PROFILE_EXPRESSION</div><div class="param-enum">PROFILE_EXPRESSION_REFERENCE</div><div class="param-enum">PROFILE_JOB</div><div class="param-enum">PROFILE_SET</div><div class="param-enum">PROFILE_SET_REFERENCE</div><div class="param-enum">REDACTION</div><div class="param-enum">SEGMENT</div><div class="param-enum">SOURCE_DATABASE_CONNECTOR</div><div class="param-enum">SOURCE_FILE_CONNECTOR</div><div class="param-enum">TOKENIZATION</div>
+        <div class="param-enum">ALGORITHM_REFERENCE</div><div class="param-enum">APPLICATION_SETTINGS</div><div class="param-enum">BINARYLOOKUP</div><div class="param-enum">CLEANSING</div><div class="param-enum">DATABASE_CONNECTOR</div><div class="param-enum">DATABASE_RULESET</div><div class="param-enum">DATE_SHIFT</div><div class="param-enum">DOMAIN</div><div class="param-enum">DOMAIN_REFERENCE</div><div class="param-enum">FILE_CONNECTOR</div><div class="param-enum">FILE_FORMAT</div><div class="param-enum">FILE_RULESET</div><div class="param-enum">GLOBAL_OBJECT</div><div class="param-enum">JDBC_DRIVER</div><div class="param-enum">KEY</div><div class="param-enum">LOOKUP</div><div class="param-enum">MAPPLET</div><div class="param-enum">MASKING_JOB</div><div class="param-enum">MIN_MAX</div><div class="param-enum">MOUNT_INFORMATION</div><div class="param-enum">PROFILE_EXPRESSION</div><div class="param-enum">PROFILE_EXPRESSION_REFERENCE</div><div class="param-enum">PROFILE_JOB</div><div class="param-enum">PROFILE_SET</div><div class="param-enum">PROFILE_SET_REFERENCE</div><div class="param-enum">REDACTION</div><div class="param-enum">REIDENTIFICATION_JOB</div><div class="param-enum">SEGMENT</div><div class="param-enum">SOURCE_DATABASE_CONNECTOR</div><div class="param-enum">SOURCE_FILE_CONNECTOR</div><div class="param-enum">TOKENIZATION</div><div class="param-enum">TOKENIZATION_JOB</div>
 <div class="param">importStatus (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">SUCCESS</div><div class="param-enum">FAILED</div><div class="param-enum">SKIPPED</div>
@@ -14469,7 +14398,7 @@ font-style: italic;
       <div class="param">fileType </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The type of file that is being installed. </div>
         <div class="param-enum-header">Enum:</div>
         <div class="param-enum">LICENSE_DB2_ISERIES</div><div class="param-enum">LICENSE_DB2_MAINFRAME</div>
-<div class="param">fileReferenceId </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The reference ID of the uploaded file to be installed. This file should have been uploaded via the /fileUpload endpoint. </div>
+<div class="param">fileReferenceId </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The reference URI of the uploaded file to be installed. This file should have been uploaded via the /fileUpload endpoint. </div>
 <div class="param">requiresRestart (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> True if the Masking Engine must be restarted for the installation to take effect, false otherwise. </div>
     </div>  <!-- field-items -->
   </div>
@@ -14493,6 +14422,9 @@ font-style: italic;
 <div class="param">uploadDate (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> The date the driver was updated. format: date-time</div>
 <div class="param">checksum (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The md5 checksum of the uploaded driver. </div>
 <div class="param">builtIn (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Whether this is a JDBC driver that is supported natively by the engine. </div>
+<div class="param">loggerInstalled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Whether a logger is successfully installed. </div>
+<div class="param">fileReferenceId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The file references ID of the uploaded zip file </div>
+<div class="param">pluginJvmPermissions (optional)</div><div class="param-desc"><span class="param-type"><a href="#PluginJvmPermission">array[PluginJvmPermission]</a></span> The permissions granted to this driver. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -14501,6 +14433,56 @@ font-style: italic;
     <div class="field-items">
       <div class="param">_pageInfo (optional)</div><div class="param-desc"><span class="param-type"><a href="#PageInfo">PageInfo</a></span>  </div>
 <div class="param">responseList (optional)</div><div class="param-desc"><span class="param-type"><a href="#JdbcDriver">array[JdbcDriver]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="JvmPermissionAction">JvmPermissionAction - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">jvmPermissionActionId (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The ID number of the permission action. This field is auto-generated by the Masking Engine. format: int32</div>
+<div class="param">value </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the permission action. </div>
+<div class="param">jvmPermissionClassName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The permission class name. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="JvmPermissionActionsList">JvmPermissionActionsList - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">_pageInfo (optional)</div><div class="param-desc"><span class="param-type"><a href="#PageInfo">PageInfo</a></span>  </div>
+<div class="param">responseList (optional)</div><div class="param-desc"><span class="param-type"><a href="#JvmPermissionAction">array[JvmPermissionAction]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="JvmPermissionClassName">JvmPermissionClassName - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">jvmPermissionClassNameId (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The ID number of the permission class. This field is auto-generated by the Masking Engine. format: int32</div>
+<div class="param">value </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the permission class. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="JvmPermissionClassNamesList">JvmPermissionClassNamesList - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">_pageInfo (optional)</div><div class="param-desc"><span class="param-type"><a href="#PageInfo">PageInfo</a></span>  </div>
+<div class="param">responseList (optional)</div><div class="param-desc"><span class="param-type"><a href="#JvmPermissionClassName">array[JvmPermissionClassName]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="JvmPermissionTargetName">JvmPermissionTargetName - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">jvmPermissionTargetNameId (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The ID number of the permission target. This field is auto-generated by the Masking Engine. format: int32</div>
+<div class="param">value </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the permission target. </div>
+<div class="param">jvmPermissionClassName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The permission class name. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="JvmPermissionTargetNamesList">JvmPermissionTargetNamesList - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">_pageInfo (optional)</div><div class="param-desc"><span class="param-type"><a href="#PageInfo">PageInfo</a></span>  </div>
+<div class="param">responseList (optional)</div><div class="param-desc"><span class="param-type"><a href="#JvmPermissionTargetName">array[JvmPermissionTargetName]</a></span>  </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -14678,7 +14660,7 @@ font-style: italic;
     <h3 class="field-label"><a name="MappingExtension">MappingExtension - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
     <div class="field-items">
-      <div class="param">fileReferenceId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The reference UUID value returned from the endpoint for uploading files to the Masking Engine. The file should contain a newline separated list of mapping values. </div>
+      <div class="param">fileReferenceId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The reference URI value returned from the endpoint for uploading files to the Masking Engine. The file should contain a newline separated list of mapping values. </div>
 <div class="param">ignoreCharacters (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">array[Integer]</a></span> The integer ASCII values of characters to ignore in the column data to map </div>
     </div>  <!-- field-items -->
   </div>
@@ -14688,7 +14670,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">mappletInput (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the input variable for the custom algorithm </div>
 <div class="param">mappletOutput (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the output variable for the custom algorithm </div>
-<div class="param">fileReferenceId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The reference UUID value returned from the endpoint for uploading files to the Masking Engine. </div>
+<div class="param">fileReferenceId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The reference URI value returned from the endpoint for uploading files to the Masking Engine. </div>
 <div class="param">fileDownloadId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This value is returned on GET. It can be fed into the file-downloads endpoint. </div>
     </div>  <!-- field-items -->
   </div>
@@ -14829,45 +14811,13 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
-    <h3 class="field-label"><a name="Plugin">Plugin - </a> <a class="up" href="#__Models">Up</a></h3>
+    <h3 class="field-label"><a name="PluginJvmPermission">PluginJvmPermission - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
     <div class="field-items">
-      <div class="param">pluginId (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> The id of the algorithm plugin format: int64</div>
-<div class="param">pluginName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the plugin </div>
-<div class="param">pluginAuthor (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The author of the plugin </div>
-<div class="param">originalFileName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The original name of the plugin JAR file </div>
-<div class="param">jarFingerprint (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The value of the 8-byte fingerprint identifying this plugin </div>
-<div class="param">installDate (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> Date and time when this plugin was installed format: date-time</div>
-<div class="param">installUser (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The login ID of the user that installed this plugin format: int32</div>
-<div class="param">pluginObjects (optional)</div><div class="param-desc"><span class="param-type"><a href="#PluginObject">array[PluginObject]</a></span> List of objects included in the plugin </div>
-    </div>  <!-- field-items -->
-  </div>
-  <div class="model">
-    <h3 class="field-label"><a name="PluginBase">PluginBase - </a> <a class="up" href="#__Models">Up</a></h3>
-    <div class='model-description'></div>
-    <div class="field-items">
-      <div class="param">pluginId (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> The id of the algorithm plugin format: int64</div>
-<div class="param">pluginName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the plugin </div>
-<div class="param">pluginAuthor (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The author of the plugin </div>
-    </div>  <!-- field-items -->
-  </div>
-  <div class="model">
-    <h3 class="field-label"><a name="PluginList">PluginList - </a> <a class="up" href="#__Models">Up</a></h3>
-    <div class='model-description'></div>
-    <div class="field-items">
-      <div class="param">_pageInfo (optional)</div><div class="param-desc"><span class="param-type"><a href="#PageInfo">PageInfo</a></span>  </div>
-<div class="param">responseList (optional)</div><div class="param-desc"><span class="param-type"><a href="#Plugin">array[Plugin]</a></span>  </div>
-    </div>  <!-- field-items -->
-  </div>
-  <div class="model">
-    <h3 class="field-label"><a name="PluginObject">PluginObject - </a> <a class="up" href="#__Models">Up</a></h3>
-    <div class='model-description'></div>
-    <div class="field-items">
-      <div class="param">objectIdentifier (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
-<div class="param">objectName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
-<div class="param">objectType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The type of plugin object </div>
-        <div class="param-enum-header">Enum:</div>
-        <div class="param-enum">ALGORITHM</div><div class="param-enum">ALGORITHM_FRAMEWORK</div>
+      <div class="param">pluginJvmPermissionId (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The ID number of the plugin jvm permission. This field is auto-generated by the Masking Engine. format: int32</div>
+<div class="param">className (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The class name of the permission. </div>
+<div class="param">target (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The target name of the permission. </div>
+<div class="param">action (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The action of the permission. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -14976,9 +14926,8 @@ font-style: italic;
     <div class="field-items">
       <div class="param">recordTypeQualifierId (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The ID number of the record type qualifier. This field is auto-generated by the Masking Engine. format: int32</div>
 <div class="param">recordTypeId (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The ID number of the record type that the record type qualifier refers to. format: int32</div>
-<div class="param">pattern (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The pattern to match against the record type field </div>
-<div class="param">index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The number of lines at the beginning of the file to skip. format: int32</div>
-<div class="param">length (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The length of the field to match against the pattern. format: int32</div>
+<div class="param">pattern (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The pattern to match against the record type field. </div>
+<div class="param">fileFieldMetadataId (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The ID of the record type field the record type qualifier refers to. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -15056,7 +15005,7 @@ font-style: italic;
     <h3 class="field-label"><a name="SecureLookupExtension">SecureLookupExtension - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
     <div class="field-items">
-      <div class="param">fileReferenceId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The reference UUID value returned from the endpoint for uploading files to the Masking Engine. </div>
+      <div class="param">fileReferenceId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The reference URI value returned from the endpoint for uploading files to the Masking Engine. </div>
 <div class="param">latestKeyResetTime (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span> The last time the algorithm&#39;s key was randomized. This changes the masked results of the algorithm. format: date-time</div>
     </div>  <!-- field-items -->
   </div>

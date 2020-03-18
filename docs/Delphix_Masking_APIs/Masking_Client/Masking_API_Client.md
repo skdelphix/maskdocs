@@ -42,7 +42,10 @@ operations.
 To access the API client on your Masking Engine, go to
 [<span class="underline">http://myMaskingEngine.myDomain.com/masking/api-client</span>](http://mymaskingengine.mydomain.com/masking/api-client).
 
-To access the API client documentation without an engine, please refer to the static HTML here: [Masking API 5.1.0 Documentation](/maskingApiEndpoints.html).
+To access the API client documentation without an engine, please refer to the static HTML representations here:
+
+  - [Masking API 5.1.0 Documentation](/maskingApiEndpoints/5_1_0_maskingApiEndpoints.html).
+  - [Masking API 5.1.1 Documentation](/maskingApiEndpoints/5_1_1_maskingApiEndpoints.html).
 
 To see how to log into the API client and for some starter recipes,
 please check out API Cookbook document. Happy programming\!
