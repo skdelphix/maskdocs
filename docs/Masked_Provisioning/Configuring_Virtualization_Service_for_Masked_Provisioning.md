@@ -6,7 +6,7 @@ During the VDB provisioning process, the Virtualization Engine can optionally ru
 
 !!! warning "Important Validation Notices"
 
-    When using seperate Virtualization and Masking engines, ensure that the versions are compatible. See the [compatiblity matrix](/Securing_Sensitive_Data/Provision_Masked_VDBs/#virtualization-and-masking-engine-compatibility-matrix).
+    When using seperate Virtualization and Masking engines, ensure that the versions are compatible. See the [compatiblity matrix](/Masked_Provisioning/Provision_Masked_VDBs/#virtualization-and-masking-engine-compatibility-matrix).
 
 
     Old versions of the serviceconfig or any information associated with them are not tracked. In particular, if you have been using the local masking service or a remote service and then change to a new remote service Delphix will start throwing out any old job information on the next masking job/fetch or GUI reload. Users should not rely on that information being preserved through serviceconfig updates.
