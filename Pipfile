@@ -9,4 +9,7 @@ mkdocs-material = "*"
 markdown-include = "*"
 mkdocs-awesome-pages-plugin = "*"
 
+[requires]
+python_version = "3.7"
+
 [dev-packages]
