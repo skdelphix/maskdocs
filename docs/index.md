@@ -1,3 +1,7 @@
+---
+title: Introduction to Delphix Masking
+---
+
 # Introduction to Delphix Masking
 
 ## Challenge
