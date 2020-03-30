@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "https://clever-lumiere-c80098.netlify.com/5.3.8/"
-  to = "https://dlpx-5-3-8--clever-lumiere-c80098.netlify.com/"
+  from = "https://clever-lumiere-c80098.netlify.com/5.3.8"
+  to = "https://dlpx-5-3-8--clever-lumiere-c80098.netlify.com"
   status = 301
   force = true
   query = {path = ":path"}
