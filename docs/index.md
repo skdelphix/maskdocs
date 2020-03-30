@@ -1,3 +1,8 @@
+---
+title: Introduction to Delphix Masking
+date: 03.30.2020
+---
+
 # Introduction to Delphix Masking 
 
 ## Challenge
