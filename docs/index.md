@@ -1,6 +1,7 @@
 ---
 title: Introduction to Delphix Masking
 date: 03.30.2020
+update: 1
 ---
 
 # Introduction to Delphix Masking 
