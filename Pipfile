@@ -4,8 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-mkdocs = "~=0.17"
-mkdocs-material = "~=2.9"
+mkdocs = "*"
+mkdocs-material = "*"
 markdown-include = "*"
 mkdocs-awesome-pages-plugin = "*"
 
