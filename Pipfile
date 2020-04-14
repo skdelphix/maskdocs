@@ -8,7 +8,7 @@ mkdocs = "*"
 mkdocs-material = "*"
 markdown-include = "*"
 mkdocs-awesome-pages-plugin = "*"
-jinja2 == "10.2.3"
+jinja2 == "2.10.3"
 
 [requires]
 python_version = "3.7"
