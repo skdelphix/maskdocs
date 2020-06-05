@@ -4,7 +4,7 @@
 
 ### Extended Connectors
 
-This is new. Extended Connectors is a new feature that allows you to upload additional JDBC Drivers to the Delphix Masking engine. This enables masking data sources that are not natively supported by Delphix Masking. For more information, please refer to the [Managing Extended Connectors](/Connecting_Data/Managing_Extended_Connectors/) section.
+Testing a new change. This is new. Extended Connectors is a new feature that allows you to upload additional JDBC Drivers to the Delphix Masking engine. This enables masking data sources that are not natively supported by Delphix Masking. For more information, please refer to the [Managing Extended Connectors](/Connecting_Data/Managing_Extended_Connectors/) section.
 
 ### Sync for Tokenization and Reidentification Jobs
 
