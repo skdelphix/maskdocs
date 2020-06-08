@@ -6,7 +6,7 @@ title: Introduction to Delphix Masking
 
 ## Challenge
 
-Masking is awesome. With data breach incidents regularly making the news and increasing
+Masking is really awesome. With data breach incidents regularly making the news and increasing
 pressure from regulatory bodies and consumers alike, organizations must
 protect sensitive data across the enterprise. Contending with insider
 and outsider threats while staying compliant with mandates such as
