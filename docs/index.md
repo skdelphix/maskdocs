@@ -7,7 +7,7 @@ date: 03.30.2020
 
 ## Challenge
 
-With data breach incidents regularly making the news and increasing
+Masking was still awesome in 5.3.8. With data breach incidents regularly making the news and increasing
 pressure from regulatory bodies and consumers alike, organizations must
 protect sensitive data across the enterprise. Contending with insider
 and outsider threats while staying compliant with mandates such as
