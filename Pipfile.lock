@@ -52,9 +52,9 @@
         },
         "markupsafe": {
             "hashes": [
-                "sha256:a6be69091dac236ea9c6bc7d012beab42010fa914c459791d627dad4910eb665"
+                "sha256:09027a7803a62ca78792ad89403b1b7a73a01c8cb65909cd876f7fcebd79b161"
             ],
-            "version": "==1.0"
+            "version": "==1.1.1"
         },
         "mkdocs": {
             "hashes": [
