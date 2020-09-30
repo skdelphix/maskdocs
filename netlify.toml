@@ -3,9 +3,15 @@
   to = "https://dlpx-5-3-8--clever-lumiere-c80098.netlify.app/:splat"
   status = 200
   force = true
-
+  
 [[redirects]]
-  from = "https://maskdocdev.delphix.com/5.3.8/*"
-  to = "https://dlpx-5-3-8--clever-lumiere-c80098.netlify.app/:splat"
+  from = "https://clever-lumiere-c80098.netlify.com/5.3.9/*"
+  to = "https://dlpx-5-3-9--clever-lumiere-c80098.netlify.app/:splat"
+  status = 200
+  force = true
+  
+[[redirects]]
+  from = "https://clever-lumiere-c80098.netlify.com/6.0.2/*"
+  to = "https://dlpx-6-0-2-0--clever-lumiere-c80098.netlify.app/:splat"
   status = 200
   force = true
