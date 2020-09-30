@@ -1,11 +1,5 @@
 [[redirects]]
   from = "https://clever-lumiere-c80098.netlify.com/*"
-  to = "https://clever-lumiere-c80098.netlify.com/latest/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://clever-lumiere-c80098.netlify.com/latest/*"
   to = "https://dlpx-6-0-1-0--clever-lumiere-c80098.netlify.com/:splat"
   status = 200
   force = true
