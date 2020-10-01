@@ -1,4 +1,10 @@
  [[redirects]]
+  from = "https://clever-lumiere-c80098.netlify.com/6.0.2/*"
+  to = "https://dlpx-6-0-2-0--clever-lumiere-c80098.netlify.app/:splat"
+  status = 200
+  force = true
+  
+[[redirects]]
   from = "https://clever-lumiere-c80098.netlify.com/6.0.1/*"
   to = "https://dlpx-6-0-1-0--clever-lumiere-c80098.netlify.app/:splat"
   status = 200
@@ -13,5 +19,5 @@
 [[redirects]]
   from = "https://clever-lumiere-c80098.netlify.app/*"
   to = "https://dlpx-6-0-2-0--clever-lumiere-c80098.netlify.app/:splat"
-  status = 200
+  status = 302
   force = true
