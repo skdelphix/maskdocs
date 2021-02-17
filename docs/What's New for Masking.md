@@ -1,4 +1,4 @@
-# What's New for Masking Engines
+# What's New for Masking Engines - It's Really Cool!
 ## Synchronizing Masking Jobs and Universal Settings Across Engines
 In 5.2 we introduced the ability to synchronize Masking Algorithms between engines to ensure consistent masking, regardless of the engine executing the masking. In 5.3 are expanding the list of syncable objects to include:
 
